@@ -158,7 +158,7 @@ A **VPN (Virtual Private Network)** creates an encrypted tunnel between endpoint
 
 **SSL/TLS VPNs** operate at Layer 4/7 and are accessible through standard web browsers or lightweight clients, making them easier to deploy for remote access than IPSec in some environments.
 
-![SSL/TLS Stripping Attack Diagram](img/diagram-ssl-stripping.png)
+![SSL/TLS Stripping Attack Diagram](img/diagram-ssl-stripping.webp)
 
 **WireGuard** is a modern VPN protocol, released in 2019, that uses state-of-the-art cryptography (Curve25519 for key exchange, ChaCha20-Poly1305 for encryption, BLAKE2 for hashing) and a dramatically simpler codebase (~4,000 lines vs. OpenVPN's ~100,000). Its simplicity reduces attack surface and has driven rapid adoption.
 
