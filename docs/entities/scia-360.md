@@ -11,7 +11,9 @@ sources: []
 
 ## Overview
 
-In-depth study of operating system security mechanisms. Topics include OS architecture, user/kernel privilege separation, access control models, file system security, process isolation, and hardening techniques for major OS platforms.
+Fundamental principles of operating systems and operational security, including process and resource management, security capabilities and limitations, authentication, security policies, sandbox, software vulnerabilities, and virtualization. Case studies of operating systems. Spring.
+
+**Prerequisites:** Grade of C or better in COSC 241 and SCIA 120
 
 ## Course Details
 
