@@ -60,7 +60,7 @@ Security threats do not target the network as a monolithic entity — they targe
 - **Layer 3 (Network)**: IP spoofing, ICMP flood attacks, route injection/BGP hijacking.
 - **Layer 4 (Transport)**: SYN flood DoS attacks, TCP session hijacking, port scanning.
 
-![Session Hijacking Diagram](img/diagram-session-hijacking.png)
+![Session Hijacking Diagram](img/diagram-session-hijacking.webp)
 - **Layer 5-7 (Application)**: DNS poisoning, HTTP-based attacks (SQLi, XSS), email phishing, malware command-and-control communication.
 
 ---
