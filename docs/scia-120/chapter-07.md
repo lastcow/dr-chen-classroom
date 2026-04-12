@@ -73,7 +73,7 @@ The **Address Resolution Protocol (ARP)** maps IP addresses to MAC (hardware) ad
 
 ARP poisoning enables **man-in-the-middle (MitM)** attacks: the attacker forwards traffic to the legitimate destination (so the attack remains invisible) while reading or modifying it in transit.
 
-![Man-in-the-Middle Attack Diagram](img/diagram-mitm-general.png)
+![Man-in-the-Middle Attack Diagram](img/diagram-mitm-general.webp)
 
 Tools like **arpspoof** and **Ettercap** automate ARP poisoning attacks. Defenses include *dynamic ARP inspection (DAI)* on managed switches, which validates ARP packets against a trusted DHCP snooping database.
 
