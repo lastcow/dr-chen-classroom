@@ -11,7 +11,9 @@ sources: []
 
 ## Overview
 
-Focuses on security principles applied to database systems. Topics include SQL injection prevention, database access control, encryption of data at rest, auditing, privilege management, and securing database applications.
+Securing data and information, monitoring communications and auditing database environments. RDBMS, SQL, database communications, database authentication, access control in databases, encryption in databases, database auditing, and databases in the cloud. Fall.
+
+**Prerequisites:** Grade of C or better in COSC 240 and SCIA 120
 
 ## Course Details
 
