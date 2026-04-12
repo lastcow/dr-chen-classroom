@@ -59,6 +59,8 @@ Security threats do not target the network as a monolithic entity — they targe
 - **Layer 2 (Data Link)**: ARP poisoning, MAC flooding (overwhelming a switch's address table to force broadcasting), VLAN hopping.
 - **Layer 3 (Network)**: IP spoofing, ICMP flood attacks, route injection/BGP hijacking.
 - **Layer 4 (Transport)**: SYN flood DoS attacks, TCP session hijacking, port scanning.
+
+![Session Hijacking Diagram](img/diagram-session-hijacking.png)
 - **Layer 5-7 (Application)**: DNS poisoning, HTTP-based attacks (SQLi, XSS), email phishing, malware command-and-control communication.
 
 ---
@@ -69,11 +71,17 @@ Security threats do not target the network as a monolithic entity — they targe
 
 The **Address Resolution Protocol (ARP)** maps IP addresses to MAC (hardware) addresses on a local network segment. ARP is a stateless protocol — devices cache ARP replies without verifying whether they requested them. An attacker on the same local network segment can broadcast forged ARP replies, associating their own MAC address with the IP address of another device (such as the default gateway). Subsequent traffic destined for that IP address is then forwarded to the attacker instead.
 
-ARP poisoning enables **man-in-the-middle (MitM)** attacks: the attacker forwards traffic to the legitimate destination (so the attack remains invisible) while reading or modifying it in transit. Tools like **arpspoof** and **Ettercap** automate ARP poisoning attacks. Defenses include *dynamic ARP inspection (DAI)* on managed switches, which validates ARP packets against a trusted DHCP snooping database.
+ARP poisoning enables **man-in-the-middle (MitM)** attacks: the attacker forwards traffic to the legitimate destination (so the attack remains invisible) while reading or modifying it in transit.
+
+![Man-in-the-Middle Attack Diagram](img/diagram-mitm-general.png)
+
+Tools like **arpspoof** and **Ettercap** automate ARP poisoning attacks. Defenses include *dynamic ARP inspection (DAI)* on managed switches, which validates ARP packets against a trusted DHCP snooping database.
 
 ### DNS Poisoning and Spoofing
 
 The **Domain Name System (DNS)** translates human-readable domain names (e.g., `www.bank.com`) into IP addresses. **DNS cache poisoning** (also called DNS spoofing) involves injecting false DNS records into a resolver's cache so that subsequent lookups for a domain return an attacker-controlled IP address, redirecting users to malicious sites.
+
+![DNS Spoofing Attack Diagram](img/diagram-dns-spoofing.png)
 
 Classic DNS poisoning exploited the fact that DNS used predictable transaction IDs and source ports. The Kaminsky attack (discovered in 2008) demonstrated a practical, fast method for poisoning DNS caches on a wide scale. **DNSSEC** (DNS Security Extensions), covered in Chapter 8, provides cryptographic authentication of DNS records to prevent this class of attack.
 
@@ -149,6 +157,8 @@ A **VPN (Virtual Private Network)** creates an encrypted tunnel between endpoint
 **IPSec (Internet Protocol Security)** operates at Layer 3 and can be deployed in *transport mode* (encrypting only the payload) or *tunnel mode* (encrypting the entire original IP packet, including headers). IPSec uses two main protocols: AH (Authentication Header) for integrity without encryption, and ESP (Encapsulating Security Payload) for both confidentiality and integrity.
 
 **SSL/TLS VPNs** operate at Layer 4/7 and are accessible through standard web browsers or lightweight clients, making them easier to deploy for remote access than IPSec in some environments.
+
+![SSL/TLS Stripping Attack Diagram](img/diagram-ssl-stripping.png)
 
 **WireGuard** is a modern VPN protocol, released in 2019, that uses state-of-the-art cryptography (Curve25519 for key exchange, ChaCha20-Poly1305 for encryption, BLAKE2 for hashing) and a dramatically simpler codebase (~4,000 lines vs. OpenVPN's ~100,000). Its simplicity reduces attack surface and has driven rapid adoption.
 
