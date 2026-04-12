@@ -11,7 +11,9 @@ sources: []
 
 ## Overview
 
-Covers systematic approaches to software quality assurance and testing. Topics include test planning, unit/integration/system testing, static analysis, fuzzing, security testing, and software assurance frameworks.
+Survey of quality processes and technologies for software development to assure that new software provides sufficient security for the threat environment and functions in the intended manner. Quality and security requirements and specifications; quality in architecture, design, and construction; correctness verification, inspection, and testing techniques; process and product assurance; statistical quality control; and quality management. Fall.
+
+**Prerequisite:** Grade of C or better in SCIA 325
 
 ## Course Details
 
