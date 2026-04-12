@@ -102,6 +102,8 @@ A **mantrap** (also called an airlock or access control vestibule) is a small en
 
 ### Visitor Management
 
+![Visitor Management Dialog](img/dialog-visitor.webp)
+
 Visitors to controlled facilities should be required to sign in, show identification, receive a visitor badge, and be escorted by authorized personnel. Visitor logs serve as both a deterrent and a forensic record. Badge designs should visually distinguish visitors from employees, making it easy for anyone in the facility to identify someone who should not be moving freely.
 
 ---
@@ -156,6 +158,8 @@ Privacy filters are physical overlays applied to monitor screens that restrict t
 
 ### Clean Desk Policy
 
+![Clean Desk Policy Dialog](img/dialog-clean-desk.webp)
+
 A **clean desk policy** requires employees to secure sensitive materials — documents, portable drives, access badges, passwords — when leaving their workstations, especially at the end of the day. This reduces the risk of sensitive information being seen, photographed, or stolen by cleaning staff, visitors, or other unauthorized individuals. A complementary **clear screen policy** requires computers to be locked when unattended.
 
 ---
@@ -171,6 +175,8 @@ Physical risks specific to mobile devices include:
 - **Evil maid attack** — an attacker with brief, unmonitored physical access to a device (such as a hotel room) installs malware, extracts data, or compromises the device hardware
 - **Border search and seizure** — government authorities in some jurisdictions can legally compel travelers to unlock devices at border crossings
 - **Juice jacking** — charging via untrusted public USB ports can expose devices to data theft or malware installation
+
+![Juice Jacking Warning Dialog](img/dialog-juice-jacking.webp)
 
 Controls for mobile device risk include full-disk encryption, strong PINs (not just biometrics, which can be compelled by some authorities), Mobile Device Management (MDM) solutions with remote wipe capabilities, and employee training on travel security.
 
@@ -191,6 +197,8 @@ Several common attack techniques exploit human behavior rather than technical we
 **Shoulder surfing** is the act of directly or covertly observing someone's screen, keyboard, or physical documents. Attackers may observe login credentials, sensitive document contents, or PIN codes entered at ATMs or office keypads. Countermeasures include privacy screen filters, physical positioning of workstations away from high-traffic areas, and employee awareness training.
 
 ### Tailgating and Piggybacking
+
+![Tailgating Attack Dialog](img/dialog-tailgating.webp)
 
 **Tailgating** (sometimes called piggybacking) occurs when an unauthorized individual follows an authorized person through a secured door or entry point, taking advantage of the access that person legitimately possesses. The attacker relies on social norms — people are generally reluctant to challenge someone who appears to belong — and sometimes on the authorized person actively holding the door as a courtesy.
 
