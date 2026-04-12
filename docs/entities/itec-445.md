@@ -11,7 +11,9 @@ sources: []
 
 ## Overview
 
-Advanced database course covering query optimization, transaction management, concurrency control, distributed databases, NoSQL systems, and database administration. Builds on introductory database concepts.
+Advanced topics such as database security, importing and exporting data, creating indexes and views, script writing, and performing administrative tasks on a database server. An advanced project implementation is required. Fall.
+
+**Prerequisite:** Grade of C or better in ITEC 345
 
 ## Course Details
 
