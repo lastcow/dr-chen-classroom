@@ -11,7 +11,7 @@ sources: []
 
 ## Overview
 
-Introductory course covering foundational concepts of secure computing and information assurance. Topics include basic security principles, threats and vulnerabilities, cryptography fundamentals, access control, and security policies.
+Broad overview of computing security. Importance of securing digital information, operating systems security, secure programming, and secure digital communications. Physical security, social engineering, operating systems security, malware, network security, Internet security, cryptography, security models and practices, distributed-applications security, and cloud computing security. Every semester.
 
 ## Course Details
 
