@@ -54,5 +54,21 @@ nav:
     - SCIA 472 - Hacking Exposed & Incident Response: entities/scia-472.md
     - ITEC 442 - Electronic Commerce: entities/itec-442.md
     - ITEC 445 - Database Systems II: entities/itec-445.md
+  - SCIA 120 Reading Materials:
+    - Week 1 - Introduction to Information Security: scia-120/chapter-01.md
+    - Week 2 - Physical Security: scia-120/chapter-02.md
+    - Week 3 - Social Engineering: scia-120/chapter-03.md
+    - Week 4 - Operating System Security: scia-120/chapter-04.md
+    - Week 5 - Malware Types and Defense: scia-120/chapter-05.md
+    - Week 6 - Cryptography Fundamentals: scia-120/chapter-06.md
+    - Week 7 - Network Security: scia-120/chapter-07.md
+    - Week 8 - Internet Security: scia-120/chapter-08.md
+    - Week 9 - Secure Programming: scia-120/chapter-09.md
+    - Week 10 - Security Models and Policies: scia-120/chapter-10.md
+    - Week 11 - Authentication and Access Control: scia-120/chapter-11.md
+    - Week 12 - Distributed Applications Security: scia-120/chapter-12.md
+    - Week 13 - Cloud Computing Security: scia-120/chapter-13.md
+    - Week 14 - Risk Management and Compliance: scia-120/chapter-14.md
+    - Week 15 - Emerging Threats and Future of Security: scia-120/chapter-15.md
   - Schema: SCHEMA.md
   - Log: log.md
