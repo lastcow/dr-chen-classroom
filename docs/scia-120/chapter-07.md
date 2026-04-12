@@ -81,7 +81,7 @@ Tools like **arpspoof** and **Ettercap** automate ARP poisoning attacks. Defense
 
 The **Domain Name System (DNS)** translates human-readable domain names (e.g., `www.bank.com`) into IP addresses. **DNS cache poisoning** (also called DNS spoofing) involves injecting false DNS records into a resolver's cache so that subsequent lookups for a domain return an attacker-controlled IP address, redirecting users to malicious sites.
 
-![DNS Spoofing Attack Diagram](img/diagram-dns-spoofing.png)
+![DNS Spoofing Attack Diagram](img/diagram-dns-spoofing.webp)
 
 Classic DNS poisoning exploited the fact that DNS used predictable transaction IDs and source ports. The Kaminsky attack (discovered in 2008) demonstrated a practical, fast method for poisoning DNS caches on a wide scale. **DNSSEC** (DNS Security Extensions), covered in Chapter 8, provides cryptographic authentication of DNS records to prevent this class of attack.
 
