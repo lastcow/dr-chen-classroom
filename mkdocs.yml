@@ -50,5 +50,13 @@ exclude_docs: |
 
 nav:
   - Home: index.md
+  - Courses:
+    - SCIA 120 - Intro to Secure Computing: entities/scia-120.md
+    - SCIA 340 - Secure Databases: entities/scia-340.md
+    - SCIA 360 - Operating System Security: entities/scia-360.md
+    - SCIA 425 - Software Testing and Assurance: entities/scia-425.md
+    - SCIA 472 - Hacking Exposed & Incident Response: entities/scia-472.md
+    - ITEC 442 - Electronic Commerce: entities/itec-442.md
+    - ITEC 445 - Database Systems II: entities/itec-445.md
   - Schema: SCHEMA.md
   - Log: log.md

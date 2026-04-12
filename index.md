@@ -3,11 +3,17 @@
 > Content catalog for Dr. Chen's Classroom Wiki.
 > Every wiki page listed under its type with a one-line summary.
 > Read this first to find relevant pages for any query.
-> Last updated: 2026-04-12 | Total pages: 0
+> Last updated: 2026-04-12 | Total pages: 7
 
 ## Courses
 
-<!-- One entry per course. Format: [[course-code-overview]] — one-line description -->
+- [[scia-120]] — Introduction to Secure Computing and Information Assurance
+- [[scia-340]] — Secure Databases
+- [[scia-360]] — Operating System Security
+- [[scia-425]] — Software Testing and Assurance
+- [[scia-472]] — Hacking Exposed and Incident Response
+- [[itec-442]] — Electronic Commerce
+- [[itec-445]] — Database Systems II
 
 ## Assignments & Rubrics
 
