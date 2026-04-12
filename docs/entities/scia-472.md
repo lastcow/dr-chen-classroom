@@ -11,7 +11,9 @@ sources: []
 
 ## Overview
 
-Hands-on course covering offensive and defensive security techniques. Topics include penetration testing methodologies, vulnerability exploitation, network forensics, incident detection, response procedures, and post-incident analysis.
+Common network attacks, applications of information security concepts, hands-on security assessments of wired and wireless networks, web applications and intrusions, countermeasures to attacks, lifecycle of incident response, real world case studies. Spring.
+
+**Co-requisite:** COSC 331
 
 ## Course Details
 
