@@ -239,10 +239,7 @@ hide:
 <!-- ═══════════════ HERO ════════════════ -->
 <div class="fsu-hero">
   <div class="fsu-hero-content">
-    <a class="fsu-logo-link" href="https://www.frostburg.edu" target="_blank">
-      <img src="fsu-logo.png" alt="Frostburg State University">
-    </a>
-    <h1>Dr. Chen's <span>Classroom Wiki</span></h1>
+    <h1>Dr. Chen's <span>Classroom</span></h1>
     <p class="subtitle">Department of Computer Science &amp; Information Technology</p>
     <div class="instructor-badge">📚 Instructor: Dr. Chen &nbsp;|&nbsp; Frostburg State University</div>
     <br>
@@ -254,7 +251,6 @@ hide:
 
 <!-- ═══════════════ INFO STRIP ════════════════ -->
 <div class="fsu-infostrip">
-  <span>📅 <strong>Semester:</strong> Fall 2026</span>
   <span>🏛️ <strong>Institution:</strong> Frostburg State University</span>
   <span>📍 <strong>Location:</strong> Frostburg, Maryland</span>
   <span>🔒 <strong>Department:</strong> Computer Science &amp; IT</span>
