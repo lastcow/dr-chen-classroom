@@ -127,7 +127,7 @@ nav:
     - SCIA 425 - Software Testing and Assurance: entities/scia-425.md
     - SCIA 472 - Hacking Exposed & Incident Response: scia-472/index.md
     - ITEC 442 - Electronic Commerce: itec-442/index.md
-    - ITEC 445 - Database Systems II: entities/itec-445.md
+    - ITEC 445 - Database Systems II: itec-445/index.md
   - SCIA 120 Reading Materials:
     - Week 1 - Introduction to Information Security: scia-120/chapter-01.md
     - Week 2 - Physical Security: scia-120/chapter-02.md
@@ -192,6 +192,23 @@ nav:
     - Week 13 - Compliance Testing and Regulatory Assurance: scia-425/chapter-13.md
     - Week 14 - Software Quality Management: scia-425/chapter-14.md
     - Week 15 - Emerging Trends and Course Synthesis: scia-425/chapter-15.md
+  - ITEC 445 Reading Materials:
+    - Course Overview: itec-445/index.md
+    - Week 1 - Advanced SQL: Joins, Subqueries & Set Ops: itec-445/week01.md
+    - Week 2 - Window Functions, CTEs & Analytics: itec-445/week02.md
+    - Week 3 - Stored Procedures & Control Flow: itec-445/week03.md
+    - Week 4 - User-Defined Functions & Triggers: itec-445/week04.md
+    - Week 5 - Data Import & Export (ETL): itec-445/week05.md
+    - Week 6 - Index Design & Query Performance: itec-445/week06.md
+    - Week 7 - Execution Plans & Advanced Optimization: itec-445/week07.md
+    - Week 8 - Database Views: Design & Security: itec-445/week08.md
+    - Week 9 - Security: Authentication & Authorization: itec-445/week09.md
+    - Week 10 - Security: Encryption, Auditing & Compliance: itec-445/week10.md
+    - Week 11 - Database Scripting & Automation: itec-445/week11.md
+    - Week 12 - Backup, Recovery & High Availability: itec-445/week12.md
+    - Week 13 - Monitoring, Replication & Tuning: itec-445/week13.md
+    - Week 14 - NoSQL, NewSQL & Cloud Databases: itec-445/week14.md
+    - Week 15 - Advanced Project & Capstone: itec-445/week15.md
   - ITEC 442 Reading Materials:
     - Course Overview: itec-442/index.md
     - Week 1 - E-Commerce Foundations & Business Models: itec-442/week01.md
