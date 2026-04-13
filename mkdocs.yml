@@ -102,5 +102,21 @@ nav:
     - Week 13 - Kernel Security and Rootkits: scia-360/chapter-13.md
     - Week 14 - OS Hardening and CIS Benchmarks: scia-360/chapter-14.md
     - Week 15 - Case Studies and Emerging Threats: scia-360/chapter-15.md
+  - SCIA 425 Reading Materials:
+    - Week 1 - Introduction to Software Assurance: scia-425/chapter-01.md
+    - Week 2 - Security Requirements and Specifications: scia-425/chapter-02.md
+    - Week 3 - Threat Modeling: scia-425/chapter-03.md
+    - Week 4 - Quality in Architecture and Design: scia-425/chapter-04.md
+    - Week 5 - Static Analysis and Code Inspection: scia-425/chapter-05.md
+    - Week 6 - Software Testing Fundamentals: scia-425/chapter-06.md
+    - Week 7 - Dynamic Testing and Fuzzing: scia-425/chapter-07.md
+    - Week 8 - Security Testing and Penetration Testing: scia-425/chapter-08.md
+    - Week 9 - Process Assurance and Quality Plans: scia-425/chapter-09.md
+    - Week 10 - Statistical Quality Control and Metrics: scia-425/chapter-10.md
+    - Week 11 - Formal Methods and Correctness Verification: scia-425/chapter-11.md
+    - Week 12 - DevSecOps and Continuous Assurance: scia-425/chapter-12.md
+    - Week 13 - Compliance Testing and Regulatory Assurance: scia-425/chapter-13.md
+    - Week 14 - Software Quality Management: scia-425/chapter-14.md
+    - Week 15 - Emerging Trends and Course Synthesis: scia-425/chapter-15.md
   - Schema: SCHEMA.md
   - Log: log.md
