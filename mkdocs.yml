@@ -125,7 +125,7 @@ nav:
     - SCIA 340 - Secure Databases: entities/scia-340.md
     - SCIA 360 - Operating System Security: entities/scia-360.md
     - SCIA 425 - Software Testing and Assurance: entities/scia-425.md
-    - SCIA 472 - Hacking Exposed & Incident Response: entities/scia-472.md
+    - SCIA 472 - Hacking Exposed & Incident Response: scia-472/index.md
     - ITEC 442 - Electronic Commerce: entities/itec-442.md
     - ITEC 445 - Database Systems II: entities/itec-445.md
   - SCIA 120 Reading Materials:
@@ -192,5 +192,22 @@ nav:
     - Week 13 - Compliance Testing and Regulatory Assurance: scia-425/chapter-13.md
     - Week 14 - Software Quality Management: scia-425/chapter-14.md
     - Week 15 - Emerging Trends and Course Synthesis: scia-425/chapter-15.md
+  - SCIA 472 Reading Materials:
+    - Course Overview: scia-472/index.md
+    - Week 1 - Ethical Hacking & Kill Chain: scia-472/week01.md
+    - Week 2 - Reconnaissance & OSINT: scia-472/week02.md
+    - Week 3 - Network Scanning & Enumeration: scia-472/week03.md
+    - Week 4 - Vulnerability Assessment: scia-472/week04.md
+    - Week 5 - Exploitation & Metasploit: scia-472/week05.md
+    - Week 6 - Web Application Attacks: scia-472/week06.md
+    - Week 7 - Wireless Network Security: scia-472/week07.md
+    - Week 8 - Password Attacks: scia-472/week08.md
+    - Week 9 - Social Engineering & Phishing: scia-472/week09.md
+    - Week 10 - Post-Exploitation & Lateral Movement: scia-472/week10.md
+    - Week 11 - Malware Analysis: scia-472/week11.md
+    - Week 12 - IR Preparation & Detection: scia-472/week12.md
+    - Week 13 - IR Containment & Recovery: scia-472/week13.md
+    - Week 14 - Digital Forensics: scia-472/week14.md
+    - Week 15 - Case Studies & Capstone: scia-472/week15.md
   - Schema: SCHEMA.md
   - Log: log.md
