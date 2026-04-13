@@ -194,16 +194,16 @@ nav:
     - Week 15 - Emerging Trends and Course Synthesis: scia-425/chapter-15.md
   - ITEC 445 Reading Materials:
     - Course Overview: itec-445/index.md
-    - Week 1 - Advanced SQL: Joins, Subqueries & Set Ops: itec-445/week01.md
+    - "Week 1 - Advanced SQL — Joins, Subqueries & Set Ops": itec-445/week01.md
     - Week 2 - Window Functions, CTEs & Analytics: itec-445/week02.md
     - Week 3 - Stored Procedures & Control Flow: itec-445/week03.md
     - Week 4 - User-Defined Functions & Triggers: itec-445/week04.md
-    - Week 5 - Data Import & Export (ETL): itec-445/week05.md
+    - "Week 5 - Data Import & Export (ETL)": itec-445/week05.md
     - Week 6 - Index Design & Query Performance: itec-445/week06.md
     - Week 7 - Execution Plans & Advanced Optimization: itec-445/week07.md
-    - Week 8 - Database Views: Design & Security: itec-445/week08.md
-    - Week 9 - Security: Authentication & Authorization: itec-445/week09.md
-    - Week 10 - Security: Encryption, Auditing & Compliance: itec-445/week10.md
+    - "Week 8 - Database Views — Design & Security": itec-445/week08.md
+    - "Week 9 - Security — Authentication & Authorization": itec-445/week09.md
+    - "Week 10 - Security — Encryption, Auditing & Compliance": itec-445/week10.md
     - Week 11 - Database Scripting & Automation: itec-445/week11.md
     - Week 12 - Backup, Recovery & High Availability: itec-445/week12.md
     - Week 13 - Monitoring, Replication & Tuning: itec-445/week13.md
