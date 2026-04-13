@@ -1,48 +1,123 @@
 site_name: Dr. Chen's Classroom
-site_description: Course knowledge base — Frostburg State University
+site_description: Course knowledge base — Frostburg State University, Department of Computer Science & Information Technology
 site_author: Dr. Chen
 site_url: https://dr.chen.me/
 
 repo_name: lastcow/dr-chen-classroom
 repo_url: https://github.com/lastcow/dr-chen-classroom
+edit_uri: ""
 
 docs_dir: docs
 
 theme:
   name: material
+  custom_dir: docs/overrides
+  logo: assets/fsu-logo.png
+  favicon: assets/fsu-logo.png
+
   palette:
-    - scheme: default
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: indigo
       accent: indigo
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: indigo
       accent: indigo
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+  icon:
+    repo: fontawesome/brands/github
+    admonition:
+      note: octicons/tag-16
+      tip: octicons/squirrel-16
+      warning: octicons/alert-16
+
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
+    - navigation.expand
     - navigation.top
+    - navigation.footer
+    - navigation.indexes
     - search.highlight
     - search.suggest
+    - search.share
     - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.follow
+    - announce.dismiss
+
+extra:
+  social:
+    - icon: fontawesome/solid/graduation-cap
+      link: https://www.frostburg.edu
+      name: Frostburg State University
+    - icon: fontawesome/brands/github
+      link: https://github.com/lastcow/dr-chen-classroom
+      name: Course Repository
+
+  analytics:
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: Thanks for your feedback!
+
+extra_css:
+  - stylesheets/extra.css
 
 plugins:
-  - search
+  - search:
+      lang: en
+  - minify:
+      minify_html: true
 
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
   - tables
+  - footnotes
   - toc:
       permalink: true
+      title: On this page
+
+copyright: "&copy; 2026 Dr. Chen &nbsp;|&nbsp; Frostburg State University &nbsp;|&nbsp; Department of Computer Science &amp; IT"
 
 nav:
   - Home: index.md
