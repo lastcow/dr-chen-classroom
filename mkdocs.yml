@@ -339,3 +339,18 @@ nav:
       - Week 13 - Monitoring, Replication & Tuning: itec-445/week13.md
       - Week 14 - NoSQL, NewSQL & Cloud Databases: itec-445/week14.md
       - Week 15 - Advanced Project & Capstone: itec-445/week15.md
+    - Labs:
+      - Labs Overview: itec-445/labs/index.md
+      - Lab 01 - Advanced SQL Joins & Subqueries: itec-445/labs/lab-01.md
+      - Lab 02 - Window Functions & CTEs: itec-445/labs/lab-02.md
+      - Lab 03 - Stored Procedures & PL/pgSQL: itec-445/labs/lab-03.md
+      - Lab 04 - User-Defined Functions & Triggers: itec-445/labs/lab-04.md
+      - Lab 05 - Data Import Export & ETL: itec-445/labs/lab-05.md
+      - Lab 06 - Index Design & Query Performance: itec-445/labs/lab-06.md
+      - Lab 07 - Query Optimization & EXPLAIN ANALYZE: itec-445/labs/lab-07.md
+      - Lab 08 - Database Views Security & Reporting: itec-445/labs/lab-08.md
+      - Lab 09 - Security Authentication & RBAC: itec-445/labs/lab-09.md
+      - Lab 10 - Encryption Auditing & Compliance: itec-445/labs/lab-10.md
+      - Lab 11 - Database Scripting & Automation: itec-445/labs/lab-11.md
+      - Lab 12 - Backup Recovery & Neon Branching: itec-445/labs/lab-12.md
+      - Lab 13 - Capstone FCRS Implementation: itec-445/labs/lab-13.md
