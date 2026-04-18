@@ -160,6 +160,21 @@ nav:
     - Week 13 - Compliance and Regulatory Standards: scia-340/chapter-13.md
     - Week 14 - Incident Response and Forensics: scia-340/chapter-14.md
     - Week 15 - Advanced Topics and Course Synthesis: scia-340/chapter-15.md
+  - SCIA 340 Labs:
+    - Lab Overview: scia-340/labs/index.md
+    - "Lab 01 — Neon Setup & Security Baseline": scia-340/labs/lab-01.md
+    - "Lab 02 — RDBMS Architecture & Attack Surface": scia-340/labs/lab-02.md
+    - "Lab 03 — SQL Injection: Vulnerable vs Secure": scia-340/labs/lab-03.md
+    - "Lab 04 — Authentication Hardening": scia-340/labs/lab-04.md
+    - "Lab 05 — Role-Based Access Control (RBAC)": scia-340/labs/lab-05.md
+    - "Lab 06 — Row-Level Security (RLS)": scia-340/labs/lab-06.md
+    - "Lab 07 — Column-Level Encryption (pgcrypto)": scia-340/labs/lab-07.md
+    - "Lab 08 — Security Definer Views": scia-340/labs/lab-08.md
+    - "Lab 09 — Audit Triggers & Compliance Logging": scia-340/labs/lab-09.md
+    - "Lab 10 — Secure Schema Design & Classification": scia-340/labs/lab-10.md
+    - "Lab 11 — Cloud DB Security & Neon Branching": scia-340/labs/lab-11.md
+    - "Lab 12 — PCI-DSS & HIPAA Compliance Controls": scia-340/labs/lab-12.md
+    - "Lab 13 — Capstone: Harden & Audit a Complete DB": scia-340/labs/lab-13.md
   - SCIA 360 Reading Materials:
     - Week 1 - Introduction to OS Security: scia-360/chapter-01.md
     - Week 2 - Process Management and Security: scia-360/chapter-02.md
@@ -176,7 +191,22 @@ nav:
     - Week 13 - Kernel Security and Rootkits: scia-360/chapter-13.md
     - Week 14 - OS Hardening and CIS Benchmarks: scia-360/chapter-14.md
     - Week 15 - Case Studies and Emerging Threats: scia-360/chapter-15.md
-  - SCIA 425 Reading Materials:
+    - Labs:
+      - Lab Overview: scia-360/labs/index.md
+      - "Lab 01 — OS Security Layers & /proc": scia-360/labs/lab-01.md
+      - "Lab 02 — Process Security & Credentials": scia-360/labs/lab-02.md
+      - "Lab 03 — Memory Protections: ASLR, Canaries & NX": scia-360/labs/lab-03.md
+      - "Lab 04 — File System Security: ACLs & SUID": scia-360/labs/lab-04.md
+      - "Lab 05 — PAM & Password Policy": scia-360/labs/lab-05.md
+      - "Lab 06 — Linux Capabilities": scia-360/labs/lab-06.md
+      - "Lab 07 — Syscall Filtering with seccomp": scia-360/labs/lab-07.md
+      - "Lab 08 — chroot Jail": scia-360/labs/lab-08.md
+      - "Lab 09 — Linux Namespaces": scia-360/labs/lab-09.md
+      - "Lab 10 — Privilege Escalation via SUID": scia-360/labs/lab-10.md
+      - "Lab 11 — Audit Logging & Log Analysis": scia-360/labs/lab-11.md
+      - "Lab 12 — OS Hardening: CIS Benchmarks": scia-360/labs/lab-12.md
+      - "Lab 13 — Capstone: Harden a Containerized System": scia-360/labs/lab-13.md
+  - SCIA-425:
     - Week 1 - Introduction to Software Assurance: scia-425/chapter-01.md
     - Week 2 - Security Requirements and Specifications: scia-425/chapter-02.md
     - Week 3 - Threat Modeling: scia-425/chapter-03.md
@@ -192,6 +222,21 @@ nav:
     - Week 13 - Compliance Testing and Regulatory Assurance: scia-425/chapter-13.md
     - Week 14 - Software Quality Management: scia-425/chapter-14.md
     - Week 15 - Emerging Trends and Course Synthesis: scia-425/chapter-15.md
+  - SCIA-425 Labs:
+    - Labs Overview: scia-425/labs/index.md
+    - Lab 01 - Security Requirements & Misuse Cases: scia-425/labs/lab-01.md
+    - Lab 02 - Threat Modeling with STRIDE: scia-425/labs/lab-02.md
+    - Lab 03 - Architecture Security Review: scia-425/labs/lab-03.md
+    - Lab 04 - Static Analysis & Code Inspection: scia-425/labs/lab-04.md
+    - Lab 05 - Test Design Coverage & Mutation: scia-425/labs/lab-05.md
+    - Lab 06 - Fuzzing & Dynamic Testing: scia-425/labs/lab-06.md
+    - Lab 07 - Security Testing & Penetration Testing: scia-425/labs/lab-07.md
+    - Lab 08 - Quality Metrics & Statistical QC: scia-425/labs/lab-08.md
+    - Lab 09 - Formal Verification & Model Checking: scia-425/labs/lab-09.md
+    - Lab 10 - DevSecOps Pipeline: scia-425/labs/lab-10.md
+    - Lab 11 - Compliance Testing: scia-425/labs/lab-11.md
+    - Lab 12 - Software Quality Audit & SQA Plan: scia-425/labs/lab-12.md
+    - Lab 13 - Capstone AI-Assisted Testing: scia-425/labs/lab-13.md
   - ITEC 445 Reading Materials:
     - Course Overview: itec-445/index.md
     - "Week 1 - Advanced SQL — Joins, Subqueries & Set Ops": itec-445/week01.md
@@ -242,6 +287,55 @@ nav:
     - Week 12 - IR Preparation & Detection: scia-472/week12.md
     - Week 13 - IR Containment & Recovery: scia-472/week13.md
     - Week 14 - Digital Forensics: scia-472/week14.md
-    - Week 15 - Case Studies & Capstone: scia-472/week15.md
-  - Schema: SCHEMA.md
-  - Log: log.md
+    - Week 15 - Case Studies and Capstone: scia-472/week15.md
+    - Labs:
+      - Lab Overview: scia-472/labs/index.md
+      - "Lab 01 — Kill Chain, ATT&CK & Methodology": scia-472/labs/lab-01.md
+      - "Lab 02 — Passive Reconnaissance & OSINT": scia-472/labs/lab-02.md
+      - "Lab 03 — Network Scanning with Nmap": scia-472/labs/lab-03.md
+      - "Lab 04 — Vulnerability Assessment & CVSS": scia-472/labs/lab-04.md
+      - "Lab 05 — Exploitation with Metasploit": scia-472/labs/lab-05.md
+      - "Lab 06 — Web Attacks: SQL Injection & XSS": scia-472/labs/lab-06.md
+      - "Lab 07 — Password Attacks & Credential Exploitation": scia-472/labs/lab-07.md
+      - "Lab 08 — Social Engineering & Phishing": scia-472/labs/lab-08.md
+      - "Lab 09 — Post-Exploitation & Persistence": scia-472/labs/lab-09.md
+      - "Lab 10 — Malware Analysis: Static & Dynamic": scia-472/labs/lab-10.md
+      - "Lab 11 — Incident Response & SIEM Analysis": scia-472/labs/lab-11.md
+      - "Lab 12 — Digital Forensics & Disk Imaging": scia-472/labs/lab-12.md
+      - "Lab 13 — Capstone: Full Attack Chain & IR Report": scia-472/labs/lab-13.md
+  - ITEC-442:
+    - Overview: itec-442/index.md
+    - Reading Materials:
+      - Week 1 - E-Commerce Foundations & Business Models: itec-442/week01.md
+      - Week 2 - Digital Marketplaces & Platform Economics: itec-442/week02.md
+      - Week 3 - Economic Impacts of E-Commerce: itec-442/week03.md
+      - Week 4 - Consumer Behavior & Digital Psychology: itec-442/week04.md
+      - Week 5 - Market Research & Digital Analytics: itec-442/week05.md
+      - Week 6 - B2C Strategy & Conversion Optimization: itec-442/week06.md
+      - Week 7 - B2B E-Commerce & Company-Centric Models: itec-442/week07.md
+      - Week 8 - E-Supply Chain Management: itec-442/week08.md
+      - Week 9 - Payment Systems & FinTech: itec-442/week09.md
+      - Week 10 - E-Commerce Security & Trust: itec-442/week10.md
+      - Week 11 - Corporate Portals & Knowledge Management: itec-442/week11.md
+      - Week 12 - E-Government & Digital Public Services: itec-442/week12.md
+      - Week 13 - E-Learning Systems & EdTech: itec-442/week13.md
+      - Week 14 - Mobile, Social & Emerging Commerce: itec-442/week14.md
+      - Week 15 - System Design & Implementation Capstone: itec-442/week15.md
+  - ITEC-445:
+    - Overview: itec-445/index.md
+    - Reading Materials:
+      - "Week 1 - Advanced SQL — Joins, Subqueries & Set Ops": itec-445/week01.md
+      - Week 2 - Window Functions, CTEs & Analytics: itec-445/week02.md
+      - Week 3 - Stored Procedures & Control Flow: itec-445/week03.md
+      - Week 4 - User-Defined Functions & Triggers: itec-445/week04.md
+      - "Week 5 - Data Import & Export (ETL)": itec-445/week05.md
+      - Week 6 - Index Design & Query Performance: itec-445/week06.md
+      - Week 7 - Execution Plans & Advanced Optimization: itec-445/week07.md
+      - "Week 8 - Database Views — Design & Security": itec-445/week08.md
+      - "Week 9 - Security — Authentication & Authorization": itec-445/week09.md
+      - "Week 10 - Security — Encryption, Auditing & Compliance": itec-445/week10.md
+      - Week 11 - Database Scripting & Automation: itec-445/week11.md
+      - Week 12 - Backup, Recovery & High Availability: itec-445/week12.md
+      - Week 13 - Monitoring, Replication & Tuning: itec-445/week13.md
+      - Week 14 - NoSQL, NewSQL & Cloud Databases: itec-445/week14.md
+      - Week 15 - Advanced Project & Capstone: itec-445/week15.md
