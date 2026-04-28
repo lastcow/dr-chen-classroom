@@ -281,7 +281,19 @@
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
+         <loc>https://dr.chen.me/raw/articles/digitalocean-initial-server-setup-ubuntu/</loc>
+         <lastmod>2026-04-28</lastmod>
+    </url>
+    <url>
          <loc>https://dr.chen.me/raw/articles/digitalocean-install-docker-ubuntu/</loc>
+         <lastmod>2026-04-28</lastmod>
+    </url>
+    <url>
+         <loc>https://dr.chen.me/raw/articles/digitalocean-install-git-ubuntu/</loc>
+         <lastmod>2026-04-28</lastmod>
+    </url>
+    <url>
+         <loc>https://dr.chen.me/raw/articles/vscode-remote-ssh-docs/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
@@ -905,7 +917,27 @@
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
+         <loc>https://dr.chen.me/setup/docker-compose/</loc>
+         <lastmod>2026-04-28</lastmod>
+    </url>
+    <url>
          <loc>https://dr.chen.me/setup/docker-ubuntu/</loc>
+         <lastmod>2026-04-28</lastmod>
+    </url>
+    <url>
+         <loc>https://dr.chen.me/setup/git-github/</loc>
+         <lastmod>2026-04-28</lastmod>
+    </url>
+    <url>
+         <loc>https://dr.chen.me/setup/ssh-terminal/</loc>
+         <lastmod>2026-04-28</lastmod>
+    </url>
+    <url>
+         <loc>https://dr.chen.me/setup/ubuntu-baseline/</loc>
+         <lastmod>2026-04-28</lastmod>
+    </url>
+    <url>
+         <loc>https://dr.chen.me/setup/vscode-remote-ssh/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
 </urlset>
