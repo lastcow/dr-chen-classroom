@@ -7,33 +7,43 @@ hide:
 
 <!-- ═══════════════ HERO ═══════════════════════════════════ -->
 <section class="tx-hero">
-  <div class="tx-hero__content">
-    <div class="tx-hero__badge">
-      🎓 Frostburg State University &nbsp;·&nbsp; Computer Science & IT
+  <div class="tx-hero__inner">
+
+    <!-- Left: text content -->
+    <div class="tx-hero__content">
+      <div class="tx-hero__badge">
+        🎓 Frostburg State University &nbsp;·&nbsp; Computer Science & IT
+      </div>
+      <h1 class="tx-hero__title">
+        Dr. Chen's<br><em>Classroom</em>
+      </h1>
+      <p class="tx-hero__subtitle">
+        Comprehensive reading materials, course resources, and academic references
+        for cybersecurity and information technology courses — built for students,
+        maintained every semester.
+      </p>
+      <div class="tx-hero__actions">
+        <a href="scia-472/index/" class="tx-hero__link tx-hero__link--primary">
+          📚 Browse Courses
+        </a>
+        <a href="https://www.frostburg.edu" target="_blank" class="tx-hero__link tx-hero__link--secondary">
+          🏛️ Visit FSU →
+        </a>
+      </div>
     </div>
-    <h1 class="tx-hero__title">
-      Dr. Chen's<br><em>Classroom</em>
-    </h1>
-    <p class="tx-hero__subtitle">
-      Comprehensive reading materials, course resources, and academic references
-      for cybersecurity and information technology courses — built for students,
-      maintained every semester.
-    </p>
-    <div class="tx-hero__actions">
-      <a href="scia-472/index/" class="tx-hero__link tx-hero__link--primary">
-        📚 Browse Courses
-      </a>
-      <a href="https://www.frostburg.edu" target="_blank" class="tx-hero__link tx-hero__link--secondary">
-        🏛️ Visit FSU →
-      </a>
+
+    <!-- Right: AI-generated line art background -->
+    <div class="tx-hero__art">
+      <img src="assets/hero-lineart.svg" alt="Academic cybersecurity line art" draggable="false">
     </div>
+
   </div>
 </section>
 
 <!-- ═══════════════ STATS ══════════════════════════════════ -->
 <div class="tx-stats">
   <div class="tx-stat">
-    <span class="tx-stat__num">7</span>
+    <span class="tx-stat__num">8</span>
     <span class="tx-stat__label">Courses</span>
   </div>
   <div class="tx-stat">
@@ -217,16 +227,24 @@ hide:
       </div>
     </a>
 
+    <a class="tx-card" href="setup/index/">
+      <div class="tx-card__icon">🛠️</div>
+      <span class="tx-card__code">SETUP</span>
+      <div class="tx-card__title">Course Environment Setup</div>
+      <div class="tx-card__meta">
+        <span>🐳 Docker on Ubuntu Server</span>
+      </div>
+    </a>
+
   </div>
 </div>
 
 <!-- ═══════════════ FEATURES ═══════════════════════════════ -->
-<div style="background: var(--md-default-bg-color); padding: 0 1.5rem;">
 <div class="tx-section" style="padding-top: 2.5rem">
   <h2 class="tx-section__title">✨ What's Inside Every Course</h2>
   <p class="tx-section__subtitle">Professional academic materials built for both student study and active reference during labs and projects.</p>
 
-  <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: 1.5rem; margin-top: 1.5rem">
+  <div class="tx-features" style="margin-top: 1.5rem">
 
     <div class="tx-feature">
       <div class="tx-feature__icon">📖</div>
@@ -265,7 +283,6 @@ hide:
     </div>
 
   </div>
-</div>
 </div>
 
 <!-- ═══════════════ UNIVERSITY BAND ════════════════════════ -->

@@ -44,8 +44,6 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
-    - navigation.expand
     - navigation.top
     - navigation.footer
     - navigation.indexes
@@ -121,7 +119,17 @@ copyright: "&copy; 2026 Dr. Chen &nbsp;|&nbsp; Frostburg State University &nbsp;
 nav:
   - Home: index.md
 
-  - SCIA-120:
+  - 🛠️ Setup:
+    - Welcome: setup/index.md
+    - Setup Menu:
+      - Ubuntu Server Baseline: setup/ubuntu-baseline.md
+      - SSH and Terminal Workflow: setup/ssh-terminal.md
+      - Git and GitHub Setup: setup/git-github.md
+      - VS Code Remote SSH: setup/vscode-remote-ssh.md
+      - Docker Setup on Ubuntu Server: setup/docker-ubuntu.md
+      - Docker Compose Basics: setup/docker-compose.md
+
+  - 🔐 SCIA-120:
     - Overview: entities/scia-120.md
     - Reading Materials:
       - Week 1 - Introduction to Information Security: scia-120/chapter-01.md
@@ -139,8 +147,25 @@ nav:
       - Week 13 - Cloud Computing Security: scia-120/chapter-13.md
       - Week 14 - Risk Management and Compliance: scia-120/chapter-14.md
       - Week 15 - Emerging Threats and Future of Security: scia-120/chapter-15.md
+    - Labs:
+      - Labs Overview: scia-120/labs/index.md
+      - Lab 01 - Introduction to Information Security: scia-120/labs/lab-01.md
+      - Lab 02 - Physical Security: scia-120/labs/lab-02.md
+      - Lab 03 - Social Engineering: scia-120/labs/lab-03.md
+      - Lab 04 - Operating System Security: scia-120/labs/lab-04.md
+      - Lab 05 - Malware Analysis & Defense: scia-120/labs/lab-05.md
+      - Lab 06 - Cryptography Fundamentals: scia-120/labs/lab-06.md
+      - Lab 07 - Network Security: scia-120/labs/lab-07.md
+      - Lab 08 - Internet Security: scia-120/labs/lab-08.md
+      - Lab 09 - Secure Programming: scia-120/labs/lab-09.md
+      - Lab 10 - Security Models & Policies: scia-120/labs/lab-10.md
+      - Lab 11 - Authentication & Access Control: scia-120/labs/lab-11.md
+      - Lab 12 - Cloud Security: scia-120/labs/lab-12.md
+      - Lab 13 - Capstone: scia-120/labs/lab-13.md
+      - "Lab — Vulnerability Management: Credentialed & Non-Credentialed Scanning": scia-120/labs/lab-vuln-mgmt.md
+      - "Lab — Binary Search Tree in Java": scia-120/labs/lab-java-bst.md
 
-  - SCIA-340:
+  - 🗄️ SCIA-340:
     - Overview: entities/scia-340.md
     - Reading Materials:
       - Week 1 - Introduction to Database Security: scia-340/chapter-01.md
@@ -174,7 +199,7 @@ nav:
       - "Lab 12 — PCI-DSS & HIPAA Compliance Controls": scia-340/labs/lab-12.md
       - "Lab 13 — Capstone: Harden & Audit a Complete DB": scia-340/labs/lab-13.md
 
-  - SCIA-360:
+  - 🐧 SCIA-360:
     - Overview: entities/scia-360.md
     - Reading Materials:
       - Week 1 - Introduction to OS Security: scia-360/chapter-01.md
@@ -207,8 +232,9 @@ nav:
       - "Lab 11 — Audit Logging & Log Analysis": scia-360/labs/lab-11.md
       - "Lab 12 — OS Hardening: CIS Benchmarks": scia-360/labs/lab-12.md
       - "Lab 13 — Capstone: Harden a Containerized System": scia-360/labs/lab-13.md
+      - "Lab — Sandbox & Isolation: Containment Strategies": scia-360/labs/lab-sandbox.md
 
-  - SCIA-425:
+  - 🧪 SCIA-425:
     - Overview: entities/scia-425.md
     - Reading Materials:
       - Week 1 - Introduction to Software Assurance: scia-425/chapter-01.md
@@ -242,7 +268,7 @@ nav:
       - Lab 12 - Software Quality Audit & SQA Plan: scia-425/labs/lab-12.md
       - Lab 13 - Capstone AI-Assisted Testing: scia-425/labs/lab-13.md
 
-  - SCIA-472:
+  - 💀 SCIA-472:
     - Overview: scia-472/index.md
     - Reading Materials:
       - Week 1 - Ethical Hacking & Kill Chain: scia-472/week01.md
@@ -275,8 +301,9 @@ nav:
       - "Lab 11 — Incident Response & SIEM Analysis": scia-472/labs/lab-11.md
       - "Lab 12 — Digital Forensics & Disk Imaging": scia-472/labs/lab-12.md
       - "Lab 13 — Capstone: Full Attack Chain & IR Report": scia-472/labs/lab-13.md
+      - "Lab — XSS & Client-Side Attacks": scia-472/labs/lab-xss.md
 
-  - ITEC-442:
+  - 🛒 ITEC-442:
     - Overview: itec-442/index.md
     - Reading Materials:
       - Week 1 - E-Commerce Foundations & Business Models: itec-442/week01.md
@@ -294,8 +321,23 @@ nav:
       - Week 13 - E-Learning Systems & EdTech: itec-442/week13.md
       - Week 14 - Mobile, Social & Emerging Commerce: itec-442/week14.md
       - Week 15 - System Design & Implementation Capstone: itec-442/week15.md
+    - Labs:
+      - Labs Overview: itec-442/labs/index.md
+      - Lab 01 - Business Model Analysis: itec-442/labs/lab-01.md
+      - Lab 02 - Marketplace Competitive Analysis: itec-442/labs/lab-02.md
+      - Lab 03 - Economic Impact Report: itec-442/labs/lab-03.md
+      - Lab 04 - Consumer Behavior & A/B Testing: itec-442/labs/lab-04.md
+      - Lab 05 - Digital Analytics with GA4: itec-442/labs/lab-05.md
+      - Lab 06 - UX Audit & CRO Plan: itec-442/labs/lab-06.md
+      - Lab 07 - B2B E-Commerce System Design: itec-442/labs/lab-07.md
+      - Lab 08 - Supply Chain Mapping: itec-442/labs/lab-08.md
+      - Lab 09 - Payment Integration with Stripe: itec-442/labs/lab-09.md
+      - Lab 10 - E-Commerce Security Audit: itec-442/labs/lab-10.md
+      - Lab 11 - Corporate Portal Design: itec-442/labs/lab-11.md
+      - Lab 12 - E-Government Service Analysis: itec-442/labs/lab-12.md
+      - Lab 13 - Capstone Mini E-Commerce System: itec-442/labs/lab-13.md
 
-  - ITEC-445:
+  - 🐘 ITEC-445:
     - Overview: itec-445/index.md
     - Reading Materials:
       - "Week 1 - Advanced SQL — Joins, Subqueries & Set Ops": itec-445/week01.md
