@@ -36,3 +36,9 @@
 - Created `scia-120/presentations/llm-wiki-sample.md` wrapper page.
 - Created `scia-120/presentations/llm-wiki-sample-deck/index.html` as a magazine-style HTML presentation sample on LLM Wiki.
 - Updated `mkdocs.yml` navigation under SCIA-120.
+## [2026-04-29] create | SCIA 120 weekly presentations generated
+- Moved the SCIA-120 Presentations navigation under the Reading Materials section.
+- Generated 15 weekly tech-dark HTML presentations from SCIA-120 reading materials, one per week.
+- Each deck has 30 slides, cover author line for Dr. Zhijiang Chen (Frostburg State University), an overall page, AI-generated SVG line-art concept visuals, review prompts, and launchable HTML.
+- Updated `scia-120/presentations/index.md` as the overall presentation page with links to all 15 presentations.
+- Created 15 wrapper pages with brief descriptions, launch links, reading links, and iframe previews.

@@ -131,9 +131,6 @@ nav:
 
   - 🔐 SCIA-120:
     - Overview: entities/scia-120.md
-    - Presentations:
-      - Presentations Overview: scia-120/presentations/index.md
-      - Sample Deck — LLM Wiki: scia-120/presentations/llm-wiki-sample.md
     - Reading Materials:
       - Week 1 - Introduction to Information Security: scia-120/chapter-01.md
       - Week 2 - Physical Security: scia-120/chapter-02.md
@@ -150,6 +147,23 @@ nav:
       - Week 13 - Cloud Computing Security: scia-120/chapter-13.md
       - Week 14 - Risk Management and Compliance: scia-120/chapter-14.md
       - Week 15 - Emerging Threats and Future of Security: scia-120/chapter-15.md
+      - Presentations:
+        - Presentations Overview: scia-120/presentations/index.md
+        - Week 01 Presentation: scia-120/presentations/week-01.md
+        - Week 02 Presentation: scia-120/presentations/week-02.md
+        - Week 03 Presentation: scia-120/presentations/week-03.md
+        - Week 04 Presentation: scia-120/presentations/week-04.md
+        - Week 05 Presentation: scia-120/presentations/week-05.md
+        - Week 06 Presentation: scia-120/presentations/week-06.md
+        - Week 07 Presentation: scia-120/presentations/week-07.md
+        - Week 08 Presentation: scia-120/presentations/week-08.md
+        - Week 09 Presentation: scia-120/presentations/week-09.md
+        - Week 10 Presentation: scia-120/presentations/week-10.md
+        - Week 11 Presentation: scia-120/presentations/week-11.md
+        - Week 12 Presentation: scia-120/presentations/week-12.md
+        - Week 13 Presentation: scia-120/presentations/week-13.md
+        - Week 14 Presentation: scia-120/presentations/week-14.md
+        - Week 15 Presentation: scia-120/presentations/week-15.md
     - Labs:
       - Labs Overview: scia-120/labs/index.md
       - Lab 01 - Introduction to Information Security: scia-120/labs/lab-01.md
