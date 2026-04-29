@@ -54,12 +54,12 @@
 </span><span id=__span-3-3><a id=__codelineno-3-3 name=__codelineno-3-3 href=#__codelineno-3-3></a><span class=sd>db_health_check.py — Frostburg University Database Health Check</span>
 </span><span id=__span-3-4><a id=__codelineno-3-4 name=__codelineno-3-4 href=#__codelineno-3-4></a><span class=sd>Checks: connection, row counts, GPA anomalies, orphaned records, index coverage</span>
 </span><span id=__span-3-5><a id=__codelineno-3-5 name=__codelineno-3-5 href=#__codelineno-3-5></a><span class=sd>&quot;&quot;&quot;</span>
-</span><span id=__span-3-6><a id=__codelineno-3-6 name=__codelineno-3-6 href=#__codelineno-3-6></a><span class=kn>import</span> <span class=nn>os</span>
-</span><span id=__span-3-7><a id=__codelineno-3-7 name=__codelineno-3-7 href=#__codelineno-3-7></a><span class=kn>import</span> <span class=nn>sys</span>
-</span><span id=__span-3-8><a id=__codelineno-3-8 name=__codelineno-3-8 href=#__codelineno-3-8></a><span class=kn>import</span> <span class=nn>psycopg2</span>
-</span><span id=__span-3-9><a id=__codelineno-3-9 name=__codelineno-3-9 href=#__codelineno-3-9></a><span class=kn>from</span> <span class=nn>datetime</span> <span class=kn>import</span> <span class=n>datetime</span>
+</span><span id=__span-3-6><a id=__codelineno-3-6 name=__codelineno-3-6 href=#__codelineno-3-6></a><span class=kn>import</span><span class=w> </span><span class=nn>os</span>
+</span><span id=__span-3-7><a id=__codelineno-3-7 name=__codelineno-3-7 href=#__codelineno-3-7></a><span class=kn>import</span><span class=w> </span><span class=nn>sys</span>
+</span><span id=__span-3-8><a id=__codelineno-3-8 name=__codelineno-3-8 href=#__codelineno-3-8></a><span class=kn>import</span><span class=w> </span><span class=nn>psycopg2</span>
+</span><span id=__span-3-9><a id=__codelineno-3-9 name=__codelineno-3-9 href=#__codelineno-3-9></a><span class=kn>from</span><span class=w> </span><span class=nn>datetime</span><span class=w> </span><span class=kn>import</span> <span class=n>datetime</span>
 </span><span id=__span-3-10><a id=__codelineno-3-10 name=__codelineno-3-10 href=#__codelineno-3-10></a>
-</span><span id=__span-3-11><a id=__codelineno-3-11 name=__codelineno-3-11 href=#__codelineno-3-11></a><span class=k>def</span> <span class=nf>check</span><span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span> <span class=n>query</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span> <span class=n>threshold</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>operator</span><span class=o>=</span><span class=s1>&#39;&gt;=&#39;</span><span class=p>):</span>
+</span><span id=__span-3-11><a id=__codelineno-3-11 name=__codelineno-3-11 href=#__codelineno-3-11></a><span class=k>def</span><span class=w> </span><span class=nf>check</span><span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span> <span class=n>query</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span> <span class=n>threshold</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>operator</span><span class=o>=</span><span class=s1>&#39;&gt;=&#39;</span><span class=p>):</span>
 </span><span id=__span-3-12><a id=__codelineno-3-12 name=__codelineno-3-12 href=#__codelineno-3-12></a><span class=w>    </span><span class=sd>&quot;&quot;&quot;Run a check query and report pass/fail.&quot;&quot;&quot;</span>
 </span><span id=__span-3-13><a id=__codelineno-3-13 name=__codelineno-3-13 href=#__codelineno-3-13></a>    <span class=k>try</span><span class=p>:</span>
 </span><span id=__span-3-14><a id=__codelineno-3-14 name=__codelineno-3-14 href=#__codelineno-3-14></a>        <span class=n>cur</span><span class=o>.</span><span class=n>execute</span><span class=p>(</span><span class=n>query</span><span class=p>)</span>
@@ -125,7 +125,7 @@
 </span><span id=__span-5-3><a id=__codelineno-5-3 name=__codelineno-5-3 href=#__codelineno-5-3></a><span class=sd>batch_gpa_update.py — Recalculate GPAs for all students in batches</span>
 </span><span id=__span-5-4><a id=__codelineno-5-4 name=__codelineno-5-4 href=#__codelineno-5-4></a><span class=sd>Uses chunked processing to avoid long-running transactions.</span>
 </span><span id=__span-5-5><a id=__codelineno-5-5 name=__codelineno-5-5 href=#__codelineno-5-5></a><span class=sd>&quot;&quot;&quot;</span>
-</span><span id=__span-5-6><a id=__codelineno-5-6 name=__codelineno-5-6 href=#__codelineno-5-6></a><span class=kn>import</span> <span class=nn>os</span><span class=o>,</span> <span class=nn>psycopg2</span>
+</span><span id=__span-5-6><a id=__codelineno-5-6 name=__codelineno-5-6 href=#__codelineno-5-6></a><span class=kn>import</span><span class=w> </span><span class=nn>os</span><span class=o>,</span><span class=w> </span><span class=nn>psycopg2</span>
 </span><span id=__span-5-7><a id=__codelineno-5-7 name=__codelineno-5-7 href=#__codelineno-5-7></a>
 </span><span id=__span-5-8><a id=__codelineno-5-8 name=__codelineno-5-8 href=#__codelineno-5-8></a><span class=n>BATCH_SIZE</span> <span class=o>=</span> <span class=mi>50</span>
 </span><span id=__span-5-9><a id=__codelineno-5-9 name=__codelineno-5-9 href=#__codelineno-5-9></a>

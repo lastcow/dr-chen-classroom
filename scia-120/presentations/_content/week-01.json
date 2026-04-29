@@ -39,7 +39,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "shield protecting connected data nodes",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Introduction to Information Security and Information Assurance. Visual must match this exact concept: shield protecting connected data nodes. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Introduction to Information Security and Information Assurance. Visual must match this exact concept: shield protecting connected data nodes. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material"
       ],
@@ -58,7 +58,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "four-stage roadmap with security icons",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Week 01 Roadmap. Visual must match this exact concept: four-stage roadmap with security icons. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Week 01 Roadmap. Visual must match this exact concept: four-stage roadmap with security icons. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material",
         "NIST Cybersecurity Framework 2.0 — https://www.nist.gov/cyberframework"
@@ -79,7 +79,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "checklist on secure clipboard",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Learning Outcomes. Visual must match this exact concept: checklist on secure clipboard. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Learning Outcomes. Visual must match this exact concept: checklist on secure clipboard. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material"
       ],
@@ -97,7 +97,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "asset inventory map with data, identity, service, trust nodes",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: The Big Question: What Are We Defending?. Visual must match this exact concept: asset inventory map with data, identity, service, trust nodes. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: The Big Question: What Are We Defending?. Visual must match this exact concept: asset inventory map with data, identity, service, trust nodes. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material",
         "CISA Cyber Essentials — https://www.cisa.gov/resources-tools/resources/cyber-essentials"
@@ -118,7 +118,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "data lifecycle with storage processing transmission",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Information Security. Visual must match this exact concept: data lifecycle with storage processing transmission. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Information Security. Visual must match this exact concept: data lifecycle with storage processing transmission. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material",
         "NIST Computer Security Resource Center Glossary — https://csrc.nist.gov/glossary"
@@ -138,7 +138,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "nested circles: information security contains cybersecurity",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Cybersecurity vs. Information Security. Visual must match this exact concept: nested circles: information security contains cybersecurity. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Cybersecurity vs. Information Security. Visual must match this exact concept: nested circles: information security contains cybersecurity. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material",
         "CISA Cyber Essentials — https://www.cisa.gov/resources-tools/resources/cyber-essentials"
@@ -159,7 +159,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "assurance seal over verified logs and backup",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Information Assurance. Visual must match this exact concept: assurance seal over verified logs and backup. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Information Assurance. Visual must match this exact concept: assurance seal over verified logs and backup. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material",
         "NIST Cybersecurity Framework 2.0 — https://www.nist.gov/cyberframework",
@@ -181,7 +181,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "two-column protect versus prove diagram",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Security vs. Assurance. Visual must match this exact concept: two-column protect versus prove diagram. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Security vs. Assurance. Visual must match this exact concept: two-column protect versus prove diagram. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material",
         "NIST Cybersecurity Framework 2.0 — https://www.nist.gov/cyberframework"
@@ -202,7 +202,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "triangle with confidentiality integrity availability corners",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: CIA Triad Overview. Visual must match this exact concept: triangle with confidentiality integrity availability corners. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: CIA Triad Overview. Visual must match this exact concept: triangle with confidentiality integrity availability corners. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material"
       ],
@@ -222,7 +222,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "locked document with authorized and blocked access paths",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Confidentiality. Visual must match this exact concept: locked document with authorized and blocked access paths. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Confidentiality. Visual must match this exact concept: locked document with authorized and blocked access paths. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material",
         "CISA Cyber Essentials — https://www.cisa.gov/resources-tools/resources/cyber-essentials"
@@ -243,7 +243,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "file hash fingerprint comparing original and changed file",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Integrity. Visual must match this exact concept: file hash fingerprint comparing original and changed file. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Integrity. Visual must match this exact concept: file hash fingerprint comparing original and changed file. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material"
       ],
@@ -268,7 +268,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "service uptime monitor with redundant servers",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Availability. Visual must match this exact concept: service uptime monitor with redundant servers. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Availability. Visual must match this exact concept: service uptime monitor with redundant servers. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material",
         "CISA Cyber Essentials — https://www.cisa.gov/resources-tools/resources/cyber-essentials"
@@ -294,7 +294,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "mirror diagram mapping CIA to DAD",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: DAD Triad: The Attacker’s Mirror. Visual must match this exact concept: mirror diagram mapping CIA to DAD. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: DAD Triad: The Attacker’s Mirror. Visual must match this exact concept: mirror diagram mapping CIA to DAD. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material"
       ],
@@ -314,7 +314,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "impact wheel: financial personal legal national trust",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Why Security Matters. Visual must match this exact concept: impact wheel: financial personal legal national trust. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Why Security Matters. Visual must match this exact concept: impact wheel: financial personal legal national trust. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material",
         "IBM Cost of a Data Breach Report 2025 — https://www.ibm.com/reports/data-breach"
@@ -335,7 +335,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "timeline from mainframe to cloud and AI",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: A Brief History of Computer Security. Visual must match this exact concept: timeline from mainframe to cloud and AI. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: A Brief History of Computer Security. Visual must match this exact concept: timeline from mainframe to cloud and AI. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material"
       ],
@@ -355,7 +355,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "threat actor radar chart capability intent opportunity",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Threat Actors: Capability, Intent, Opportunity. Visual must match this exact concept: threat actor radar chart capability intent opportunity. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Threat Actors: Capability, Intent, Opportunity. Visual must match this exact concept: threat actor radar chart capability intent opportunity. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material"
       ],
@@ -375,7 +375,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "three actor cards with tools motives targets",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Common Threat Actor Profiles. Visual must match this exact concept: three actor cards with tools motives targets. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Common Threat Actor Profiles. Visual must match this exact concept: three actor cards with tools motives targets. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material"
       ],
@@ -395,7 +395,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "insider badge and external APT path converging on assets",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Insiders and Nation-State/APT Actors. Visual must match this exact concept: insider badge and external APT path converging on assets. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Insiders and Nation-State/APT Actors. Visual must match this exact concept: insider badge and external APT path converging on assets. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material"
       ],
@@ -416,7 +416,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "MICE motivation matrix with examples",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Attack Motivations: MICE. Visual must match this exact concept: MICE motivation matrix with examples. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Attack Motivations: MICE. Visual must match this exact concept: MICE motivation matrix with examples. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material"
       ],
@@ -437,7 +437,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "system diagram with intended path and abuse path",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: The Security Mindset. Visual must match this exact concept: system diagram with intended path and abuse path. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: The Security Mindset. Visual must match this exact concept: system diagram with intended path and abuse path. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material"
       ],
@@ -458,7 +458,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "risk equation cards multiplying threat vulnerability impact",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Risk = Threat × Vulnerability × Impact. Visual must match this exact concept: risk equation cards multiplying threat vulnerability impact. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Risk = Threat × Vulnerability × Impact. Visual must match this exact concept: risk equation cards multiplying threat vulnerability impact. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material"
       ],
@@ -484,7 +484,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "four-way risk treatment decision board",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Risk Treatment Options. Visual must match this exact concept: four-way risk treatment decision board. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Risk Treatment Options. Visual must match this exact concept: four-way risk treatment decision board. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material",
         "NIST Cybersecurity Framework 2.0 — https://www.nist.gov/cyberframework"
@@ -505,7 +505,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "three-layer control pipeline prevent detect correct",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Control Functions: Preventive, Detective, Corrective. Visual must match this exact concept: three-layer control pipeline prevent detect correct. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Control Functions: Preventive, Detective, Corrective. Visual must match this exact concept: three-layer control pipeline prevent detect correct. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material",
         "CISA Cyber Essentials — https://www.cisa.gov/resources-tools/resources/cyber-essentials"
@@ -526,7 +526,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "stacked layers administrative technical physical",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Control Layers: Administrative, Technical, Physical. Visual must match this exact concept: stacked layers administrative technical physical. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Control Layers: Administrative, Technical, Physical. Visual must match this exact concept: stacked layers administrative technical physical. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material",
         "CISA Cyber Essentials — https://www.cisa.gov/resources-tools/resources/cyber-essentials"
@@ -549,7 +549,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "six-step circular lifecycle with NIST CSF labels",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Security Lifecycle and NIST CSF 2.0. Visual must match this exact concept: six-step circular lifecycle with NIST CSF labels. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Security Lifecycle and NIST CSF 2.0. Visual must match this exact concept: six-step circular lifecycle with NIST CSF labels. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material",
         "NIST Cybersecurity Framework 2.0 — https://www.nist.gov/cyberframework"
@@ -572,7 +572,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "incident analysis worksheet with asset CIA actor controls evidence",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Student Scenario: Classify the Incident. Visual must match this exact concept: incident analysis worksheet with asset CIA actor controls evidence. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Student Scenario: Classify the Incident. Visual must match this exact concept: incident analysis worksheet with asset CIA actor controls evidence. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material",
         "CISA Cyber Essentials — https://www.cisa.gov/resources-tools/resources/cyber-essentials"
@@ -596,7 +596,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "career pathway map from foundations to roles",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Cybersecurity Career Paths. Visual must match this exact concept: career pathway map from foundations to roles. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Cybersecurity Career Paths. Visual must match this exact concept: career pathway map from foundations to roles. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material",
         "ISC2 Cybersecurity Workforce Study 2025 — https://www.isc2.org/Insights/2025/12/2025-ISC2-Cybersecurity-Workforce-Study"
@@ -619,7 +619,7 @@
       ],
       "visual_mode": "line_art",
       "visual_kind": "summary constellation connecting CIA DAD risk controls lifecycle careers",
-      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Week 01 Takeaway. Visual must match this exact concept: summary constellation connecting CIA DAD risk controls lifecycle careers. No conversational scenes, no people chatting, no photorealism.",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Week 01 Takeaway. Visual must match this exact concept: summary constellation connecting CIA DAD risk controls lifecycle careers. Use abstract topic-specific cybersecurity symbols; avoid photorealism.",
       "sources": [
         "SCIA 120 Chapter 1 reading material",
         "NIST Cybersecurity Framework 2.0 — https://www.nist.gov/cyberframework",
