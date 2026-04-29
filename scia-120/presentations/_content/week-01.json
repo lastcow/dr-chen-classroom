@@ -1,0 +1,635 @@
+{
+  "week": 1,
+  "title": "Introduction to Information Security and Information Assurance",
+  "source": "scia-120/chapter-01.md",
+  "author": "Dr. Zhijiang Chen",
+  "institution": "Frostburg State University",
+  "summary": "Information security (often abbreviated infosec ) is the practice of protecting information and information systems from unauthorized access, use, disclosure, disruption, modification, or destruction. The goal is to ensure that data remains private, accurate, and accessible to those who legitimately need it. It is important to distinguish information…",
+  "key_concepts": [
+    "What Is Information Security?",
+    "What Is Information Assurance?",
+    "The CIA Triad",
+    "Confidentiality",
+    "Integrity",
+    "Availability",
+    "The DAD Triad",
+    "Why Security Matters"
+  ],
+  "slides": [
+    {
+      "number": 1,
+      "type": "cover",
+      "title": "Introduction to Information Security and Information Assurance",
+      "main_idea": "Introduce Week 1: Introduction to Information Security and Information Assurance.",
+      "details": [
+        "Information security (often abbreviated infosec ) is the practice of protecting information and information systems from unauthorized access, use, disclosure, disruption, modification,…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where introduction to information security and information assurance affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize introduction to information security and information assurance in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Information security (often abbreviated infosec ) is the practice of…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Tech-dark line-art hero for Week 1: Introduction to Information Security and Information Assurance, with networks, locks, shields, data paths, and classroom learning cues.",
+      "visual_mode": "line_art",
+      "speaker_goal": "Teach Introduction to Information Security and Information Assurance using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 2,
+      "type": "agenda",
+      "title": "Overall roadmap",
+      "main_idea": "The week moves from core definitions to practical security decisions.",
+      "details": [
+        "What Is Information Security?",
+        "What Is Information Assurance?",
+        "The CIA Triad",
+        "Confidentiality"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where overall roadmap affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize overall roadmap in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: What Is Information Security?",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art roadmap showing the major learning path for Overall roadmap; connected nodes represent reading concepts and classroom application.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Overall roadmap using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 3,
+      "type": "objectives",
+      "title": "Learning objectives",
+      "main_idea": "Students should explain, apply, and evaluate the week’s main security ideas.",
+      "details": [
+        "Explain What Is Information Security?.",
+        "Explain What Is Information Assurance?.",
+        "Explain The CIA Triad.",
+        "Explain Confidentiality."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where learning objectives affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize learning objectives in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Explain What Is Information Security?.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Learning objectives: Learning objectives, Explain What Is Information Security?, Explain What Is Information Assurance?. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Learning objectives using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 4,
+      "type": "application",
+      "title": "Opening scenario",
+      "main_idea": "Use a realistic scenario to anchor Introduction to Information Security and Information Assurance in operational decision-making.",
+      "details": [
+        "Information security (often abbreviated infosec ) is the practice of protecting information and information systems from unauthorized access, use, disclosure, disruption,…",
+        "The goal is to ensure that data remains private, accurate, and accessible to those who legitimately need it.",
+        "It is important to distinguish information security from cybersecurity , a term that has become ubiquitous but is somewhat narrower in common usage."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where opening scenario affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Information security (often abbreviated infosec ) is the practice of…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Opening scenario: Opening scenario, Information security (often abbreviated infosec ) is the practice of protecting information and information systems from unauthorized access, use, disclosure, disruption,…, The goal is to ensure that data remains private, accurate, and accessible to those who legitimately need it. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Opening scenario using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 5,
+      "type": "definition",
+      "title": "What Is Information Security?",
+      "main_idea": "Information security (often abbreviated infosec ) is the practice of protecting information and information systems from unauthorized access, use, disclosure, disruption,…",
+      "details": [
+        "Information security (often abbreviated infosec ) is the practice of protecting information and information systems from unauthorized access, use, disclosure, disruption,…",
+        "The goal is to ensure that data remains private, accurate, and accessible to those who legitimately need it.",
+        "It is important to distinguish information security from cybersecurity , a term that has become ubiquitous but is somewhat narrower in common usage.",
+        "Cybersecurity typically refers to the protection of digital systems, networks, and data from attacks that originate in or travel through cyberspace."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where what is information security? affects users, data, or operations.",
+        "instructor_prompt": "How does this concept help us analyze the incident?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Information security (often abbreviated infosec ) is the practice of…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for What Is Information Security?: What Is Information Security?, Information security (often abbreviated infosec ) is the practice of protecting information and information systems from unauthorized access, use, disclosure, disruption,…, The goal is to ensure that data remains private, accurate, and accessible to those who legitimately need it. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach What Is Information Security? using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 6,
+      "type": "concept",
+      "title": "What Is Information Assurance?",
+      "main_idea": "Information Assurance (IA) is a related but distinct concept.",
+      "details": [
+        "Information Assurance (IA) is a related but distinct concept.",
+        "While information security focuses primarily on protecting data, information assurance is concerned with ensuring that information is trustworthy and usable when needed.",
+        "IA encompasses not only security controls but also reliability, accuracy, and the processes that guarantee confidence in information.",
+        "In practical terms, information assurance asks: Can I trust that this information is what it claims to be?"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where what is information assurance? affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize what is information assurance? in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Information Assurance (IA) is a related but distinct concept.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for What Is Information Assurance?: What Is Information Assurance?, Information Assurance (IA) is a related but distinct concept, While information security focuses primarily on protecting data, information assurance is concerned with ensuring that information is trustworthy and usable when needed. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach What Is Information Assurance? using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 7,
+      "type": "application",
+      "title": "The CIA Triad",
+      "main_idea": "The most fundamental model in information security is the CIA Triad , which describes the three core properties that any secure information system must maintain.",
+      "details": [
+        "The most fundamental model in information security is the CIA Triad , which describes the three core properties that any secure information system must maintain.",
+        "The CIA Triad connects to risk, controls, and evidence.",
+        "The CIA Triad connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where the cia triad affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The most fundamental model in information security is the CIA Triad ,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The CIA Triad: The CIA Triad, The most fundamental model in information security is the CIA Triad , which describes the three core properties that any secure information system must maintain, The CIA Triad connects to risk, controls, and evidence. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The CIA Triad using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 8,
+      "type": "evidence",
+      "title": "Confidentiality",
+      "main_idea": "Confidentiality ensures that information is accessible only to those authorized to access it.",
+      "details": [
+        "Confidentiality ensures that information is accessible only to those authorized to access it.",
+        "It prevents unauthorized disclosure.",
+        "Examples of confidentiality controls include encryption, access control lists, and user authentication.",
+        "A breach of confidentiality occurs when sensitive data — such as medical records, financial information, or trade secrets — is read or copied by an unauthorized party."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where confidentiality affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize confidentiality in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Confidentiality ensures that information is accessible only to those…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Confidentiality: Confidentiality, Confidentiality ensures that information is accessible only to those authorized to access it, It prevents unauthorized disclosure. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Confidentiality using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 9,
+      "type": "definition",
+      "title": "Integrity",
+      "main_idea": "Integrity ensures that information is accurate and has not been tampered with or altered without authorization.",
+      "details": [
+        "Integrity ensures that information is accurate and has not been tampered with or altered without authorization.",
+        "It covers both accidental modification (such as a database error) and intentional manipulation (such as an attacker altering financial records).",
+        "Controls that protect integrity include checksums, digital signatures, version control, and write-protect mechanisms."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where integrity affects users, data, or operations.",
+        "instructor_prompt": "What problem does integrity help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Integrity ensures that information is accurate and has not been…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Integrity: Integrity, Integrity ensures that information is accurate and has not been tampered with or altered without authorization, It covers both accidental modification (such as a database error) and intentional manipulation (such as an attacker altering financial records). Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Integrity using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 10,
+      "type": "concept",
+      "title": "Availability",
+      "main_idea": "Availability ensures that systems and data are accessible and usable by authorized users when needed.",
+      "details": [
+        "Availability ensures that systems and data are accessible and usable by authorized users when needed.",
+        "A system may be perfectly confidential and perfectly intact, but if it is offline when users need it, it has failed from a security perspective.",
+        "Availability is threatened by denial-of-service attacks, hardware failures, natural disasters, and ransomware.",
+        "Controls include redundancy, failover systems, backups, and disaster recovery planning."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where availability affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize availability in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Availability ensures that systems and data are accessible and usable…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Availability: Availability, Availability ensures that systems and data are accessible and usable by authorized users when needed, A system may be perfectly confidential and perfectly intact, but if it is offline when users need it, it has failed from a security perspective. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Availability using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 11,
+      "type": "application",
+      "title": "The DAD Triad",
+      "main_idea": "The DAD Triad — Disclosure, Alteration, Denial — is the mirror image of the CIA Triad.",
+      "details": [
+        "The DAD Triad — Disclosure, Alteration, Denial — is the mirror image of the CIA Triad.",
+        "Rather than describing what security should preserve, the DAD Triad describes what attackers are trying to achieve .",
+        "Each attack maps to an attack on one of the CIA properties: - Disclosure is the opposite of Confidentiality — it represents unauthorized access to or release of sensitive…",
+        "- Alteration is the opposite of Integrity — it represents unauthorized modification of data."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where the dad triad affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The DAD Triad — Disclosure, Alteration, Denial — is the mirror image…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The DAD Triad: The DAD Triad, The DAD Triad — Disclosure, Alteration, Denial — is the mirror image of the CIA Triad, Rather than describing what security should preserve, the DAD Triad describes what attackers are trying to achieve . Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The DAD Triad using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 12,
+      "type": "evidence",
+      "title": "Why Security Matters",
+      "main_idea": "The consequences of inadequate security are significant, expensive, and sometimes catastrophic.",
+      "details": [
+        "The consequences of inadequate security are significant, expensive, and sometimes catastrophic.",
+        "Consider a few dimensions of impact: Financial loss is the most visible consequence.",
+        "The IBM Cost of a Data Breach Report consistently estimates the average global cost of a data breach at over $4 million USD per incident.",
+        "Organizations face direct costs from incident response, legal fees, fines, and customer notification, as well as indirect costs from reputational damage and loss of customer trust."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where why security matters affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize why security matters in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The consequences of inadequate security are significant, expensive,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Why Security Matters: Why Security Matters, The consequences of inadequate security are significant, expensive, and sometimes catastrophic, Consider a few dimensions of impact: Financial loss is the most visible consequence. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Why Security Matters using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 13,
+      "type": "definition",
+      "title": "A Brief History of Computer Security",
+      "main_idea": "Understanding the history of computer security helps contextualize why today's threats and defenses evolved as they did.",
+      "details": [
+        "Understanding the history of computer security helps contextualize why today's threats and defenses evolved as they did.",
+        "1960s–1970s: Timesharing and Early Threats.",
+        "The first computer security concerns arose in the era of mainframes and timesharing systems, when multiple users accessed the same machine.",
+        "The threat model was primarily one of insider misbehavior — unauthorized access to other users' data."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where a brief history of computer security affects users, data, or operations.",
+        "instructor_prompt": "What problem does a brief history of computer security help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Understanding the history of computer security helps contextualize…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for A Brief History of Computer Security: A Brief History of Computer Security, Understanding the history of computer security helps contextualize why today's threats and defenses evolved as they did, 1960s–1970s: Timesharing and Early Threats. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach A Brief History of Computer Security using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 14,
+      "type": "concept",
+      "title": "Threat Actors",
+      "main_idea": "A threat actor (also called a threat agent) is any individual, group, or entity that has the potential, intent, and capability to cause harm to information systems.",
+      "details": [
+        "A threat actor (also called a threat agent) is any individual, group, or entity that has the potential, intent, and capability to cause harm to information systems.",
+        "Understanding who the adversaries are — their motivations, resources, and methods — is critical to building appropriate defenses.",
+        "Threat Actors connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where threat actors affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize threat actors in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A threat actor (also called a threat agent) is any individual, group,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Threat Actors: Threat Actors, A threat actor (also called a threat agent) is any individual, group, or entity that has the potential, intent, and capability to cause harm to information systems, Understanding who the adversaries are — their motivations, resources, and methods — is critical to building appropriate defenses. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Threat Actors using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 15,
+      "type": "application",
+      "title": "Script Kiddies",
+      "main_idea": "Script kiddies are low-skill attackers who use pre-built tools and exploit code created by others, with little understanding of the underlying technology.",
+      "details": [
+        "Script kiddies are low-skill attackers who use pre-built tools and exploit code created by others, with little understanding of the underlying technology.",
+        "They are typically motivated by curiosity, notoriety, or vandalism.",
+        "While individually unsophisticated, they represent a significant volume of attack traffic due to their large numbers and the easy availability of attack tools."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where script kiddies affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Script kiddies are low-skill attackers who use pre-built tools and…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Script Kiddies: Script Kiddies, Script kiddies are low-skill attackers who use pre-built tools and exploit code created by others, with little understanding of the underlying technology, They are typically motivated by curiosity, notoriety, or vandalism. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Script Kiddies using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 16,
+      "type": "evidence",
+      "title": "Hacktivists",
+      "main_idea": "Hacktivists are actors motivated by political, social, or ideological causes.",
+      "details": [
+        "Hacktivists are actors motivated by political, social, or ideological causes.",
+        "Groups like Anonymous have conducted high-profile attacks against governments, corporations, and organizations they perceive as adversarial to their cause.",
+        "Their tools are often disruptive rather than financially motivated — website defacement and distributed denial-of-service (DDoS) attacks are common."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where hacktivists affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize hacktivists in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Hacktivists are actors motivated by political, social, or ideological…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Hacktivists: Hacktivists, Hacktivists are actors motivated by political, social, or ideological causes, Groups like Anonymous have conducted high-profile attacks against governments, corporations, and organizations they perceive as adversarial to their cause. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Hacktivists using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 17,
+      "type": "definition",
+      "title": "Cybercriminals",
+      "main_idea": "Organized criminal groups operate sophisticated technical operations aimed at financial gain.",
+      "details": [
+        "Organized criminal groups operate sophisticated technical operations aimed at financial gain.",
+        "They engage in ransomware deployment, credential theft, business email compromise (BEC), banking fraud, and the operation of dark-web marketplaces for stolen data.",
+        "These groups may operate like businesses, with specialized roles, customer service, and affiliate programs."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where cybercriminals affects users, data, or operations.",
+        "instructor_prompt": "What problem does cybercriminals help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Organized criminal groups operate sophisticated technical operations…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Cybercriminals: Cybercriminals, Organized criminal groups operate sophisticated technical operations aimed at financial gain, They engage in ransomware deployment, credential theft, business email compromise (BEC), banking fraud, and the operation of dark-web marketplaces for stolen data. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Cybercriminals using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 18,
+      "type": "concept",
+      "title": "Insider Threats",
+      "main_idea": "Insider threats originate from within the organization — current or former employees, contractors, or business partners who have or had legitimate access to systems.",
+      "details": [
+        "Insider threats originate from within the organization — current or former employees, contractors, or business partners who have or had legitimate access to systems.",
+        "Insiders may act with malicious intent (stealing data for personal gain or to harm the organization) or negligently (accidentally causing breaches through careless behavior).",
+        "The 2013 Edward Snowden leak of NSA documents is perhaps the most famous example of an insider threat."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where insider threats affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize insider threats in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Insider threats originate from within the organization — current or…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Insider Threats: Insider Threats, Insider threats originate from within the organization — current or former employees, contractors, or business partners who have or had legitimate access to systems, Insiders may act with malicious intent (stealing data for personal gain or to harm the organization) or negligently (accidentally causing breaches through careless behavior). Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Insider Threats using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 19,
+      "type": "application",
+      "title": "Nation-States and Advanced Persistent Threats (APTs)",
+      "main_idea": "Nation-state actors are well-funded, highly skilled groups operating on behalf of governments.",
+      "details": [
+        "Nation-state actors are well-funded, highly skilled groups operating on behalf of governments.",
+        "Their objectives range from espionage and intelligence collection to sabotage and strategic disruption.",
+        "Advanced Persistent Threats (APTs) are long-term, targeted intrusion campaigns characterized by stealthy, slow operations designed to avoid detection.",
+        "Notable examples include APT28 (Fancy Bear, attributed to Russian intelligence) and APT41 (attributed to Chinese state-sponsored hackers)."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where nation-states and advanced persistent threats (apts) affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Nation-state actors are well-funded, highly skilled groups operating…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Nation-States and Advanced Persistent Threats (APTs): Nation-States and Advanced Persistent Threats (APTs), Nation-state actors are well-funded, highly skilled groups operating on behalf of governments, Their objectives range from espionage and intelligence collection to sabotage and strategic disruption. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Nation-States and Advanced Persistent Threats (APTs) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 20,
+      "type": "evidence",
+      "title": "Attack Motivations",
+      "main_idea": "Understanding why attackers do what they do is as important as understanding what they do.",
+      "details": [
+        "Understanding why attackers do what they do is as important as understanding what they do.",
+        "Nation-states are motivated by a combination of ideology, strategic advantage, and coercion.",
+        "Hacktivists are primarily motivated by ideology.",
+        "Understanding motivation helps predict targeting and behavior."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where attack motivations affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize attack motivations in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Understanding why attackers do what they do is as important as…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Attack Motivations: Attack Motivations, Understanding why attackers do what they do is as important as understanding what they do, Nation-states are motivated by a combination of ideology, strategic advantage, and coercion. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Attack Motivations using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 21,
+      "type": "definition",
+      "title": "The Security Mindset",
+      "main_idea": "Effective security practitioners develop a distinctive way of thinking about systems — one that differs from how developers or end users typically think.",
+      "details": [
+        "Effective security practitioners develop a distinctive way of thinking about systems — one that differs from how developers or end users typically think.",
+        "This security mindset involves: - Adversarial thinking: Always asking \"How could an attacker exploit this?\" rather than \"How will a legitimate user use this?\" - Skepticism:…",
+        "- Thinking in failure modes: Considering what happens when controls fail, not just when they succeed.",
+        "- Defense in depth: Assuming no single control will be sufficient and layering multiple defenses."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where the security mindset affects users, data, or operations.",
+        "instructor_prompt": "What problem does the security mindset help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Effective security practitioners develop a distinctive way of…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Security Mindset: The Security Mindset, Effective security practitioners develop a distinctive way of thinking about systems — one that differs from how developers or end users typically think, This security mindset involves: - Adversarial thinking: Always asking \"How could an attacker exploit this?\" rather than \"How will a legitimate user use this?\" - Skepticism:…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Security Mindset using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 22,
+      "type": "concept",
+      "title": "Risk Management Basics",
+      "main_idea": "Risk is the potential for loss or damage when a threat exploits a vulnerability.",
+      "details": [
+        "Risk is the potential for loss or damage when a threat exploits a vulnerability.",
+        "A foundational formula in risk management is: Risk = Threat × Vulnerability × Impact - Threat is the likelihood that a specific type of attack or adverse event will occur.",
+        "- Vulnerability is a weakness in a system that could be exploited.",
+        "- Impact is the magnitude of harm if the threat is realized."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where risk management basics affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize risk management basics in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Risk is the potential for loss or damage when a threat exploits a…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Risk Management Basics: Risk Management Basics, Risk is the potential for loss or damage when a threat exploits a vulnerability, A foundational formula in risk management is: Risk = Threat × Vulnerability × Impact - Threat is the likelihood that a specific type of attack or adverse event will occur. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Risk Management Basics using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 23,
+      "type": "application",
+      "title": "Types of Security Controls",
+      "main_idea": "Security controls are safeguards or countermeasures implemented to reduce risk.",
+      "details": [
+        "Security controls are safeguards or countermeasures implemented to reduce risk.",
+        "They are categorized in several ways.",
+        "- Technical/Logical controls: Software and hardware mechanisms — firewalls, encryption, authentication systems.",
+        "- Physical controls: Tangible barriers — locks, fences, guards, surveillance cameras."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where types of security controls affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Security controls are safeguards or countermeasures implemented to…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Types of Security Controls: Types of Security Controls, Security controls are safeguards or countermeasures implemented to reduce risk, They are categorized in several ways. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Types of Security Controls using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 24,
+      "type": "evidence",
+      "title": "The Security Lifecycle",
+      "main_idea": "Security is not a one-time project; it is an ongoing process.",
+      "details": [
+        "Security is not a one-time project; it is an ongoing process.",
+        "The security lifecycle (sometimes represented as a cycle) includes the following phases: 1.",
+        "Identify — understand assets, threats, vulnerabilities, and risks 2.",
+        "Protect — implement controls to defend against identified risks 3."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where the security lifecycle affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize the security lifecycle in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Security is not a one-time project; it is an ongoing process.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Security Lifecycle: The Security Lifecycle, Security is not a one-time project; it is an ongoing process, The security lifecycle (sometimes represented as a cycle) includes the following phases: 1. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Security Lifecycle using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 25,
+      "type": "vocabulary",
+      "title": "Key terms to keep",
+      "main_idea": "Vocabulary becomes useful when students can connect terms to scenarios and evidence.",
+      "details": [
+        "What Is Information Security?",
+        "What Is Information Assurance?",
+        "The CIA Triad",
+        "Confidentiality"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where key terms to keep affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize key terms to keep in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: What Is Information Security?",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Key terms to keep: Key terms to keep, What Is Information Security?, What Is Information Assurance?. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Key terms to keep using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 26,
+      "type": "comparison",
+      "title": "Compare: What Is Information Security? vs. What Is Information Assurance?",
+      "main_idea": "Comparing related ideas helps students avoid shallow memorization.",
+      "details": [
+        "Where What Is Information Security? applies.",
+        "Where What Is Information Assurance? applies.",
+        "How the difference changes the security decision."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where compare: what is information security? vs. what is information assurance? affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize compare: what is information security? vs. what is information assurance? in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Where What Is Information Security? applies.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Compare: What Is Information Security? vs. What Is Information Assurance?: Compare: What Is Information Security? vs. What Is Information Assurance?, Where What Is Information Security? applies, Where What Is Information Assurance? applies. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Compare: What Is Information Security? vs. What Is Information Assurance? using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 27,
+      "type": "application",
+      "title": "Applied decision checkpoint",
+      "main_idea": "Students should translate concepts into a defensible security decision.",
+      "details": [
+        "Identify the asset or process at risk.",
+        "Choose a preventive, detective, or corrective control.",
+        "Explain what evidence would prove the control is working."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where applied decision checkpoint affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Identify the asset or process at risk.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Applied decision checkpoint: Applied decision checkpoint, Identify the asset or process at risk, Choose a preventive, detective, or corrective control. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Applied decision checkpoint using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 28,
+      "type": "review",
+      "title": "Review questions",
+      "main_idea": "Retrieval practice should ask students to define, compare, apply, and evaluate.",
+      "details": [
+        "Define one core concept in plain language.",
+        "Compare two controls or threats from the week.",
+        "Apply one idea to a campus or business system.",
+        "Evaluate why a solution might fail in practice."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where review questions affects users, data, or operations.",
+        "instructor_prompt": "What is the one sentence takeaway for review questions?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Define one core concept in plain language.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Review questions: Review questions, Define one core concept in plain language, Compare two controls or threats from the week. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Review questions using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 29,
+      "type": "bridge",
+      "title": "Bridge to lab and assessment",
+      "main_idea": "The reading should transfer into evidence-based lab work and written explanations.",
+      "details": [
+        "Collect evidence, not just screenshots.",
+        "Explain what the artifact proves.",
+        "Connect the proof back to risk and control selection."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where bridge to lab and assessment affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize bridge to lab and assessment in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Collect evidence, not just screenshots.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Bridge to lab and assessment: Bridge to lab and assessment, Collect evidence, not just screenshots, Explain what the artifact proves. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Bridge to lab and assessment using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 30,
+      "type": "closing",
+      "title": "Takeaway",
+      "main_idea": "The central takeaway from Week 1 is to reason from risk to evidence to action.",
+      "details": [
+        "Introduction to Information Security and Information Assurance",
+        "Security is a decision process, not just a tool list.",
+        "Use the reading to justify practical choices."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where takeaway affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize takeaway in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction to Information Security and Information Assurance",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Takeaway: Takeaway, Introduction to Information Security and Information Assurance, Security is a decision process, not just a tool list. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Takeaway using evidence, scenario reasoning, and a concrete security takeaway."
+    }
+  ]
+}

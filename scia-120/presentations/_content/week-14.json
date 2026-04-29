@@ -1,0 +1,636 @@
+{
+  "week": 14,
+  "title": "Security Practices, Risk Management, and Compliance",
+  "source": "scia-120/chapter-14.md",
+  "author": "Dr. Zhijiang Chen",
+  "institution": "Frostburg State University",
+  "summary": "Security technology alone cannot protect an organization. Firewalls can be misconfigured. Antivirus can miss novel malware. Encryption protects data at rest but not the application that decrypts it. The gap between having security tools and actually being secure is bridged by security practices — the organizational processes, methodologies, governance…",
+  "key_concepts": [
+    "Introduction",
+    "Information Security Risk Management",
+    "Asset Identification and Valuation",
+    "Threat Identification and Threat Intelligence",
+    "Risk Treatment Options",
+    "Security Metrics and KPIs",
+    "Vulnerability Assessment and Penetration Testing",
+    "Vulnerability Assessment"
+  ],
+  "slides": [
+    {
+      "number": 1,
+      "type": "cover",
+      "title": "Security Practices, Risk Management, and Compliance",
+      "main_idea": "Introduce Week 14: Security Practices, Risk Management, and Compliance.",
+      "details": [
+        "Security technology alone cannot protect an organization."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where security practices, risk management, and compliance affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize security practices, risk management, and compliance in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Security technology alone cannot protect an organization.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Tech-dark line-art hero for Week 14: Security Practices, Risk Management, and Compliance, with networks, locks, shields, data paths, and classroom learning cues.",
+      "visual_mode": "line_art",
+      "speaker_goal": "Teach Security Practices, Risk Management, and Compliance using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 2,
+      "type": "agenda",
+      "title": "Overall roadmap",
+      "main_idea": "The week moves from core definitions to practical security decisions.",
+      "details": [
+        "Introduction",
+        "Information Security Risk Management",
+        "Asset Identification and Valuation",
+        "Threat Identification and Threat Intelligence"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where overall roadmap affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize overall roadmap in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art roadmap showing the major learning path for Overall roadmap; connected nodes represent reading concepts and classroom application.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Overall roadmap using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 3,
+      "type": "objectives",
+      "title": "Learning objectives",
+      "main_idea": "Students should explain, apply, and evaluate the week’s main security ideas.",
+      "details": [
+        "Explain Introduction.",
+        "Explain Information Security Risk Management.",
+        "Explain Asset Identification and Valuation.",
+        "Explain Threat Identification and Threat Intelligence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where learning objectives affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize learning objectives in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Explain Introduction.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Learning objectives: Learning objectives, Explain Introduction, Explain Information Security Risk Management. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Learning objectives using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 4,
+      "type": "application",
+      "title": "Opening scenario",
+      "main_idea": "Use a realistic scenario to anchor Security Practices, Risk Management, and Compliance in operational decision-making.",
+      "details": [
+        "Security technology alone cannot protect an organization.",
+        "Encryption protects data at rest but not the application that decrypts it.",
+        "The gap between having security tools and actually being secure is bridged by security practices — the organizational processes, methodologies, governance frameworks, and human…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where opening scenario affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Security technology alone cannot protect an organization.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Opening scenario: Opening scenario, Security technology alone cannot protect an organization, Encryption protects data at rest but not the application that decrypts it. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Opening scenario using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 5,
+      "type": "definition",
+      "title": "Introduction",
+      "main_idea": "Security technology alone cannot protect an organization.",
+      "details": [
+        "Security technology alone cannot protect an organization.",
+        "Encryption protects data at rest but not the application that decrypts it.",
+        "The gap between having security tools and actually being secure is bridged by security practices — the organizational processes, methodologies, governance frameworks, and human…",
+        "Together, these practices constitute information security management — the discipline that transforms technical security into organizational security."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where introduction affects users, data, or operations.",
+        "instructor_prompt": "What problem does introduction help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Security technology alone cannot protect an organization.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Introduction: Introduction, Security technology alone cannot protect an organization, Encryption protects data at rest but not the application that decrypts it. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Introduction using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 6,
+      "type": "concept",
+      "title": "Information Security Risk Management",
+      "main_idea": "Risk management is the systematic process of identifying, assessing, and treating risks to organizational assets.",
+      "details": [
+        "Risk management is the systematic process of identifying, assessing, and treating risks to organizational assets.",
+        "It is not about eliminating all risk — that is impossible.",
+        "It is about making informed decisions about which risks to accept, which to mitigate, and how much to invest in doing so.",
+        "NIST SP 800-30 ( Guide for Conducting Risk Assessments ) is the foundational U.S."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where information security risk management affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize information security risk management in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Risk management is the systematic process of identifying, assessing,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Information Security Risk Management: Information Security Risk Management, Risk management is the systematic process of identifying, assessing, and treating risks to organizational assets, It is not about eliminating all risk — that is impossible. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Information Security Risk Management using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 7,
+      "type": "application",
+      "title": "Asset Identification and Valuation",
+      "main_idea": "You cannot protect what you do not know you have.",
+      "details": [
+        "You cannot protect what you do not know you have.",
+        "Asset inventory is the starting point of risk management.",
+        "An information asset is anything of value to the organization that processes, stores, or transmits information: servers, databases, applications, endpoint devices, network…",
+        "Assets are characterized by their value — both quantitative (replacement cost, revenue generated, regulatory penalty exposure) and qualitative (reputational value, operational…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where asset identification and valuation affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: You cannot protect what you do not know you have.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Asset Identification and Valuation: Asset Identification and Valuation, You cannot protect what you do not know you have, Asset inventory is the starting point of risk management. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Asset Identification and Valuation using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 8,
+      "type": "evidence",
+      "title": "Threat Identification and Threat Intelligence",
+      "main_idea": "A threat is a potential cause of an unwanted incident that could result in harm to the organization.",
+      "details": [
+        "A threat is a potential cause of an unwanted incident that could result in harm to the organization.",
+        "Threats are characterized by their source (who or what is behind them) and event (what they might do).",
+        "Threat intelligence can be consumed from commercial providers (CrowdStrike, Mandiant), government sources (CISA advisories, FBI flash alerts), industry sharing groups (ISACs —…",
+        "Intelligence is operationalized into security controls: blocking known-malicious IPs, updating detection signatures, patching actively exploited vulnerabilities."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where threat identification and threat intelligence affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize threat identification and threat intelligence in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A threat is a potential cause of an unwanted incident that could…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Threat Identification and Threat Intelligence: Threat Identification and Threat Intelligence, A threat is a potential cause of an unwanted incident that could result in harm to the organization, Threats are characterized by their source (who or what is behind them) and event (what they might do). Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Threat Identification and Threat Intelligence using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 9,
+      "type": "definition",
+      "title": "Risk Treatment Options",
+      "main_idea": "After identifying and assessing risks, organizations choose how to treat them: - Mitigate (Reduce) : Implement controls to reduce the likelihood or impact of the risk.",
+      "details": [
+        "After identifying and assessing risks, organizations choose how to treat them: - Mitigate (Reduce) : Implement controls to reduce the likelihood or impact of the risk.",
+        "Patching vulnerabilities, adding MFA, encrypting data, and deploying firewalls are all mitigation measures.",
+        "- Transfer : Shift the financial consequences of the risk to a third party, typically through cyber insurance.",
+        "Transfer does not eliminate the operational impact of a breach — it addresses the financial liability."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where risk treatment options affects users, data, or operations.",
+        "instructor_prompt": "What problem does risk treatment options help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: After identifying and assessing risks, organizations choose how to…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Risk Treatment Options: Risk Treatment Options, After identifying and assessing risks, organizations choose how to treat them: - Mitigate (Reduce) : Implement controls to reduce the likelihood or impact of the risk, Patching vulnerabilities, adding MFA, encrypting data, and deploying firewalls are all mitigation measures. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Risk Treatment Options using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 10,
+      "type": "concept",
+      "title": "Security Metrics and KPIs",
+      "main_idea": "Effective risk management requires measurement.",
+      "details": [
+        "Effective risk management requires measurement.",
+        "Security Metrics and KPIs connects to risk, controls, and evidence.",
+        "Security Metrics and KPIs connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where security metrics and kpis affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize security metrics and kpis in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Effective risk management requires measurement.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Security Metrics and KPIs: Security Metrics and KPIs, Effective risk management requires measurement, Security Metrics and KPIs connects to risk, controls, and evidence. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Security Metrics and KPIs using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 11,
+      "type": "application",
+      "title": "Vulnerability Assessment and Penetration Testing",
+      "main_idea": "Understanding the weaknesses in your own systems before attackers find them is a cornerstone of proactive security.",
+      "details": [
+        "Understanding the weaknesses in your own systems before attackers find them is a cornerstone of proactive security.",
+        "Two complementary approaches serve this purpose:",
+        "Vulnerability Assessment and Penetration Testing connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where vulnerability assessment and penetration testing affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Understanding the weaknesses in your own systems before attackers…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Vulnerability Assessment and Penetration Testing: Vulnerability Assessment and Penetration Testing, Understanding the weaknesses in your own systems before attackers find them is a cornerstone of proactive security, Two complementary approaches serve this purpose:. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Vulnerability Assessment and Penetration Testing using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 12,
+      "type": "evidence",
+      "title": "Vulnerability Assessment",
+      "main_idea": "A vulnerability assessment is a systematic examination of systems to identify known vulnerabilities — unpatched software, misconfigured services, default credentials, missing…",
+      "details": [
+        "A vulnerability assessment is a systematic examination of systems to identify known vulnerabilities — unpatched software, misconfigured services, default credentials, missing…",
+        "It is primarily a discovery exercise: here is what is wrong, here is the severity, here is how to fix it.",
+        "Vulnerability assessments are typically performed using automated scanning tools: Nessus, Qualys, OpenVAS, Rapid7 InsightVM.",
+        "They should be run regularly (weekly or monthly for critical systems) and after significant infrastructure changes."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where vulnerability assessment affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize vulnerability assessment in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A vulnerability assessment is a systematic examination of systems to…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Vulnerability Assessment: Vulnerability Assessment, A vulnerability assessment is a systematic examination of systems to identify known vulnerabilities — unpatched software, misconfigured services, default credentials, missing…, It is primarily a discovery exercise: here is what is wrong, here is the severity, here is how to fix it. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Vulnerability Assessment using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 13,
+      "type": "definition",
+      "title": "Penetration Testing",
+      "main_idea": "A penetration test (pentest) goes beyond vulnerability scanning: it involves skilled security professionals attempting to exploit identified vulnerabilities to demonstrate…",
+      "details": [
+        "A penetration test (pentest) goes beyond vulnerability scanning: it involves skilled security professionals attempting to exploit identified vulnerabilities to demonstrate…",
+        "A pentest answers the question: \"If an attacker exploited these vulnerabilities, how far could they get, and what could they access?\" The penetration testing lifecycle follows a…",
+        "Planning and Reconnaissance : Agree on scope, rules of engagement, and objectives.",
+        "Scanning and Enumeration : Use tools (Nmap, Masscan, Nikto, Burp Suite, OWASP ZAP) to identify open ports, services, operating system versions, web application frameworks, and…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where penetration testing affects users, data, or operations.",
+        "instructor_prompt": "What problem does penetration testing help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A penetration test (pentest) goes beyond vulnerability scanning: it…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Penetration Testing: Penetration Testing, A penetration test (pentest) goes beyond vulnerability scanning: it involves skilled security professionals attempting to exploit identified vulnerabilities to demonstrate…, A pentest answers the question: \"If an attacker exploited these vulnerabilities, how far could they get, and what could they access?\" The penetration testing lifecycle follows a…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Penetration Testing using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 14,
+      "type": "concept",
+      "title": "Business Continuity and Disaster Recovery",
+      "main_idea": "Security is not only about preventing breaches — it is also about ensuring that business operations can continue through disruptions, whether from cyberattacks, natural disasters,…",
+      "details": [
+        "Security is not only about preventing breaches — it is also about ensuring that business operations can continue through disruptions, whether from cyberattacks, natural disasters,…",
+        "Business Continuity Planning (BCP) addresses how the organization maintains critical business functions during and after a disruptive event.",
+        "It is broader than IT recovery: it includes people (who does what if key staff are unavailable), processes (how are critical functions performed manually if systems are down), and…",
+        "Disaster Recovery (DR) focuses specifically on restoring IT systems and data after a catastrophic failure."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where business continuity and disaster recovery affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize business continuity and disaster recovery in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Security is not only about preventing breaches — it is also about…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Business Continuity and Disaster Recovery: Business Continuity and Disaster Recovery, Security is not only about preventing breaches — it is also about ensuring that business operations can continue through disruptions, whether from cyberattacks, natural disasters,…, Business Continuity Planning (BCP) addresses how the organization maintains critical business functions during and after a disruptive event. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Business Continuity and Disaster Recovery using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 15,
+      "type": "application",
+      "title": "Backup Strategies: The 3-2-1 Rule",
+      "main_idea": "Defenses include maintaining offline or immutable backups (cloud object storage with Object Lock, air-gapped tape backups) that ransomware cannot reach or encrypt.",
+      "details": [
+        "Defenses include maintaining offline or immutable backups (cloud object storage with Object Lock, air-gapped tape backups) that ransomware cannot reach or encrypt.",
+        "Backups must be tested regularly — an untested backup is not a backup.",
+        "DR strategies range in cost and recovery speed: - Cold site : Backup facility with infrastructure but no running systems; recovery takes days.",
+        "- Warm site : Standby environment with systems partially configured; recovery takes hours."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where backup strategies: the 3-2-1 rule affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Defenses include maintaining offline or immutable backups (cloud…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Backup Strategies: The 3-2-1 Rule: Backup Strategies: The 3-2-1 Rule, Defenses include maintaining offline or immutable backups (cloud object storage with Object Lock, air-gapped tape backups) that ransomware cannot reach or encrypt, Backups must be tested regularly — an untested backup is not a backup. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Backup Strategies: The 3-2-1 Rule using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 16,
+      "type": "evidence",
+      "title": "Incident Response",
+      "main_idea": "Despite best efforts, security incidents will occur.",
+      "details": [
+        "Despite best efforts, security incidents will occur.",
+        "The ability to detect incidents quickly and respond effectively limits their impact — every minute of undetected intrusion is time for the attacker to steal more data, spread…",
+        "NIST SP 800-61 ( Computer Security Incident Handling Guide ) defines the incident response lifecycle as six phases:"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where incident response affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize incident response in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Despite best efforts, security incidents will occur.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Incident Response: Incident Response, Despite best efforts, security incidents will occur, The ability to detect incidents quickly and respond effectively limits their impact — every minute of undetected intrusion is time for the attacker to steal more data, spread…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Incident Response using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 17,
+      "type": "definition",
+      "title": "Preparation",
+      "main_idea": "Preparation occurs before any incident.",
+      "details": [
+        "Preparation occurs before any incident.",
+        "Preparation connects to risk, controls, and evidence.",
+        "Preparation connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where preparation affects users, data, or operations.",
+        "instructor_prompt": "What problem does preparation help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Preparation occurs before any incident.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Preparation: Preparation, Preparation occurs before any incident, Preparation connects to risk, controls, and evidence. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Preparation using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 18,
+      "type": "concept",
+      "title": "Detection and Analysis",
+      "main_idea": "The detection phase involves identifying indicators of compromise (IOCs) or unusual activity that suggests an incident has occurred.",
+      "details": [
+        "The detection phase involves identifying indicators of compromise (IOCs) or unusual activity that suggests an incident has occurred.",
+        "Sources include SIEM alerts, EDR detections, user reports, threat intelligence feeds, and external notifications (e.g., from CISA, a partner organization, or a security…",
+        "Analysis involves determining: What happened?",
+        "Is it a true positive or false positive?"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where detection and analysis affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize detection and analysis in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The detection phase involves identifying indicators of compromise…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Detection and Analysis: Detection and Analysis, The detection phase involves identifying indicators of compromise (IOCs) or unusual activity that suggests an incident has occurred, Sources include SIEM alerts, EDR detections, user reports, threat intelligence feeds, and external notifications (e. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Detection and Analysis using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 19,
+      "type": "application",
+      "title": "Containment",
+      "main_idea": "Containment limits the spread and impact of the incident.",
+      "details": [
+        "Containment limits the spread and impact of the incident.",
+        "Short-term containment may involve isolating affected systems (removing network access), blocking malicious IPs or domains, disabling compromised accounts, and preserving evidence.",
+        "Long-term containment involves implementing temporary fixes to allow business continuity while full eradication is prepared.",
+        "Warning — Evidence Preservation : Containment actions must be balanced against evidence preservation."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where containment affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Containment limits the spread and impact of the incident.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Containment: Containment, Containment limits the spread and impact of the incident, Short-term containment may involve isolating affected systems (removing network access), blocking malicious IPs or domains, disabling compromised accounts, and preserving evidence. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Containment using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 20,
+      "type": "evidence",
+      "title": "Eradication",
+      "main_idea": "Eradication removes the cause of the incident: deleting malware, closing exploited vulnerabilities, removing backdoors and persistence mechanisms (scheduled tasks, startup…",
+      "details": [
+        "Eradication removes the cause of the incident: deleting malware, closing exploited vulnerabilities, removing backdoors and persistence mechanisms (scheduled tasks, startup…",
+        "Eradication connects to risk, controls, and evidence.",
+        "Eradication connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where eradication affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize eradication in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Eradication removes the cause of the incident: deleting malware,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Eradication: Eradication, Eradication removes the cause of the incident: deleting malware, closing exploited vulnerabilities, removing backdoors and persistence mechanisms (scheduled tasks, startup…, Eradication connects to risk, controls, and evidence. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Eradication using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 21,
+      "type": "definition",
+      "title": "Recovery",
+      "main_idea": "Recovery restores affected systems to normal operation.",
+      "details": [
+        "Recovery restores affected systems to normal operation.",
+        "This involves restoring from known-clean backups, reimaging compromised systems (often preferable to trying to \"clean\" them in place), applying patches, and gradually restoring…",
+        "Recovery connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where recovery affects users, data, or operations.",
+        "instructor_prompt": "What problem does recovery help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Recovery restores affected systems to normal operation.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Recovery: Recovery, Recovery restores affected systems to normal operation, This involves restoring from known-clean backups, reimaging compromised systems (often preferable to trying to \"clean\" them in place), applying patches, and gradually restoring…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Recovery using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 22,
+      "type": "concept",
+      "title": "Post-Incident Activity: Lessons Learned",
+      "main_idea": "After recovery, the IR team conducts a thorough review: What happened?",
+      "details": [
+        "After recovery, the IR team conducts a thorough review: What happened?",
+        "What could have been done faster or better?",
+        "What controls would have prevented or limited the incident?",
+        "Lessons learned should result in concrete improvements to security controls, detection capabilities, and IR procedures."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where post-incident activity: lessons learned affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize post-incident activity: lessons learned in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: After recovery, the IR team conducts a thorough review: What happened?",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Post-Incident Activity: Lessons Learned: Post-Incident Activity: Lessons Learned, After recovery, the IR team conducts a thorough review: What happened?, What could have been done faster or better?. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Post-Incident Activity: Lessons Learned using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 23,
+      "type": "application",
+      "title": "Digital Forensics Basics",
+      "main_idea": "Digital forensics is the science of collecting, preserving, analyzing, and presenting digital evidence in a manner that maintains its integrity and legal admissibility.",
+      "details": [
+        "Digital forensics is the science of collecting, preserving, analyzing, and presenting digital evidence in a manner that maintains its integrity and legal admissibility.",
+        "Chain of Custody : Every piece of evidence must have a documented chain of custody — a record of who collected it, when, where, how it was stored, who accessed it, and how it was…",
+        "Breaks in chain of custody can render evidence inadmissible in legal proceedings.",
+        "Forensic Imaging : Forensic analysis is conducted on a bit-for-bit copy of the original evidence (forensic image), not on the original itself."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where digital forensics basics affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Digital forensics is the science of collecting, preserving,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Digital Forensics Basics: Digital Forensics Basics, Digital forensics is the science of collecting, preserving, analyzing, and presenting digital evidence in a manner that maintains its integrity and legal admissibility, Chain of Custody : Every piece of evidence must have a documented chain of custody — a record of who collected it, when, where, how it was stored, who accessed it, and how it was…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Digital Forensics Basics using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 24,
+      "type": "evidence",
+      "title": "Security Audits and Assessments",
+      "main_idea": "Security audits systematically evaluate whether security controls are in place, properly configured, and effective.",
+      "details": [
+        "Security audits systematically evaluate whether security controls are in place, properly configured, and effective.",
+        "Internal audits are conducted by organizational staff; external audits by independent third parties.",
+        "Types include: - Compliance audits : Verify adherence to specific regulatory requirements (HIPAA, PCI-DSS).",
+        "- Technical security assessments : Assess the technical security posture of systems (vulnerability scans, configuration reviews, penetration tests)."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where security audits and assessments affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize security audits and assessments in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Security audits systematically evaluate whether security controls are…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Security Audits and Assessments: Security Audits and Assessments, Security audits systematically evaluate whether security controls are in place, properly configured, and effective, Internal audits are conducted by organizational staff; external audits by independent third parties. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Security Audits and Assessments using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 25,
+      "type": "vocabulary",
+      "title": "Key terms to keep",
+      "main_idea": "Vocabulary becomes useful when students can connect terms to scenarios and evidence.",
+      "details": [
+        "Introduction",
+        "Information Security Risk Management",
+        "Asset Identification and Valuation",
+        "Threat Identification and Threat Intelligence"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where key terms to keep affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize key terms to keep in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Key terms to keep: Key terms to keep, Introduction, Information Security Risk Management. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Key terms to keep using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 26,
+      "type": "comparison",
+      "title": "Compare: Introduction vs. Information Security Risk Management",
+      "main_idea": "Comparing related ideas helps students avoid shallow memorization.",
+      "details": [
+        "Where Introduction applies.",
+        "Where Information Security Risk Management applies.",
+        "How the difference changes the security decision."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where compare: introduction vs. information security risk management affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize compare: introduction vs. information security risk management in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Where Introduction applies.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Compare: Introduction vs. Information Security Risk Management: Compare: Introduction vs. Information Security Risk Management, Where Introduction applies, Where Information Security Risk Management applies. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Compare: Introduction vs. Information Security Risk Management using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 27,
+      "type": "application",
+      "title": "Applied decision checkpoint",
+      "main_idea": "Students should translate concepts into a defensible security decision.",
+      "details": [
+        "Identify the asset or process at risk.",
+        "Choose a preventive, detective, or corrective control.",
+        "Explain what evidence would prove the control is working."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where applied decision checkpoint affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Identify the asset or process at risk.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Applied decision checkpoint: Applied decision checkpoint, Identify the asset or process at risk, Choose a preventive, detective, or corrective control. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Applied decision checkpoint using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 28,
+      "type": "review",
+      "title": "Review questions",
+      "main_idea": "Retrieval practice should ask students to define, compare, apply, and evaluate.",
+      "details": [
+        "Define one core concept in plain language.",
+        "Compare two controls or threats from the week.",
+        "Apply one idea to a campus or business system.",
+        "Evaluate why a solution might fail in practice."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where review questions affects users, data, or operations.",
+        "instructor_prompt": "What is the one sentence takeaway for review questions?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Define one core concept in plain language.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Review questions: Review questions, Define one core concept in plain language, Compare two controls or threats from the week. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Review questions using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 29,
+      "type": "bridge",
+      "title": "Bridge to lab and assessment",
+      "main_idea": "The reading should transfer into evidence-based lab work and written explanations.",
+      "details": [
+        "Collect evidence, not just screenshots.",
+        "Explain what the artifact proves.",
+        "Connect the proof back to risk and control selection."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where bridge to lab and assessment affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize bridge to lab and assessment in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Collect evidence, not just screenshots.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Bridge to lab and assessment: Bridge to lab and assessment, Collect evidence, not just screenshots, Explain what the artifact proves. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Bridge to lab and assessment using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 30,
+      "type": "closing",
+      "title": "Takeaway",
+      "main_idea": "The central takeaway from Week 14 is to reason from risk to evidence to action.",
+      "details": [
+        "Security Practices, Risk Management, and Compliance",
+        "Security is a decision process, not just a tool list.",
+        "Use the reading to justify practical choices."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 14 incident where takeaway affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize takeaway in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Security Practices, Risk Management, and Compliance",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Takeaway: Takeaway, Security Practices, Risk Management, and Compliance, Security is a decision process, not just a tool list. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Takeaway using evidence, scenario reasoning, and a concrete security takeaway."
+    }
+  ]
+}
