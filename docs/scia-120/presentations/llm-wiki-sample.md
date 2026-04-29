@@ -15,7 +15,7 @@ This is a sample **magazine-style HTML presentation** for introducing the LLM Wi
 
 -   :material-presentation-play: **Open full-screen deck**
 
-    <a class="md-button md-button--primary" href="llm-wiki-sample-deck/">Launch presentation</a>
+    <a class="md-button md-button--primary" href="../llm-wiki-sample-deck/">Launch presentation</a>
 
 -   :material-keyboard: **Controls**
 
@@ -23,5 +23,5 @@ This is a sample **magazine-style HTML presentation** for introducing the LLM Wi
 
 </div>
 
-<iframe src="llm-wiki-sample-deck/" style="width:100%; height:640px; border:1px solid #d0d7de; border-radius:12px; background:#0a1f3d;"></iframe>
+<iframe src="../llm-wiki-sample-deck/" style="width:100%; height:640px; border:1px solid #d0d7de; border-radius:12px; background:#0a1f3d;"></iframe>
 
