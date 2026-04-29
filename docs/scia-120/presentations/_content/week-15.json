@@ -1,0 +1,636 @@
+{
+  "week": 15,
+  "title": "Emerging Threats and the Future of Cybersecurity",
+  "source": "scia-120/chapter-15.md",
+  "author": "Dr. Zhijiang Chen",
+  "institution": "Frostburg State University",
+  "summary": "In the preceding fourteen chapters, we have built a comprehensive foundation: from the principles of confidentiality, integrity, and availability, through cryptography, networking, operating system security, application vulnerabilities, identity management, cloud security, and risk management. This final chapter looks forward — examining how the threat…",
+  "key_concepts": [
+    "Introduction",
+    "The Evolving Threat Landscape",
+    "Advanced Persistent Threats (APTs)",
+    "APT Tactics, Techniques, and Procedures (TTPs)",
+    "Supply Chain Attacks",
+    "SolarWinds (2020)",
+    "XZ Utils Backdoor (2024)",
+    "Zero-Day Vulnerabilities"
+  ],
+  "slides": [
+    {
+      "number": 1,
+      "type": "cover",
+      "title": "Emerging Threats and the Future of Cybersecurity",
+      "main_idea": "Introduce Week 15: Emerging Threats and the Future of Cybersecurity.",
+      "details": [
+        "This final chapter looks forward — examining how the threat landscape is evolving, what new technologies are reshaping both offensive and defensive security, and what the field will…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where emerging threats and the future of cybersecurity affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize emerging threats and the future of cybersecurity in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: This final chapter looks forward — examining how the threat landscape…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Tech-dark line-art hero for Week 15: Emerging Threats and the Future of Cybersecurity, with networks, locks, shields, data paths, and classroom learning cues.",
+      "visual_mode": "line_art",
+      "speaker_goal": "Teach Emerging Threats and the Future of Cybersecurity using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 2,
+      "type": "agenda",
+      "title": "Overall roadmap",
+      "main_idea": "The week moves from core definitions to practical security decisions.",
+      "details": [
+        "Introduction",
+        "The Evolving Threat Landscape",
+        "Advanced Persistent Threats (APTs)",
+        "APT Tactics, Techniques, and Procedures (TTPs)"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where overall roadmap affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize overall roadmap in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art roadmap showing the major learning path for Overall roadmap; connected nodes represent reading concepts and classroom application.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Overall roadmap using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 3,
+      "type": "objectives",
+      "title": "Learning objectives",
+      "main_idea": "Students should explain, apply, and evaluate the week’s main security ideas.",
+      "details": [
+        "Explain Introduction.",
+        "Explain The Evolving Threat Landscape.",
+        "Explain Advanced Persistent Threats (APTs).",
+        "Explain APT Tactics, Techniques, and Procedures (TTPs)."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where learning objectives affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize learning objectives in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Explain Introduction.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Learning objectives: Learning objectives, Explain Introduction, Explain The Evolving Threat Landscape. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Learning objectives using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 4,
+      "type": "application",
+      "title": "Opening scenario",
+      "main_idea": "Use a realistic scenario to anchor Emerging Threats and the Future of Cybersecurity in operational decision-making.",
+      "details": [
+        "This final chapter looks forward — examining how the threat landscape is evolving, what new technologies are reshaping both offensive and defensive security, and what the field…",
+        "It also steps back to reflect on the interconnectedness of everything we have studied.",
+        "Cybersecurity is not a solved problem."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where opening scenario affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: This final chapter looks forward — examining how the threat landscape…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Opening scenario: Opening scenario, This final chapter looks forward — examining how the threat landscape is evolving, what new technologies are reshaping both offensive and defensive security, and what the field…, It also steps back to reflect on the interconnectedness of everything we have studied. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Opening scenario using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 5,
+      "type": "definition",
+      "title": "Introduction",
+      "main_idea": "This final chapter looks forward — examining how the threat landscape is evolving, what new technologies are reshaping both offensive and defensive security, and what the field…",
+      "details": [
+        "This final chapter looks forward — examining how the threat landscape is evolving, what new technologies are reshaping both offensive and defensive security, and what the field…",
+        "It also steps back to reflect on the interconnectedness of everything we have studied.",
+        "Cybersecurity is not a solved problem.",
+        "It is a dynamic, adversarial discipline where the frontlines shift constantly."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where introduction affects users, data, or operations.",
+        "instructor_prompt": "What problem does introduction help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: This final chapter looks forward — examining how the threat landscape…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Introduction: Introduction, This final chapter looks forward — examining how the threat landscape is evolving, what new technologies are reshaping both offensive and defensive security, and what the field…, It also steps back to reflect on the interconnectedness of everything we have studied. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Introduction using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 6,
+      "type": "concept",
+      "title": "The Evolving Threat Landscape",
+      "main_idea": "The cybersecurity threat landscape has shifted dramatically over the past two decades.",
+      "details": [
+        "The cybersecurity threat landscape has shifted dramatically over the past two decades.",
+        "Early attacks were largely opportunistic — script kiddies exploiting publicly available tools for notoriety or disruption.",
+        "In 2023, ransomware payments globally exceeded $1 billion for the first time.",
+        "- Nation-states are persistent and capable : Government-sponsored hacking groups conduct long-term espionage, intellectual property theft, and pre-positioning in critical…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where the evolving threat landscape affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize the evolving threat landscape in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The cybersecurity threat landscape has shifted dramatically over the…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Evolving Threat Landscape: The Evolving Threat Landscape, The cybersecurity threat landscape has shifted dramatically over the past two decades, Early attacks were largely opportunistic — script kiddies exploiting publicly available tools for notoriety or disruption. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Evolving Threat Landscape using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 7,
+      "type": "application",
+      "title": "Advanced Persistent Threats (APTs)",
+      "main_idea": "The defining characteristics of APTs are: - Advanced : Use of custom-developed malware, zero-day exploits, and sophisticated techniques to evade detection.",
+      "details": [
+        "The defining characteristics of APTs are: - Advanced : Use of custom-developed malware, zero-day exploits, and sophisticated techniques to evade detection.",
+        "- Persistent : Long-term access maintained over months or years, using stealthy techniques to avoid detection while continuously pursuing objectives.",
+        "- Targeted : Not opportunistic mass attacks, but carefully selected targets — defense contractors, government agencies, critical infrastructure operators, research institutions."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where advanced persistent threats (apts) affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The defining characteristics of APTs are: - Advanced : Use of…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Advanced Persistent Threats (APTs): Advanced Persistent Threats (APTs), The defining characteristics of APTs are: - Advanced : Use of custom-developed malware, zero-day exploits, and sophisticated techniques to evade detection, - Persistent : Long-term access maintained over months or years, using stealthy techniques to avoid detection while continuously pursuing objectives. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Advanced Persistent Threats (APTs) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 8,
+      "type": "evidence",
+      "title": "APT Tactics, Techniques, and Procedures (TTPs)",
+      "main_idea": "The MITRE ATT&CK framework (Adversarial Tactics, Techniques, and Common Knowledge) is the most comprehensive publicly available knowledge base of APT behavior.",
+      "details": [
+        "The MITRE ATT&CK framework (Adversarial Tactics, Techniques, and Common Knowledge) is the most comprehensive publicly available knowledge base of APT behavior.",
+        "Notable APT groups include APT28/Fancy Bear (Russia, GRU), APT29/Cozy Bear (Russia, SVR), APT41 (China, dual-purpose espionage and financial crime), Lazarus Group (North Korea,…",
+        "Each has distinct TTPs, targets, and objectives."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where apt tactics, techniques, and procedures (ttps) affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize apt tactics, techniques, and procedures (ttps) in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The MITRE ATT&CK framework (Adversarial Tactics, Techniques, and…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for APT Tactics, Techniques, and Procedures (TTPs): APT Tactics, Techniques, and Procedures (TTPs), The MITRE ATT&CK framework (Adversarial Tactics, Techniques, and Common Knowledge) is the most comprehensive publicly available knowledge base of APT behavior, Notable APT groups include APT28/Fancy Bear (Russia, GRU), APT29/Cozy Bear (Russia, SVR), APT41 (China, dual-purpose espionage and financial crime), Lazarus Group (North Korea,…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach APT Tactics, Techniques, and Procedures (TTPs) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 9,
+      "type": "definition",
+      "title": "Supply Chain Attacks",
+      "main_idea": "A supply chain attack targets the software or hardware supply chain rather than the end target directly.",
+      "details": [
+        "A supply chain attack targets the software or hardware supply chain rather than the end target directly.",
+        "By compromising a supplier's product or update mechanism, attackers can distribute malware or backdoors to thousands of downstream customers simultaneously, bypassing the…",
+        "Supply Chain Attacks connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where supply chain attacks affects users, data, or operations.",
+        "instructor_prompt": "What problem does supply chain attacks help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A supply chain attack targets the software or hardware supply chain…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Supply Chain Attacks: Supply Chain Attacks, A supply chain attack targets the software or hardware supply chain rather than the end target directly, By compromising a supplier's product or update mechanism, attackers can distribute malware or backdoors to thousands of downstream customers simultaneously, bypassing the…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Supply Chain Attacks using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 10,
+      "type": "concept",
+      "title": "SolarWinds (2020)",
+      "main_idea": "The SolarWinds attack, attributed to Russia's SVR intelligence service (APT29), is considered the most sophisticated supply chain attack ever publicly disclosed.",
+      "details": [
+        "The SolarWinds attack, attributed to Russia's SVR intelligence service (APT29), is considered the most sophisticated supply chain attack ever publicly disclosed.",
+        "Attackers compromised SolarWinds' build environment and injected malicious code (dubbed \"SUNBURST\") into a legitimate software update for Orion, SolarWinds' widely-used IT…",
+        "Approximately 18,000 organizations installed the backdoored update, including the U.S.",
+        "Treasury Department, Department of Justice, Department of Homeland Security, NSA, and major technology companies."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where solarwinds (2020) affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize solarwinds (2020) in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The SolarWinds attack, attributed to Russia's SVR intelligence…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for SolarWinds (2020): SolarWinds (2020), The SolarWinds attack, attributed to Russia's SVR intelligence service (APT29), is considered the most sophisticated supply chain attack ever publicly disclosed, Attackers compromised SolarWinds' build environment and injected malicious code (dubbed \"SUNBURST\") into a legitimate software update for Orion, SolarWinds' widely-used IT…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach SolarWinds (2020) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 11,
+      "type": "application",
+      "title": "XZ Utils Backdoor (2024)",
+      "main_idea": "In March 2024, a Microsoft employee named Andres Freund discovered a backdoor in XZ Utils, a widely-used data compression library present in most Linux distributions.",
+      "details": [
+        "In March 2024, a Microsoft employee named Andres Freund discovered a backdoor in XZ Utils, a widely-used data compression library present in most Linux distributions.",
+        "The XZ Utils incident revealed the vulnerability of the open-source software supply chain and the sophistication of nation-state social engineering operations targeting…",
+        "It also highlighted the extraordinary role that individual vigilance plays in security: the backdoor was caught by a single developer noticing a 500ms performance anomaly in SSH…",
+        "Supply chain defenses include software bill of materials (SBOMs), code signing and binary transparency, vendor security assessments, and monitoring of open-source dependencies for…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where xz utils backdoor (2024) affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: In March 2024, a Microsoft employee named Andres Freund discovered a…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for XZ Utils Backdoor (2024): XZ Utils Backdoor (2024), In March 2024, a Microsoft employee named Andres Freund discovered a backdoor in XZ Utils, a widely-used data compression library present in most Linux distributions, The XZ Utils incident revealed the vulnerability of the open-source software supply chain and the sophistication of nation-state social engineering operations targeting…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach XZ Utils Backdoor (2024) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 12,
+      "type": "evidence",
+      "title": "Zero-Day Vulnerabilities",
+      "main_idea": "A zero-day vulnerability is a security flaw that is unknown to the software vendor and for which no patch exists.",
+      "details": [
+        "A zero-day vulnerability is a security flaw that is unknown to the software vendor and for which no patch exists.",
+        "The term \"zero-day\" refers to the fact that developers have had zero days to address the vulnerability.",
+        "Zero-days are the most valuable type of vulnerability in the exploit ecosystem."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where zero-day vulnerabilities affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize zero-day vulnerabilities in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A zero-day vulnerability is a security flaw that is unknown to the…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Zero-Day Vulnerabilities: Zero-Day Vulnerabilities, A zero-day vulnerability is a security flaw that is unknown to the software vendor and for which no patch exists, The term \"zero-day\" refers to the fact that developers have had zero days to address the vulnerability. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Zero-Day Vulnerabilities using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 13,
+      "type": "definition",
+      "title": "Discovery and Disclosure",
+      "main_idea": "Zero-days are discovered through security research: manual code review, fuzzing (automated generation of malformed inputs to trigger unexpected behavior), and binary analysis.",
+      "details": [
+        "Zero-days are discovered through security research: manual code review, fuzzing (automated generation of malformed inputs to trigger unexpected behavior), and binary analysis.",
+        "This balances getting systems patched while limiting exposure.",
+        "- Full disclosure : Publish all details immediately, pressuring vendors to patch quickly but potentially enabling exploitation before patches are available.",
+        "- Silent disclosure / Keeping it private : Not disclosing at all — used by government intelligence agencies to preserve offensive capabilities."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where discovery and disclosure affects users, data, or operations.",
+        "instructor_prompt": "What problem does discovery and disclosure help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Zero-days are discovered through security research: manual code…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Discovery and Disclosure: Discovery and Disclosure, Zero-days are discovered through security research: manual code review, fuzzing (automated generation of malformed inputs to trigger unexpected behavior), and binary analysis, This balances getting systems patched while limiting exposure. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Discovery and Disclosure using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 14,
+      "type": "concept",
+      "title": "Exploit Markets",
+      "main_idea": "A gray and black market exists for zero-day exploits.",
+      "details": [
+        "A gray and black market exists for zero-day exploits.",
+        "Commercial vulnerability brokers like Zerodium publicly advertise prices: $2.5 million for iOS full-chain exploits, $1 million for Android, $200,000–$500,000 for popular desktop…",
+        "Government agencies (including Western intelligence agencies through programs sometimes called \"Vulnerability Equities Process\") purchase zero-days for offensive use.",
+        "Criminal groups pay substantial sums for vulnerabilities targeting banking and industrial systems."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where exploit markets affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize exploit markets in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A gray and black market exists for zero-day exploits.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Exploit Markets: Exploit Markets, A gray and black market exists for zero-day exploits, Commercial vulnerability brokers like Zerodium publicly advertise prices: $2. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Exploit Markets using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 15,
+      "type": "application",
+      "title": "Artificial Intelligence in Cybersecurity",
+      "main_idea": "AI and machine learning are transforming cybersecurity from both sides of the offensive-defensive divide.",
+      "details": [
+        "AI and machine learning are transforming cybersecurity from both sides of the offensive-defensive divide.",
+        "Artificial Intelligence in Cybersecurity connects to risk, controls, and evidence.",
+        "Artificial Intelligence in Cybersecurity connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where artificial intelligence in cybersecurity affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: AI and machine learning are transforming cybersecurity from both…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Artificial Intelligence in Cybersecurity: Artificial Intelligence in Cybersecurity, AI and machine learning are transforming cybersecurity from both sides of the offensive-defensive divide, Artificial Intelligence in Cybersecurity connects to risk, controls, and evidence. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Artificial Intelligence in Cybersecurity using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 16,
+      "type": "evidence",
+      "title": "Offensive Applications of AI",
+      "main_idea": "AI-Generated Phishing : Large Language Models (LLMs) like GPT-4 can generate highly convincing, personalized phishing emails at scale — without grammatical errors or the stilted…",
+      "details": [
+        "AI-Generated Phishing : Large Language Models (LLMs) like GPT-4 can generate highly convincing, personalized phishing emails at scale — without grammatical errors or the stilted…",
+        "AI can tailor emails using publicly available information about targets (LinkedIn profiles, company blogs) to make them more convincing.",
+        "Deepfakes : AI-generated synthetic media — fake video and audio — is being used in business email compromise (BEC) and fraud schemes.",
+        "In 2024, a Hong Kong finance employee was defrauded of $25 million after participating in a video call with deepfake versions of the company's CFO and colleagues."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where offensive applications of ai affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize offensive applications of ai in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: AI-Generated Phishing : Large Language Models (LLMs) like GPT-4 can…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Offensive Applications of AI: Offensive Applications of AI, AI-Generated Phishing : Large Language Models (LLMs) like GPT-4 can generate highly convincing, personalized phishing emails at scale — without grammatical errors or the stilted…, AI can tailor emails using publicly available information about targets (LinkedIn profiles, company blogs) to make them more convincing. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Offensive Applications of AI using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 17,
+      "type": "definition",
+      "title": "Defensive Applications of AI",
+      "main_idea": "Anomaly Detection : ML models can learn baselines of normal network traffic, user behavior, and system activity, and flag deviations that may indicate compromise.",
+      "details": [
+        "Anomaly Detection : ML models can learn baselines of normal network traffic, user behavior, and system activity, and flag deviations that may indicate compromise.",
+        "Unlike signature-based detection (which only detects known threats), anomaly detection can surface novel attack patterns.",
+        "Products like Darktrace, Vectra AI, and Microsoft Sentinel Fusion use ML for this purpose.",
+        "SOAR reduces analyst workload and MTTD/MTTR."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where defensive applications of ai affects users, data, or operations.",
+        "instructor_prompt": "What problem does defensive applications of ai help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Anomaly Detection : ML models can learn baselines of normal network…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Defensive Applications of AI: Defensive Applications of AI, Anomaly Detection : ML models can learn baselines of normal network traffic, user behavior, and system activity, and flag deviations that may indicate compromise, Unlike signature-based detection (which only detects known threats), anomaly detection can surface novel attack patterns. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Defensive Applications of AI using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 18,
+      "type": "concept",
+      "title": "Quantum Computing and Post-Quantum Cryptography",
+      "main_idea": "Quantum computers leverage quantum mechanical phenomena (superposition, entanglement) to perform certain computations exponentially faster than classical computers.",
+      "details": [
+        "Quantum computers leverage quantum mechanical phenomena (superposition, entanglement) to perform certain computations exponentially faster than classical computers.",
+        "For cybersecurity, the most significant implication is Shor's algorithm, which can factor large integers and solve discrete logarithm problems in polynomial time on a sufficiently…",
+        "The Cryptographic Threat : Shor's algorithm would break RSA and ECC (Elliptic Curve Cryptography) — the asymmetric cryptography underpinning TLS, digital signatures, key exchange,…",
+        "An adversary with a cryptographically relevant quantum computer (CRQC) could decrypt all past and present communications encrypted with these algorithms."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where quantum computing and post-quantum cryptography affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize quantum computing and post-quantum cryptography in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Quantum computers leverage quantum mechanical phenomena…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Quantum Computing and Post-Quantum Cryptography: Quantum Computing and Post-Quantum Cryptography, Quantum computers leverage quantum mechanical phenomena (superposition, entanglement) to perform certain computations exponentially faster than classical computers, For cybersecurity, the most significant implication is Shor's algorithm, which can factor large integers and solve discrete logarithm problems in polynomial time on a sufficiently…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Quantum Computing and Post-Quantum Cryptography using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 19,
+      "type": "application",
+      "title": "Post-Quantum Cryptography Standards",
+      "main_idea": "The National Institute of Standards and Technology (NIST) conducted a multi-year Post-Quantum Cryptography (PQC) standardization competition.",
+      "details": [
+        "The National Institute of Standards and Technology (NIST) conducted a multi-year Post-Quantum Cryptography (PQC) standardization competition.",
+        "In 2024, NIST published the first post-quantum cryptography standards: - CRYSTALS-Kyber (ML-KEM, FIPS 203) : A key encapsulation mechanism (KEM) based on the hardness of the…",
+        "It replaces RSA and ECDH for key exchange in protocols like TLS.",
+        "- CRYSTALS-Dilithium (ML-DSA, FIPS 204) : A digital signature algorithm based on MLWE/MSIS problems."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where post-quantum cryptography standards affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The National Institute of Standards and Technology (NIST) conducted a…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Post-Quantum Cryptography Standards: Post-Quantum Cryptography Standards, The National Institute of Standards and Technology (NIST) conducted a multi-year Post-Quantum Cryptography (PQC) standardization competition, In 2024, NIST published the first post-quantum cryptography standards: - CRYSTALS-Kyber (ML-KEM, FIPS 203) : A key encapsulation mechanism (KEM) based on the hardness of the…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Post-Quantum Cryptography Standards using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 20,
+      "type": "evidence",
+      "title": "IoT and OT/ICS/SCADA Security",
+      "main_idea": "The Internet of Things (IoT) encompasses billions of embedded devices — smart thermostats, medical devices, industrial sensors, cameras, vehicles, and consumer electronics —…",
+      "details": [
+        "The Internet of Things (IoT) encompasses billions of embedded devices — smart thermostats, medical devices, industrial sensors, cameras, vehicles, and consumer electronics —…",
+        "These devices dramatically expand the attack surface while typically being designed with minimal security: - Default credentials : Many IoT devices ship with default usernames and…",
+        "The Mirai botnet (2016) compromised hundreds of thousands of IoT devices using default credentials, launching a DDoS attack that took down major internet infrastructure including…",
+        "- No patch mechanism : Many IoT devices have no mechanism for receiving security updates, leaving them permanently vulnerable to known exploits."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where iot and ot/ics/scada security affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize iot and ot/ics/scada security in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The Internet of Things (IoT) encompasses billions of embedded devices…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for IoT and OT/ICS/SCADA Security: IoT and OT/ICS/SCADA Security, The Internet of Things (IoT) encompasses billions of embedded devices — smart thermostats, medical devices, industrial sensors, cameras, vehicles, and consumer electronics —…, These devices dramatically expand the attack surface while typically being designed with minimal security: - Default credentials : Many IoT devices ship with default usernames and…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach IoT and OT/ICS/SCADA Security using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 21,
+      "type": "definition",
+      "title": "Autonomous Vehicles and Cyber-Physical Systems",
+      "main_idea": "Cyber-physical systems (CPS) tightly couple computation with physical processes.",
+      "details": [
+        "Cyber-physical systems (CPS) tightly couple computation with physical processes.",
+        "Autonomous vehicles are the most visible example: a vehicle whose steering, braking, and acceleration are controlled by software connected to sensors, GPS, and potentially to…",
+        "Security vulnerabilities in CPS have direct physical safety implications.",
+        "Researchers demonstrated remote hacking of a Jeep Cherokee in 2015, taking control of its steering and brakes over the cellular network."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where autonomous vehicles and cyber-physical systems affects users, data, or operations.",
+        "instructor_prompt": "What problem does autonomous vehicles and cyber-physical systems help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Cyber-physical systems (CPS) tightly couple computation with physical…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Autonomous Vehicles and Cyber-Physical Systems: Autonomous Vehicles and Cyber-Physical Systems, Cyber-physical systems (CPS) tightly couple computation with physical processes, Autonomous vehicles are the most visible example: a vehicle whose steering, braking, and acceleration are controlled by software connected to sensors, GPS, and potentially to…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Autonomous Vehicles and Cyber-Physical Systems using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 22,
+      "type": "concept",
+      "title": "5G Security Implications",
+      "main_idea": "5G networks offer dramatically higher bandwidth, lower latency, and the ability to support massive numbers of connected devices — enabling smart cities, autonomous vehicles,…",
+      "details": [
+        "5G networks offer dramatically higher bandwidth, lower latency, and the ability to support massive numbers of connected devices — enabling smart cities, autonomous vehicles,…",
+        "The SS7 vulnerabilities that enable SIM-based OTP interception (discussed in Chapter 11) are less relevant in native 5G networks.",
+        "New risks : 5G's increased reliance on software-defined networking and virtualization (replacing specialized hardware with software running on commodity servers) introduces the…",
+        "Concerns have been raised about 5G equipment from vendors with ties to foreign governments (notably Huawei and ZTE) potentially containing backdoors or vulnerabilities that could…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where 5g security implications affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize 5g security implications in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: 5G networks offer dramatically higher bandwidth, lower latency, and…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for 5G Security Implications: 5G Security Implications, 5G networks offer dramatically higher bandwidth, lower latency, and the ability to support massive numbers of connected devices — enabling smart cities, autonomous vehicles,…, The SS7 vulnerabilities that enable SIM-based OTP interception (discussed in Chapter 11) are less relevant in native 5G networks. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach 5G Security Implications using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 23,
+      "type": "application",
+      "title": "Cybersecurity Workforce Trends and Career Paths",
+      "main_idea": "The global cybersecurity workforce shortage remains severe.",
+      "details": [
+        "The global cybersecurity workforce shortage remains severe.",
+        "Estimates put the gap between cybersecurity positions available and qualified professionals at several million unfilled roles worldwide.",
+        "This shortage reflects not only technical complexity but also the interdisciplinary nature of the field — effective security professionals need technical skills, business acumen,…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where cybersecurity workforce trends and career paths affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The global cybersecurity workforce shortage remains severe.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Cybersecurity Workforce Trends and Career Paths: Cybersecurity Workforce Trends and Career Paths, The global cybersecurity workforce shortage remains severe, Estimates put the gap between cybersecurity positions available and qualified professionals at several million unfilled roles worldwide. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Cybersecurity Workforce Trends and Career Paths using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 24,
+      "type": "evidence",
+      "title": "Career Paths in Cybersecurity",
+      "main_idea": "Security Operations / SOC Analyst (Tier 1–3) : Monitor security alerts, investigate incidents, and escalate true positives.",
+      "details": [
+        "Security Operations / SOC Analyst (Tier 1–3) : Monitor security alerts, investigate incidents, and escalate true positives.",
+        "Entry-level Tier 1 analysts perform triage; senior Tier 3 analysts handle complex incident investigation and threat hunting.",
+        "Relevant certifications: CompTIA Security+, CompTIA CySA+, GCIA, GCIH.",
+        "Penetration Tester / Red Team : Perform authorized attacks against organizations to identify vulnerabilities."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where career paths in cybersecurity affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize career paths in cybersecurity in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Security Operations / SOC Analyst (Tier 1–3) : Monitor security…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Career Paths in Cybersecurity: Career Paths in Cybersecurity, Security Operations / SOC Analyst (Tier 1–3) : Monitor security alerts, investigate incidents, and escalate true positives, Entry-level Tier 1 analysts perform triage; senior Tier 3 analysts handle complex incident investigation and threat hunting. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Career Paths in Cybersecurity using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 25,
+      "type": "vocabulary",
+      "title": "Key terms to keep",
+      "main_idea": "Vocabulary becomes useful when students can connect terms to scenarios and evidence.",
+      "details": [
+        "Introduction",
+        "The Evolving Threat Landscape",
+        "Advanced Persistent Threats (APTs)",
+        "APT Tactics, Techniques, and Procedures (TTPs)"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where key terms to keep affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize key terms to keep in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Key terms to keep: Key terms to keep, Introduction, The Evolving Threat Landscape. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Key terms to keep using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 26,
+      "type": "comparison",
+      "title": "Compare: Introduction vs. The Evolving Threat Landscape",
+      "main_idea": "Comparing related ideas helps students avoid shallow memorization.",
+      "details": [
+        "Where Introduction applies.",
+        "Where The Evolving Threat Landscape applies.",
+        "How the difference changes the security decision."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where compare: introduction vs. the evolving threat landscape affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize compare: introduction vs. the evolving threat landscape in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Where Introduction applies.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Compare: Introduction vs. The Evolving Threat Landscape: Compare: Introduction vs. The Evolving Threat Landscape, Where Introduction applies, Where The Evolving Threat Landscape applies. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Compare: Introduction vs. The Evolving Threat Landscape using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 27,
+      "type": "application",
+      "title": "Applied decision checkpoint",
+      "main_idea": "Students should translate concepts into a defensible security decision.",
+      "details": [
+        "Identify the asset or process at risk.",
+        "Choose a preventive, detective, or corrective control.",
+        "Explain what evidence would prove the control is working."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where applied decision checkpoint affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Identify the asset or process at risk.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Applied decision checkpoint: Applied decision checkpoint, Identify the asset or process at risk, Choose a preventive, detective, or corrective control. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Applied decision checkpoint using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 28,
+      "type": "review",
+      "title": "Review questions",
+      "main_idea": "Retrieval practice should ask students to define, compare, apply, and evaluate.",
+      "details": [
+        "Define one core concept in plain language.",
+        "Compare two controls or threats from the week.",
+        "Apply one idea to a campus or business system.",
+        "Evaluate why a solution might fail in practice."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where review questions affects users, data, or operations.",
+        "instructor_prompt": "What is the one sentence takeaway for review questions?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Define one core concept in plain language.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Review questions: Review questions, Define one core concept in plain language, Compare two controls or threats from the week. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Review questions using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 29,
+      "type": "bridge",
+      "title": "Bridge to lab and assessment",
+      "main_idea": "The reading should transfer into evidence-based lab work and written explanations.",
+      "details": [
+        "Collect evidence, not just screenshots.",
+        "Explain what the artifact proves.",
+        "Connect the proof back to risk and control selection."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where bridge to lab and assessment affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize bridge to lab and assessment in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Collect evidence, not just screenshots.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Bridge to lab and assessment: Bridge to lab and assessment, Collect evidence, not just screenshots, Explain what the artifact proves. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Bridge to lab and assessment using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 30,
+      "type": "closing",
+      "title": "Takeaway",
+      "main_idea": "The central takeaway from Week 15 is to reason from risk to evidence to action.",
+      "details": [
+        "Emerging Threats and the Future of Cybersecurity",
+        "Security is a decision process, not just a tool list.",
+        "Use the reading to justify practical choices."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 15 incident where takeaway affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize takeaway in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Emerging Threats and the Future of Cybersecurity",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Takeaway: Takeaway, Emerging Threats and the Future of Cybersecurity, Security is a decision process, not just a tool list. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Takeaway using evidence, scenario reasoning, and a concrete security takeaway."
+    }
+  ]
+}

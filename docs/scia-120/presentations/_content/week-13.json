@@ -1,0 +1,636 @@
+{
+  "week": 13,
+  "title": "Cloud Computing Security",
+  "source": "scia-120/chapter-13.md",
+  "author": "Dr. Zhijiang Chen",
+  "institution": "Frostburg State University",
+  "summary": "Cloud computing has fundamentally transformed how organizations build, deploy, and manage information systems. What once required months of procurement, physical hardware installation, and data center operations now takes minutes — and can be provisioned, scaled, or decommissioned through an API call or a web console. Amazon Web Services (AWS), Microsoft…",
+  "key_concepts": [
+    "Introduction",
+    "Cloud Service Models",
+    "Infrastructure as a Service (IaaS)",
+    "Platform as a Service (PaaS)",
+    "Software as a Service (SaaS)",
+    "The Shared Responsibility Model",
+    "Cloud Deployment Models",
+    "Misconfiguration"
+  ],
+  "slides": [
+    {
+      "number": 1,
+      "type": "cover",
+      "title": "Cloud Computing Security",
+      "main_idea": "Introduce Week 13: Cloud Computing Security.",
+      "details": [
+        "Cloud computing has fundamentally transformed how organizations build, deploy, and manage information systems."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where cloud computing security affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize cloud computing security in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Cloud computing has fundamentally transformed how organizations…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Tech-dark line-art hero for Week 13: Cloud Computing Security, with networks, locks, shields, data paths, and classroom learning cues.",
+      "visual_mode": "line_art",
+      "speaker_goal": "Teach Cloud Computing Security using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 2,
+      "type": "agenda",
+      "title": "Overall roadmap",
+      "main_idea": "The week moves from core definitions to practical security decisions.",
+      "details": [
+        "Introduction",
+        "Cloud Service Models",
+        "Infrastructure as a Service (IaaS)",
+        "Platform as a Service (PaaS)"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where overall roadmap affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize overall roadmap in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art roadmap showing the major learning path for Overall roadmap; connected nodes represent reading concepts and classroom application.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Overall roadmap using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 3,
+      "type": "objectives",
+      "title": "Learning objectives",
+      "main_idea": "Students should explain, apply, and evaluate the week’s main security ideas.",
+      "details": [
+        "Explain Introduction.",
+        "Explain Cloud Service Models.",
+        "Explain Infrastructure as a Service (IaaS).",
+        "Explain Platform as a Service (PaaS)."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where learning objectives affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize learning objectives in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Explain Introduction.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Learning objectives: Learning objectives, Explain Introduction, Explain Cloud Service Models. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Learning objectives using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 4,
+      "type": "application",
+      "title": "Opening scenario",
+      "main_idea": "Use a realistic scenario to anchor Cloud Computing Security in operational decision-making.",
+      "details": [
+        "Cloud computing has fundamentally transformed how organizations build, deploy, and manage information systems.",
+        "What once required months of procurement, physical hardware installation, and data center operations now takes minutes — and can be provisioned, scaled, or decommissioned through…",
+        "Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP) collectively host the workloads of the world's most critical organizations: governments, hospitals,…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where opening scenario affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Cloud computing has fundamentally transformed how organizations…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Opening scenario: Opening scenario, Cloud computing has fundamentally transformed how organizations build, deploy, and manage information systems, What once required months of procurement, physical hardware installation, and data center operations now takes minutes — and can be provisioned, scaled, or decommissioned through…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Opening scenario using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 5,
+      "type": "definition",
+      "title": "Introduction",
+      "main_idea": "Cloud computing has fundamentally transformed how organizations build, deploy, and manage information systems.",
+      "details": [
+        "Cloud computing has fundamentally transformed how organizations build, deploy, and manage information systems.",
+        "What once required months of procurement, physical hardware installation, and data center operations now takes minutes — and can be provisioned, scaled, or decommissioned through…",
+        "Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP) collectively host the workloads of the world's most critical organizations: governments, hospitals,…",
+        "This shift in infrastructure brings enormous operational benefits but also introduces new and subtle security risks."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where introduction affects users, data, or operations.",
+        "instructor_prompt": "What problem does introduction help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Cloud computing has fundamentally transformed how organizations…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Introduction: Introduction, Cloud computing has fundamentally transformed how organizations build, deploy, and manage information systems, What once required months of procurement, physical hardware installation, and data center operations now takes minutes — and can be provisioned, scaled, or decommissioned through…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Introduction using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 6,
+      "type": "concept",
+      "title": "Cloud Service Models",
+      "main_idea": "Cloud services are typically classified into three models, which differ in what the cloud provider manages versus what the customer is responsible for:",
+      "details": [
+        "Cloud services are typically classified into three models, which differ in what the cloud provider manages versus what the customer is responsible for:",
+        "Cloud Service Models connects to risk, controls, and evidence.",
+        "Cloud Service Models connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where cloud service models affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize cloud service models in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Cloud services are typically classified into three models, which…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Cloud Service Models: Cloud Service Models, Cloud services are typically classified into three models, which differ in what the cloud provider manages versus what the customer is responsible for:, Cloud Service Models connects to risk, controls, and evidence. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Cloud Service Models using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 7,
+      "type": "application",
+      "title": "Infrastructure as a Service (IaaS)",
+      "main_idea": "IaaS provides virtualized computing infrastructure: virtual machines, block storage volumes, virtual networks, and load balancers.",
+      "details": [
+        "IaaS provides virtualized computing infrastructure: virtual machines, block storage volumes, virtual networks, and load balancers.",
+        "The customer provisions and manages operating systems, middleware, applications, and data.",
+        "The provider manages the physical hardware, hypervisor, and data center infrastructure.",
+        "Examples: AWS EC2, Azure Virtual Machines, Google Compute Engine, AWS S3 (object storage), Azure Blob Storage."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where infrastructure as a service (iaas) affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: IaaS provides virtualized computing infrastructure: virtual machines,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Infrastructure as a Service (IaaS): Infrastructure as a Service (IaaS), IaaS provides virtualized computing infrastructure: virtual machines, block storage volumes, virtual networks, and load balancers, The customer provisions and manages operating systems, middleware, applications, and data. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Infrastructure as a Service (IaaS) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 8,
+      "type": "evidence",
+      "title": "Platform as a Service (PaaS)",
+      "main_idea": "PaaS provides a managed platform for deploying applications, abstracting away OS management, runtime maintenance, and infrastructure scaling.",
+      "details": [
+        "PaaS provides a managed platform for deploying applications, abstracting away OS management, runtime maintenance, and infrastructure scaling.",
+        "The customer deploys their application code and data; the provider manages everything below: the OS, runtime, middleware, and infrastructure.",
+        "Examples: AWS Elastic Beanstalk, Azure App Service, Google App Engine, AWS RDS (managed database), Heroku.",
+        "PaaS shifts significant security responsibility to the provider — the customer no longer patches the OS or manages the runtime."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where platform as a service (paas) affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize platform as a service (paas) in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: PaaS provides a managed platform for deploying applications,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Platform as a Service (PaaS): Platform as a Service (PaaS), PaaS provides a managed platform for deploying applications, abstracting away OS management, runtime maintenance, and infrastructure scaling, The customer deploys their application code and data; the provider manages everything below: the OS, runtime, middleware, and infrastructure. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Platform as a Service (PaaS) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 9,
+      "type": "definition",
+      "title": "Software as a Service (SaaS)",
+      "main_idea": "SaaS delivers complete applications over the internet.",
+      "details": [
+        "SaaS delivers complete applications over the internet.",
+        "The customer simply uses the application; the provider manages everything: infrastructure, platform, application, and runtime.",
+        "Examples: Microsoft 365, Google Workspace, Salesforce, Workday, Slack, Zoom.",
+        "In SaaS, the provider manages nearly all security."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where software as a service (saas) affects users, data, or operations.",
+        "instructor_prompt": "What problem does software as a service (saas) help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: SaaS delivers complete applications over the internet.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Software as a Service (SaaS): Software as a Service (SaaS), SaaS delivers complete applications over the internet, The customer simply uses the application; the provider manages everything: infrastructure, platform, application, and runtime. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Software as a Service (SaaS) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 10,
+      "type": "concept",
+      "title": "The Shared Responsibility Model",
+      "main_idea": "The shared responsibility model is the most important concept in cloud security.",
+      "details": [
+        "The shared responsibility model is the most important concept in cloud security.",
+        "It defines the boundary between what the cloud provider secures and what the customer must secure.",
+        "This boundary shifts depending on the service model.",
+        "Key Concept — Shared Responsibility : The cloud provider is responsible for the security of the cloud (physical infrastructure, hardware, hypervisors, managed service platforms)."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where the shared responsibility model affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize the shared responsibility model in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The shared responsibility model is the most important concept in…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Shared Responsibility Model: The Shared Responsibility Model, The shared responsibility model is the most important concept in cloud security, It defines the boundary between what the cloud provider secures and what the customer must secure. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Shared Responsibility Model using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 11,
+      "type": "application",
+      "title": "Cloud Deployment Models",
+      "main_idea": "Organizations deploy cloud resources in several ways: Public Cloud : Resources are provisioned on infrastructure shared with other cloud tenants (logical isolation, not physical).",
+      "details": [
+        "Organizations deploy cloud resources in several ways: Public Cloud : Resources are provisioned on infrastructure shared with other cloud tenants (logical isolation, not physical).",
+        "This is the model offered by AWS, Azure, and GCP.",
+        "Cost-efficient and highly scalable, but subject to the shared responsibility model.",
+        "Private Cloud : Cloud infrastructure dedicated exclusively to one organization, either hosted on-premises (using platforms like OpenStack or VMware vSphere) or dedicated-tenancy…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where cloud deployment models affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Organizations deploy cloud resources in several ways: Public Cloud :…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Cloud Deployment Models: Cloud Deployment Models, Organizations deploy cloud resources in several ways: Public Cloud : Resources are provisioned on infrastructure shared with other cloud tenants (logical isolation, not physical), This is the model offered by AWS, Azure, and GCP. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Cloud Deployment Models using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 12,
+      "type": "evidence",
+      "title": "Misconfiguration",
+      "main_idea": "Misconfiguration is the leading cause of cloud data breaches.",
+      "details": [
+        "Misconfiguration is the leading cause of cloud data breaches.",
+        "The most notorious example is publicly accessible Amazon S3 buckets.",
+        "By default, S3 buckets are private, but a single misconfigured access control policy or a \"Block Public Access\" setting being disabled can expose all bucket contents to the entire…",
+        "Between 2017 and 2020, hundreds of organizations inadvertently exposed billions of records through misconfigured S3 buckets, including government agencies, major corporations, and…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where misconfiguration affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize misconfiguration in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Misconfiguration is the leading cause of cloud data breaches.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Misconfiguration: Misconfiguration, Misconfiguration is the leading cause of cloud data breaches, The most notorious example is publicly accessible Amazon S3 buckets. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Misconfiguration using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 13,
+      "type": "definition",
+      "title": "Insecure APIs",
+      "main_idea": "Cloud management APIs (AWS API, Azure ARM, GCP API) are powerful attack surfaces.",
+      "details": [
+        "Cloud management APIs (AWS API, Azure ARM, GCP API) are powerful attack surfaces.",
+        "Every action that can be performed in a cloud console can also be performed via API, with no security control beyond valid credentials.",
+        "API keys and access tokens that are leaked — in source code, in log files, in GitHub repositories — grant full access to cloud resources."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where insecure apis affects users, data, or operations.",
+        "instructor_prompt": "What problem does insecure apis help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Cloud management APIs (AWS API, Azure ARM, GCP API) are powerful…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Insecure APIs: Insecure APIs, Cloud management APIs (AWS API, Azure ARM, GCP API) are powerful attack surfaces, Every action that can be performed in a cloud console can also be performed via API, with no security control beyond valid credentials. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Insecure APIs using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 14,
+      "type": "concept",
+      "title": "Account Hijacking",
+      "main_idea": "Cloud accounts represent the highest-value credential in modern attack campaigns.",
+      "details": [
+        "Cloud accounts represent the highest-value credential in modern attack campaigns.",
+        "Compromising cloud credentials (IAM user access keys, federated identity credentials, or management console passwords) can grant access to all resources in an account.",
+        "Phishing campaigns specifically targeting DevOps engineers and cloud administrators are common.",
+        "MFA is essential for all cloud console access."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where account hijacking affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize account hijacking in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Cloud accounts represent the highest-value credential in modern…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Account Hijacking: Account Hijacking, Cloud accounts represent the highest-value credential in modern attack campaigns, Compromising cloud credentials (IAM user access keys, federated identity credentials, or management console passwords) can grant access to all resources in an account. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Account Hijacking using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 15,
+      "type": "application",
+      "title": "Data Breaches and Insider Threats",
+      "main_idea": "Sensitive data stored in cloud environments — customer PII, intellectual property, regulated data — can be exfiltrated by external attackers who compromise access credentials or…",
+      "details": [
+        "Sensitive data stored in cloud environments — customer PII, intellectual property, regulated data — can be exfiltrated by external attackers who compromise access credentials or…",
+        "Encryption, data loss prevention (DLP) controls, and detailed access logging are essential countermeasures.",
+        "Data Breaches and Insider Threats connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where data breaches and insider threats affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Sensitive data stored in cloud environments — customer PII,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Data Breaches and Insider Threats: Data Breaches and Insider Threats, Sensitive data stored in cloud environments — customer PII, intellectual property, regulated data — can be exfiltrated by external attackers who compromise access credentials or…, Encryption, data loss prevention (DLP) controls, and detailed access logging are essential countermeasures. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Data Breaches and Insider Threats using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 16,
+      "type": "evidence",
+      "title": "Shadow IT",
+      "main_idea": "Shadow IT refers to cloud resources provisioned by employees or teams without the knowledge or approval of IT and security teams.",
+      "details": [
+        "Shadow IT refers to cloud resources provisioned by employees or teams without the knowledge or approval of IT and security teams.",
+        "When individual developers spin up EC2 instances, S3 buckets, or SaaS subscriptions outside formal procurement processes, those resources may bypass security controls, not be…",
+        "Cloud Access Security Brokers (CASBs) and cloud security posture management (CSPM) tools help detect and govern shadow IT."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where shadow it affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize shadow it in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Shadow IT refers to cloud resources provisioned by employees or teams…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Shadow IT: Shadow IT, Shadow IT refers to cloud resources provisioned by employees or teams without the knowledge or approval of IT and security teams, When individual developers spin up EC2 instances, S3 buckets, or SaaS subscriptions outside formal procurement processes, those resources may bypass security controls, not be…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Shadow IT using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 17,
+      "type": "definition",
+      "title": "AWS IAM",
+      "main_idea": "AWS Identity and Access Management (IAM) is the access control system for all AWS services.",
+      "details": [
+        "AWS Identity and Access Management (IAM) is the access control system for all AWS services.",
+        "Key components: - Users : Long-term identities for humans or applications.",
+        "Best practice: minimize IAM users; use roles instead.",
+        "- Groups : Collections of users sharing the same policies."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where aws iam affects users, data, or operations.",
+        "instructor_prompt": "What problem does aws iam help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: AWS Identity and Access Management (IAM) is the access control system…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for AWS IAM: AWS IAM, AWS Identity and Access Management (IAM) is the access control system for all AWS services, Key components: - Users : Long-term identities for humans or applications. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach AWS IAM using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 18,
+      "type": "concept",
+      "title": "Azure Active Directory",
+      "main_idea": "Azure Active Directory (Azure AD, now called Microsoft Entra ID) serves as the identity foundation for Azure, Microsoft 365, and integrated third-party SaaS applications.",
+      "details": [
+        "Azure Active Directory (Azure AD, now called Microsoft Entra ID) serves as the identity foundation for Azure, Microsoft 365, and integrated third-party SaaS applications.",
+        "Azure Active Directory connects to risk, controls, and evidence.",
+        "Azure Active Directory connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where azure active directory affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize azure active directory in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Azure Active Directory (Azure AD, now called Microsoft Entra ID)…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Azure Active Directory: Azure Active Directory, Azure Active Directory (Azure AD, now called Microsoft Entra ID) serves as the identity foundation for Azure, Microsoft 365, and integrated third-party SaaS applications, Azure Active Directory connects to risk, controls, and evidence. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Azure Active Directory using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 19,
+      "type": "application",
+      "title": "Encryption in the Cloud",
+      "main_idea": "Encryption at Rest : Data stored in cloud services (S3, RDS, EBS volumes, Azure Blob Storage) should be encrypted at rest.",
+      "details": [
+        "Encryption at Rest : Data stored in cloud services (S3, RDS, EBS volumes, Azure Blob Storage) should be encrypted at rest.",
+        "AWS, Azure, and GCP all offer default encryption with provider-managed keys, but organizations requiring greater control use customer-managed keys (CMKs) via Key Management…",
+        "Encryption in Transit : All data transmitted between clients and cloud services, and between cloud services internally, should use TLS 1.2 or 1.3.",
+        "Most cloud services enforce this by default, but it must be explicitly required for legacy protocols and internal service communication."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where encryption in the cloud affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Encryption at Rest : Data stored in cloud services (S3, RDS, EBS…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Encryption in the Cloud: Encryption in the Cloud, Encryption at Rest : Data stored in cloud services (S3, RDS, EBS volumes, Azure Blob Storage) should be encrypted at rest, AWS, Azure, and GCP all offer default encryption with provider-managed keys, but organizations requiring greater control use customer-managed keys (CMKs) via Key Management…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Encryption in the Cloud using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 20,
+      "type": "evidence",
+      "title": "Virtual Private Cloud (VPC)",
+      "main_idea": "A Virtual Private Cloud (VPC) is an isolated virtual network within a cloud provider's infrastructure.",
+      "details": [
+        "A Virtual Private Cloud (VPC) is an isolated virtual network within a cloud provider's infrastructure.",
+        "Organizations deploy their cloud resources within VPCs, controlling IP address ranges (CIDR blocks), subnets, route tables, and network gateways.",
+        "Proper VPC design involves: - Public subnets : For resources that need direct internet access (load balancers, NAT gateways, bastion hosts).",
+        "- Private subnets : For resources that should not be directly accessible from the internet (application servers, databases, internal services)."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where virtual private cloud (vpc) affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize virtual private cloud (vpc) in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A Virtual Private Cloud (VPC) is an isolated virtual network within a…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Virtual Private Cloud (VPC): Virtual Private Cloud (VPC), A Virtual Private Cloud (VPC) is an isolated virtual network within a cloud provider's infrastructure, Organizations deploy their cloud resources within VPCs, controlling IP address ranges (CIDR blocks), subnets, route tables, and network gateways. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Virtual Private Cloud (VPC) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 21,
+      "type": "definition",
+      "title": "Security Groups and NACLs",
+      "main_idea": "Security Groups are stateful virtual firewalls attached to individual resources (EC2 instances, RDS databases, Lambda functions).",
+      "details": [
+        "Security Groups are stateful virtual firewalls attached to individual resources (EC2 instances, RDS databases, Lambda functions).",
+        "They filter traffic based on protocol, port, and source/destination IP or security group.",
+        "Because security groups are stateful, return traffic is automatically allowed for permitted inbound connections.",
+        "Network Access Control Lists (NACLs) are stateless firewall rules applied at the subnet level."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where security groups and nacls affects users, data, or operations.",
+        "instructor_prompt": "What problem does security groups and nacls help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Security Groups are stateful virtual firewalls attached to individual…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Security Groups and NACLs: Security Groups and NACLs, Security Groups are stateful virtual firewalls attached to individual resources (EC2 instances, RDS databases, Lambda functions), They filter traffic based on protocol, port, and source/destination IP or security group. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Security Groups and NACLs using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 22,
+      "type": "concept",
+      "title": "AWS CloudTrail and CloudWatch",
+      "main_idea": "AWS CloudTrail records all API calls made in an AWS account — who made the call, from where, at what time, and what was the result.",
+      "details": [
+        "AWS CloudTrail records all API calls made in an AWS account — who made the call, from where, at what time, and what was the result.",
+        "CloudTrail is the essential audit log for AWS and must be enabled in all regions, with logs protected from tampering (S3 bucket with Object Lock or delivered to a separate…",
+        "CloudTrail enables detection of: unauthorized access attempts, privilege escalation, IAM changes, data exfiltration via unusual data transfer, and cryptomining via unauthorized…",
+        "Amazon CloudWatch monitors resource metrics and application logs, and can trigger alarms and automated responses."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where aws cloudtrail and cloudwatch affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize aws cloudtrail and cloudwatch in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: AWS CloudTrail records all API calls made in an AWS account — who…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for AWS CloudTrail and CloudWatch: AWS CloudTrail and CloudWatch, AWS CloudTrail records all API calls made in an AWS account — who made the call, from where, at what time, and what was the result, CloudTrail is the essential audit log for AWS and must be enabled in all regions, with logs protected from tampering (S3 bucket with Object Lock or delivered to a separate…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach AWS CloudTrail and CloudWatch using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 23,
+      "type": "application",
+      "title": "Azure Monitor and Microsoft Defender for Cloud",
+      "main_idea": "Azure Monitor collects metrics and logs from Azure resources and applications.",
+      "details": [
+        "Azure Monitor collects metrics and logs from Azure resources and applications.",
+        "Microsoft Defender for Cloud (formerly Azure Security Center) provides continuous security assessment, threat detection, and recommendations for Azure resources.",
+        "Azure Sentinel (Microsoft Sentinel) is a SIEM and SOAR platform natively integrated with Azure and Microsoft 365."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where azure monitor and microsoft defender for cloud affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Azure Monitor collects metrics and logs from Azure resources and…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Azure Monitor and Microsoft Defender for Cloud: Azure Monitor and Microsoft Defender for Cloud, Azure Monitor collects metrics and logs from Azure resources and applications, Microsoft Defender for Cloud (formerly Azure Security Center) provides continuous security assessment, threat detection, and recommendations for Azure resources. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Azure Monitor and Microsoft Defender for Cloud using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 24,
+      "type": "evidence",
+      "title": "Cloud Compliance",
+      "main_idea": "Cloud providers publish SOC 2 Type II reports; customers must also achieve their own SOC 2 compliance for their cloud-hosted services.",
+      "details": [
+        "Cloud providers publish SOC 2 Type II reports; customers must also achieve their own SOC 2 compliance for their cloud-hosted services.",
+        "- FedRAMP (Federal Risk and Authorization Management Program) : A U.S.",
+        "government program standardizing security assessment and authorization for cloud services used by federal agencies.",
+        "AWS GovCloud, Azure Government, and GCP Government Cloud offer FedRAMP-authorized environments."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where cloud compliance affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize cloud compliance in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Cloud providers publish SOC 2 Type II reports; customers must also…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Cloud Compliance: Cloud Compliance, Cloud providers publish SOC 2 Type II reports; customers must also achieve their own SOC 2 compliance for their cloud-hosted services, - FedRAMP (Federal Risk and Authorization Management Program) : A U. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Cloud Compliance using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 25,
+      "type": "vocabulary",
+      "title": "Key terms to keep",
+      "main_idea": "Vocabulary becomes useful when students can connect terms to scenarios and evidence.",
+      "details": [
+        "Introduction",
+        "Cloud Service Models",
+        "Infrastructure as a Service (IaaS)",
+        "Platform as a Service (PaaS)"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where key terms to keep affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize key terms to keep in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Key terms to keep: Key terms to keep, Introduction, Cloud Service Models. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Key terms to keep using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 26,
+      "type": "comparison",
+      "title": "Compare: Introduction vs. Cloud Service Models",
+      "main_idea": "Comparing related ideas helps students avoid shallow memorization.",
+      "details": [
+        "Where Introduction applies.",
+        "Where Cloud Service Models applies.",
+        "How the difference changes the security decision."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where compare: introduction vs. cloud service models affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize compare: introduction vs. cloud service models in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Where Introduction applies.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Compare: Introduction vs. Cloud Service Models: Compare: Introduction vs. Cloud Service Models, Where Introduction applies, Where Cloud Service Models applies. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Compare: Introduction vs. Cloud Service Models using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 27,
+      "type": "application",
+      "title": "Applied decision checkpoint",
+      "main_idea": "Students should translate concepts into a defensible security decision.",
+      "details": [
+        "Identify the asset or process at risk.",
+        "Choose a preventive, detective, or corrective control.",
+        "Explain what evidence would prove the control is working."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where applied decision checkpoint affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Identify the asset or process at risk.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Applied decision checkpoint: Applied decision checkpoint, Identify the asset or process at risk, Choose a preventive, detective, or corrective control. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Applied decision checkpoint using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 28,
+      "type": "review",
+      "title": "Review questions",
+      "main_idea": "Retrieval practice should ask students to define, compare, apply, and evaluate.",
+      "details": [
+        "Define one core concept in plain language.",
+        "Compare two controls or threats from the week.",
+        "Apply one idea to a campus or business system.",
+        "Evaluate why a solution might fail in practice."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where review questions affects users, data, or operations.",
+        "instructor_prompt": "What is the one sentence takeaway for review questions?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Define one core concept in plain language.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Review questions: Review questions, Define one core concept in plain language, Compare two controls or threats from the week. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Review questions using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 29,
+      "type": "bridge",
+      "title": "Bridge to lab and assessment",
+      "main_idea": "The reading should transfer into evidence-based lab work and written explanations.",
+      "details": [
+        "Collect evidence, not just screenshots.",
+        "Explain what the artifact proves.",
+        "Connect the proof back to risk and control selection."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where bridge to lab and assessment affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize bridge to lab and assessment in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Collect evidence, not just screenshots.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Bridge to lab and assessment: Bridge to lab and assessment, Collect evidence, not just screenshots, Explain what the artifact proves. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Bridge to lab and assessment using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 30,
+      "type": "closing",
+      "title": "Takeaway",
+      "main_idea": "The central takeaway from Week 13 is to reason from risk to evidence to action.",
+      "details": [
+        "Cloud Computing Security",
+        "Security is a decision process, not just a tool list.",
+        "Use the reading to justify practical choices."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 13 incident where takeaway affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize takeaway in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Cloud Computing Security",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Takeaway: Takeaway, Cloud Computing Security, Security is a decision process, not just a tool list. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Takeaway using evidence, scenario reasoning, and a concrete security takeaway."
+    }
+  ]
+}

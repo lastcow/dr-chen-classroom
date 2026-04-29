@@ -1,0 +1,638 @@
+{
+  "week": 6,
+  "title": "Cryptography Fundamentals",
+  "source": "scia-120/chapter-06.md",
+  "author": "Dr. Zhijiang Chen",
+  "institution": "Frostburg State University",
+  "summary": "Cryptography is among the oldest disciplines in the long history of human secrecy and communication. At its core, cryptography is the science and art of transforming information into an unintelligible form so that only authorized parties can read it. The word itself comes from the Greek kryptos (hidden) and graphia (writing). What began as simple letter…",
+  "key_concepts": [
+    "Introduction",
+    "The Caesar Cipher",
+    "The Vigenère Cipher",
+    "The Enigma Machine",
+    "Cryptographic Goals",
+    "How Block Ciphers Work",
+    "DES and 3DES",
+    "AES: The Advanced Encryption Standard"
+  ],
+  "slides": [
+    {
+      "number": 1,
+      "type": "cover",
+      "title": "Cryptography Fundamentals",
+      "main_idea": "Introduce Week 6: Cryptography Fundamentals.",
+      "details": [
+        "Cryptography is among the oldest disciplines in the long history of human secrecy and communication."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where cryptography fundamentals affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize cryptography fundamentals in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Cryptography is among the oldest disciplines in the long history of…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Tech-dark line-art hero for Week 6: Cryptography Fundamentals, with networks, locks, shields, data paths, and classroom learning cues.",
+      "visual_mode": "line_art",
+      "speaker_goal": "Teach Cryptography Fundamentals using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 2,
+      "type": "agenda",
+      "title": "Overall roadmap",
+      "main_idea": "The week moves from core definitions to practical security decisions.",
+      "details": [
+        "Introduction",
+        "The Caesar Cipher",
+        "The Vigenère Cipher",
+        "The Enigma Machine"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where overall roadmap affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize overall roadmap in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art roadmap showing the major learning path for Overall roadmap; connected nodes represent reading concepts and classroom application.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Overall roadmap using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 3,
+      "type": "objectives",
+      "title": "Learning objectives",
+      "main_idea": "Students should explain, apply, and evaluate the week’s main security ideas.",
+      "details": [
+        "Explain Introduction.",
+        "Explain The Caesar Cipher.",
+        "Explain The Vigenère Cipher.",
+        "Explain The Enigma Machine."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where learning objectives affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize learning objectives in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Explain Introduction.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Learning objectives: Learning objectives, Explain Introduction, Explain The Caesar Cipher. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Learning objectives using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 4,
+      "type": "application",
+      "title": "Opening scenario",
+      "main_idea": "Use a realistic scenario to anchor Cryptography Fundamentals in operational decision-making.",
+      "details": [
+        "Cryptography is among the oldest disciplines in the long history of human secrecy and communication.",
+        "At its core, cryptography is the science and art of transforming information into an unintelligible form so that only authorized parties can read it.",
+        "The word itself comes from the Greek kryptos (hidden) and graphia (writing)."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where opening scenario affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Cryptography is among the oldest disciplines in the long history of…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Opening scenario: Opening scenario, Cryptography is among the oldest disciplines in the long history of human secrecy and communication, At its core, cryptography is the science and art of transforming information into an unintelligible form so that only authorized parties can read it. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Opening scenario using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 5,
+      "type": "definition",
+      "title": "Introduction",
+      "main_idea": "Cryptography is among the oldest disciplines in the long history of human secrecy and communication.",
+      "details": [
+        "Cryptography is among the oldest disciplines in the long history of human secrecy and communication.",
+        "At its core, cryptography is the science and art of transforming information into an unintelligible form so that only authorized parties can read it.",
+        "The word itself comes from the Greek kryptos (hidden) and graphia (writing).",
+        "The importance of cryptography in computing and information assurance cannot be overstated."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where introduction affects users, data, or operations.",
+        "instructor_prompt": "What problem does introduction help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Cryptography is among the oldest disciplines in the long history of…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Introduction: Introduction, Cryptography is among the oldest disciplines in the long history of human secrecy and communication, At its core, cryptography is the science and art of transforming information into an unintelligible form so that only authorized parties can read it. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Introduction using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 6,
+      "type": "concept",
+      "title": "The Caesar Cipher",
+      "main_idea": "The Caesar cipher, attributed to Julius Caesar, is one of the earliest documented encryption schemes.",
+      "details": [
+        "The Caesar cipher, attributed to Julius Caesar, is one of the earliest documented encryption schemes.",
+        "It works by shifting each letter of the alphabet by a fixed number of positions.",
+        "For example, with a shift of 3, the letter A becomes D, B becomes E, and so on.",
+        "The message \"ATTACK AT DAWN\" would become \"DWWDFN DW GDZQ.\" Despite its historical significance, the Caesar cipher is trivially weak by modern standards."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where the caesar cipher affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize the caesar cipher in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The Caesar cipher, attributed to Julius Caesar, is one of the…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Caesar Cipher: The Caesar Cipher, The Caesar cipher, attributed to Julius Caesar, is one of the earliest documented encryption schemes, It works by shifting each letter of the alphabet by a fixed number of positions. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Caesar Cipher using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 7,
+      "type": "application",
+      "title": "The Vigenère Cipher",
+      "main_idea": "The Vigenère cipher, introduced in the 16th century, improved on Caesar by using a repeating keyword to determine different shifts for different character positions.",
+      "details": [
+        "The Vigenère cipher, introduced in the 16th century, improved on Caesar by using a repeating keyword to determine different shifts for different character positions.",
+        "If the keyword is \"KEY\" and the message is \"HELLOWORLD,\" then the first letter H is shifted by K (10), E is shifted by E (4), L is shifted by Y (24), and so on.",
+        "The cipher repeats the keyword cyclically across the message.",
+        "For centuries, the Vigenère cipher was considered unbreakable."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where the vigenère cipher affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The Vigenère cipher, introduced in the 16th century, improved on…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Vigenère Cipher: The Vigenère Cipher, The Vigenère cipher, introduced in the 16th century, improved on Caesar by using a repeating keyword to determine different shifts for different character positions, If the keyword is \"KEY\" and the message is \"HELLOWORLD,\" then the first letter H is shifted by K (10), E is shifted by E (4), L is shifted by Y (24), and so on. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Vigenère Cipher using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 8,
+      "type": "evidence",
+      "title": "The Enigma Machine",
+      "main_idea": "The Enigma machine, used by Nazi Germany during World War II, represented a leap in mechanical cryptographic complexity.",
+      "details": [
+        "The Enigma machine, used by Nazi Germany during World War II, represented a leap in mechanical cryptographic complexity.",
+        "It used a series of electromechanical rotors that scrambled electrical signals as a key was pressed, with the rotor positions advancing after each keypress, producing a…",
+        "The number of possible configurations was on the order of 10^23.",
+        "Despite this complexity, the Enigma was broken through a combination of mathematical insight (notably by Alan Turing and his colleagues at Bletchley Park), procedural weaknesses…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where the enigma machine affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize the enigma machine in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The Enigma machine, used by Nazi Germany during World War II,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Enigma Machine: The Enigma Machine, The Enigma machine, used by Nazi Germany during World War II, represented a leap in mechanical cryptographic complexity, It used a series of electromechanical rotors that scrambled electrical signals as a key was pressed, with the rotor positions advancing after each keypress, producing a…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Enigma Machine using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 9,
+      "type": "definition",
+      "title": "Cryptographic Goals",
+      "main_idea": "Modern cryptography is defined by four primary security goals: - Confidentiality : Ensuring that information is accessible only to authorized parties.",
+      "details": [
+        "Modern cryptography is defined by four primary security goals: - Confidentiality : Ensuring that information is accessible only to authorized parties.",
+        "Encryption is the primary mechanism.",
+        "- Integrity : Ensuring that information has not been altered in an unauthorized manner.",
+        "Hash functions and MACs (Message Authentication Codes) provide this."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where cryptographic goals affects users, data, or operations.",
+        "instructor_prompt": "What problem does cryptographic goals help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Modern cryptography is defined by four primary security goals: -…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Cryptographic Goals: Cryptographic Goals, Modern cryptography is defined by four primary security goals: - Confidentiality : Ensuring that information is accessible only to authorized parties, Encryption is the primary mechanism. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Cryptographic Goals using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 10,
+      "type": "concept",
+      "title": "How Block Ciphers Work",
+      "main_idea": "Symmetric encryption uses the same key for both encryption and decryption.",
+      "details": [
+        "Symmetric encryption uses the same key for both encryption and decryption.",
+        "Modern symmetric ciphers operate as block ciphers , processing fixed-size chunks of data (blocks) rather than individual bytes.",
+        "The plaintext is divided into blocks (typically 128 bits), each block is encrypted with a series of mathematical transformations, and the resulting ciphertext blocks are assembled…",
+        "This layered approach is called a substitution-permutation network (SPN)."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where how block ciphers work affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize how block ciphers work in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Symmetric encryption uses the same key for both encryption and…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for How Block Ciphers Work: How Block Ciphers Work, Symmetric encryption uses the same key for both encryption and decryption, Modern symmetric ciphers operate as block ciphers , processing fixed-size chunks of data (blocks) rather than individual bytes. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach How Block Ciphers Work using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 11,
+      "type": "application",
+      "title": "DES and 3DES",
+      "main_idea": "The Data Encryption Standard (DES) was adopted as a federal standard in 1977.",
+      "details": [
+        "The Data Encryption Standard (DES) was adopted as a federal standard in 1977.",
+        "It operates on 64-bit blocks with a 56-bit key, using 16 rounds of a Feistel network structure.",
+        "By the late 1990s, the short key length had become a critical vulnerability — a special-purpose machine called Deep Crack demonstrated in 1998 that DES could be brute-forced in…",
+        "Triple DES (3DES) was introduced as a stopgap, applying DES encryption three times with either two or three independent keys (112-bit or 168-bit effective key length)."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where des and 3des affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The Data Encryption Standard (DES) was adopted as a federal standard…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for DES and 3DES: DES and 3DES, The Data Encryption Standard (DES) was adopted as a federal standard in 1977, It operates on 64-bit blocks with a 56-bit key, using 16 rounds of a Feistel network structure. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach DES and 3DES using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 12,
+      "type": "evidence",
+      "title": "AES: The Advanced Encryption Standard",
+      "main_idea": "The Advanced Encryption Standard (AES) , standardized by NIST in 2001, replaced DES and 3DES as the gold standard for symmetric encryption.",
+      "details": [
+        "The Advanced Encryption Standard (AES) , standardized by NIST in 2001, replaced DES and 3DES as the gold standard for symmetric encryption.",
+        "AES supports key lengths of 128, 192, or 256 bits and operates on 128-bit blocks through 10, 12, or 14 rounds respectively.",
+        "Its design is based on a substitution-permutation network and has withstood more than two decades of intense cryptanalytic scrutiny.",
+        "AES is extraordinarily fast in both hardware and software."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where aes: the advanced encryption standard affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize aes: the advanced encryption standard in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The Advanced Encryption Standard (AES) , standardized by NIST in…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for AES: The Advanced Encryption Standard: AES: The Advanced Encryption Standard, The Advanced Encryption Standard (AES) , standardized by NIST in 2001, replaced DES and 3DES as the gold standard for symmetric encryption, AES supports key lengths of 128, 192, or 256 bits and operates on 128-bit blocks through 10, 12, or 14 rounds respectively. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach AES: The Advanced Encryption Standard using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 13,
+      "type": "definition",
+      "title": "Modes of Operation",
+      "main_idea": "Even a secure block cipher like AES can be used insecurely if the mode of operation is poorly chosen.",
+      "details": [
+        "Even a secure block cipher like AES can be used insecurely if the mode of operation is poorly chosen.",
+        "A mode of operation defines how a block cipher is applied to messages longer than a single block.",
+        "- ECB (Electronic Codebook) : The simplest mode — each block is encrypted independently.",
+        "This is dangerously insecure for most purposes because identical plaintext blocks produce identical ciphertext blocks, leaking information about patterns in the data."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where modes of operation affects users, data, or operations.",
+        "instructor_prompt": "What problem does modes of operation help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Even a secure block cipher like AES can be used insecurely if the…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Modes of Operation: Modes of Operation, Even a secure block cipher like AES can be used insecurely if the mode of operation is poorly chosen, A mode of operation defines how a block cipher is applied to messages longer than a single block. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Modes of Operation using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 14,
+      "type": "concept",
+      "title": "Key Management",
+      "main_idea": "The security of any symmetric encryption system ultimately depends on the security of the key, not the algorithm.",
+      "details": [
+        "The security of any symmetric encryption system ultimately depends on the security of the key, not the algorithm.",
+        "Key management — the processes governing key generation, distribution, storage, rotation, and destruction — is often the weakest link in cryptographic deployments.",
+        "Keys must be generated using a cryptographically secure random number generator (CSPRNG).",
+        "They must be stored securely, ideally in dedicated hardware (HSMs — Hardware Security Modules)."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where key management affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize key management in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The security of any symmetric encryption system ultimately depends on…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Key Management: Key Management, The security of any symmetric encryption system ultimately depends on the security of the key, not the algorithm, Key management — the processes governing key generation, distribution, storage, rotation, and destruction — is often the weakest link in cryptographic deployments. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Key Management using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 15,
+      "type": "application",
+      "title": "The Public/Private Key Pair",
+      "main_idea": "The fundamental limitation of symmetric encryption is the key distribution problem : if Alice wants to send Bob an encrypted message, how does she share the symmetric key with him…",
+      "details": [
+        "The fundamental limitation of symmetric encryption is the key distribution problem : if Alice wants to send Bob an encrypted message, how does she share the symmetric key with him…",
+        "Asymmetric (or public-key ) cryptography, introduced by Diffie and Hellman in 1976 and formalized by Rivest, Shamir, and Adleman in 1977, solves this problem elegantly.",
+        "In asymmetric cryptography, each party has a key pair : a public key that can be freely shared with anyone, and a private key that is kept absolutely secret.",
+        "Data encrypted with the public key can only be decrypted with the corresponding private key."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where the public/private key pair affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The fundamental limitation of symmetric encryption is the key…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Public/Private Key Pair: The Public/Private Key Pair, The fundamental limitation of symmetric encryption is the key distribution problem : if Alice wants to send Bob an encrypted message, how does she share the symmetric key with him…, Asymmetric (or public-key ) cryptography, introduced by Diffie and Hellman in 1976 and formalized by Rivest, Shamir, and Adleman in 1977, solves this problem elegantly. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Public/Private Key Pair using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 16,
+      "type": "evidence",
+      "title": "RSA: How It Works (Simplified)",
+      "main_idea": "RSA (Rivest-Shamir-Adleman) is the most widely deployed asymmetric encryption algorithm.",
+      "details": [
+        "RSA (Rivest-Shamir-Adleman) is the most widely deployed asymmetric encryption algorithm.",
+        "Its security rests on the integer factorization problem : multiplying two large prime numbers together is computationally easy, but factoring the product back into its prime…",
+        "The key generation process, in simplified form: 1.",
+        "Choose two large prime numbers p and q ."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where rsa: how it works (simplified) affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize rsa: how it works (simplified) in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: RSA (Rivest-Shamir-Adleman) is the most widely deployed asymmetric…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for RSA: How It Works (Simplified): RSA: How It Works (Simplified), RSA (Rivest-Shamir-Adleman) is the most widely deployed asymmetric encryption algorithm, Its security rests on the integer factorization problem : multiplying two large prime numbers together is computationally easy, but factoring the product back into its prime…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach RSA: How It Works (Simplified) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 17,
+      "type": "definition",
+      "title": "Elliptic Curve Cryptography (ECC)",
+      "main_idea": "Elliptic Curve Cryptography (ECC) provides equivalent security to RSA but with much smaller key sizes.",
+      "details": [
+        "Elliptic Curve Cryptography (ECC) provides equivalent security to RSA but with much smaller key sizes.",
+        "A 256-bit ECC key provides roughly the same security as a 3072-bit RSA key.",
+        "This makes ECC particularly valuable in resource-constrained environments such as mobile devices, embedded systems, and IoT devices.",
+        "ECC is based on the mathematical properties of elliptic curves over finite fields and the difficulty of the elliptic curve discrete logarithm problem ."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where elliptic curve cryptography (ecc) affects users, data, or operations.",
+        "instructor_prompt": "What problem does elliptic curve cryptography (ecc) help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Elliptic Curve Cryptography (ECC) provides equivalent security to RSA…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Elliptic Curve Cryptography (ECC): Elliptic Curve Cryptography (ECC), Elliptic Curve Cryptography (ECC) provides equivalent security to RSA but with much smaller key sizes, A 256-bit ECC key provides roughly the same security as a 3072-bit RSA key. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Elliptic Curve Cryptography (ECC) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 18,
+      "type": "concept",
+      "title": "Hybrid Encryption",
+      "main_idea": "Asymmetric encryption is orders of magnitude slower than symmetric encryption and is generally impractical for encrypting large amounts of data directly.",
+      "details": [
+        "Asymmetric encryption is orders of magnitude slower than symmetric encryption and is generally impractical for encrypting large amounts of data directly.",
+        "In practice, systems use hybrid encryption : asymmetric cryptography is used to securely exchange a symmetric session key, and then symmetric encryption (e.g., AES-GCM) handles…",
+        "This approach, used in TLS and PGP among others, combines the key distribution advantages of asymmetric cryptography with the speed of symmetric cryptography."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where hybrid encryption affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize hybrid encryption in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Asymmetric encryption is orders of magnitude slower than symmetric…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Hybrid Encryption: Hybrid Encryption, Asymmetric encryption is orders of magnitude slower than symmetric encryption and is generally impractical for encrypting large amounts of data directly, In practice, systems use hybrid encryption : asymmetric cryptography is used to securely exchange a symmetric session key, and then symmetric encryption (e. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Hybrid Encryption using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 19,
+      "type": "application",
+      "title": "Hash Functions",
+      "main_idea": "A cryptographic hash function takes an input of arbitrary length and produces a fixed-size output (the digest or hash ).",
+      "details": [
+        "A cryptographic hash function takes an input of arbitrary length and produces a fixed-size output (the digest or hash ).",
+        "Unlike encryption, hashing is a one-way operation — given a hash, it should be computationally infeasible to recover the original input.",
+        "Hash Functions connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where hash functions affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A cryptographic hash function takes an input of arbitrary length and…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Hash Functions: Hash Functions, A cryptographic hash function takes an input of arbitrary length and produces a fixed-size output (the digest or hash ), Unlike encryption, hashing is a one-way operation — given a hash, it should be computationally infeasible to recover the original input. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Hash Functions using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 20,
+      "type": "evidence",
+      "title": "Properties of Cryptographic Hash Functions",
+      "main_idea": "Preimage resistance : Given a hash h , it should be computationally infeasible to find any input m such that hash( m ) = h .",
+      "details": [
+        "Preimage resistance : Given a hash h , it should be computationally infeasible to find any input m such that hash( m ) = h .",
+        "Second preimage resistance : Given an input m1 , it should be computationally infeasible to find a different input m2 such that hash( m1 ) = hash( m2 ).",
+        "Collision resistance : It should be computationally infeasible to find any two distinct inputs m1 and m2 such that hash( m1 ) = hash( m2 )."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where properties of cryptographic hash functions affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize properties of cryptographic hash functions in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Preimage resistance : Given a hash h , it should be computationally…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Properties of Cryptographic Hash Functions: Properties of Cryptographic Hash Functions, Preimage resistance : Given a hash h , it should be computationally infeasible to find any input m such that hash( m ) = h , Second preimage resistance : Given an input m1 , it should be computationally infeasible to find a different input m2 such that hash( m1 ) = hash( m2 ). Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Properties of Cryptographic Hash Functions using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 21,
+      "type": "definition",
+      "title": "Common Hash Algorithms",
+      "main_idea": "MD5 and SHA-1 should never be used for new security-sensitive applications, though they may still appear in legacy systems.",
+      "details": [
+        "MD5 and SHA-1 should never be used for new security-sensitive applications, though they may still appear in legacy systems.",
+        "⚠️ Warning : Hashing passwords with a simple hash function (even SHA-256) is insufficient.",
+        "Password hashing requires specially designed, computationally expensive algorithms such as bcrypt , Argon2 , or PBKDF2 to resist brute-force and dictionary attacks.",
+        "See Chapter 4 for details on password security."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where common hash algorithms affects users, data, or operations.",
+        "instructor_prompt": "What problem does common hash algorithms help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: MD5 and SHA-1 should never be used for new security-sensitive…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Common Hash Algorithms: Common Hash Algorithms, MD5 and SHA-1 should never be used for new security-sensitive applications, though they may still appear in legacy systems, ⚠️ Warning : Hashing passwords with a simple hash function (even SHA-256) is insufficient. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Common Hash Algorithms using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 22,
+      "type": "concept",
+      "title": "The Birthday Attack",
+      "main_idea": "This is why MD5 (128-bit output) is particularly weak — finding a collision requires only about 2^64 computations, which is feasible with modern hardware.",
+      "details": [
+        "This is why MD5 (128-bit output) is particularly weak — finding a collision requires only about 2^64 computations, which is feasible with modern hardware.",
+        "The Birthday Attack connects to risk, controls, and evidence.",
+        "The Birthday Attack connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where the birthday attack affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize the birthday attack in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: This is why MD5 (128-bit output) is particularly weak — finding a…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Birthday Attack: The Birthday Attack, This is why MD5 (128-bit output) is particularly weak — finding a collision requires only about 2^64 computations, which is feasible with modern hardware, The Birthday Attack connects to risk, controls, and evidence. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Birthday Attack using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 23,
+      "type": "application",
+      "title": "Digital Signatures",
+      "main_idea": "A digital signature provides authentication, integrity, and non-repudiation for digital documents.",
+      "details": [
+        "A digital signature provides authentication, integrity, and non-repudiation for digital documents.",
+        "Alice computes the hash of her message: h = hash(message) .",
+        "Alice encrypts the hash with her private key: signature = RSA decrypt(private key, h) (conceptually — in practice, this is more precisely described as \"signing\" using the private…",
+        "Alice sends the message and the signature to Bob."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where digital signatures affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A digital signature provides authentication, integrity, and…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Digital Signatures: Digital Signatures, A digital signature provides authentication, integrity, and non-repudiation for digital documents, Alice computes the hash of her message: h = hash(message) . Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Digital Signatures using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 24,
+      "type": "evidence",
+      "title": "Public Key Infrastructure (PKI)",
+      "main_idea": "A critical problem with public-key cryptography is: how do you know that a public key actually belongs to who you think it does?",
+      "details": [
+        "A critical problem with public-key cryptography is: how do you know that a public key actually belongs to who you think it does?",
+        "An attacker could substitute their own public key, impersonating another party.",
+        "The Public Key Infrastructure (PKI) solves this through digital certificates.",
+        "A digital certificate (most commonly an X.509 certificate) binds a public key to an identity (a person, organization, or domain name)."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where public key infrastructure (pki) affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize public key infrastructure (pki) in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A critical problem with public-key cryptography is: how do you know…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Public Key Infrastructure (PKI): Public Key Infrastructure (PKI), A critical problem with public-key cryptography is: how do you know that a public key actually belongs to who you think it does?, An attacker could substitute their own public key, impersonating another party. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Public Key Infrastructure (PKI) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 25,
+      "type": "vocabulary",
+      "title": "Key terms to keep",
+      "main_idea": "Vocabulary becomes useful when students can connect terms to scenarios and evidence.",
+      "details": [
+        "Introduction",
+        "The Caesar Cipher",
+        "The Vigenère Cipher",
+        "The Enigma Machine"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where key terms to keep affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize key terms to keep in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Key terms to keep: Key terms to keep, Introduction, The Caesar Cipher. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Key terms to keep using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 26,
+      "type": "comparison",
+      "title": "Compare: Introduction vs. The Caesar Cipher",
+      "main_idea": "Comparing related ideas helps students avoid shallow memorization.",
+      "details": [
+        "Where Introduction applies.",
+        "Where The Caesar Cipher applies.",
+        "How the difference changes the security decision."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where compare: introduction vs. the caesar cipher affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize compare: introduction vs. the caesar cipher in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Where Introduction applies.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Compare: Introduction vs. The Caesar Cipher: Compare: Introduction vs. The Caesar Cipher, Where Introduction applies, Where The Caesar Cipher applies. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Compare: Introduction vs. The Caesar Cipher using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 27,
+      "type": "application",
+      "title": "Applied decision checkpoint",
+      "main_idea": "Students should translate concepts into a defensible security decision.",
+      "details": [
+        "Identify the asset or process at risk.",
+        "Choose a preventive, detective, or corrective control.",
+        "Explain what evidence would prove the control is working."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where applied decision checkpoint affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Identify the asset or process at risk.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Applied decision checkpoint: Applied decision checkpoint, Identify the asset or process at risk, Choose a preventive, detective, or corrective control. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Applied decision checkpoint using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 28,
+      "type": "review",
+      "title": "Review questions",
+      "main_idea": "Retrieval practice should ask students to define, compare, apply, and evaluate.",
+      "details": [
+        "Define one core concept in plain language.",
+        "Compare two controls or threats from the week.",
+        "Apply one idea to a campus or business system.",
+        "Evaluate why a solution might fail in practice."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where review questions affects users, data, or operations.",
+        "instructor_prompt": "What is the one sentence takeaway for review questions?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Define one core concept in plain language.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Review questions: Review questions, Define one core concept in plain language, Compare two controls or threats from the week. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Review questions using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 29,
+      "type": "bridge",
+      "title": "Bridge to lab and assessment",
+      "main_idea": "The reading should transfer into evidence-based lab work and written explanations.",
+      "details": [
+        "Collect evidence, not just screenshots.",
+        "Explain what the artifact proves.",
+        "Connect the proof back to risk and control selection."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where bridge to lab and assessment affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize bridge to lab and assessment in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Collect evidence, not just screenshots.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Bridge to lab and assessment: Bridge to lab and assessment, Collect evidence, not just screenshots, Explain what the artifact proves. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Bridge to lab and assessment using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 30,
+      "type": "closing",
+      "title": "Takeaway",
+      "main_idea": "The central takeaway from Week 6 is to reason from risk to evidence to action.",
+      "details": [
+        "Cryptography Fundamentals",
+        "Security is a decision process, not just a tool list.",
+        "Use the reading to justify practical choices."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 6 incident where takeaway affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize takeaway in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Cryptography Fundamentals",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Takeaway: Takeaway, Cryptography Fundamentals, Security is a decision process, not just a tool list. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Takeaway using evidence, scenario reasoning, and a concrete security takeaway."
+    }
+  ]
+}

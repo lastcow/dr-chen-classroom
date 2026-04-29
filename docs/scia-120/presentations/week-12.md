@@ -9,14 +9,14 @@ sources: [scia-120/chapter-12.md]
 
 # Week 12 Presentation — Distributed Applications Security
 
-**Brief:** This tech-dark, magazine-style deck summarizes the Week 12 reading material for SCIA 120. It is designed for classroom lecture flow: cover, overall page, AI-generated concept map, learning objectives, core reading concepts, applied scenarios, review prompts, and takeaway.
+**Brief:** This tech-dark, magazine-style deck summarizes the Week 12 SCIA 120 reading material. The deck includes a cover page, overall page, learning objectives, concept slides, applied scenarios, review prompts, slide-specific classroom dialog, and AI-generated SVG line-art visuals matched to the slide content.
 
-**Source reading:** [Week 12 Reading Material](../chapter-12.md)  
-**Key terms:** Introduction, What Are Distributed Applications?, Expanded Attack Surface, Trust Between Services, Network Exposure
+**Source reading:** [Week 12 Reading Material](/scia-120/chapter-12/)  
+**Key concepts:** Introduction, What Are Distributed Applications?, Expanded Attack Surface, Trust Between Services, Network Exposure, Data Consistency and State
 
-<a class="md-button md-button--primary" href="week-12-deck/">Launch presentation</a>
-<a class="md-button" href="../chapter-12/">Open reading material</a>
+<a class="md-button md-button--primary" href="/scia-120/presentations/week-12-deck/">Launch presentation</a>
+<a class="md-button" href="/scia-120/chapter-12/">Open reading material</a>
 
 ## Preview
 
-<iframe src="week-12-deck/" style="width:100%; height:680px; border:1px solid #1e3a5f; border-radius:14px; background:#050b14;"></iframe>
+<iframe src="/scia-120/presentations/week-12-deck/" style="width:100%; height:680px; border:1px solid #1e3a5f; border-radius:14px; background:#050b14;"></iframe>

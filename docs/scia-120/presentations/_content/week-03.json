@@ -1,0 +1,631 @@
+{
+  "week": 3,
+  "title": "Social Engineering",
+  "source": "scia-120/chapter-03.md",
+  "author": "Dr. Zhijiang Chen",
+  "institution": "Frostburg State University",
+  "summary": "Social engineering in a security context refers to any technique that uses psychological manipulation — rather than technical exploitation — to gain unauthorized access to systems, data, or physical spaces. The social engineer's targets are people, not machines. Their tools are trust, deception, urgency, and authority. Social engineer Kevin Mitnick, one of…",
+  "key_concepts": [
+    "Defining Social Engineering",
+    "The Psychology of Social Engineering: Cialdini's Principles of Influence",
+    ". Reciprocity",
+    ". Commitment and Consistency",
+    ". Social Proof",
+    ". Authority",
+    ". Liking",
+    ". Scarcity"
+  ],
+  "slides": [
+    {
+      "number": 1,
+      "type": "cover",
+      "title": "Social Engineering",
+      "main_idea": "Introduce Week 3: Social Engineering.",
+      "details": [
+        "Social engineering in a security context refers to any technique that uses psychological manipulation — rather than technical exploitation — to gain unauthorized access to systems,…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where social engineering affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize social engineering in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Social engineering in a security context refers to any technique that…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Tech-dark line-art hero for Week 3: Social Engineering, with networks, locks, shields, data paths, and classroom learning cues.",
+      "visual_mode": "line_art",
+      "speaker_goal": "Teach Social Engineering using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 2,
+      "type": "agenda",
+      "title": "Overall roadmap",
+      "main_idea": "The week moves from core definitions to practical security decisions.",
+      "details": [
+        "Defining Social Engineering",
+        "The Psychology of Social Engineering: Cialdini's Principles of Influence",
+        ". Reciprocity",
+        ". Commitment and Consistency"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where overall roadmap affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize overall roadmap in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Defining Social Engineering",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art roadmap showing the major learning path for Overall roadmap; connected nodes represent reading concepts and classroom application.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Overall roadmap using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 3,
+      "type": "objectives",
+      "title": "Learning objectives",
+      "main_idea": "Students should explain, apply, and evaluate the week’s main security ideas.",
+      "details": [
+        "Explain Defining Social Engineering.",
+        "Explain The Psychology of Social Engineering: Cialdini's Principles of Influence.",
+        "Explain . Reciprocity.",
+        "Explain . Commitment and Consistency."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where learning objectives affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize learning objectives in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Explain Defining Social Engineering.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Learning objectives: Learning objectives, Explain Defining Social Engineering, Explain The Psychology of Social Engineering: Cialdini's Principles of Influence. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Learning objectives using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 4,
+      "type": "application",
+      "title": "Opening scenario",
+      "main_idea": "Use a realistic scenario to anchor Social Engineering in operational decision-making.",
+      "details": [
+        "Social engineering in a security context refers to any technique that uses psychological manipulation — rather than technical exploitation — to gain unauthorized access to…",
+        "The social engineer's targets are people, not machines.",
+        "Their tools are trust, deception, urgency, and authority."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where opening scenario affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Social engineering in a security context refers to any technique that…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Opening scenario: Opening scenario, Social engineering in a security context refers to any technique that uses psychological manipulation — rather than technical exploitation — to gain unauthorized access to…, The social engineer's targets are people, not machines. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Opening scenario using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 5,
+      "type": "definition",
+      "title": "Defining Social Engineering",
+      "main_idea": "Social engineering in a security context refers to any technique that uses psychological manipulation — rather than technical exploitation — to gain unauthorized access to…",
+      "details": [
+        "Social engineering in a security context refers to any technique that uses psychological manipulation — rather than technical exploitation — to gain unauthorized access to…",
+        "The social engineer's targets are people, not machines.",
+        "Their tools are trust, deception, urgency, and authority.",
+        "Social engineer Kevin Mitnick, one of the most famous hackers in history, spent years evading law enforcement not primarily through technical wizardry but through his ability to…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where defining social engineering affects users, data, or operations.",
+        "instructor_prompt": "What problem does defining social engineering help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Social engineering in a security context refers to any technique that…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Defining Social Engineering: Defining Social Engineering, Social engineering in a security context refers to any technique that uses psychological manipulation — rather than technical exploitation — to gain unauthorized access to…, The social engineer's targets are people, not machines. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Defining Social Engineering using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 6,
+      "type": "concept",
+      "title": "The Psychology of Social Engineering: Cialdini's Principles of Influence",
+      "main_idea": "Psychologist Robert Cialdini's landmark 1984 book Influence: The Psychology of Persuasion identified six principles of influence that explain why people comply with requests.",
+      "details": [
+        "Psychologist Robert Cialdini's landmark 1984 book Influence: The Psychology of Persuasion identified six principles of influence that explain why people comply with requests.",
+        "Social engineers deliberately exploit all six.",
+        "The Psychology of Social Engineering: Cialdini's Principles of Influence connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where the psychology of social engineering: cialdini's principles of influence affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize the psychology of social engineering: cialdini's principles of influence in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Psychologist Robert Cialdini's landmark 1984 book Influence: The…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Psychology of Social Engineering: Cialdini's Principles of Influence: The Psychology of Social Engineering: Cialdini's Principles of Influence, Psychologist Robert Cialdini's landmark 1984 book Influence: The Psychology of Persuasion identified six principles of influence that explain why people comply with requests, Social engineers deliberately exploit all six. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Psychology of Social Engineering: Cialdini's Principles of Influence using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 7,
+      "type": "application",
+      "title": ". Reciprocity",
+      "main_idea": "People feel obligated to return favors.",
+      "details": [
+        "People feel obligated to return favors.",
+        "If an attacker performs a small kindness — helps you with a task, provides useful information — you feel a subconscious debt.",
+        "That debt makes you more likely to comply with a subsequent request, even if it is inappropriate or security-violating."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where . reciprocity affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: People feel obligated to return favors.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for . Reciprocity: . Reciprocity, People feel obligated to return favors, If an attacker performs a small kindness — helps you with a task, provides useful information — you feel a subconscious debt. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach . Reciprocity using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 8,
+      "type": "evidence",
+      "title": ". Commitment and Consistency",
+      "main_idea": "Once a person commits to a position or action, they are strongly motivated to remain consistent with that commitment.",
+      "details": [
+        "Once a person commits to a position or action, they are strongly motivated to remain consistent with that commitment.",
+        "Attackers exploit this by first obtaining small, innocuous commitments and then escalating.",
+        "If a target agrees that \"of course I want to keep our systems secure,\" they become more susceptible to a subsequent request framed as being in service of that stated commitment."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where . commitment and consistency affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize . commitment and consistency in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Once a person commits to a position or action, they are strongly…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for . Commitment and Consistency: . Commitment and Consistency, Once a person commits to a position or action, they are strongly motivated to remain consistent with that commitment, Attackers exploit this by first obtaining small, innocuous commitments and then escalating. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach . Commitment and Consistency using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 9,
+      "type": "definition",
+      "title": ". Social Proof",
+      "main_idea": "People look to the behavior of others when uncertain about how to act.",
+      "details": [
+        "People look to the behavior of others when uncertain about how to act.",
+        "\"Everyone else is doing it\" is a powerful driver.",
+        "Attackers invoke social proof by claiming other employees have already complied with a request, creating the impression that resistance is abnormal."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where . social proof affects users, data, or operations.",
+        "instructor_prompt": "What problem does . social proof help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: People look to the behavior of others when uncertain about how to act.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for . Social Proof: . Social Proof, People look to the behavior of others when uncertain about how to act, \"Everyone else is doing it\" is a powerful driver. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach . Social Proof using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 10,
+      "type": "concept",
+      "title": ". Authority",
+      "main_idea": "People comply with requests from those they perceive as authorities.",
+      "details": [
+        "People comply with requests from those they perceive as authorities.",
+        "Attackers impersonate executives, IT staff, law enforcement, or government officials.",
+        "The mere perception of authority — conveyed through a confident voice, technical jargon, or an official-sounding title — can be enough to override a target's skepticism."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where . authority affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize . authority in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: People comply with requests from those they perceive as authorities.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for . Authority: . Authority, People comply with requests from those they perceive as authorities, Attackers impersonate executives, IT staff, law enforcement, or government officials. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach . Authority using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 11,
+      "type": "application",
+      "title": ". Liking",
+      "main_idea": "People are more likely to comply with requests from those they like.",
+      "details": [
+        "People are more likely to comply with requests from those they like.",
+        "Attackers invest time in building rapport, mirroring behavior, expressing shared interests, and flattering targets.",
+        "Online research (via social media) enables attackers to identify interests, mutual connections, and personal details that help them appear relatable and trustworthy."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where . liking affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: People are more likely to comply with requests from those they like.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for . Liking: . Liking, People are more likely to comply with requests from those they like, Attackers invest time in building rapport, mirroring behavior, expressing shared interests, and flattering targets. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach . Liking using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 12,
+      "type": "evidence",
+      "title": ". Scarcity",
+      "main_idea": "People place higher value on things that are scarce and respond urgently to the prospect of missing out.",
+      "details": [
+        "People place higher value on things that are scarce and respond urgently to the prospect of missing out.",
+        "Creating artificial urgency (\"I need this done in the next 10 minutes or the system will go down\") bypasses deliberate thinking and pushes targets toward compliance without…",
+        "These principles are not separately deployed — skilled social engineers weave them together in real time, adapting based on the target's responses."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where . scarcity affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize . scarcity in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: People place higher value on things that are scarce and respond…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for . Scarcity: . Scarcity, People place higher value on things that are scarce and respond urgently to the prospect of missing out, Creating artificial urgency (\"I need this done in the next 10 minutes or the system will go down\") bypasses deliberate thinking and pushes targets toward compliance without…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach . Scarcity using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 13,
+      "type": "definition",
+      "title": "Phishing",
+      "main_idea": "Phishing is the most prevalent form of social engineering attack.",
+      "details": [
+        "Phishing is the most prevalent form of social engineering attack.",
+        "The attacker sends fraudulent emails designed to appear as legitimate communications from trusted sources — banks, technology companies, government agencies, or the target's own…",
+        "Phishing operates at scale — the same message is sent to thousands or millions of recipients, with the attacker needing only a small percentage to succeed."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where phishing affects users, data, or operations.",
+        "instructor_prompt": "What problem does phishing help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Phishing is the most prevalent form of social engineering attack.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Phishing: Phishing, Phishing is the most prevalent form of social engineering attack, The attacker sends fraudulent emails designed to appear as legitimate communications from trusted sources — banks, technology companies, government agencies, or the target's own…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Phishing using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 14,
+      "type": "concept",
+      "title": "Spear Phishing",
+      "main_idea": "Spear phishing is a targeted variant of phishing in which the attacker customizes the message for a specific individual or organization.",
+      "details": [
+        "Spear phishing is a targeted variant of phishing in which the attacker customizes the message for a specific individual or organization.",
+        "Using information gathered from social media, corporate websites, press releases, or prior reconnaissance, the attacker crafts a message that is highly credible to the specific…",
+        "A spear phish to a corporate finance employee might reference a real upcoming event, invoke a real executive's name, and use the correct internal terminology — making it far more…",
+        "Spear phishing is significantly more effective than broad phishing: industry data suggests spear phishing open rates and click rates are substantially higher than generic phishing."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where spear phishing affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize spear phishing in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Spear phishing is a targeted variant of phishing in which the…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Spear Phishing: Spear Phishing, Spear phishing is a targeted variant of phishing in which the attacker customizes the message for a specific individual or organization, Using information gathered from social media, corporate websites, press releases, or prior reconnaissance, the attacker crafts a message that is highly credible to the specific…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Spear Phishing using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 15,
+      "type": "application",
+      "title": "Whaling",
+      "main_idea": "Whaling is spear phishing directed at senior executives — the \"big fish\" in an organization.",
+      "details": [
+        "Whaling is spear phishing directed at senior executives — the \"big fish\" in an organization.",
+        "These attacks are particularly high-value because executives often have access to financial systems, strategic information, and can authorize large transfers or data disclosures.",
+        "Whaling attacks frequently masquerade as legal documents, regulatory notices, or urgent communications from the board of directors."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where whaling affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Whaling is spear phishing directed at senior executives — the \"big…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Whaling: Whaling, Whaling is spear phishing directed at senior executives — the \"big fish\" in an organization, These attacks are particularly high-value because executives often have access to financial systems, strategic information, and can authorize large transfers or data disclosures. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Whaling using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 16,
+      "type": "evidence",
+      "title": "Vishing (Voice Phishing)",
+      "main_idea": "Vishing uses phone calls to manipulate targets.",
+      "details": [
+        "Vishing uses phone calls to manipulate targets.",
+        "Attackers impersonate bank fraud departments, technical support personnel, government agencies (such as the IRS), or internal IT staff.",
+        "Voice conveys confidence, urgency, and human connection in ways that email cannot, making vishing sometimes more effective at bypassing skepticism.",
+        "Caller ID spoofing technology makes it trivially easy to make a call appear to originate from any number, including legitimate organizational phone numbers."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where vishing (voice phishing) affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize vishing (voice phishing) in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Vishing uses phone calls to manipulate targets.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Vishing (Voice Phishing): Vishing (Voice Phishing), Vishing uses phone calls to manipulate targets, Attackers impersonate bank fraud departments, technical support personnel, government agencies (such as the IRS), or internal IT staff. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Vishing (Voice Phishing) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 17,
+      "type": "definition",
+      "title": "Smishing (SMS Phishing)",
+      "main_idea": "Smishing uses text messages (SMS) to deliver phishing messages.",
+      "details": [
+        "Smishing uses text messages (SMS) to deliver phishing messages.",
+        "Targets receive texts appearing to be from their bank, a package delivery service, or a government agency, often with a link to a malicious site optimized for mobile display.",
+        "The relative novelty of SMS-based attacks — many users have not been specifically warned about them — and the typically less scrutinized nature of text messages contribute to…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where smishing (sms phishing) affects users, data, or operations.",
+        "instructor_prompt": "What problem does smishing (sms phishing) help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Smishing uses text messages (SMS) to deliver phishing messages.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Smishing (SMS Phishing): Smishing (SMS Phishing), Smishing uses text messages (SMS) to deliver phishing messages, Targets receive texts appearing to be from their bank, a package delivery service, or a government agency, often with a link to a malicious site optimized for mobile display. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Smishing (SMS Phishing) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 18,
+      "type": "concept",
+      "title": "Pretexting",
+      "main_idea": "Pretexting involves creating a fabricated scenario (a \"pretext\") to extract information from a target.",
+      "details": [
+        "Pretexting involves creating a fabricated scenario (a \"pretext\") to extract information from a target.",
+        "The attacker invents an identity and backstory — a new IT employee, an auditor, a vendor representative, a journalist — and uses this false identity to gain trust and elicit…",
+        "Unlike phishing, pretexting is typically an interactive, real-time engagement.",
+        "The attacker maintains the pretext throughout the conversation, adapting to questions and objections."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where pretexting affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize pretexting in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Pretexting involves creating a fabricated scenario (a \"pretext\") to…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Pretexting: Pretexting, Pretexting involves creating a fabricated scenario (a \"pretext\") to extract information from a target, The attacker invents an identity and backstory — a new IT employee, an auditor, a vendor representative, a journalist — and uses this false identity to gain trust and elicit…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Pretexting using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 19,
+      "type": "application",
+      "title": "Baiting",
+      "main_idea": "Baiting lures targets with the promise of something desirable.",
+      "details": [
+        "Baiting lures targets with the promise of something desirable.",
+        "The classic example is the USB drop attack: USB drives loaded with malware are intentionally left in parking lots, restrooms, or common areas, labeled with enticing labels…",
+        "A curious or opportunistic employee picks up the drive and plugs it into a work computer, triggering malware installation.",
+        "A 2016 experiment by researchers at the University of Illinois found that of nearly 300 USB drives dropped around a university campus, 45–98% (depending on labeling) were picked…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where baiting affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Baiting lures targets with the promise of something desirable.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Baiting: Baiting, Baiting lures targets with the promise of something desirable, The classic example is the USB drop attack: USB drives loaded with malware are intentionally left in parking lots, restrooms, or common areas, labeled with enticing labels…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Baiting using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 20,
+      "type": "evidence",
+      "title": "Quid Pro Quo",
+      "main_idea": "Quid pro quo (Latin: \"something for something\") attacks offer a service in exchange for information.",
+      "details": [
+        "Quid pro quo (Latin: \"something for something\") attacks offer a service in exchange for information.",
+        "A common form involves an attacker calling employees and offering free IT support or a software upgrade.",
+        "In exchange for this \"help,\" the attacker requests credentials or remote access to the system.",
+        "The helpfulness and reciprocity dynamic make targets more likely to comply."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where quid pro quo affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize quid pro quo in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Quid pro quo (Latin: \"something for something\") attacks offer a…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Quid Pro Quo: Quid Pro Quo, Quid pro quo (Latin: \"something for something\") attacks offer a service in exchange for information, A common form involves an attacker calling employees and offering free IT support or a software upgrade. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Quid Pro Quo using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 21,
+      "type": "definition",
+      "title": "Watering Hole Attacks",
+      "main_idea": "A watering hole attack compromises a website known to be frequented by members of a specific target organization or industry.",
+      "details": [
+        "A watering hole attack compromises a website known to be frequented by members of a specific target organization or industry.",
+        "Rather than attacking the target directly (which may have strong defenses), the attacker compromises a third-party site the target regularly visits — an industry forum, a news…",
+        "The technique exploits the implicit trust users place in familiar websites."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where watering hole attacks affects users, data, or operations.",
+        "instructor_prompt": "What problem does watering hole attacks help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A watering hole attack compromises a website known to be frequented…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Watering Hole Attacks: Watering Hole Attacks, A watering hole attack compromises a website known to be frequented by members of a specific target organization or industry, Rather than attacking the target directly (which may have strong defenses), the attacker compromises a third-party site the target regularly visits — an industry forum, a news…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Watering Hole Attacks using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 22,
+      "type": "concept",
+      "title": "Business Email Compromise (BEC)",
+      "main_idea": "Business Email Compromise is a sophisticated attack in which attackers compromise or impersonate corporate email accounts to conduct financial fraud.",
+      "details": [
+        "Business Email Compromise is a sophisticated attack in which attackers compromise or impersonate corporate email accounts to conduct financial fraud.",
+        "A typical BEC attack involves an attacker impersonating an executive (often the CEO or CFO) and instructing a finance employee to make an urgent wire transfer to an account…",
+        "Alternatively, attackers may compromise a vendor's email account and redirect legitimate invoices to fraudulent banking details.",
+        "The FBI has consistently identified BEC as the highest-grossing form of cybercrime, with global losses measured in billions of dollars annually."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where business email compromise (bec) affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize business email compromise (bec) in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Business Email Compromise is a sophisticated attack in which…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Business Email Compromise (BEC): Business Email Compromise (BEC), Business Email Compromise is a sophisticated attack in which attackers compromise or impersonate corporate email accounts to conduct financial fraud, A typical BEC attack involves an attacker impersonating an executive (often the CEO or CFO) and instructing a finance employee to make an urgent wire transfer to an account…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Business Email Compromise (BEC) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 23,
+      "type": "application",
+      "title": "Deepfake Social Engineering",
+      "main_idea": "A rapidly emerging threat involves the use of AI-generated synthetic media — deepfake audio and video — to impersonate individuals in social engineering attacks.",
+      "details": [
+        "A rapidly emerging threat involves the use of AI-generated synthetic media — deepfake audio and video — to impersonate individuals in social engineering attacks.",
+        "In documented cases, attackers have used AI-generated voice clones of executives to authorize fraudulent wire transfers over the phone.",
+        "In 2020, a criminal group reportedly used deepfake audio to impersonate a bank director's voice and convince a bank manager to transfer $35 million.",
+        "As the technology becomes more accessible and realistic, this attack vector is expected to grow significantly."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where deepfake social engineering affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A rapidly emerging threat involves the use of AI-generated synthetic…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Deepfake Social Engineering: Deepfake Social Engineering, A rapidly emerging threat involves the use of AI-generated synthetic media — deepfake audio and video — to impersonate individuals in social engineering attacks, In documented cases, attackers have used AI-generated voice clones of executives to authorize fraudulent wire transfers over the phone. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Deepfake Social Engineering using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 24,
+      "type": "evidence",
+      "title": "Detection Techniques",
+      "main_idea": "Recognizing social engineering in real time is difficult because these attacks are designed to exploit cognition rather than trigger logical analysis.",
+      "details": [
+        "Recognizing social engineering in real time is difficult because these attacks are designed to exploit cognition rather than trigger logical analysis.",
+        "Nevertheless, there are warning signs that should prompt heightened scrutiny: - Unexpected urgency or pressure: Legitimate organizations do not typically demand immediate action…",
+        "- Requests for sensitive information: No legitimate IT department will ask for a password; no legitimate bank representative needs your full card number if they initiated the call.",
+        "- Unusual communication channels: An executive requesting a wire transfer via personal Gmail rather than corporate email is suspicious."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where detection techniques affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize detection techniques in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Recognizing social engineering in real time is difficult because…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Detection Techniques: Detection Techniques, Recognizing social engineering in real time is difficult because these attacks are designed to exploit cognition rather than trigger logical analysis, Nevertheless, there are warning signs that should prompt heightened scrutiny: - Unexpected urgency or pressure: Legitimate organizations do not typically demand immediate action…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Detection Techniques using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 25,
+      "type": "vocabulary",
+      "title": "Key terms to keep",
+      "main_idea": "Vocabulary becomes useful when students can connect terms to scenarios and evidence.",
+      "details": [
+        "Defining Social Engineering",
+        "The Psychology of Social Engineering: Cialdini's Principles of Influence",
+        ". Reciprocity",
+        ". Commitment and Consistency"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where key terms to keep affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize key terms to keep in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Defining Social Engineering",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Key terms to keep: Key terms to keep, Defining Social Engineering, The Psychology of Social Engineering: Cialdini's Principles of Influence. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Key terms to keep using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 26,
+      "type": "comparison",
+      "title": "Compare: Defining Social Engineering vs. The Psychology of Social Engineering: Cialdini's Principles of Influence",
+      "main_idea": "Comparing related ideas helps students avoid shallow memorization.",
+      "details": [
+        "Where Defining Social Engineering applies.",
+        "Where The Psychology of Social Engineering: Cialdini's Principles of Influence applies.",
+        "How the difference changes the security decision."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where compare: defining social engineering vs. the psychology of social engineering: cialdini's principles of influence affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize compare: defining social engineering vs. the psychology of social engineering: cialdini's principles of influence in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Where Defining Social Engineering applies.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Compare: Defining Social Engineering vs. The Psychology of Social Engineering: Cialdini's Principles of Influence: Compare: Defining Social Engineering vs. The Psychology of Social Engineering: Cialdini's Principles of Influence, Where Defining Social Engineering applies, Where The Psychology of Social Engineering: Cialdini's Principles of Influence applies. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Compare: Defining Social Engineering vs. The Psychology of Social Engineering: Cialdini's Principles of Influence using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 27,
+      "type": "application",
+      "title": "Applied decision checkpoint",
+      "main_idea": "Students should translate concepts into a defensible security decision.",
+      "details": [
+        "Identify the asset or process at risk.",
+        "Choose a preventive, detective, or corrective control.",
+        "Explain what evidence would prove the control is working."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where applied decision checkpoint affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Identify the asset or process at risk.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Applied decision checkpoint: Applied decision checkpoint, Identify the asset or process at risk, Choose a preventive, detective, or corrective control. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Applied decision checkpoint using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 28,
+      "type": "review",
+      "title": "Review questions",
+      "main_idea": "Retrieval practice should ask students to define, compare, apply, and evaluate.",
+      "details": [
+        "Define one core concept in plain language.",
+        "Compare two controls or threats from the week.",
+        "Apply one idea to a campus or business system.",
+        "Evaluate why a solution might fail in practice."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where review questions affects users, data, or operations.",
+        "instructor_prompt": "What is the one sentence takeaway for review questions?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Define one core concept in plain language.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Review questions: Review questions, Define one core concept in plain language, Compare two controls or threats from the week. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Review questions using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 29,
+      "type": "bridge",
+      "title": "Bridge to lab and assessment",
+      "main_idea": "The reading should transfer into evidence-based lab work and written explanations.",
+      "details": [
+        "Collect evidence, not just screenshots.",
+        "Explain what the artifact proves.",
+        "Connect the proof back to risk and control selection."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where bridge to lab and assessment affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize bridge to lab and assessment in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Collect evidence, not just screenshots.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Bridge to lab and assessment: Bridge to lab and assessment, Collect evidence, not just screenshots, Explain what the artifact proves. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Bridge to lab and assessment using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 30,
+      "type": "closing",
+      "title": "Takeaway",
+      "main_idea": "The central takeaway from Week 3 is to reason from risk to evidence to action.",
+      "details": [
+        "Social Engineering",
+        "Security is a decision process, not just a tool list.",
+        "Use the reading to justify practical choices."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 3 incident where takeaway affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize takeaway in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Social Engineering",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Takeaway: Takeaway, Social Engineering, Security is a decision process, not just a tool list. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Takeaway using evidence, scenario reasoning, and a concrete security takeaway."
+    }
+  ]
+}

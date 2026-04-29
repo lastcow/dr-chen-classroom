@@ -1,0 +1,637 @@
+{
+  "week": 8,
+  "title": "Internet Security",
+  "source": "scia-120/chapter-08.md",
+  "author": "Dr. Zhijiang Chen",
+  "institution": "Frostburg State University",
+  "summary": "The internet was not designed with security in mind. Its foundational protocols — TCP/IP, HTTP, DNS, SMTP — were developed in an era when the network's user base was small, relatively trusted, and primarily academic. The explosive growth of the internet into a global infrastructure carrying financial transactions, medical records, political communications,…",
+  "key_concepts": [
+    "Introduction",
+    "Internet Architecture and Security Implications",
+    "HTTPS and TLS in Practice",
+    "OWASP Top 10",
+    "The Same-Origin Policy",
+    "Cookies and Session Management",
+    "Content Security Policy (CSP)",
+    "Email Security Protocols"
+  ],
+  "slides": [
+    {
+      "number": 1,
+      "type": "cover",
+      "title": "Internet Security",
+      "main_idea": "Introduce Week 8: Internet Security.",
+      "details": [
+        "The internet was not designed with security in mind."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where internet security affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize internet security in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The internet was not designed with security in mind.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Tech-dark line-art hero for Week 8: Internet Security, with networks, locks, shields, data paths, and classroom learning cues.",
+      "visual_mode": "line_art",
+      "speaker_goal": "Teach Internet Security using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 2,
+      "type": "agenda",
+      "title": "Overall roadmap",
+      "main_idea": "The week moves from core definitions to practical security decisions.",
+      "details": [
+        "Introduction",
+        "Internet Architecture and Security Implications",
+        "HTTPS and TLS in Practice",
+        "OWASP Top 10"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where overall roadmap affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize overall roadmap in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art roadmap showing the major learning path for Overall roadmap; connected nodes represent reading concepts and classroom application.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Overall roadmap using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 3,
+      "type": "objectives",
+      "title": "Learning objectives",
+      "main_idea": "Students should explain, apply, and evaluate the week’s main security ideas.",
+      "details": [
+        "Explain Introduction.",
+        "Explain Internet Architecture and Security Implications.",
+        "Explain HTTPS and TLS in Practice.",
+        "Explain OWASP Top 10."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where learning objectives affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize learning objectives in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Explain Introduction.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Learning objectives: Learning objectives, Explain Introduction, Explain Internet Architecture and Security Implications. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Learning objectives using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 4,
+      "type": "application",
+      "title": "Opening scenario",
+      "main_idea": "Use a realistic scenario to anchor Internet Security in operational decision-making.",
+      "details": [
+        "The internet was not designed with security in mind.",
+        "Its foundational protocols — TCP/IP, HTTP, DNS, SMTP — were developed in an era when the network's user base was small, relatively trusted, and primarily academic.",
+        "Many of the topics here build directly on the cryptography covered in Chapter 6 and the network security concepts in Chapter 7."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where opening scenario affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The internet was not designed with security in mind.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Opening scenario: Opening scenario, The internet was not designed with security in mind, Its foundational protocols — TCP/IP, HTTP, DNS, SMTP — were developed in an era when the network's user base was small, relatively trusted, and primarily academic. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Opening scenario using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 5,
+      "type": "definition",
+      "title": "Introduction",
+      "main_idea": "The internet was not designed with security in mind.",
+      "details": [
+        "The internet was not designed with security in mind.",
+        "Its foundational protocols — TCP/IP, HTTP, DNS, SMTP — were developed in an era when the network's user base was small, relatively trusted, and primarily academic.",
+        "Many of the topics here build directly on the cryptography covered in Chapter 6 and the network security concepts in Chapter 7."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where introduction affects users, data, or operations.",
+        "instructor_prompt": "What problem does introduction help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The internet was not designed with security in mind.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Introduction: Introduction, The internet was not designed with security in mind, Its foundational protocols — TCP/IP, HTTP, DNS, SMTP — were developed in an era when the network's user base was small, relatively trusted, and primarily academic. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Introduction using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 6,
+      "type": "concept",
+      "title": "Internet Architecture and Security Implications",
+      "main_idea": "The internet is a network of networks: thousands of autonomous systems (AS) — ISPs, universities, corporations — interconnected through BGP (Border Gateway Protocol) , which…",
+      "details": [
+        "The internet is a network of networks: thousands of autonomous systems (AS) — ISPs, universities, corporations — interconnected through BGP (Border Gateway Protocol) , which…",
+        "This decentralized architecture provides resilience (no single point of failure) but creates security implications that are difficult to fully address.",
+        "BGP hijacking , for example, occurs when an AS maliciously or accidentally announces ownership of IP address blocks it doesn't control, attracting and potentially intercepting…",
+        "Notable incidents include Pakistan Telecom briefly hijacking YouTube's IP addresses in 2008 and, more seriously, nation-state-attributed BGP hijacking incidents targeting…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where internet architecture and security implications affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize internet architecture and security implications in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The internet is a network of networks: thousands of autonomous…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Internet Architecture and Security Implications: Internet Architecture and Security Implications, The internet is a network of networks: thousands of autonomous systems (AS) — ISPs, universities, corporations — interconnected through BGP (Border Gateway Protocol) , which…, This decentralized architecture provides resilience (no single point of failure) but creates security implications that are difficult to fully address. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Internet Architecture and Security Implications using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 7,
+      "type": "application",
+      "title": "HTTPS and TLS in Practice",
+      "main_idea": "HTTPS (HTTP Secure) is HTTP carried over a TLS connection.",
+      "details": [
+        "HTTPS (HTTP Secure) is HTTP carried over a TLS connection.",
+        "The presence of a padlock icon in a browser's address bar indicates a valid TLS certificate, but it does not mean the site itself is trustworthy or not malicious — only that the…",
+        "Phishing sites routinely obtain valid TLS certificates for their fraudulent domains.",
+        "HSTS (HTTP Strict Transport Security) is a security header that instructs browsers to only connect to a domain over HTTPS, never falling back to plain HTTP, for a specified…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where https and tls in practice affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: HTTPS (HTTP Secure) is HTTP carried over a TLS connection.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for HTTPS and TLS in Practice: HTTPS and TLS in Practice, HTTPS (HTTP Secure) is HTTP carried over a TLS connection, The presence of a padlock icon in a browser's address bar indicates a valid TLS certificate, but it does not mean the site itself is trustworthy or not malicious — only that the…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach HTTPS and TLS in Practice using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 8,
+      "type": "evidence",
+      "title": "OWASP Top 10",
+      "main_idea": "The Open Web Application Security Project (OWASP) publishes the OWASP Top 10 , a periodically updated list of the most critical web application security risks.",
+      "details": [
+        "The Open Web Application Security Project (OWASP) publishes the OWASP Top 10 , a periodically updated list of the most critical web application security risks.",
+        "It is the de facto standard reference for web application security.",
+        "Broken Access Control : Users acting outside of their intended permissions — accessing other users' data, elevating privileges, or bypassing authorization checks.",
+        "This is the most prevalent web security failure, found in 94% of tested applications."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where owasp top 10 affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize owasp top 10 in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The Open Web Application Security Project (OWASP) publishes the OWASP…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for OWASP Top 10: OWASP Top 10, The Open Web Application Security Project (OWASP) publishes the OWASP Top 10 , a periodically updated list of the most critical web application security risks, It is the de facto standard reference for web application security. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach OWASP Top 10 using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 9,
+      "type": "definition",
+      "title": "The Same-Origin Policy",
+      "main_idea": "The Same-Origin Policy (SOP) is a fundamental browser security mechanism that restricts how scripts loaded from one origin (defined as the combination of scheme, hostname, and…",
+      "details": [
+        "The Same-Origin Policy (SOP) is a fundamental browser security mechanism that restricts how scripts loaded from one origin (defined as the combination of scheme, hostname, and…",
+        "Without SOP, a malicious script could silently read your email, your bank balance, or any other data from any site you are logged into.",
+        "CORS (Cross-Origin Resource Sharing) is a controlled relaxation of SOP that allows servers to explicitly declare which origins may access their resources, using HTTP headers…",
+        "Misconfigured CORS policies (e.g., Access-Control-Allow-Origin: with Access-Control-Allow-Credentials: true) can re-open the vulnerabilities that SOP prevents."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where the same-origin policy affects users, data, or operations.",
+        "instructor_prompt": "What problem does the same-origin policy help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The Same-Origin Policy (SOP) is a fundamental browser security…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Same-Origin Policy: The Same-Origin Policy, The Same-Origin Policy (SOP) is a fundamental browser security mechanism that restricts how scripts loaded from one origin (defined as the combination of scheme, hostname, and…, Without SOP, a malicious script could silently read your email, your bank balance, or any other data from any site you are logged into. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Same-Origin Policy using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 10,
+      "type": "concept",
+      "title": "Cookies and Session Management",
+      "main_idea": "HTTP cookies are small pieces of data stored by the browser and automatically sent with every request to the domain that set them.",
+      "details": [
+        "HTTP cookies are small pieces of data stored by the browser and automatically sent with every request to the domain that set them.",
+        "They are the primary mechanism for maintaining session state in stateless HTTP.",
+        "Security-relevant cookie attributes: - Secure : Cookie is only sent over HTTPS connections.",
+        "- HttpOnly : Cookie is inaccessible to JavaScript, preventing theft via XSS."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where cookies and session management affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize cookies and session management in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: HTTP cookies are small pieces of data stored by the browser and…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Cookies and Session Management: Cookies and Session Management, HTTP cookies are small pieces of data stored by the browser and automatically sent with every request to the domain that set them, They are the primary mechanism for maintaining session state in stateless HTTP. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Cookies and Session Management using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 11,
+      "type": "application",
+      "title": "Content Security Policy (CSP)",
+      "main_idea": "Content Security Policy (CSP) is an HTTP response header that tells the browser which sources of content (scripts, styles, images, fonts, etc.) are legitimate for a given page.",
+      "details": [
+        "Content Security Policy (CSP) is an HTTP response header that tells the browser which sources of content (scripts, styles, images, fonts, etc.) are legitimate for a given page.",
+        "By specifying a strict CSP (e.g., script-src 'self'), an application can prevent the execution of injected scripts even if an XSS vulnerability exists, providing a powerful…",
+        "CSP is not a substitute for fixing XSS vulnerabilities but significantly raises the bar for exploitation."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where content security policy (csp) affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Content Security Policy (CSP) is an HTTP response header that tells…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Content Security Policy (CSP): Content Security Policy (CSP), Content Security Policy (CSP) is an HTTP response header that tells the browser which sources of content (scripts, styles, images, fonts, etc, By specifying a strict CSP (e. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Content Security Policy (CSP) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 12,
+      "type": "evidence",
+      "title": "Email Security Protocols",
+      "main_idea": "Email's foundational protocols (SMTP, POP3, IMAP) were designed without authentication, making email domain spoofing trivially easy — anyone can send an email claiming to be from…",
+      "details": [
+        "Email's foundational protocols (SMTP, POP3, IMAP) were designed without authentication, making email domain spoofing trivially easy — anyone can send an email claiming to be from…",
+        "Three complementary standards have been developed to address this:",
+        "Email Security Protocols connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where email security protocols affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize email security protocols in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Email's foundational protocols (SMTP, POP3, IMAP) were designed…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Email Security Protocols: Email Security Protocols, Email's foundational protocols (SMTP, POP3, IMAP) were designed without authentication, making email domain spoofing trivially easy — anyone can send an email claiming to be from…, Three complementary standards have been developed to address this:. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Email Security Protocols using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 13,
+      "type": "definition",
+      "title": "SPF (Sender Policy Framework)",
+      "main_idea": "SPF allows domain owners to publish, via DNS TXT records, a list of mail servers authorized to send email on behalf of their domain.",
+      "details": [
+        "SPF allows domain owners to publish, via DNS TXT records, a list of mail servers authorized to send email on behalf of their domain.",
+        "When a receiving mail server gets a message, it checks whether the sending server's IP is listed in the sender domain's SPF record.",
+        "This prevents unauthorized servers from sending mail as your domain.",
+        "However, SPF only validates the envelope sender (the SMTP MAIL FROM address), not the visible From: header."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where spf (sender policy framework) affects users, data, or operations.",
+        "instructor_prompt": "What problem does spf (sender policy framework) help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: SPF allows domain owners to publish, via DNS TXT records, a list of…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for SPF (Sender Policy Framework): SPF (Sender Policy Framework), SPF allows domain owners to publish, via DNS TXT records, a list of mail servers authorized to send email on behalf of their domain, When a receiving mail server gets a message, it checks whether the sending server's IP is listed in the sender domain's SPF record. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach SPF (Sender Policy Framework) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 14,
+      "type": "concept",
+      "title": "DKIM (DomainKeys Identified Mail)",
+      "main_idea": "DKIM allows sending mail servers to attach a cryptographic signature to outgoing messages.",
+      "details": [
+        "DKIM allows sending mail servers to attach a cryptographic signature to outgoing messages.",
+        "The signature covers specified headers and the message body.",
+        "The corresponding public key is published in the sending domain's DNS records.",
+        "Receiving servers verify the signature, confirming that the message was sent by an authorized server and has not been modified in transit."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where dkim (domainkeys identified mail) affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize dkim (domainkeys identified mail) in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: DKIM allows sending mail servers to attach a cryptographic signature…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for DKIM (DomainKeys Identified Mail): DKIM (DomainKeys Identified Mail), DKIM allows sending mail servers to attach a cryptographic signature to outgoing messages, The signature covers specified headers and the message body. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach DKIM (DomainKeys Identified Mail) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 15,
+      "type": "application",
+      "title": "DMARC (Domain-based Message Authentication, Reporting, and Conformance)",
+      "main_idea": "DMARC builds on SPF and DKIM by allowing domain owners to specify what should happen to messages that fail authentication (nothing, quarantine to spam, or reject outright) and to…",
+      "details": [
+        "DMARC builds on SPF and DKIM by allowing domain owners to specify what should happen to messages that fail authentication (nothing, quarantine to spam, or reject outright) and to…",
+        "A properly configured DMARC policy (especially with p=reject) dramatically reduces spoofed email successfully reaching recipients.",
+        "⚠️ Warning : Email without SPF, DKIM, and DMARC is easily spoofed.",
+        "Many phishing attacks succeed because recipient organizations do not validate the sender's domain."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where dmarc (domain-based message authentication, reporting, and conformance) affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: DMARC builds on SPF and DKIM by allowing domain owners to specify…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for DMARC (Domain-based Message Authentication, Reporting, and Conformance): DMARC (Domain-based Message Authentication, Reporting, and Conformance), DMARC builds on SPF and DKIM by allowing domain owners to specify what should happen to messages that fail authentication (nothing, quarantine to spam, or reject outright) and to…, A properly configured DMARC policy (especially with p=reject) dramatically reduces spoofed email successfully reaching recipients. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach DMARC (Domain-based Message Authentication, Reporting, and Conformance) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 16,
+      "type": "evidence",
+      "title": "DNS Security and DNSSEC",
+      "main_idea": "The DNS infrastructure underpins nearly all internet communication — every web request, email, and API call typically begins with a DNS lookup.",
+      "details": [
+        "The DNS infrastructure underpins nearly all internet communication — every web request, email, and API call typically begins with a DNS lookup.",
+        "Yet traditional DNS provides no authentication: resolvers cannot verify that the responses they receive are from the authoritative name server for a domain and haven't been…",
+        "DNSSEC (DNS Security Extensions) adds cryptographic signatures to DNS records.",
+        "Each zone has a key pair; resource records are signed with the private key, and resolvers can verify these signatures using the public key published in the zone."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where dns security and dnssec affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize dns security and dnssec in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The DNS infrastructure underpins nearly all internet communication —…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for DNS Security and DNSSEC: DNS Security and DNSSEC, The DNS infrastructure underpins nearly all internet communication — every web request, email, and API call typically begins with a DNS lookup, Yet traditional DNS provides no authentication: resolvers cannot verify that the responses they receive are from the authoritative name server for a domain and haven't been…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach DNS Security and DNSSEC using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 17,
+      "type": "definition",
+      "title": "VPN Use for Privacy",
+      "main_idea": "Beyond their role in securing remote access (covered in Chapter 7), VPNs are widely used for privacy: by routing all traffic through the VPN provider's servers, the user's ISP and…",
+      "details": [
+        "Beyond their role in securing remote access (covered in Chapter 7), VPNs are widely used for privacy: by routing all traffic through the VPN provider's servers, the user's ISP and…",
+        "However, this only shifts trust to the VPN provider, who can see all the user's traffic.",
+        "Users should choose VPN providers with strong no-logging policies and ideally those that have been independently audited."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where vpn use for privacy affects users, data, or operations.",
+        "instructor_prompt": "What problem does vpn use for privacy help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Beyond their role in securing remote access (covered in Chapter 7),…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for VPN Use for Privacy: VPN Use for Privacy, Beyond their role in securing remote access (covered in Chapter 7), VPNs are widely used for privacy: by routing all traffic through the VPN provider's servers, the user's ISP and…, However, this only shifts trust to the VPN provider, who can see all the user's traffic. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach VPN Use for Privacy using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 18,
+      "type": "concept",
+      "title": "Tor and Onion Routing",
+      "main_idea": "Tor (The Onion Router) provides anonymity through a technique called onion routing .",
+      "details": [
+        "Tor (The Onion Router) provides anonymity through a technique called onion routing .",
+        "When a Tor user connects to a website, their traffic is encrypted in multiple layers and relayed through a circuit of three volunteer-operated Tor relays (the guard/entry node, a…",
+        "Each relay decrypts one layer, learning only the previous and next hop — no single relay knows both the origin and destination of the traffic.",
+        "Tor is used by journalists, activists, whistleblowers, and ordinary users who need strong anonymity."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where tor and onion routing affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize tor and onion routing in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Tor (The Onion Router) provides anonymity through a technique called…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Tor and Onion Routing: Tor and Onion Routing, Tor (The Onion Router) provides anonymity through a technique called onion routing , When a Tor user connects to a website, their traffic is encrypted in multiple layers and relayed through a circuit of three volunteer-operated Tor relays (the guard/entry node, a…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Tor and Onion Routing using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 19,
+      "type": "application",
+      "title": "The Dark Web",
+      "main_idea": "The dark web refers to overlay networks (primarily Tor, but also I2P and Freenet) that require specific software to access and provide anonymity to both clients and servers.",
+      "details": [
+        "The dark web refers to overlay networks (primarily Tor, but also I2P and Freenet) that require specific software to access and provide anonymity to both clients and servers.",
+        "It hosts a range of content: privacy-focused services (SecureDrop for whistleblowing), forums, and unfortunately, markets for illegal goods and cybercrime-as-a-service operations.",
+        "From a security perspective, the dark web is significant as a marketplace for stolen credentials, ransomware tools, zero-day exploits, and personal data from breaches.",
+        "Organizations monitor dark web forums and marketplaces for indications that their data or credentials have been compromised."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where the dark web affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The dark web refers to overlay networks (primarily Tor, but also I2P…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Dark Web: The Dark Web, The dark web refers to overlay networks (primarily Tor, but also I2P and Freenet) that require specific software to access and provide anonymity to both clients and servers, It hosts a range of content: privacy-focused services (SecureDrop for whistleblowing), forums, and unfortunately, markets for illegal goods and cybercrime-as-a-service operations. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Dark Web using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 20,
+      "type": "evidence",
+      "title": "IoT Security",
+      "main_idea": "The Internet of Things (IoT) encompasses the vast and growing ecosystem of network-connected devices beyond traditional computers: smart thermostats, IP cameras, smart TVs,…",
+      "details": [
+        "The Internet of Things (IoT) encompasses the vast and growing ecosystem of network-connected devices beyond traditional computers: smart thermostats, IP cameras, smart TVs,…",
+        "By 2030, an estimated 25 billion IoT devices will be deployed.",
+        "IoT devices present severe security challenges: - Insecure defaults : Many devices ship with default credentials (admin/admin, admin/password) that many users never change.",
+        "The Mirai botnet (2016), which launched record-breaking DDoS attacks, was built from hundreds of thousands of IoT devices compromised using default credentials."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where iot security affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize iot security in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The Internet of Things (IoT) encompasses the vast and growing…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for IoT Security: IoT Security, The Internet of Things (IoT) encompasses the vast and growing ecosystem of network-connected devices beyond traditional computers: smart thermostats, IP cameras, smart TVs,…, By 2030, an estimated 25 billion IoT devices will be deployed. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach IoT Security using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 21,
+      "type": "definition",
+      "title": "PCI-DSS",
+      "main_idea": "PCI-DSS includes requirements for network security (firewalls, encryption in transit), access control (least privilege, MFA), vulnerability management (patching, security…",
+      "details": [
+        "PCI-DSS includes requirements for network security (firewalls, encryption in transit), access control (least privilege, MFA), vulnerability management (patching, security…",
+        "PCI-DSS compliance is not a guarantee of security, but it establishes a meaningful baseline.",
+        "Merchants who achieve compliance through compliance-checking exercises alone without actually improving security (\"checkbox compliance\") continue to be breached.",
+        "This has shifted card fraud toward card-not-present (online) transactions, which require other mitigations such as 3D Secure (3DS) protocols."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where pci-dss affects users, data, or operations.",
+        "instructor_prompt": "What problem does pci-dss help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: PCI-DSS includes requirements for network security (firewalls,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for PCI-DSS: PCI-DSS, PCI-DSS includes requirements for network security (firewalls, encryption in transit), access control (least privilege, MFA), vulnerability management (patching, security…, PCI-DSS compliance is not a guarantee of security, but it establishes a meaningful baseline. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach PCI-DSS using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 22,
+      "type": "concept",
+      "title": "Cookies, Fingerprinting, and Trackers",
+      "main_idea": "While first-party cookies serve legitimate purposes (session state, preferences), third-party tracking cookies enable advertising networks and data brokers to track users'…",
+      "details": [
+        "While first-party cookies serve legitimate purposes (session state, preferences), third-party tracking cookies enable advertising networks and data brokers to track users'…",
+        "Modern browsers (Safari, Firefox, Brave) and privacy regulations (GDPR, CCPA) have increasingly restricted third-party cookies.",
+        "Users can test their fingerprint uniqueness at sites like coveryourtracks.eff.org.",
+        "Data brokers aggregate personal data from public records, social media, loyalty programs, and purchased datasets, building detailed profiles on individuals that are sold to…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where cookies, fingerprinting, and trackers affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize cookies, fingerprinting, and trackers in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: While first-party cookies serve legitimate purposes (session state,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Cookies, Fingerprinting, and Trackers: Cookies, Fingerprinting, and Trackers, While first-party cookies serve legitimate purposes (session state, preferences), third-party tracking cookies enable advertising networks and data brokers to track users'…, Modern browsers (Safari, Firefox, Brave) and privacy regulations (GDPR, CCPA) have increasingly restricted third-party cookies. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Cookies, Fingerprinting, and Trackers using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 23,
+      "type": "application",
+      "title": "Privacy Hygiene Best Practices",
+      "main_idea": "- Password managers (Bitwarden, 1Password, KeePass) enable the use of unique, strong passwords for every account, eliminating credential reuse.",
+      "details": [
+        "- Password managers (Bitwarden, 1Password, KeePass) enable the use of unique, strong passwords for every account, eliminating credential reuse.",
+        "- Multi-Factor Authentication (MFA) : Enable MFA — preferably hardware security keys (FIDO2/WebAuthn) or TOTP apps — on all accounts, especially email, banking, and cloud storage.",
+        "SMS-based MFA is better than nothing but vulnerable to SIM swapping.",
+        "- Browser privacy : Use a privacy-focused browser (Firefox with uBlock Origin, Brave) or configure your existing browser to block trackers."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where privacy hygiene best practices affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: - Password managers (Bitwarden, 1Password, KeePass) enable the use of…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Privacy Hygiene Best Practices: Privacy Hygiene Best Practices, - Password managers (Bitwarden, 1Password, KeePass) enable the use of unique, strong passwords for every account, eliminating credential reuse, - Multi-Factor Authentication (MFA) : Enable MFA — preferably hardware security keys (FIDO2/WebAuthn) or TOTP apps — on all accounts, especially email, banking, and cloud storage. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Privacy Hygiene Best Practices using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 24,
+      "type": "evidence",
+      "title": "Introduction",
+      "main_idea": "The internet was not designed with security in mind.",
+      "details": [
+        "The internet was not designed with security in mind.",
+        "Its foundational protocols — TCP/IP, HTTP, DNS, SMTP — were developed in an era when the network's user base was small, relatively trusted, and primarily academic.",
+        "Many of the topics here build directly on the cryptography covered in Chapter 6 and the network security concepts in Chapter 7."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where introduction affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize introduction in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The internet was not designed with security in mind.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Introduction: Introduction, The internet was not designed with security in mind, Its foundational protocols — TCP/IP, HTTP, DNS, SMTP — were developed in an era when the network's user base was small, relatively trusted, and primarily academic. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Introduction using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 25,
+      "type": "vocabulary",
+      "title": "Key terms to keep",
+      "main_idea": "Vocabulary becomes useful when students can connect terms to scenarios and evidence.",
+      "details": [
+        "Introduction",
+        "Internet Architecture and Security Implications",
+        "HTTPS and TLS in Practice",
+        "OWASP Top 10"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where key terms to keep affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize key terms to keep in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Key terms to keep: Key terms to keep, Introduction, Internet Architecture and Security Implications. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Key terms to keep using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 26,
+      "type": "comparison",
+      "title": "Compare: Introduction vs. Internet Architecture and Security Implications",
+      "main_idea": "Comparing related ideas helps students avoid shallow memorization.",
+      "details": [
+        "Where Introduction applies.",
+        "Where Internet Architecture and Security Implications applies.",
+        "How the difference changes the security decision."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where compare: introduction vs. internet architecture and security implications affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize compare: introduction vs. internet architecture and security implications in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Where Introduction applies.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Compare: Introduction vs. Internet Architecture and Security Implications: Compare: Introduction vs. Internet Architecture and Security Implications, Where Introduction applies, Where Internet Architecture and Security Implications applies. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Compare: Introduction vs. Internet Architecture and Security Implications using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 27,
+      "type": "application",
+      "title": "Applied decision checkpoint",
+      "main_idea": "Students should translate concepts into a defensible security decision.",
+      "details": [
+        "Identify the asset or process at risk.",
+        "Choose a preventive, detective, or corrective control.",
+        "Explain what evidence would prove the control is working."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where applied decision checkpoint affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Identify the asset or process at risk.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Applied decision checkpoint: Applied decision checkpoint, Identify the asset or process at risk, Choose a preventive, detective, or corrective control. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Applied decision checkpoint using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 28,
+      "type": "review",
+      "title": "Review questions",
+      "main_idea": "Retrieval practice should ask students to define, compare, apply, and evaluate.",
+      "details": [
+        "Define one core concept in plain language.",
+        "Compare two controls or threats from the week.",
+        "Apply one idea to a campus or business system.",
+        "Evaluate why a solution might fail in practice."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where review questions affects users, data, or operations.",
+        "instructor_prompt": "What is the one sentence takeaway for review questions?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Define one core concept in plain language.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Review questions: Review questions, Define one core concept in plain language, Compare two controls or threats from the week. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Review questions using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 29,
+      "type": "bridge",
+      "title": "Bridge to lab and assessment",
+      "main_idea": "The reading should transfer into evidence-based lab work and written explanations.",
+      "details": [
+        "Collect evidence, not just screenshots.",
+        "Explain what the artifact proves.",
+        "Connect the proof back to risk and control selection."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where bridge to lab and assessment affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize bridge to lab and assessment in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Collect evidence, not just screenshots.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Bridge to lab and assessment: Bridge to lab and assessment, Collect evidence, not just screenshots, Explain what the artifact proves. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Bridge to lab and assessment using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 30,
+      "type": "closing",
+      "title": "Takeaway",
+      "main_idea": "The central takeaway from Week 8 is to reason from risk to evidence to action.",
+      "details": [
+        "Internet Security",
+        "Security is a decision process, not just a tool list.",
+        "Use the reading to justify practical choices."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 8 incident where takeaway affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize takeaway in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Internet Security",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Takeaway: Takeaway, Internet Security, Security is a decision process, not just a tool list. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Takeaway using evidence, scenario reasoning, and a concrete security takeaway."
+    }
+  ]
+}

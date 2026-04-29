@@ -1,0 +1,638 @@
+{
+  "week": 11,
+  "title": "Authentication and Access Control",
+  "source": "scia-120/chapter-11.md",
+  "author": "Dr. Zhijiang Chen",
+  "institution": "Frostburg State University",
+  "summary": "Every secure computing system ultimately depends on one foundational question: who are you, and what are you allowed to do? Authentication and access control are the mechanisms that answer these questions, forming the first line of defense against unauthorized use of systems, data, and resources. In this chapter, we examine the principles, technologies, and…",
+  "key_concepts": [
+    "Introduction",
+    "AAA: Authentication, Authorization, and Accounting",
+    "Authentication Factors",
+    "Something You Know: Passwords",
+    "Something You Have: Possession Factors",
+    "Something You Are: Biometrics",
+    "Multi-Factor Authentication (MFA)",
+    "Attacks on MFA"
+  ],
+  "slides": [
+    {
+      "number": 1,
+      "type": "cover",
+      "title": "Authentication and Access Control",
+      "main_idea": "Introduce Week 11: Authentication and Access Control.",
+      "details": [
+        "Every secure computing system ultimately depends on one foundational question: who are you, and what are you allowed to do?"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where authentication and access control affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize authentication and access control in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Every secure computing system ultimately depends on one foundational…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Tech-dark line-art hero for Week 11: Authentication and Access Control, with networks, locks, shields, data paths, and classroom learning cues.",
+      "visual_mode": "line_art",
+      "speaker_goal": "Teach Authentication and Access Control using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 2,
+      "type": "agenda",
+      "title": "Overall roadmap",
+      "main_idea": "The week moves from core definitions to practical security decisions.",
+      "details": [
+        "Introduction",
+        "AAA: Authentication, Authorization, and Accounting",
+        "Authentication Factors",
+        "Something You Know: Passwords"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where overall roadmap affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize overall roadmap in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art roadmap showing the major learning path for Overall roadmap; connected nodes represent reading concepts and classroom application.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Overall roadmap using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 3,
+      "type": "objectives",
+      "title": "Learning objectives",
+      "main_idea": "Students should explain, apply, and evaluate the week’s main security ideas.",
+      "details": [
+        "Explain Introduction.",
+        "Explain AAA: Authentication, Authorization, and Accounting.",
+        "Explain Authentication Factors.",
+        "Explain Something You Know: Passwords."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where learning objectives affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize learning objectives in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Explain Introduction.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Learning objectives: Learning objectives, Explain Introduction, Explain AAA: Authentication, Authorization, and Accounting. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Learning objectives using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 4,
+      "type": "application",
+      "title": "Opening scenario",
+      "main_idea": "Use a realistic scenario to anchor Authentication and Access Control in operational decision-making.",
+      "details": [
+        "Every secure computing system ultimately depends on one foundational question: who are you, and what are you allowed to do?",
+        "Authentication and access control are the mechanisms that answer these questions, forming the first line of defense against unauthorized use of systems, data, and resources.",
+        "Understanding authentication and access control is not merely a technical exercise."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where opening scenario affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Every secure computing system ultimately depends on one foundational…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Opening scenario: Opening scenario, Every secure computing system ultimately depends on one foundational question: who are you, and what are you allowed to do?, Authentication and access control are the mechanisms that answer these questions, forming the first line of defense against unauthorized use of systems, data, and resources. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Opening scenario using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 5,
+      "type": "definition",
+      "title": "Introduction",
+      "main_idea": "Every secure computing system ultimately depends on one foundational question: who are you, and what are you allowed to do?",
+      "details": [
+        "Every secure computing system ultimately depends on one foundational question: who are you, and what are you allowed to do?",
+        "Authentication and access control are the mechanisms that answer these questions, forming the first line of defense against unauthorized use of systems, data, and resources.",
+        "Understanding authentication and access control is not merely a technical exercise.",
+        "It is a study in how trust is established and enforced between humans and machines, and increasingly between machines and other machines."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where introduction affects users, data, or operations.",
+        "instructor_prompt": "What problem does introduction help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Every secure computing system ultimately depends on one foundational…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Introduction: Introduction, Every secure computing system ultimately depends on one foundational question: who are you, and what are you allowed to do?, Authentication and access control are the mechanisms that answer these questions, forming the first line of defense against unauthorized use of systems, data, and resources. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Introduction using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 6,
+      "type": "concept",
+      "title": "AAA: Authentication, Authorization, and Accounting",
+      "main_idea": "Security professionals commonly refer to the \"AAA\" framework when discussing identity and access: Authentication is the process of verifying that an entity is who it claims to be.",
+      "details": [
+        "Security professionals commonly refer to the \"AAA\" framework when discussing identity and access: Authentication is the process of verifying that an entity is who it claims to be.",
+        "A user presenting a username and password, a server presenting a TLS certificate, or a mobile app presenting a cryptographic token — all of these are acts of authentication.",
+        "Authorization is what happens after authentication: determining what an authenticated entity is permitted to do.",
+        "Even after you prove you are Alice, the system must decide: can Alice read this file?"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where aaa: authentication, authorization, and accounting affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize aaa: authentication, authorization, and accounting in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Security professionals commonly refer to the \"AAA\" framework when…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for AAA: Authentication, Authorization, and Accounting: AAA: Authentication, Authorization, and Accounting, Security professionals commonly refer to the \"AAA\" framework when discussing identity and access: Authentication is the process of verifying that an entity is who it claims to be, A user presenting a username and password, a server presenting a TLS certificate, or a mobile app presenting a cryptographic token — all of these are acts of authentication. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach AAA: Authentication, Authorization, and Accounting using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 7,
+      "type": "application",
+      "title": "Authentication Factors",
+      "main_idea": "Authentication is built around three classical categories of evidence, often called factors :",
+      "details": [
+        "Authentication is built around three classical categories of evidence, often called factors :",
+        "Authentication Factors connects to risk, controls, and evidence.",
+        "Authentication Factors connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where authentication factors affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Authentication is built around three classical categories of…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Authentication Factors: Authentication Factors, Authentication is built around three classical categories of evidence, often called factors :, Authentication Factors connects to risk, controls, and evidence. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Authentication Factors using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 8,
+      "type": "evidence",
+      "title": "Something You Know: Passwords",
+      "main_idea": "Passwords remain the most prevalent authentication mechanism despite their well-documented weaknesses.",
+      "details": [
+        "Passwords remain the most prevalent authentication mechanism despite their well-documented weaknesses.",
+        "A strong password policy includes length requirements (minimum 12–16 characters), complexity, and prohibition of common or previously breached passwords.",
+        "However, the storage of passwords is arguably more important than their complexity.",
+        "Password Hashing Passwords should never be stored in plaintext."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where something you know: passwords affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize something you know: passwords in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Passwords remain the most prevalent authentication mechanism despite…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Something You Know: Passwords: Something You Know: Passwords, Passwords remain the most prevalent authentication mechanism despite their well-documented weaknesses, A strong password policy includes length requirements (minimum 12–16 characters), complexity, and prohibition of common or previously breached passwords. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Something You Know: Passwords using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 9,
+      "type": "definition",
+      "title": "Something You Have: Possession Factors",
+      "main_idea": "Possession-based authentication relies on a physical or digital artifact that the legitimate user holds: One-Time Passwords (OTP) An OTP is a password valid for only a single…",
+      "details": [
+        "Possession-based authentication relies on a physical or digital artifact that the legitimate user holds: One-Time Passwords (OTP) An OTP is a password valid for only a single…",
+        "TOTP (Time-based OTP, defined in RFC 6238) generates a 6–8 digit code by computing HMAC-SHA1 of a shared secret combined with the current Unix timestamp divided into 30-second…",
+        "Authenticator apps like Google Authenticator, Authy, and Microsoft Authenticator implement TOTP.",
+        "HOTP (HMAC-based OTP) is similar but counter-based rather than time-based."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where something you have: possession factors affects users, data, or operations.",
+        "instructor_prompt": "What problem does something you have: possession factors help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Possession-based authentication relies on a physical or digital…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Something You Have: Possession Factors: Something You Have: Possession Factors, Possession-based authentication relies on a physical or digital artifact that the legitimate user holds: One-Time Passwords (OTP) An OTP is a password valid for only a single…, TOTP (Time-based OTP, defined in RFC 6238) generates a 6–8 digit code by computing HMAC-SHA1 of a shared secret combined with the current Unix timestamp divided into 30-second…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Something You Have: Possession Factors using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 10,
+      "type": "concept",
+      "title": "Something You Are: Biometrics",
+      "main_idea": "Also called the False Match Rate (FMR).",
+      "details": [
+        "Also called the False Match Rate (FMR).",
+        "- False Rejection Rate (FRR) : The probability that the system denies access to a legitimate user.",
+        "Also called the False Non-Match Rate (FNMR).",
+        "There is an inherent tradeoff: tightening the acceptance threshold decreases FAR but increases FRR, and vice versa."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where something you are: biometrics affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize something you are: biometrics in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Also called the False Match Rate (FMR).",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Something You Are: Biometrics: Something You Are: Biometrics, Also called the False Match Rate (FMR), - False Rejection Rate (FRR) : The probability that the system denies access to a legitimate user. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Something You Are: Biometrics using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 11,
+      "type": "application",
+      "title": "Multi-Factor Authentication (MFA)",
+      "main_idea": "Multi-factor authentication requires the user to present evidence from two or more distinct factor categories (know, have, are).",
+      "details": [
+        "Multi-factor authentication requires the user to present evidence from two or more distinct factor categories (know, have, are).",
+        "The rationale is straightforward: compromising multiple independent factors simultaneously is significantly harder than compromising any single factor.",
+        "A password may be phished; a hardware token requires physical possession.",
+        "A fingerprint may be spoofed; a PIN must still be known."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where multi-factor authentication (mfa) affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Multi-factor authentication requires the user to present evidence…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Multi-Factor Authentication (MFA): Multi-Factor Authentication (MFA), Multi-factor authentication requires the user to present evidence from two or more distinct factor categories (know, have, are), The rationale is straightforward: compromising multiple independent factors simultaneously is significantly harder than compromising any single factor. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Multi-Factor Authentication (MFA) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 12,
+      "type": "evidence",
+      "title": "Attacks on MFA",
+      "main_idea": "Once the number is transferred, any SMS OTPs sent to that number are intercepted by the attacker.",
+      "details": [
+        "Once the number is transferred, any SMS OTPs sent to that number are intercepted by the attacker.",
+        "SIM swapping has been used in high-profile cryptocurrency thefts worth millions of dollars.",
+        "SS7 Attacks : The Signaling System No.",
+        "7 (SS7) protocol, which routes SMS messages globally, has known vulnerabilities that allow skilled adversaries (typically nation-state actors or sophisticated criminals) to…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where attacks on mfa affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize attacks on mfa in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Once the number is transferred, any SMS OTPs sent to that number are…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Attacks on MFA: Attacks on MFA, Once the number is transferred, any SMS OTPs sent to that number are intercepted by the attacker, SIM swapping has been used in high-profile cryptocurrency thefts worth millions of dollars. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Attacks on MFA using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 13,
+      "type": "definition",
+      "title": "Passwordless Authentication",
+      "main_idea": "Passwordless authentication eliminates the shared secret (password) entirely, replacing it with cryptographic mechanisms.",
+      "details": [
+        "Passwordless authentication eliminates the shared secret (password) entirely, replacing it with cryptographic mechanisms.",
+        "FIDO2 passkeys are the leading passwordless standard: a passkey is a FIDO2 credential stored on a device (or in a password manager/cloud keychain) that authenticates using local…",
+        "Passkeys are now supported by Apple, Google, and Microsoft, and are increasingly accepted by major websites.",
+        "The security advantages of passwordless authentication are substantial: there is no password to phish, crack, stuff, or breach."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where passwordless authentication affects users, data, or operations.",
+        "instructor_prompt": "What problem does passwordless authentication help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Passwordless authentication eliminates the shared secret (password)…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Passwordless Authentication: Passwordless Authentication, Passwordless authentication eliminates the shared secret (password) entirely, replacing it with cryptographic mechanisms, FIDO2 passkeys are the leading passwordless standard: a passkey is a FIDO2 credential stored on a device (or in a password manager/cloud keychain) that authenticates using local…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Passwordless Authentication using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 14,
+      "type": "concept",
+      "title": "Single Sign-On and Federated Identity",
+      "main_idea": "Managing separate credentials for hundreds of applications is impractical.",
+      "details": [
+        "Managing separate credentials for hundreds of applications is impractical.",
+        "Single Sign-On (SSO) allows a user to authenticate once with a trusted identity provider (IdP) and then access multiple service providers (SPs) or relying parties without…",
+        "Federation extends SSO across organizational boundaries."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where single sign-on and federated identity affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize single sign-on and federated identity in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Managing separate credentials for hundreds of applications is…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Single Sign-On and Federated Identity: Single Sign-On and Federated Identity, Managing separate credentials for hundreds of applications is impractical, Single Sign-On (SSO) allows a user to authenticate once with a trusted identity provider (IdP) and then access multiple service providers (SPs) or relying parties without…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Single Sign-On and Federated Identity using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 15,
+      "type": "application",
+      "title": "SAML 2.0",
+      "main_idea": "Security Assertion Markup Language (SAML) 2.0 is an XML-based standard for exchanging authentication and authorization data between an IdP and an SP.",
+      "details": [
+        "Security Assertion Markup Language (SAML) 2.0 is an XML-based standard for exchanging authentication and authorization data between an IdP and an SP.",
+        "User attempts to access an SP (e.g., Salesforce).",
+        "SP redirects the user to their IdP (e.g., Okta, Azure AD) with a SAML Request.",
+        "IdP authenticates the user (prompting for credentials and MFA)."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where saml 2.0 affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Security Assertion Markup Language (SAML) 2.0 is an XML-based…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for SAML 2.0: SAML 2.0, Security Assertion Markup Language (SAML) 2, User attempts to access an SP (e. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach SAML 2.0 using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 16,
+      "type": "evidence",
+      "title": "OAuth 2.0",
+      "main_idea": "OAuth 2.0 is an authorization framework (not an authentication protocol) that allows a third-party application to obtain limited access to a user's resources on a service…",
+      "details": [
+        "OAuth 2.0 is an authorization framework (not an authentication protocol) that allows a third-party application to obtain limited access to a user's resources on a service…",
+        "The key OAuth 2.0 roles are: - Resource Owner : The user who owns the data.",
+        "- Client : The application requesting access.",
+        "- Authorization Server : Issues access tokens after authenticating the user and obtaining consent."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where oauth 2.0 affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize oauth 2.0 in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: OAuth 2.0 is an authorization framework (not an authentication…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for OAuth 2.0: OAuth 2.0, OAuth 2, The key OAuth 2. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach OAuth 2.0 using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 17,
+      "type": "definition",
+      "title": "OpenID Connect (OIDC)",
+      "main_idea": "OpenID Connect is an authentication layer built on top of OAuth 2.0.",
+      "details": [
+        "OpenID Connect is an authentication layer built on top of OAuth 2.0.",
+        "While OAuth 2.0 only addresses authorization (what resources can be accessed), OIDC adds an ID Token — a signed JWT (JSON Web Token) that contains claims about the authenticated…",
+        "OIDC is now the dominant protocol for web and mobile authentication, used by \"Sign in with Google,\" \"Sign in with Apple,\" and enterprise SSO systems."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where openid connect (oidc) affects users, data, or operations.",
+        "instructor_prompt": "What problem does openid connect (oidc) help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: OpenID Connect is an authentication layer built on top of OAuth 2.0.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for OpenID Connect (OIDC): OpenID Connect (OIDC), OpenID Connect is an authentication layer built on top of OAuth 2, While OAuth 2. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach OpenID Connect (OIDC) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 18,
+      "type": "concept",
+      "title": "Kerberos",
+      "main_idea": "Kerberos is a network authentication protocol developed at MIT, now central to Microsoft Active Directory.",
+      "details": [
+        "Kerberos is a network authentication protocol developed at MIT, now central to Microsoft Active Directory.",
+        "It uses symmetric-key cryptography and a trusted third party — the Key Distribution Center (KDC) — to authenticate clients and servers without transmitting passwords over the…",
+        "The KDC comprises two services: the Authentication Server (AS) and the Ticket-Granting Server (TGS).",
+        "Upon login, the user receives a Ticket-Granting Ticket (TGT); subsequent access to services uses this TGT to request service-specific tickets."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where kerberos affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize kerberos in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Kerberos is a network authentication protocol developed at MIT, now…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Kerberos: Kerberos, Kerberos is a network authentication protocol developed at MIT, now central to Microsoft Active Directory, It uses symmetric-key cryptography and a trusted third party — the Key Distribution Center (KDC) — to authenticate clients and servers without transmitting passwords over the…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Kerberos using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 19,
+      "type": "application",
+      "title": "LDAP and Active Directory",
+      "main_idea": "The Lightweight Directory Access Protocol (LDAP) is a protocol for accessing and managing directory information — essentially a structured database of network objects: users,…",
+      "details": [
+        "The Lightweight Directory Access Protocol (LDAP) is a protocol for accessing and managing directory information — essentially a structured database of network objects: users,…",
+        "Microsoft Active Directory (AD) is the most widely deployed LDAP-based directory service, forming the identity backbone of most enterprise Windows environments.",
+        "AD organizes objects in a hierarchical structure of forests , domains , and organizational units (OUs).",
+        "Group Policy Objects (GPOs) allow administrators to enforce security configurations across all domain-joined machines."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where ldap and active directory affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The Lightweight Directory Access Protocol (LDAP) is a protocol for…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for LDAP and Active Directory: LDAP and Active Directory, The Lightweight Directory Access Protocol (LDAP) is a protocol for accessing and managing directory information — essentially a structured database of network objects: users,…, Microsoft Active Directory (AD) is the most widely deployed LDAP-based directory service, forming the identity backbone of most enterprise Windows environments. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach LDAP and Active Directory using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 20,
+      "type": "evidence",
+      "title": "Access Control Models and Implementation",
+      "main_idea": "Once identity is established, access control policies determine what that identity can do.",
+      "details": [
+        "Once identity is established, access control policies determine what that identity can do.",
+        "Several formal models guide implementation: Discretionary Access Control (DAC) : Resource owners control access to their own resources.",
+        "The classic Unix file permission model (owner/group/other, read/write/execute) is DAC.",
+        "It is flexible but relies on users making correct access decisions — mistakes propagate easily."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where access control models and implementation affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize access control models and implementation in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Once identity is established, access control policies determine what…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Access Control Models and Implementation: Access Control Models and Implementation, Once identity is established, access control policies determine what that identity can do, Several formal models guide implementation: Discretionary Access Control (DAC) : Resource owners control access to their own resources. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Access Control Models and Implementation using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 21,
+      "type": "definition",
+      "title": "Least Privilege and Need-to-Know",
+      "main_idea": "The principle of least privilege states that every user, process, and system component should have the minimum permissions necessary to perform its intended function — and no more.",
+      "details": [
+        "The principle of least privilege states that every user, process, and system component should have the minimum permissions necessary to perform its intended function — and no more.",
+        "This limits the blast radius of a compromise: a low-privilege account that is hijacked can cause far less damage than an administrator account.",
+        "Need-to-know is a related concept: even users with the appropriate clearance or role should only access specific information they need for a specific task.",
+        "These principles work together to reduce insider threat risk and limit the movement of external attackers through a network."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where least privilege and need-to-know affects users, data, or operations.",
+        "instructor_prompt": "What problem does least privilege and need-to-know help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The principle of least privilege states that every user, process, and…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Least Privilege and Need-to-Know: Least Privilege and Need-to-Know, The principle of least privilege states that every user, process, and system component should have the minimum permissions necessary to perform its intended function — and no more, This limits the blast radius of a compromise: a low-privilege account that is hijacked can cause far less damage than an administrator account. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Least Privilege and Need-to-Know using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 22,
+      "type": "concept",
+      "title": "Identity and Access Management (IAM)",
+      "main_idea": "Failure to deprovision accounts promptly is a common vulnerability — orphaned accounts are a significant risk.",
+      "details": [
+        "Failure to deprovision accounts promptly is a common vulnerability — orphaned accounts are a significant risk.",
+        "Privileged Access Management (PAM) is a specialized discipline focused on controlling and auditing access by privileged accounts — system administrators, database administrators,…",
+        "Identity and Access Management (IAM) connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where identity and access management (iam) affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize identity and access management (iam) in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Failure to deprovision accounts promptly is a common vulnerability —…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Identity and Access Management (IAM): Identity and Access Management (IAM), Failure to deprovision accounts promptly is a common vulnerability — orphaned accounts are a significant risk, Privileged Access Management (PAM) is a specialized discipline focused on controlling and auditing access by privileged accounts — system administrators, database administrators,…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Identity and Access Management (IAM) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 23,
+      "type": "application",
+      "title": "Credential Attacks: Stuffing and Spraying",
+      "main_idea": "Credential Stuffing exploits the widespread reuse of passwords.",
+      "details": [
+        "Credential Stuffing exploits the widespread reuse of passwords.",
+        "Attackers obtain large lists of username/password pairs from previous data breaches (billions of credentials are available on criminal forums) and systematically test them against…",
+        "Because many users reuse passwords across sites, a credential set from a gaming site breach may work on banking or email accounts.",
+        "Defenses include MFA, breach-detection feeds (checking user credentials against known breach databases), and rate limiting."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where credential attacks: stuffing and spraying affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Credential Stuffing exploits the widespread reuse of passwords.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Credential Attacks: Stuffing and Spraying: Credential Attacks: Stuffing and Spraying, Credential Stuffing exploits the widespread reuse of passwords, Attackers obtain large lists of username/password pairs from previous data breaches (billions of credentials are available on criminal forums) and systematically test them against…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Credential Attacks: Stuffing and Spraying using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 24,
+      "type": "evidence",
+      "title": "Introduction",
+      "main_idea": "Every secure computing system ultimately depends on one foundational question: who are you, and what are you allowed to do?",
+      "details": [
+        "Every secure computing system ultimately depends on one foundational question: who are you, and what are you allowed to do?",
+        "Authentication and access control are the mechanisms that answer these questions, forming the first line of defense against unauthorized use of systems, data, and resources.",
+        "Understanding authentication and access control is not merely a technical exercise.",
+        "It is a study in how trust is established and enforced between humans and machines, and increasingly between machines and other machines."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where introduction affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize introduction in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Every secure computing system ultimately depends on one foundational…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Introduction: Introduction, Every secure computing system ultimately depends on one foundational question: who are you, and what are you allowed to do?, Authentication and access control are the mechanisms that answer these questions, forming the first line of defense against unauthorized use of systems, data, and resources. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Introduction using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 25,
+      "type": "vocabulary",
+      "title": "Key terms to keep",
+      "main_idea": "Vocabulary becomes useful when students can connect terms to scenarios and evidence.",
+      "details": [
+        "Introduction",
+        "AAA: Authentication, Authorization, and Accounting",
+        "Authentication Factors",
+        "Something You Know: Passwords"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where key terms to keep affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize key terms to keep in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Key terms to keep: Key terms to keep, Introduction, AAA: Authentication, Authorization, and Accounting. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Key terms to keep using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 26,
+      "type": "comparison",
+      "title": "Compare: Introduction vs. AAA: Authentication, Authorization, and Accounting",
+      "main_idea": "Comparing related ideas helps students avoid shallow memorization.",
+      "details": [
+        "Where Introduction applies.",
+        "Where AAA: Authentication, Authorization, and Accounting applies.",
+        "How the difference changes the security decision."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where compare: introduction vs. aaa: authentication, authorization, and accounting affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize compare: introduction vs. aaa: authentication, authorization, and accounting in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Where Introduction applies.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Compare: Introduction vs. AAA: Authentication, Authorization, and Accounting: Compare: Introduction vs. AAA: Authentication, Authorization, and Accounting, Where Introduction applies, Where AAA: Authentication, Authorization, and Accounting applies. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Compare: Introduction vs. AAA: Authentication, Authorization, and Accounting using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 27,
+      "type": "application",
+      "title": "Applied decision checkpoint",
+      "main_idea": "Students should translate concepts into a defensible security decision.",
+      "details": [
+        "Identify the asset or process at risk.",
+        "Choose a preventive, detective, or corrective control.",
+        "Explain what evidence would prove the control is working."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where applied decision checkpoint affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Identify the asset or process at risk.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Applied decision checkpoint: Applied decision checkpoint, Identify the asset or process at risk, Choose a preventive, detective, or corrective control. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Applied decision checkpoint using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 28,
+      "type": "review",
+      "title": "Review questions",
+      "main_idea": "Retrieval practice should ask students to define, compare, apply, and evaluate.",
+      "details": [
+        "Define one core concept in plain language.",
+        "Compare two controls or threats from the week.",
+        "Apply one idea to a campus or business system.",
+        "Evaluate why a solution might fail in practice."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where review questions affects users, data, or operations.",
+        "instructor_prompt": "What is the one sentence takeaway for review questions?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Define one core concept in plain language.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Review questions: Review questions, Define one core concept in plain language, Compare two controls or threats from the week. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Review questions using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 29,
+      "type": "bridge",
+      "title": "Bridge to lab and assessment",
+      "main_idea": "The reading should transfer into evidence-based lab work and written explanations.",
+      "details": [
+        "Collect evidence, not just screenshots.",
+        "Explain what the artifact proves.",
+        "Connect the proof back to risk and control selection."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where bridge to lab and assessment affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize bridge to lab and assessment in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Collect evidence, not just screenshots.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Bridge to lab and assessment: Bridge to lab and assessment, Collect evidence, not just screenshots, Explain what the artifact proves. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Bridge to lab and assessment using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 30,
+      "type": "closing",
+      "title": "Takeaway",
+      "main_idea": "The central takeaway from Week 11 is to reason from risk to evidence to action.",
+      "details": [
+        "Authentication and Access Control",
+        "Security is a decision process, not just a tool list.",
+        "Use the reading to justify practical choices."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 11 incident where takeaway affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize takeaway in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Authentication and Access Control",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Takeaway: Takeaway, Authentication and Access Control, Security is a decision process, not just a tool list. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Takeaway using evidence, scenario reasoning, and a concrete security takeaway."
+    }
+  ]
+}

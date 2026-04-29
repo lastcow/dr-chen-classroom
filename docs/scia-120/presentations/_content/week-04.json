@@ -1,0 +1,632 @@
+{
+  "week": 4,
+  "title": "Operating System Security Fundamentals",
+  "source": "scia-120/chapter-04.md",
+  "author": "Dr. Zhijiang Chen",
+  "institution": "Frostburg State University",
+  "summary": "An operating system is not a monolithic block of code. Modern OS design separates the software into distinct layers with carefully defined trust boundaries.",
+  "key_concepts": [
+    "Operating System Security Architecture",
+    "Kernel Space vs. User Space",
+    "The System Call Interface as Attack Surface",
+    "The Principle of Least Privilege",
+    "User Accounts and Permissions",
+    "Discretionary Access Control (DAC)",
+    "Mandatory Access Control (MAC)",
+    "Role-Based Access Control (RBAC)"
+  ],
+  "slides": [
+    {
+      "number": 1,
+      "type": "cover",
+      "title": "Operating System Security Fundamentals",
+      "main_idea": "Introduce Week 4: Operating System Security Fundamentals.",
+      "details": [
+        "An operating system is not a monolithic block of code."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where operating system security fundamentals affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize operating system security fundamentals in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: An operating system is not a monolithic block of code.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Tech-dark line-art hero for Week 4: Operating System Security Fundamentals, with networks, locks, shields, data paths, and classroom learning cues.",
+      "visual_mode": "line_art",
+      "speaker_goal": "Teach Operating System Security Fundamentals using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 2,
+      "type": "agenda",
+      "title": "Overall roadmap",
+      "main_idea": "The week moves from core definitions to practical security decisions.",
+      "details": [
+        "Operating System Security Architecture",
+        "Kernel Space vs. User Space",
+        "The System Call Interface as Attack Surface",
+        "The Principle of Least Privilege"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where overall roadmap affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize overall roadmap in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Operating System Security Architecture",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art roadmap showing the major learning path for Overall roadmap; connected nodes represent reading concepts and classroom application.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Overall roadmap using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 3,
+      "type": "objectives",
+      "title": "Learning objectives",
+      "main_idea": "Students should explain, apply, and evaluate the week’s main security ideas.",
+      "details": [
+        "Explain Operating System Security Architecture.",
+        "Explain Kernel Space vs. User Space.",
+        "Explain The System Call Interface as Attack Surface.",
+        "Explain The Principle of Least Privilege."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where learning objectives affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize learning objectives in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Explain Operating System Security Architecture.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Learning objectives: Learning objectives, Explain Operating System Security Architecture, Explain Kernel Space vs. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Learning objectives using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 4,
+      "type": "application",
+      "title": "Opening scenario",
+      "main_idea": "Use a realistic scenario to anchor Operating System Security Fundamentals in operational decision-making.",
+      "details": [
+        "An operating system is not a monolithic block of code.",
+        "Modern OS design separates the software into distinct layers with carefully defined trust boundaries.",
+        "Operating System Security Fundamentals"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where opening scenario affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: An operating system is not a monolithic block of code.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Opening scenario: Opening scenario, An operating system is not a monolithic block of code, Modern OS design separates the software into distinct layers with carefully defined trust boundaries. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Opening scenario using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 5,
+      "type": "definition",
+      "title": "Operating System Security Architecture",
+      "main_idea": "An operating system is not a monolithic block of code.",
+      "details": [
+        "An operating system is not a monolithic block of code.",
+        "Modern OS design separates the software into distinct layers with carefully defined trust boundaries.",
+        "Operating System Security Architecture connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where operating system security architecture affects users, data, or operations.",
+        "instructor_prompt": "What problem does operating system security architecture help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: An operating system is not a monolithic block of code.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Operating System Security Architecture: Operating System Security Architecture, An operating system is not a monolithic block of code, Modern OS design separates the software into distinct layers with carefully defined trust boundaries. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Operating System Security Architecture using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 6,
+      "type": "concept",
+      "title": "Kernel Space vs. User Space",
+      "main_idea": "The most fundamental architectural distinction in OS security is between kernel space and user space .",
+      "details": [
+        "The most fundamental architectural distinction in OS security is between kernel space and user space .",
+        "The kernel is the core of the operating system — the privileged software that directly manages hardware, memory, processes, and input/output.",
+        "Code running in kernel space operates with full, unrestricted access to all system resources.",
+        "The kernel is the crown jewel of system security: if an attacker achieves kernel-level code execution, they effectively own the machine entirely."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where kernel space vs. user space affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize kernel space vs. user space in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The most fundamental architectural distinction in OS security is…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Kernel Space vs. User Space: Kernel Space vs. User Space, The most fundamental architectural distinction in OS security is between kernel space and user space , The kernel is the core of the operating system — the privileged software that directly manages hardware, memory, processes, and input/output. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Kernel Space vs. User Space using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 7,
+      "type": "application",
+      "title": "The System Call Interface as Attack Surface",
+      "main_idea": "Every time a user-space application needs to do something privileged — read a file, open a network connection, allocate memory — it must issue a system call (syscall).",
+      "details": [
+        "Every time a user-space application needs to do something privileged — read a file, open a network connection, allocate memory — it must issue a system call (syscall).",
+        "The syscall interface is a carefully managed boundary between unprivileged code and the kernel.",
+        "It is also a significant attack surface: flaws in how the kernel handles syscalls can allow user-space attackers to escalate privileges to kernel level, a class of vulnerability…",
+        "The set of all entry points, data inputs, and interfaces that an attacker could potentially exploit is called the attack surface of a system."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where the system call interface as attack surface affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Every time a user-space application needs to do something privileged…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The System Call Interface as Attack Surface: The System Call Interface as Attack Surface, Every time a user-space application needs to do something privileged — read a file, open a network connection, allocate memory — it must issue a system call (syscall), The syscall interface is a carefully managed boundary between unprivileged code and the kernel. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The System Call Interface as Attack Surface using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 8,
+      "type": "evidence",
+      "title": "The Principle of Least Privilege",
+      "main_idea": "The Principle of Least Privilege (PoLP) states that any user, process, or system component should operate with only the minimum permissions necessary to perform its legitimate…",
+      "details": [
+        "The Principle of Least Privilege (PoLP) states that any user, process, or system component should operate with only the minimum permissions necessary to perform its legitimate…",
+        "The principle has profound implications for system design and administration: - A web server process should not run as root (or SYSTEM on Windows) — it needs only to read web…",
+        "- A database application user should not have administrative access to the database — it needs only to perform the specific queries required.",
+        "- An employee in the finance department should not have access to HR records — only to the financial systems their job requires."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where the principle of least privilege affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize the principle of least privilege in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The Principle of Least Privilege (PoLP) states that any user,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Principle of Least Privilege: The Principle of Least Privilege, The Principle of Least Privilege (PoLP) states that any user, process, or system component should operate with only the minimum permissions necessary to perform its legitimate…, The principle has profound implications for system design and administration: - A web server process should not run as root (or SYSTEM on Windows) — it needs only to read web…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Principle of Least Privilege using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 9,
+      "type": "definition",
+      "title": "User Accounts and Permissions",
+      "main_idea": "Modern operating systems are multi-user environments.",
+      "details": [
+        "Modern operating systems are multi-user environments.",
+        "Each user has an account with an associated set of permissions that determines what they can do on the system.",
+        "Access control for files and resources is implemented through several models:"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where user accounts and permissions affects users, data, or operations.",
+        "instructor_prompt": "What problem does user accounts and permissions help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Modern operating systems are multi-user environments.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for User Accounts and Permissions: User Accounts and Permissions, Modern operating systems are multi-user environments, Each user has an account with an associated set of permissions that determines what they can do on the system. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach User Accounts and Permissions using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 10,
+      "type": "concept",
+      "title": "Discretionary Access Control (DAC)",
+      "main_idea": "Discretionary Access Control allows the owner of a resource to control who can access it.",
+      "details": [
+        "Discretionary Access Control allows the owner of a resource to control who can access it.",
+        "On a DAC system (the default model for most commercial operating systems), the creator of a file can grant or deny access to other users at their own discretion.",
+        "Unix/Linux file permissions and Windows ACLs are both DAC implementations.",
+        "DAC is flexible but has weaknesses: it relies on users making good access control decisions, and malware running as a user inherits all of that user's permissions."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where discretionary access control (dac) affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize discretionary access control (dac) in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Discretionary Access Control allows the owner of a resource to…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Discretionary Access Control (DAC): Discretionary Access Control (DAC), Discretionary Access Control allows the owner of a resource to control who can access it, On a DAC system (the default model for most commercial operating systems), the creator of a file can grant or deny access to other users at their own discretion. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Discretionary Access Control (DAC) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 11,
+      "type": "application",
+      "title": "Mandatory Access Control (MAC)",
+      "main_idea": "Mandatory Access Control removes discretion from resource owners.",
+      "details": [
+        "Mandatory Access Control removes discretion from resource owners.",
+        "Instead, a central security policy (enforced by the OS or a security module) determines access based on labels assigned to both subjects (users, processes) and objects (files,…",
+        "A process cannot access a resource unless the security policy explicitly permits it, regardless of what the resource owner wants.",
+        "MAC systems are common in high-security environments (government, military)."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where mandatory access control (mac) affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Mandatory Access Control removes discretion from resource owners.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Mandatory Access Control (MAC): Mandatory Access Control (MAC), Mandatory Access Control removes discretion from resource owners, Instead, a central security policy (enforced by the OS or a security module) determines access based on labels assigned to both subjects (users, processes) and objects (files,…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Mandatory Access Control (MAC) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 12,
+      "type": "evidence",
+      "title": "Role-Based Access Control (RBAC)",
+      "main_idea": "Role-Based Access Control assigns permissions to roles rather than directly to individuals.",
+      "details": [
+        "Role-Based Access Control assigns permissions to roles rather than directly to individuals.",
+        "Users are assigned to roles, and inherit that role's permissions.",
+        "An organization might have roles such as \"Database Administrator,\" \"Read-Only Analyst,\" and \"HR Manager,\" each with different permission sets.",
+        "RBAC simplifies administration (especially in large organizations) and makes it easier to enforce least privilege."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where role-based access control (rbac) affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize role-based access control (rbac) in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Role-Based Access Control assigns permissions to roles rather than…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Role-Based Access Control (RBAC): Role-Based Access Control (RBAC), Role-Based Access Control assigns permissions to roles rather than directly to individuals, Users are assigned to roles, and inherit that role's permissions. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Role-Based Access Control (RBAC) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 13,
+      "type": "definition",
+      "title": "Process Isolation and Memory Protection",
+      "main_idea": "Modern operating systems implement process isolation to prevent one process from interfering with another.",
+      "details": [
+        "Modern operating systems implement process isolation to prevent one process from interfering with another.",
+        "Each process runs in its own virtual address space — the OS provides each process with the illusion that it has the machine's entire memory to itself, mapped through a Memory…",
+        "In reality, the physical memory is shared, but the mapping ensures that process A cannot read or write process B's memory.",
+        "- Address Space Layout Randomization (ASLR): Randomizes the memory addresses at which system components (stack, heap, libraries) are loaded, making it harder for an attacker to…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where process isolation and memory protection affects users, data, or operations.",
+        "instructor_prompt": "What problem does process isolation and memory protection help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Modern operating systems implement process isolation to prevent one…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Process Isolation and Memory Protection: Process Isolation and Memory Protection, Modern operating systems implement process isolation to prevent one process from interfering with another, Each process runs in its own virtual address space — the OS provides each process with the illusion that it has the machine's entire memory to itself, mapped through a Memory…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Process Isolation and Memory Protection using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 14,
+      "type": "concept",
+      "title": "The Windows Security Model",
+      "main_idea": "Microsoft Windows is the dominant desktop operating system and a frequent target of attackers.",
+      "details": [
+        "Microsoft Windows is the dominant desktop operating system and a frequent target of attackers.",
+        "Understanding its security model is essential for any security professional.",
+        "The Windows Security Model connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where the windows security model affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize the windows security model in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Microsoft Windows is the dominant desktop operating system and a…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Windows Security Model: The Windows Security Model, Microsoft Windows is the dominant desktop operating system and a frequent target of attackers, Understanding its security model is essential for any security professional. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Windows Security Model using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 15,
+      "type": "application",
+      "title": "The Security Account Manager (SAM)",
+      "main_idea": "The Security Account Manager (SAM) is a database stored in the Windows registry that holds user account credentials.",
+      "details": [
+        "The Security Account Manager (SAM) is a database stored in the Windows registry that holds user account credentials.",
+        "Passwords are stored as hashed values (historically using NTLM hashing).",
+        "The SAM database is locked from access while Windows is running, but attackers have developed various techniques (pass-the-hash, SAM dumping via tools like Mimikatz) to extract…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where the security account manager (sam) affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The Security Account Manager (SAM) is a database stored in the…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Security Account Manager (SAM): The Security Account Manager (SAM), The Security Account Manager (SAM) is a database stored in the Windows registry that holds user account credentials, Passwords are stored as hashed values (historically using NTLM hashing). Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Security Account Manager (SAM) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 16,
+      "type": "evidence",
+      "title": "Access Control Lists (ACLs)",
+      "main_idea": "Windows uses Access Control Lists to implement DAC.",
+      "details": [
+        "Windows uses Access Control Lists to implement DAC.",
+        "- A SACL (System Access Control List): Controls which access events are audited (logged).",
+        "Windows permissions are highly granular — you can separately control Read, Write, Execute, Modify, Take Ownership, and many other permission types on any object."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where access control lists (acls) affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize access control lists (acls) in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Windows uses Access Control Lists to implement DAC.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Access Control Lists (ACLs): Access Control Lists (ACLs), Windows uses Access Control Lists to implement DAC, - A SACL (System Access Control List): Controls which access events are audited (logged). Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Access Control Lists (ACLs) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 17,
+      "type": "definition",
+      "title": "User Account Control (UAC)",
+      "main_idea": "User Account Control was introduced in Windows Vista as a mechanism to limit the damage that can be done by malware or by users making mistakes.",
+      "details": [
+        "User Account Control was introduced in Windows Vista as a mechanism to limit the damage that can be done by malware or by users making mistakes.",
+        "Even an administrator account does not run with full administrative privileges by default — when an action requiring elevated privileges is attempted, UAC prompts the user for…",
+        "Standard users are prompted for administrator credentials; administrators are asked to confirm.",
+        "UAC is not a security boundary — it is a consent mechanism."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where user account control (uac) affects users, data, or operations.",
+        "instructor_prompt": "What problem does user account control (uac) help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: User Account Control was introduced in Windows Vista as a mechanism…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for User Account Control (UAC): User Account Control (UAC), User Account Control was introduced in Windows Vista as a mechanism to limit the damage that can be done by malware or by users making mistakes, Even an administrator account does not run with full administrative privileges by default — when an action requiring elevated privileges is attempted, UAC prompts the user for…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach User Account Control (UAC) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 18,
+      "type": "concept",
+      "title": "Windows Defender and Microsoft Security Center",
+      "main_idea": "Windows ships with built-in antivirus and antimalware capabilities through Windows Defender Antivirus (now part of the broader Microsoft Defender platform).",
+      "details": [
+        "Windows ships with built-in antivirus and antimalware capabilities through Windows Defender Antivirus (now part of the broader Microsoft Defender platform).",
+        "Modern versions provide real-time protection, cloud-based threat intelligence, exploit protection, and endpoint detection and response (EDR) capabilities.",
+        "Windows Security Center provides a centralized dashboard for monitoring the health of various security components."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where windows defender and microsoft security center affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize windows defender and microsoft security center in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Windows ships with built-in antivirus and antimalware capabilities…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Windows Defender and Microsoft Security Center: Windows Defender and Microsoft Security Center, Windows ships with built-in antivirus and antimalware capabilities through Windows Defender Antivirus (now part of the broader Microsoft Defender platform), Modern versions provide real-time protection, cloud-based threat intelligence, exploit protection, and endpoint detection and response (EDR) capabilities. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Windows Defender and Microsoft Security Center using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 19,
+      "type": "application",
+      "title": "BitLocker",
+      "main_idea": "BitLocker is Windows' full-disk encryption feature, available in Pro and Enterprise editions.",
+      "details": [
+        "BitLocker is Windows' full-disk encryption feature, available in Pro and Enterprise editions.",
+        "It encrypts entire volumes using AES encryption, protecting data at rest from attackers who gain physical access to the drive.",
+        "BitLocker can be configured to require a PIN at boot, rely on a Trusted Platform Module (TPM) chip, or use a USB recovery key."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where bitlocker affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: BitLocker is Windows' full-disk encryption feature, available in Pro…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for BitLocker: BitLocker, BitLocker is Windows' full-disk encryption feature, available in Pro and Enterprise editions, It encrypts entire volumes using AES encryption, protecting data at rest from attackers who gain physical access to the drive. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach BitLocker using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 20,
+      "type": "evidence",
+      "title": "The Linux Security Model",
+      "main_idea": "Linux powers the majority of the world's servers, cloud infrastructure, network devices, and embedded systems.",
+      "details": [
+        "Linux powers the majority of the world's servers, cloud infrastructure, network devices, and embedded systems.",
+        "Its security model is foundational knowledge for any security professional.",
+        "The Linux Security Model connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where the linux security model affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize the linux security model in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Linux powers the majority of the world's servers, cloud…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Linux Security Model: The Linux Security Model, Linux powers the majority of the world's servers, cloud infrastructure, network devices, and embedded systems, Its security model is foundational knowledge for any security professional. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Linux Security Model using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 21,
+      "type": "definition",
+      "title": "The Root Account",
+      "main_idea": "Linux's traditional privilege model centers on the root account — the superuser with unrestricted access to everything on the system.",
+      "details": [
+        "Linux's traditional privilege model centers on the root account — the superuser with unrestricted access to everything on the system.",
+        "Running services as root is extremely dangerous: if any root-owned process is compromised, the attacker inherits root privileges.",
+        "Best practice is to run services as dedicated unprivileged users."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where the root account affects users, data, or operations.",
+        "instructor_prompt": "What problem does the root account help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Linux's traditional privilege model centers on the root account — the…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Root Account: The Root Account, Linux's traditional privilege model centers on the root account — the superuser with unrestricted access to everything on the system, Running services as root is extremely dangerous: if any root-owned process is compromised, the attacker inherits root privileges. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Root Account using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 22,
+      "type": "concept",
+      "title": "sudo",
+      "main_idea": "The sudo utility allows specific users to execute commands as root (or as another user) on a per-command basis, based on a policy defined in /etc/sudoers.",
+      "details": [
+        "The sudo utility allows specific users to execute commands as root (or as another user) on a per-command basis, based on a policy defined in /etc/sudoers.",
+        "Properly configured, sudo allows administrators to perform privileged tasks without needing to log in directly as root, and creates an audit trail of privileged actions.",
+        "The principle of least privilege is enforced by granting sudo access only to specific commands, not to a shell."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where sudo affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize sudo in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The sudo utility allows specific users to execute commands as root…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for sudo: sudo, The sudo utility allows specific users to execute commands as root (or as another user) on a per-command basis, based on a policy defined in /etc/sudoers, Properly configured, sudo allows administrators to perform privileged tasks without needing to log in directly as root, and creates an audit trail of privileged actions. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach sudo using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 23,
+      "type": "application",
+      "title": "File System Permissions (chmod/chown)",
+      "main_idea": "Linux file permissions follow the classic Unix model: each file has an owner (a user), a group, and permissions assigned to three categories — owner, group, and other.",
+      "details": [
+        "Linux file permissions follow the classic Unix model: each file has an owner (a user), a group, and permissions assigned to three categories — owner, group, and other.",
+        "Permissions include read (r), write (w), and execute (x).",
+        "These are represented as octal values (e.g., chmod 644 sets owner read/write, group read, others read) or symbolic notation (e.g., chmod u+x).",
+        "Understanding and correctly configuring file permissions is a fundamental Linux security skill — misconfigured permissions are a common source of vulnerabilities."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where file system permissions (chmod/chown) affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Linux file permissions follow the classic Unix model: each file has…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for File System Permissions (chmod/chown): File System Permissions (chmod/chown), Linux file permissions follow the classic Unix model: each file has an owner (a user), a group, and permissions assigned to three categories — owner, group, and other, Permissions include read (r), write (w), and execute (x). Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach File System Permissions (chmod/chown) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 24,
+      "type": "evidence",
+      "title": "SELinux and AppArmor",
+      "main_idea": "SELinux (Security-Enhanced Linux) is a kernel security module that implements Mandatory Access Control on Linux.",
+      "details": [
+        "SELinux (Security-Enhanced Linux) is a kernel security module that implements Mandatory Access Control on Linux.",
+        "Originally developed by the NSA, SELinux enforces a detailed policy that defines exactly what each process is allowed to do — which files it can read, which network ports it can…",
+        "A compromised web server running under SELinux policy is constrained to the specific file paths and resources it legitimately needs, dramatically limiting an attacker's ability to…",
+        "AppArmor is an alternative MAC system, used by default on Ubuntu and SUSE."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where selinux and apparmor affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize selinux and apparmor in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: SELinux (Security-Enhanced Linux) is a kernel security module that…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for SELinux and AppArmor: SELinux and AppArmor, SELinux (Security-Enhanced Linux) is a kernel security module that implements Mandatory Access Control on Linux, Originally developed by the NSA, SELinux enforces a detailed policy that defines exactly what each process is allowed to do — which files it can read, which network ports it can…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach SELinux and AppArmor using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 25,
+      "type": "vocabulary",
+      "title": "Key terms to keep",
+      "main_idea": "Vocabulary becomes useful when students can connect terms to scenarios and evidence.",
+      "details": [
+        "Operating System Security Architecture",
+        "Kernel Space vs. User Space",
+        "The System Call Interface as Attack Surface",
+        "The Principle of Least Privilege"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where key terms to keep affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize key terms to keep in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Operating System Security Architecture",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Key terms to keep: Key terms to keep, Operating System Security Architecture, Kernel Space vs. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Key terms to keep using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 26,
+      "type": "comparison",
+      "title": "Compare: Operating System Security Architecture vs. Kernel Space vs. User Space",
+      "main_idea": "Comparing related ideas helps students avoid shallow memorization.",
+      "details": [
+        "Where Operating System Security Architecture applies.",
+        "Where Kernel Space vs. User Space applies.",
+        "How the difference changes the security decision."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where compare: operating system security architecture vs. kernel space vs. user space affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize compare: operating system security architecture vs. kernel space vs. user space in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Where Operating System Security Architecture applies.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Compare: Operating System Security Architecture vs. Kernel Space vs. User Space: Compare: Operating System Security Architecture vs. Kernel Space vs. User Space, Where Operating System Security Architecture applies, Where Kernel Space vs. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Compare: Operating System Security Architecture vs. Kernel Space vs. User Space using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 27,
+      "type": "application",
+      "title": "Applied decision checkpoint",
+      "main_idea": "Students should translate concepts into a defensible security decision.",
+      "details": [
+        "Identify the asset or process at risk.",
+        "Choose a preventive, detective, or corrective control.",
+        "Explain what evidence would prove the control is working."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where applied decision checkpoint affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Identify the asset or process at risk.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Applied decision checkpoint: Applied decision checkpoint, Identify the asset or process at risk, Choose a preventive, detective, or corrective control. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Applied decision checkpoint using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 28,
+      "type": "review",
+      "title": "Review questions",
+      "main_idea": "Retrieval practice should ask students to define, compare, apply, and evaluate.",
+      "details": [
+        "Define one core concept in plain language.",
+        "Compare two controls or threats from the week.",
+        "Apply one idea to a campus or business system.",
+        "Evaluate why a solution might fail in practice."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where review questions affects users, data, or operations.",
+        "instructor_prompt": "What is the one sentence takeaway for review questions?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Define one core concept in plain language.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Review questions: Review questions, Define one core concept in plain language, Compare two controls or threats from the week. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Review questions using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 29,
+      "type": "bridge",
+      "title": "Bridge to lab and assessment",
+      "main_idea": "The reading should transfer into evidence-based lab work and written explanations.",
+      "details": [
+        "Collect evidence, not just screenshots.",
+        "Explain what the artifact proves.",
+        "Connect the proof back to risk and control selection."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where bridge to lab and assessment affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize bridge to lab and assessment in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Collect evidence, not just screenshots.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Bridge to lab and assessment: Bridge to lab and assessment, Collect evidence, not just screenshots, Explain what the artifact proves. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Bridge to lab and assessment using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 30,
+      "type": "closing",
+      "title": "Takeaway",
+      "main_idea": "The central takeaway from Week 4 is to reason from risk to evidence to action.",
+      "details": [
+        "Operating System Security Fundamentals",
+        "Security is a decision process, not just a tool list.",
+        "Use the reading to justify practical choices."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 4 incident where takeaway affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize takeaway in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Operating System Security Fundamentals",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Takeaway: Takeaway, Operating System Security Fundamentals, Security is a decision process, not just a tool list. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Takeaway using evidence, scenario reasoning, and a concrete security takeaway."
+    }
+  ]
+}

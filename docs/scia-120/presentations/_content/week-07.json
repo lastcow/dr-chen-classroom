@@ -1,0 +1,639 @@
+{
+  "week": 7,
+  "title": "Network Security Fundamentals",
+  "source": "scia-120/chapter-07.md",
+  "author": "Dr. Zhijiang Chen",
+  "institution": "Frostburg State University",
+  "summary": "Networks are the arteries of modern computing: nearly every piece of software of consequence communicates over a network, and nearly every organization's most sensitive data flows across one. The internet, as the world's largest and most open network, is simultaneously its most powerful communications medium and its largest attack surface. Understanding how…",
+  "key_concepts": [
+    "Introduction",
+    "The OSI Model",
+    "The TCP/IP Stack",
+    "IP Addressing and Subnetting",
+    "Network Security Threats by OSI Layer",
+    "ARP Poisoning",
+    "DNS Poisoning and Spoofing",
+    "IP Spoofing"
+  ],
+  "slides": [
+    {
+      "number": 1,
+      "type": "cover",
+      "title": "Network Security Fundamentals",
+      "main_idea": "Introduce Week 7: Network Security Fundamentals.",
+      "details": [
+        "Networks are the arteries of modern computing: nearly every piece of software of consequence communicates over a network, and nearly every organization's most sensitive data flows…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where network security fundamentals affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize network security fundamentals in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Networks are the arteries of modern computing: nearly every piece of…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Tech-dark line-art hero for Week 7: Network Security Fundamentals, with networks, locks, shields, data paths, and classroom learning cues.",
+      "visual_mode": "line_art",
+      "speaker_goal": "Teach Network Security Fundamentals using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 2,
+      "type": "agenda",
+      "title": "Overall roadmap",
+      "main_idea": "The week moves from core definitions to practical security decisions.",
+      "details": [
+        "Introduction",
+        "The OSI Model",
+        "The TCP/IP Stack",
+        "IP Addressing and Subnetting"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where overall roadmap affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize overall roadmap in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art roadmap showing the major learning path for Overall roadmap; connected nodes represent reading concepts and classroom application.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Overall roadmap using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 3,
+      "type": "objectives",
+      "title": "Learning objectives",
+      "main_idea": "Students should explain, apply, and evaluate the week’s main security ideas.",
+      "details": [
+        "Explain Introduction.",
+        "Explain The OSI Model.",
+        "Explain The TCP/IP Stack.",
+        "Explain IP Addressing and Subnetting."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where learning objectives affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize learning objectives in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Explain Introduction.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Learning objectives: Learning objectives, Explain Introduction, Explain The OSI Model. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Learning objectives using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 4,
+      "type": "application",
+      "title": "Opening scenario",
+      "main_idea": "Use a realistic scenario to anchor Network Security Fundamentals in operational decision-making.",
+      "details": [
+        "Networks are the arteries of modern computing: nearly every piece of software of consequence communicates over a network, and nearly every organization's most sensitive data flows…",
+        "The internet, as the world's largest and most open network, is simultaneously its most powerful communications medium and its largest attack surface.",
+        "Understanding how networks function — their architecture, protocols, and inherent vulnerabilities — is a prerequisite for understanding how to defend them."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where opening scenario affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Networks are the arteries of modern computing: nearly every piece of…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Opening scenario: Opening scenario, Networks are the arteries of modern computing: nearly every piece of software of consequence communicates over a network, and nearly every organization's most sensitive data flows…, The internet, as the world's largest and most open network, is simultaneously its most powerful communications medium and its largest attack surface. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Opening scenario using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 5,
+      "type": "definition",
+      "title": "Introduction",
+      "main_idea": "Networks are the arteries of modern computing: nearly every piece of software of consequence communicates over a network, and nearly every organization's most sensitive data flows…",
+      "details": [
+        "Networks are the arteries of modern computing: nearly every piece of software of consequence communicates over a network, and nearly every organization's most sensitive data flows…",
+        "The internet, as the world's largest and most open network, is simultaneously its most powerful communications medium and its largest attack surface.",
+        "Understanding how networks function — their architecture, protocols, and inherent vulnerabilities — is a prerequisite for understanding how to defend them.",
+        "This chapter begins with a review of the networking concepts needed to understand security: the OSI and TCP/IP models, addressing, and routing."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where introduction affects users, data, or operations.",
+        "instructor_prompt": "What problem does introduction help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Networks are the arteries of modern computing: nearly every piece of…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Introduction: Introduction, Networks are the arteries of modern computing: nearly every piece of software of consequence communicates over a network, and nearly every organization's most sensitive data flows…, The internet, as the world's largest and most open network, is simultaneously its most powerful communications medium and its largest attack surface. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Introduction using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 6,
+      "type": "concept",
+      "title": "The OSI Model",
+      "main_idea": "The Open Systems Interconnection (OSI) model is a conceptual framework that divides network communication into seven distinct layers.",
+      "details": [
+        "The Open Systems Interconnection (OSI) model is a conceptual framework that divides network communication into seven distinct layers.",
+        "Each layer provides services to the layer above it and relies on the layer below.",
+        "Understanding this model is critical for security professionals because different attacks target different layers, and defensive tools are typically designed to operate at one or…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where the osi model affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize the osi model in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The Open Systems Interconnection (OSI) model is a conceptual…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The OSI Model: The OSI Model, The Open Systems Interconnection (OSI) model is a conceptual framework that divides network communication into seven distinct layers, Each layer provides services to the layer above it and relies on the layer below. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The OSI Model using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 7,
+      "type": "application",
+      "title": "The TCP/IP Stack",
+      "main_idea": "The TCP/IP model is the practical implementation underlying the internet.",
+      "details": [
+        "The TCP/IP model is the practical implementation underlying the internet.",
+        "It collapses the OSI's seven layers into four: - Application Layer (combines OSI layers 5-7): HTTP/S, DNS, SMTP, SSH.",
+        "- Transport Layer (OSI layer 4): TCP (connection-oriented, reliable) and UDP (connectionless, best-effort).",
+        "- Internet Layer (OSI layer 3): IP addressing and routing."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where the tcp/ip stack affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The TCP/IP model is the practical implementation underlying the…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The TCP/IP Stack: The TCP/IP Stack, The TCP/IP model is the practical implementation underlying the internet, It collapses the OSI's seven layers into four: - Application Layer (combines OSI layers 5-7): HTTP/S, DNS, SMTP, SSH. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The TCP/IP Stack using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 8,
+      "type": "evidence",
+      "title": "IP Addressing and Subnetting",
+      "main_idea": "Every device on an IP network has an IP address (IPv4: 32-bit, written as four octets, e.g., 192.168.1.100; IPv6: 128-bit, written in hexadecimal).",
+      "details": [
+        "Every device on an IP network has an IP address (IPv4: 32-bit, written as four octets, e.g., 192.168.1.100; IPv6: 128-bit, written in hexadecimal).",
+        "A subnet mask defines which portion of an IP address identifies the network and which identifies the host within that network.",
+        "CIDR notation (e.g., 192.168.1.0/24) expresses the subnet mask as the number of bits in the network portion.",
+        "Understanding subnetting is foundational to network segmentation, a core defensive strategy discussed later in this chapter."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where ip addressing and subnetting affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize ip addressing and subnetting in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Every device on an IP network has an IP address (IPv4: 32-bit,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for IP Addressing and Subnetting: IP Addressing and Subnetting, Every device on an IP network has an IP address (IPv4: 32-bit, written as four octets, e, A subnet mask defines which portion of an IP address identifies the network and which identifies the host within that network. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach IP Addressing and Subnetting using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 9,
+      "type": "definition",
+      "title": "Network Security Threats by OSI Layer",
+      "main_idea": "Security threats do not target the network as a monolithic entity — they target specific protocols and mechanisms at specific layers.",
+      "details": [
+        "Security threats do not target the network as a monolithic entity — they target specific protocols and mechanisms at specific layers.",
+        "Understanding the layer at which a threat operates guides the appropriate defensive response.",
+        "- Layer 1 (Physical) : Physical eavesdropping (tapping copper cables), jamming wireless signals, unauthorized physical access to network hardware.",
+        "- Layer 2 (Data Link) : ARP poisoning, MAC flooding (overwhelming a switch's address table to force broadcasting), VLAN hopping."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where network security threats by osi layer affects users, data, or operations.",
+        "instructor_prompt": "What problem does network security threats by osi layer help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Security threats do not target the network as a monolithic entity —…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Network Security Threats by OSI Layer: Network Security Threats by OSI Layer, Security threats do not target the network as a monolithic entity — they target specific protocols and mechanisms at specific layers, Understanding the layer at which a threat operates guides the appropriate defensive response. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Network Security Threats by OSI Layer using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 10,
+      "type": "concept",
+      "title": "ARP Poisoning",
+      "main_idea": "The Address Resolution Protocol (ARP) maps IP addresses to MAC (hardware) addresses on a local network segment.",
+      "details": [
+        "The Address Resolution Protocol (ARP) maps IP addresses to MAC (hardware) addresses on a local network segment.",
+        "ARP is a stateless protocol — devices cache ARP replies without verifying whether they requested them.",
+        "An attacker on the same local network segment can broadcast forged ARP replies, associating their own MAC address with the IP address of another device (such as the default…",
+        "Subsequent traffic destined for that IP address is then forwarded to the attacker instead."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where arp poisoning affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize arp poisoning in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The Address Resolution Protocol (ARP) maps IP addresses to MAC…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for ARP Poisoning: ARP Poisoning, The Address Resolution Protocol (ARP) maps IP addresses to MAC (hardware) addresses on a local network segment, ARP is a stateless protocol — devices cache ARP replies without verifying whether they requested them. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach ARP Poisoning using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 11,
+      "type": "application",
+      "title": "DNS Poisoning and Spoofing",
+      "main_idea": "The Domain Name System (DNS) translates human-readable domain names (e.g., www.bank.com) into IP addresses.",
+      "details": [
+        "The Domain Name System (DNS) translates human-readable domain names (e.g., www.bank.com) into IP addresses.",
+        "DNS cache poisoning (also called DNS spoofing) involves injecting false DNS records into a resolver's cache so that subsequent lookups for a domain return an attacker-controlled…",
+        "Classic DNS poisoning exploited the fact that DNS used predictable transaction IDs and source ports.",
+        "The Kaminsky attack (discovered in 2008) demonstrated a practical, fast method for poisoning DNS caches on a wide scale."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where dns poisoning and spoofing affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The Domain Name System (DNS) translates human-readable domain names…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for DNS Poisoning and Spoofing: DNS Poisoning and Spoofing, The Domain Name System (DNS) translates human-readable domain names (e, DNS cache poisoning (also called DNS spoofing) involves injecting false DNS records into a resolver's cache so that subsequent lookups for a domain return an attacker-controlled…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach DNS Poisoning and Spoofing using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 12,
+      "type": "evidence",
+      "title": "IP Spoofing",
+      "main_idea": "IP spoofing involves sending IP packets with a forged source address, making the traffic appear to originate from a different host.",
+      "details": [
+        "IP spoofing involves sending IP packets with a forged source address, making the traffic appear to originate from a different host.",
+        "IP spoofing is used in denial-of-service attacks (to amplify traffic or make the source harder to trace) and in some types of session hijacking.",
+        "Defenses include ingress filtering : routers at network perimeters are configured to drop packets arriving from outside the network that claim to have source addresses belonging…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where ip spoofing affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize ip spoofing in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: IP spoofing involves sending IP packets with a forged source address,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for IP Spoofing: IP Spoofing, IP spoofing involves sending IP packets with a forged source address, making the traffic appear to originate from a different host, IP spoofing is used in denial-of-service attacks (to amplify traffic or make the source harder to trace) and in some types of session hijacking. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach IP Spoofing using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 13,
+      "type": "definition",
+      "title": "SYN Flood DoS/DDoS",
+      "main_idea": "A SYN flood attack exploits the TCP three-way handshake.",
+      "details": [
+        "A SYN flood attack exploits the TCP three-way handshake.",
+        "The attacker sends a large volume of SYN packets — typically with spoofed source IPs — to a target server.",
+        "The server allocates resources (a half-open connection entry in its state table) and sends SYN-ACK responses that never receive an ACK because the source IPs are fake.",
+        "As the state table fills, the server can no longer accept legitimate connections."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where syn flood dos/ddos affects users, data, or operations.",
+        "instructor_prompt": "What problem does syn flood dos/ddos help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A SYN flood attack exploits the TCP three-way handshake.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for SYN Flood DoS/DDoS: SYN Flood DoS/DDoS, A SYN flood attack exploits the TCP three-way handshake, The attacker sends a large volume of SYN packets — typically with spoofed source IPs — to a target server. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach SYN Flood DoS/DDoS using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 14,
+      "type": "concept",
+      "title": "Packet Sniffing",
+      "main_idea": "Packet sniffing (or network capture) involves capturing and analyzing network traffic.",
+      "details": [
+        "Packet sniffing (or network capture) involves capturing and analyzing network traffic.",
+        "On networks using hubs (which broadcast traffic to all ports), sniffing is trivial.",
+        "Modern switched networks only forward frames to the intended recipient, but sniffing is still possible through ARP poisoning, compromising a switch's SPAN port, or placing a…",
+        "Wireshark is the most widely used packet capture and analysis tool."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where packet sniffing affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize packet sniffing in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Packet sniffing (or network capture) involves capturing and analyzing…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Packet Sniffing: Packet Sniffing, Packet sniffing (or network capture) involves capturing and analyzing network traffic, On networks using hubs (which broadcast traffic to all ports), sniffing is trivial. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Packet Sniffing using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 15,
+      "type": "application",
+      "title": "Port Scanning",
+      "main_idea": "Port scanning probes a target host's TCP or UDP ports to discover which services are running.",
+      "details": [
+        "Port scanning probes a target host's TCP or UDP ports to discover which services are running.",
+        "Nmap (Network Mapper) is the de facto standard tool for port scanning and network discovery.",
+        "A basic TCP SYN scan sends SYN packets to a range of ports; open ports respond with SYN-ACK, closed ports respond with RST, and filtered ports (behind a firewall) produce no…",
+        "Nmap also supports OS detection, service version detection, and script-based vulnerability scanning through the Nmap Scripting Engine (NSE)."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where port scanning affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Port scanning probes a target host's TCP or UDP ports to discover…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Port Scanning: Port Scanning, Port scanning probes a target host's TCP or UDP ports to discover which services are running, Nmap (Network Mapper) is the de facto standard tool for port scanning and network discovery. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Port Scanning using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 16,
+      "type": "evidence",
+      "title": "Firewalls",
+      "main_idea": "A firewall is the most fundamental network security control — a device or software that monitors and controls incoming and outgoing network traffic based on predefined security…",
+      "details": [
+        "A firewall is the most fundamental network security control — a device or software that monitors and controls incoming and outgoing network traffic based on predefined security…",
+        "Packet-filtering firewalls (Layer 3) examine individual packets and make allow/deny decisions based on source IP, destination IP, protocol, and port number.",
+        "They are fast but stateless — they cannot distinguish between a new connection request and an established connection's return traffic.",
+        "Stateful inspection firewalls (Layer 4) track the state of network connections and make decisions based on context."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where firewalls affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize firewalls in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A firewall is the most fundamental network security control — a…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Firewalls: Firewalls, A firewall is the most fundamental network security control — a device or software that monitors and controls incoming and outgoing network traffic based on predefined security…, Packet-filtering firewalls (Layer 3) examine individual packets and make allow/deny decisions based on source IP, destination IP, protocol, and port number. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Firewalls using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 17,
+      "type": "definition",
+      "title": "IDS and IPS",
+      "main_idea": "An Intrusion Detection System (IDS) monitors network traffic or host activity for signs of malicious activity and generates alerts.",
+      "details": [
+        "An Intrusion Detection System (IDS) monitors network traffic or host activity for signs of malicious activity and generates alerts.",
+        "An Intrusion Prevention System (IPS) goes further — it actively blocks detected attacks in real time.",
+        "Both IDS and IPS can use two fundamental detection approaches: - Signature-based detection : Compares traffic against a database of known attack patterns (signatures).",
+        "Highly effective against known threats; ineffective against novel (\"zero-day\") attacks."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where ids and ips affects users, data, or operations.",
+        "instructor_prompt": "What problem does ids and ips help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: An Intrusion Detection System (IDS) monitors network traffic or host…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for IDS and IPS: IDS and IPS, An Intrusion Detection System (IDS) monitors network traffic or host activity for signs of malicious activity and generates alerts, An Intrusion Prevention System (IPS) goes further — it actively blocks detected attacks in real time. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach IDS and IPS using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 18,
+      "type": "concept",
+      "title": "Network Segmentation and VLANs",
+      "main_idea": "Network segmentation divides a network into isolated zones, limiting the blast radius of a compromise.",
+      "details": [
+        "Network segmentation divides a network into isolated zones, limiting the blast radius of a compromise.",
+        "If an attacker gains access to one segment, they cannot freely move to others.",
+        "VLANs (Virtual Local Area Networks) implement segmentation at Layer 2 using logical rather than physical separation.",
+        "Traffic between VLANs must pass through a router or Layer 3 switch, where firewall rules can be applied."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where network segmentation and vlans affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize network segmentation and vlans in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Network segmentation divides a network into isolated zones, limiting…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Network Segmentation and VLANs: Network Segmentation and VLANs, Network segmentation divides a network into isolated zones, limiting the blast radius of a compromise, If an attacker gains access to one segment, they cannot freely move to others. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Network Segmentation and VLANs using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 19,
+      "type": "application",
+      "title": "DMZ Architecture",
+      "main_idea": "A DMZ (Demilitarized Zone) is a network segment that hosts publicly accessible services (web servers, mail servers, DNS) while being isolated from the internal network.",
+      "details": [
+        "A DMZ (Demilitarized Zone) is a network segment that hosts publicly accessible services (web servers, mail servers, DNS) while being isolated from the internal network.",
+        "Traffic from the internet is permitted to reach DMZ hosts (with restrictions), but DMZ hosts cannot freely initiate connections into the internal network.",
+        "A typical DMZ architecture uses two firewalls: an outer firewall between the internet and the DMZ, and an inner firewall between the DMZ and the internal network.",
+        "This ensures that even a complete compromise of a DMZ server does not give the attacker direct access to internal systems."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where dmz architecture affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A DMZ (Demilitarized Zone) is a network segment that hosts publicly…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for DMZ Architecture: DMZ Architecture, A DMZ (Demilitarized Zone) is a network segment that hosts publicly accessible services (web servers, mail servers, DNS) while being isolated from the internal network, Traffic from the internet is permitted to reach DMZ hosts (with restrictions), but DMZ hosts cannot freely initiate connections into the internal network. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach DMZ Architecture using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 20,
+      "type": "evidence",
+      "title": "VPNs: Virtual Private Networks",
+      "main_idea": "A VPN (Virtual Private Network) creates an encrypted tunnel between endpoints over a public network (typically the internet), providing confidentiality and integrity for the…",
+      "details": [
+        "A VPN (Virtual Private Network) creates an encrypted tunnel between endpoints over a public network (typically the internet), providing confidentiality and integrity for the…",
+        "VPNs are used to allow remote employees to securely access internal resources, to connect geographically separated offices, and to provide privacy for general internet browsing.",
+        "IPSec (Internet Protocol Security) operates at Layer 3 and can be deployed in transport mode (encrypting only the payload) or tunnel mode (encrypting the entire original IP…",
+        "IPSec uses two main protocols: AH (Authentication Header) for integrity without encryption, and ESP (Encapsulating Security Payload) for both confidentiality and integrity."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where vpns: virtual private networks affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize vpns: virtual private networks in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A VPN (Virtual Private Network) creates an encrypted tunnel between…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for VPNs: Virtual Private Networks: VPNs: Virtual Private Networks, A VPN (Virtual Private Network) creates an encrypted tunnel between endpoints over a public network (typically the internet), providing confidentiality and integrity for the…, VPNs are used to allow remote employees to securely access internal resources, to connect geographically separated offices, and to provide privacy for general internet browsing. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach VPNs: Virtual Private Networks using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 21,
+      "type": "definition",
+      "title": "Network Access Control (NAC)",
+      "main_idea": "Network Access Control (NAC) systems enforce security policy before allowing devices to connect to a network.",
+      "details": [
+        "Network Access Control (NAC) systems enforce security policy before allowing devices to connect to a network.",
+        "A NAC system can verify that a device meets minimum security requirements (up-to-date operating system patches, active antivirus, required security software) before granting…",
+        "Devices that fail compliance checks may be placed in a quarantine VLAN until remediated.",
+        "NAC is implemented using the 802.1X standard in conjunction with a RADIUS authentication server."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where network access control (nac) affects users, data, or operations.",
+        "instructor_prompt": "What problem does network access control (nac) help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Network Access Control (NAC) systems enforce security policy before…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Network Access Control (NAC): Network Access Control (NAC), Network Access Control (NAC) systems enforce security policy before allowing devices to connect to a network, A NAC system can verify that a device meets minimum security requirements (up-to-date operating system patches, active antivirus, required security software) before granting…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Network Access Control (NAC) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 22,
+      "type": "concept",
+      "title": "SIEM: Security Information and Event Management",
+      "main_idea": "SIEM is the backbone of a Security Operations Center (SOC).",
+      "details": [
+        "SIEM is the backbone of a Security Operations Center (SOC).",
+        "Popular SIEM platforms include Splunk, IBM QRadar, Microsoft Sentinel, and the open-source Elastic Stack (ELK).",
+        "Effective SIEM implementation requires careful tuning to balance detection sensitivity with alert fatigue — too many low-quality alerts cause analysts to become desensitized,…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where siem: security information and event management affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize siem: security information and event management in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: SIEM is the backbone of a Security Operations Center (SOC).",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for SIEM: Security Information and Event Management: SIEM: Security Information and Event Management, SIEM is the backbone of a Security Operations Center (SOC), Popular SIEM platforms include Splunk, IBM QRadar, Microsoft Sentinel, and the open-source Elastic Stack (ELK). Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach SIEM: Security Information and Event Management using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 23,
+      "type": "application",
+      "title": "WEP: A Case Study in Cryptographic Failure",
+      "main_idea": "WEP (Wired Equivalent Privacy) , the original Wi-Fi security protocol (802.11b, 1997), is a cautionary tale in protocol design.",
+      "details": [
+        "WEP (Wired Equivalent Privacy) , the original Wi-Fi security protocol (802.11b, 1997), is a cautionary tale in protocol design.",
+        "WEP used the RC4 stream cipher with a 40-bit (later 104-bit) key, XORed with a 24-bit Initialization Vector (IV) that was transmitted in plaintext.",
+        "Critical flaws: - The 24-bit IV space was small enough that IVs were reused frequently on busy networks, allowing traffic analysis.",
+        "- Several classes of \"weak\" IVs leaked key material, enabling key recovery with as few as 40,000-80,000 captured packets (achievable in minutes on a busy network)."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where wep: a case study in cryptographic failure affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: WEP (Wired Equivalent Privacy) , the original Wi-Fi security protocol…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for WEP: A Case Study in Cryptographic Failure: WEP: A Case Study in Cryptographic Failure, WEP (Wired Equivalent Privacy) , the original Wi-Fi security protocol (802, WEP used the RC4 stream cipher with a 40-bit (later 104-bit) key, XORed with a 24-bit Initialization Vector (IV) that was transmitted in plaintext. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach WEP: A Case Study in Cryptographic Failure using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 24,
+      "type": "evidence",
+      "title": "WPA2: Current Standard",
+      "main_idea": "WPA2 (Wi-Fi Protected Access 2) , based on the IEEE 802.11i standard, replaced WEP and WPA using the CCMP (Counter Mode CBC-MAC Protocol) based on AES-128.",
+      "details": [
+        "WPA2 (Wi-Fi Protected Access 2) , based on the IEEE 802.11i standard, replaced WEP and WPA using the CCMP (Counter Mode CBC-MAC Protocol) based on AES-128.",
+        "WPA2 comes in two variants: - WPA2-Personal (PSK) : Uses a pre-shared key.",
+        "The passphrase is used to derive the PMK (Pairwise Master Key) , from which session keys are derived through the 4-way handshake .",
+        "The 4-way handshake can be captured and subjected to offline dictionary attacks if the passphrase is weak."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where wpa2: current standard affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize wpa2: current standard in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: WPA2 (Wi-Fi Protected Access 2) , based on the IEEE 802.11i standard,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for WPA2: Current Standard: WPA2: Current Standard, WPA2 (Wi-Fi Protected Access 2) , based on the IEEE 802, WPA2 comes in two variants: - WPA2-Personal (PSK) : Uses a pre-shared key. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach WPA2: Current Standard using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 25,
+      "type": "vocabulary",
+      "title": "Key terms to keep",
+      "main_idea": "Vocabulary becomes useful when students can connect terms to scenarios and evidence.",
+      "details": [
+        "Introduction",
+        "The OSI Model",
+        "The TCP/IP Stack",
+        "IP Addressing and Subnetting"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where key terms to keep affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize key terms to keep in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Key terms to keep: Key terms to keep, Introduction, The OSI Model. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Key terms to keep using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 26,
+      "type": "comparison",
+      "title": "Compare: Introduction vs. The OSI Model",
+      "main_idea": "Comparing related ideas helps students avoid shallow memorization.",
+      "details": [
+        "Where Introduction applies.",
+        "Where The OSI Model applies.",
+        "How the difference changes the security decision."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where compare: introduction vs. the osi model affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize compare: introduction vs. the osi model in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Where Introduction applies.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Compare: Introduction vs. The OSI Model: Compare: Introduction vs. The OSI Model, Where Introduction applies, Where The OSI Model applies. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Compare: Introduction vs. The OSI Model using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 27,
+      "type": "application",
+      "title": "Applied decision checkpoint",
+      "main_idea": "Students should translate concepts into a defensible security decision.",
+      "details": [
+        "Identify the asset or process at risk.",
+        "Choose a preventive, detective, or corrective control.",
+        "Explain what evidence would prove the control is working."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where applied decision checkpoint affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Identify the asset or process at risk.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Applied decision checkpoint: Applied decision checkpoint, Identify the asset or process at risk, Choose a preventive, detective, or corrective control. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Applied decision checkpoint using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 28,
+      "type": "review",
+      "title": "Review questions",
+      "main_idea": "Retrieval practice should ask students to define, compare, apply, and evaluate.",
+      "details": [
+        "Define one core concept in plain language.",
+        "Compare two controls or threats from the week.",
+        "Apply one idea to a campus or business system.",
+        "Evaluate why a solution might fail in practice."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where review questions affects users, data, or operations.",
+        "instructor_prompt": "What is the one sentence takeaway for review questions?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Define one core concept in plain language.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Review questions: Review questions, Define one core concept in plain language, Compare two controls or threats from the week. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Review questions using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 29,
+      "type": "bridge",
+      "title": "Bridge to lab and assessment",
+      "main_idea": "The reading should transfer into evidence-based lab work and written explanations.",
+      "details": [
+        "Collect evidence, not just screenshots.",
+        "Explain what the artifact proves.",
+        "Connect the proof back to risk and control selection."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where bridge to lab and assessment affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize bridge to lab and assessment in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Collect evidence, not just screenshots.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Bridge to lab and assessment: Bridge to lab and assessment, Collect evidence, not just screenshots, Explain what the artifact proves. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Bridge to lab and assessment using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 30,
+      "type": "closing",
+      "title": "Takeaway",
+      "main_idea": "The central takeaway from Week 7 is to reason from risk to evidence to action.",
+      "details": [
+        "Network Security Fundamentals",
+        "Security is a decision process, not just a tool list.",
+        "Use the reading to justify practical choices."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 7 incident where takeaway affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize takeaway in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Network Security Fundamentals",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Takeaway: Takeaway, Network Security Fundamentals, Security is a decision process, not just a tool list. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Takeaway using evidence, scenario reasoning, and a concrete security takeaway."
+    }
+  ]
+}

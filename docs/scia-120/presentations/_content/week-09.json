@@ -1,0 +1,635 @@
+{
+  "week": 9,
+  "title": "Secure Programming",
+  "source": "scia-120/chapter-09.md",
+  "author": "Dr. Zhijiang Chen",
+  "institution": "Frostburg State University",
+  "summary": "Software is the attack surface. Every application that runs on a network, every operating system, every firmware image represents a body of code that was written by human beings who made decisions under the pressures of deadlines, incomplete requirements, and imperfect understanding. Those decisions — some deliberate, many inadvertent — produced…",
+  "key_concepts": [
+    "Introduction",
+    "The Secure Software Development Lifecycle (SSDLC)",
+    "Threat Modeling",
+    "STRIDE",
+    "DREAD",
+    "Buffer Overflow",
+    "Integer Overflow",
+    "Format String Vulnerabilities"
+  ],
+  "slides": [
+    {
+      "number": 1,
+      "type": "cover",
+      "title": "Secure Programming",
+      "main_idea": "Introduce Week 9: Secure Programming.",
+      "details": [
+        "Every application that runs on a network, every operating system, every firmware image represents a body of code that was written by human beings who made decisions under the pressures…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where secure programming affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize secure programming in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Every application that runs on a network, every operating system,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Tech-dark line-art hero for Week 9: Secure Programming, with networks, locks, shields, data paths, and classroom learning cues.",
+      "visual_mode": "line_art",
+      "speaker_goal": "Teach Secure Programming using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 2,
+      "type": "agenda",
+      "title": "Overall roadmap",
+      "main_idea": "The week moves from core definitions to practical security decisions.",
+      "details": [
+        "Introduction",
+        "The Secure Software Development Lifecycle (SSDLC)",
+        "Threat Modeling",
+        "STRIDE"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where overall roadmap affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize overall roadmap in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art roadmap showing the major learning path for Overall roadmap; connected nodes represent reading concepts and classroom application.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Overall roadmap using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 3,
+      "type": "objectives",
+      "title": "Learning objectives",
+      "main_idea": "Students should explain, apply, and evaluate the week’s main security ideas.",
+      "details": [
+        "Explain Introduction.",
+        "Explain The Secure Software Development Lifecycle (SSDLC).",
+        "Explain Threat Modeling.",
+        "Explain STRIDE."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where learning objectives affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize learning objectives in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Explain Introduction.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Learning objectives: Learning objectives, Explain Introduction, Explain The Secure Software Development Lifecycle (SSDLC). Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Learning objectives using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 4,
+      "type": "application",
+      "title": "Opening scenario",
+      "main_idea": "Use a realistic scenario to anchor Secure Programming in operational decision-making.",
+      "details": [
+        "Every application that runs on a network, every operating system, every firmware image represents a body of code that was written by human beings who made decisions under the…",
+        "Those decisions — some deliberate, many inadvertent — produced vulnerabilities that adversaries exploit every day at scale.",
+        "The consequences of insecure software extend far beyond inconvenience."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where opening scenario affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Every application that runs on a network, every operating system,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Opening scenario: Opening scenario, Every application that runs on a network, every operating system, every firmware image represents a body of code that was written by human beings who made decisions under the…, Those decisions — some deliberate, many inadvertent — produced vulnerabilities that adversaries exploit every day at scale. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Opening scenario using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 5,
+      "type": "definition",
+      "title": "Introduction",
+      "main_idea": "Every application that runs on a network, every operating system, every firmware image represents a body of code that was written by human beings who made decisions under the…",
+      "details": [
+        "Every application that runs on a network, every operating system, every firmware image represents a body of code that was written by human beings who made decisions under the…",
+        "Those decisions — some deliberate, many inadvertent — produced vulnerabilities that adversaries exploit every day at scale.",
+        "The consequences of insecure software extend far beyond inconvenience.",
+        "The 2017 Equifax breach, which exposed the sensitive personal data of 147 million Americans, was caused by a failure to patch a known Apache Struts vulnerability (CVE-2017-5638)."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where introduction affects users, data, or operations.",
+        "instructor_prompt": "What problem does introduction help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Every application that runs on a network, every operating system,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Introduction: Introduction, Every application that runs on a network, every operating system, every firmware image represents a body of code that was written by human beings who made decisions under the…, Those decisions — some deliberate, many inadvertent — produced vulnerabilities that adversaries exploit every day at scale. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Introduction using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 6,
+      "type": "concept",
+      "title": "The Secure Software Development Lifecycle (SSDLC)",
+      "main_idea": "The traditional Software Development Lifecycle (SDLC) — requirements, design, implementation, testing, deployment, maintenance — becomes a Secure SDLC by integrating security…",
+      "details": [
+        "The traditional Software Development Lifecycle (SDLC) — requirements, design, implementation, testing, deployment, maintenance — becomes a Secure SDLC by integrating security…",
+        "Requirements Phase : Security requirements must be explicitly gathered alongside functional requirements.",
+        "What data does the application handle?",
+        "What are the regulatory requirements (HIPAA, PCI-DSS, GDPR)?"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where the secure software development lifecycle (ssdlc) affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize the secure software development lifecycle (ssdlc) in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The traditional Software Development Lifecycle (SDLC) — requirements,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Secure Software Development Lifecycle (SSDLC): The Secure Software Development Lifecycle (SSDLC), The traditional Software Development Lifecycle (SDLC) — requirements, design, implementation, testing, deployment, maintenance — becomes a Secure SDLC by integrating security…, Requirements Phase : Security requirements must be explicitly gathered alongside functional requirements. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Secure Software Development Lifecycle (SSDLC) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 7,
+      "type": "application",
+      "title": "Threat Modeling",
+      "main_idea": "Threat modeling is a structured approach to identifying security threats, their likelihood and impact, and appropriate countermeasures during the design phase.",
+      "details": [
+        "Threat modeling is a structured approach to identifying security threats, their likelihood and impact, and appropriate countermeasures during the design phase.",
+        "It answers the question: \"What can go wrong with this system?\"",
+        "Threat Modeling connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where threat modeling affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Threat modeling is a structured approach to identifying security…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Threat Modeling: Threat Modeling, Threat modeling is a structured approach to identifying security threats, their likelihood and impact, and appropriate countermeasures during the design phase, It answers the question: \"What can go wrong with this system?\". Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Threat Modeling using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 8,
+      "type": "evidence",
+      "title": "STRIDE",
+      "main_idea": "STRIDE is the most widely used threat categorization framework for software systems, developed by Microsoft.",
+      "details": [
+        "STRIDE is the most widely used threat categorization framework for software systems, developed by Microsoft.",
+        "STRIDE connects to risk, controls, and evidence.",
+        "STRIDE connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where stride affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize stride in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: STRIDE is the most widely used threat categorization framework for…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for STRIDE: STRIDE, STRIDE is the most widely used threat categorization framework for software systems, developed by Microsoft, STRIDE connects to risk, controls, and evidence. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach STRIDE using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 9,
+      "type": "definition",
+      "title": "DREAD",
+      "main_idea": "The DREAD model provides a risk rating framework for prioritizing identified threats: - D amage: How severe is the damage if exploited?",
+      "details": [
+        "The DREAD model provides a risk rating framework for prioritizing identified threats: - D amage: How severe is the damage if exploited?",
+        "(1-10) - R eproducibility: How reliably can the attack be reproduced?",
+        "(1-10) - E xploitability: How much skill/effort is required to exploit?",
+        "(1-10) - A ffected users: What percentage of users would be affected?"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where dread affects users, data, or operations.",
+        "instructor_prompt": "What problem does dread help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The DREAD model provides a risk rating framework for prioritizing…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for DREAD: DREAD, The DREAD model provides a risk rating framework for prioritizing identified threats: - D amage: How severe is the damage if exploited?, (1-10) - R eproducibility: How reliably can the attack be reproduced?. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach DREAD using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 10,
+      "type": "concept",
+      "title": "Buffer Overflow",
+      "main_idea": "A buffer overflow occurs when a program writes more data to a buffer (a contiguous block of memory) than it was allocated to hold, overwriting adjacent memory regions.",
+      "details": [
+        "A buffer overflow occurs when a program writes more data to a buffer (a contiguous block of memory) than it was allocated to hold, overwriting adjacent memory regions.",
+        "When the vulnerable function returns, execution jumps to the attacker's payload.",
+        "Heap buffer overflows target memory allocated by malloc/new.",
+        "They are more complex to exploit but can corrupt heap metadata structures, function pointers, or vtable entries to achieve code execution."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where buffer overflow affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize buffer overflow in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A buffer overflow occurs when a program writes more data to a buffer…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Buffer Overflow: Buffer Overflow, A buffer overflow occurs when a program writes more data to a buffer (a contiguous block of memory) than it was allocated to hold, overwriting adjacent memory regions, When the vulnerable function returns, execution jumps to the attacker's payload. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Buffer Overflow using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 11,
+      "type": "application",
+      "title": "Integer Overflow",
+      "main_idea": "An integer overflow occurs when an arithmetic operation produces a result outside the range that the integer type can represent.",
+      "details": [
+        "An integer overflow occurs when an arithmetic operation produces a result outside the range that the integer type can represent.",
+        "For example, adding 1 to a uint8 t with value 255 yields 0 (wraps around).",
+        "Integer Overflow connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where integer overflow affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: An integer overflow occurs when an arithmetic operation produces a…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Integer Overflow: Integer Overflow, An integer overflow occurs when an arithmetic operation produces a result outside the range that the integer type can represent, For example, adding 1 to a uint8 t with value 255 yields 0 (wraps around). Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Integer Overflow using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 12,
+      "type": "evidence",
+      "title": "Format String Vulnerabilities",
+      "main_idea": "Format string vulnerabilities arise when user-supplied data is passed directly as the format string argument to functions like printf: An attacker providing format specifiers like…",
+      "details": [
+        "Format string vulnerabilities arise when user-supplied data is passed directly as the format string argument to functions like printf: An attacker providing format specifiers like…",
+        "%n writes the number of bytes printed so far to a memory address, potentially enabling arbitrary memory writes.",
+        "Format string bugs can lead to information disclosure and remote code execution."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where format string vulnerabilities affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize format string vulnerabilities in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Format string vulnerabilities arise when user-supplied data is passed…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Format String Vulnerabilities: Format String Vulnerabilities, Format string vulnerabilities arise when user-supplied data is passed directly as the format string argument to functions like printf: An attacker providing format specifiers like…, %n writes the number of bytes printed so far to a memory address, potentially enabling arbitrary memory writes. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Format String Vulnerabilities using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 13,
+      "type": "definition",
+      "title": "SQL Injection (with Code Examples)",
+      "main_idea": "SQL injection (SQLi) remains one of the most prevalent and impactful web vulnerabilities.",
+      "details": [
+        "SQL injection (SQLi) remains one of the most prevalent and impactful web vulnerabilities.",
+        "It occurs when user-supplied data is incorporated into a SQL query without proper sanitization.",
+        "Vulnerable code (Python): Attack : An attacker enters admin' -- as the username (and anything as the password).",
+        "The query becomes: The -- comments out the rest of the query, bypassing the password check entirely."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where sql injection (with code examples) affects users, data, or operations.",
+        "instructor_prompt": "What problem does sql injection (with code examples) help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: SQL injection (SQLi) remains one of the most prevalent and impactful…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for SQL Injection (with Code Examples): SQL Injection (with Code Examples), SQL injection (SQLi) remains one of the most prevalent and impactful web vulnerabilities, It occurs when user-supplied data is incorporated into a SQL query without proper sanitization. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach SQL Injection (with Code Examples) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 14,
+      "type": "concept",
+      "title": "Cross-Site Scripting (Revisited from a Developer Perspective)",
+      "main_idea": "As covered in Chapter 8 from the attacker's perspective, XSS is fundamentally a failure of output encoding.",
+      "details": [
+        "As covered in Chapter 8 from the attacker's perspective, XSS is fundamentally a failure of output encoding.",
+        "Safe: htmlspecialchars encodes , \", and ' as HTML entities, preventing script injection.",
+        "Cross-Site Scripting (Revisited from a Developer Perspective) connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where cross-site scripting (revisited from a developer perspective) affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize cross-site scripting (revisited from a developer perspective) in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: As covered in Chapter 8 from the attacker's perspective, XSS is…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Cross-Site Scripting (Revisited from a Developer Perspective): Cross-Site Scripting (Revisited from a Developer Perspective), As covered in Chapter 8 from the attacker's perspective, XSS is fundamentally a failure of output encoding, Safe: htmlspecialchars encodes , \", and ' as HTML entities, preventing script injection. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Cross-Site Scripting (Revisited from a Developer Perspective) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 15,
+      "type": "application",
+      "title": "Race Conditions",
+      "main_idea": "A race condition (or TOCTOU — Time Of Check to Time Of Use) vulnerability occurs when a program's behavior depends on the relative timing of events in a concurrent environment,…",
+      "details": [
+        "A race condition (or TOCTOU — Time Of Check to Time Of Use) vulnerability occurs when a program's behavior depends on the relative timing of events in a concurrent environment,…",
+        "Example: A program checks if a file is writable (check), then opens and writes to it (use).",
+        "An attacker using a symlink race can replace the target file with a symlink to a sensitive file (e.g., /etc/passwd) between the check and the use, causing the program to overwrite…",
+        "In web applications, race conditions can arise in multi-threaded environments where shared state (e.g., session data, balance checks) is not properly synchronized."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where race conditions affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A race condition (or TOCTOU — Time Of Check to Time Of Use)…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Race Conditions: Race Conditions, A race condition (or TOCTOU — Time Of Check to Time Of Use) vulnerability occurs when a program's behavior depends on the relative timing of events in a concurrent environment,…, Example: A program checks if a file is writable (check), then opens and writes to it (use). Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Race Conditions using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 16,
+      "type": "evidence",
+      "title": "Insecure Deserialization",
+      "main_idea": "Many languages provide mechanisms to serialize (convert to bytes) and deserialize (reconstruct from bytes) complex objects for storage or transmission.",
+      "details": [
+        "Many languages provide mechanisms to serialize (convert to bytes) and deserialize (reconstruct from bytes) complex objects for storage or transmission.",
+        "Insecure deserialization occurs when untrusted data is deserialized without validation.",
+        "Depending on the language and libraries involved, this can lead to remote code execution, object injection, or data tampering.",
+        "Java's native serialization mechanism is particularly notorious — the readObject method can trigger arbitrary code execution if an attacker can supply crafted serialized data."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where insecure deserialization affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize insecure deserialization in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Many languages provide mechanisms to serialize (convert to bytes) and…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Insecure Deserialization: Insecure Deserialization, Many languages provide mechanisms to serialize (convert to bytes) and deserialize (reconstruct from bytes) complex objects for storage or transmission, Insecure deserialization occurs when untrusted data is deserialized without validation. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Insecure Deserialization using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 17,
+      "type": "definition",
+      "title": "Use-After-Free",
+      "main_idea": "A use-after-free vulnerability occurs when a program continues to use a memory pointer after the memory it points to has been freed (deallocated).",
+      "details": [
+        "A use-after-free vulnerability occurs when a program continues to use a memory pointer after the memory it points to has been freed (deallocated).",
+        "If an attacker can control what data is placed in the reallocated memory region, they may be able to redirect program execution.",
+        "Use-after-free vulnerabilities are among the most common critical memory safety vulnerabilities in C/C++ code and are a primary motivation for the adoption of memory-safe…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where use-after-free affects users, data, or operations.",
+        "instructor_prompt": "What problem does use-after-free help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A use-after-free vulnerability occurs when a program continues to use…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Use-After-Free: Use-After-Free, A use-after-free vulnerability occurs when a program continues to use a memory pointer after the memory it points to has been freed (deallocated), If an attacker can control what data is placed in the reallocated memory region, they may be able to redirect program execution. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Use-After-Free using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 18,
+      "type": "concept",
+      "title": "Input Validation and Sanitization",
+      "main_idea": "All data entering a program from external sources — web forms, API parameters, URL parameters, HTTP headers, file uploads, database data, environment variables — must be treated…",
+      "details": [
+        "All data entering a program from external sources — web forms, API parameters, URL parameters, HTTP headers, file uploads, database data, environment variables — must be treated…",
+        "Validation checks that input conforms to the expected format, type, length, and range.",
+        "Prefer whitelist (allowlist) validation over blacklist validation: define what is acceptable and reject everything else, rather than trying to enumerate all possible malicious…",
+        "Blacklists are almost always incomplete."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where input validation and sanitization affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize input validation and sanitization in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: All data entering a program from external sources — web forms, API…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Input Validation and Sanitization: Input Validation and Sanitization, All data entering a program from external sources — web forms, API parameters, URL parameters, HTTP headers, file uploads, database data, environment variables — must be treated…, Validation checks that input conforms to the expected format, type, length, and range. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Input Validation and Sanitization using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 19,
+      "type": "application",
+      "title": "Parameterized Queries",
+      "main_idea": "As demonstrated in the SQL injection section, parameterized queries (also called prepared statements) prevent SQL injection by separating code from data.",
+      "details": [
+        "As demonstrated in the SQL injection section, parameterized queries (also called prepared statements) prevent SQL injection by separating code from data.",
+        "Every modern database library supports them.",
+        "There is no legitimate reason to use string concatenation to build SQL queries with user input.",
+        "Similarly, use ORM frameworks that handle parameterization automatically, but be aware of their configuration — many ORMs support raw query modes that can reintroduce SQLi if…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where parameterized queries affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: As demonstrated in the SQL injection section, parameterized queries…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Parameterized Queries: Parameterized Queries, As demonstrated in the SQL injection section, parameterized queries (also called prepared statements) prevent SQL injection by separating code from data, Every modern database library supports them. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Parameterized Queries using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 20,
+      "type": "evidence",
+      "title": "Output Encoding",
+      "main_idea": "Output encoding is the complement to input validation: before including any data in output (HTML, JavaScript, CSS, URL, XML, JSON), encode it appropriately for the output context.",
+      "details": [
+        "Output encoding is the complement to input validation: before including any data in output (HTML, JavaScript, CSS, URL, XML, JSON), encode it appropriately for the output context.",
+        "HTML encoding, JavaScript encoding, URL encoding, and CSS encoding all use different character escapes and must be applied contextually.",
+        "A string that is safe in an HTML body context may be dangerous in an HTML attribute, JavaScript string, or URL."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where output encoding affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize output encoding in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Output encoding is the complement to input validation: before…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Output Encoding: Output Encoding, Output encoding is the complement to input validation: before including any data in output (HTML, JavaScript, CSS, URL, XML, JSON), encode it appropriately for the output context, HTML encoding, JavaScript encoding, URL encoding, and CSS encoding all use different character escapes and must be applied contextually. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Output Encoding using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 21,
+      "type": "definition",
+      "title": "Error Handling and Logging",
+      "main_idea": "Security-sensitive applications must handle errors carefully: - Do not expose internal details (stack traces, database error messages, file paths) to end users in production.",
+      "details": [
+        "Security-sensitive applications must handle errors carefully: - Do not expose internal details (stack traces, database error messages, file paths) to end users in production.",
+        "These help attackers understand the system's internals.",
+        "- Log sufficient information for forensic investigation (who did what, when, and from where) but do not log sensitive data (passwords, credit card numbers, health information,…",
+        "- Use structured logging that can be analyzed by SIEM systems."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where error handling and logging affects users, data, or operations.",
+        "instructor_prompt": "What problem does error handling and logging help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Security-sensitive applications must handle errors carefully: - Do…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Error Handling and Logging: Error Handling and Logging, Security-sensitive applications must handle errors carefully: - Do not expose internal details (stack traces, database error messages, file paths) to end users in production, These help attackers understand the system's internals. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Error Handling and Logging using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 22,
+      "type": "concept",
+      "title": "Cryptographic API Usage",
+      "main_idea": "A recurring theme in software security: never roll your own cryptography .",
+      "details": [
+        "A recurring theme in software security: never roll your own cryptography .",
+        "Cryptographic implementation is extraordinarily subtle — timing side channels, improper IV handling, padding oracle vulnerabilities, and subtle mathematical errors can completely…",
+        "Even expert cryptographers discover implementation flaws in their own code.",
+        "Use well-established, actively maintained cryptographic libraries: OpenSSL/BoringSSL/LibreSSL (C), Bouncy Castle (Java), Python's cryptography package (which wraps libsodium or…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where cryptographic api usage affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize cryptographic api usage in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A recurring theme in software security: never roll your own…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Cryptographic API Usage: Cryptographic API Usage, A recurring theme in software security: never roll your own cryptography , Cryptographic implementation is extraordinarily subtle — timing side channels, improper IV handling, padding oracle vulnerabilities, and subtle mathematical errors can completely…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Cryptographic API Usage using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 23,
+      "type": "application",
+      "title": "Dependency Management and Software Composition Analysis (SCA)",
+      "main_idea": "Modern applications depend on dozens or hundreds of third-party libraries.",
+      "details": [
+        "Modern applications depend on dozens or hundreds of third-party libraries.",
+        "These dependencies have their own vulnerabilities.",
+        "Tools include Snyk, OWASP Dependency-Check, GitHub's Dependabot, and Google's OSV-Scanner.",
+        "Incorporate SCA into the CI/CD pipeline to catch new vulnerabilities as they are disclosed."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where dependency management and software composition analysis (sca) affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Modern applications depend on dozens or hundreds of third-party…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Dependency Management and Software Composition Analysis (SCA): Dependency Management and Software Composition Analysis (SCA), Modern applications depend on dozens or hundreds of third-party libraries, These dependencies have their own vulnerabilities. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Dependency Management and Software Composition Analysis (SCA) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 24,
+      "type": "evidence",
+      "title": "Static Analysis (SAST)",
+      "main_idea": "Static Application Security Testing (SAST) tools analyze source code (or compiled bytecode) without executing the program, looking for patterns that indicate security…",
+      "details": [
+        "Static Application Security Testing (SAST) tools analyze source code (or compiled bytecode) without executing the program, looking for patterns that indicate security…",
+        "They can detect common vulnerabilities like SQL injection, XSS, buffer overflows, use of deprecated functions, and hard-coded credentials.",
+        "SAST tools include Semgrep (multi-language, rule-based), Checkmarx, Veracode, SonarQube (open-source tier available), Bandit (Python), and Brakeman (Ruby on Rails).",
+        "SAST should be integrated into the IDE (developer gets immediate feedback) and CI/CD pipeline (gates build/merge on security findings)."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where static analysis (sast) affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize static analysis (sast) in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Static Application Security Testing (SAST) tools analyze source code…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Static Analysis (SAST): Static Analysis (SAST), Static Application Security Testing (SAST) tools analyze source code (or compiled bytecode) without executing the program, looking for patterns that indicate security…, They can detect common vulnerabilities like SQL injection, XSS, buffer overflows, use of deprecated functions, and hard-coded credentials. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Static Analysis (SAST) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 25,
+      "type": "vocabulary",
+      "title": "Key terms to keep",
+      "main_idea": "Vocabulary becomes useful when students can connect terms to scenarios and evidence.",
+      "details": [
+        "Introduction",
+        "The Secure Software Development Lifecycle (SSDLC)",
+        "Threat Modeling",
+        "STRIDE"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where key terms to keep affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize key terms to keep in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Key terms to keep: Key terms to keep, Introduction, The Secure Software Development Lifecycle (SSDLC). Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Key terms to keep using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 26,
+      "type": "comparison",
+      "title": "Compare: Introduction vs. The Secure Software Development Lifecycle (SSDLC)",
+      "main_idea": "Comparing related ideas helps students avoid shallow memorization.",
+      "details": [
+        "Where Introduction applies.",
+        "Where The Secure Software Development Lifecycle (SSDLC) applies.",
+        "How the difference changes the security decision."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where compare: introduction vs. the secure software development lifecycle (ssdlc) affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize compare: introduction vs. the secure software development lifecycle (ssdlc) in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Where Introduction applies.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Compare: Introduction vs. The Secure Software Development Lifecycle (SSDLC): Compare: Introduction vs. The Secure Software Development Lifecycle (SSDLC), Where Introduction applies, Where The Secure Software Development Lifecycle (SSDLC) applies. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Compare: Introduction vs. The Secure Software Development Lifecycle (SSDLC) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 27,
+      "type": "application",
+      "title": "Applied decision checkpoint",
+      "main_idea": "Students should translate concepts into a defensible security decision.",
+      "details": [
+        "Identify the asset or process at risk.",
+        "Choose a preventive, detective, or corrective control.",
+        "Explain what evidence would prove the control is working."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where applied decision checkpoint affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Identify the asset or process at risk.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Applied decision checkpoint: Applied decision checkpoint, Identify the asset or process at risk, Choose a preventive, detective, or corrective control. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Applied decision checkpoint using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 28,
+      "type": "review",
+      "title": "Review questions",
+      "main_idea": "Retrieval practice should ask students to define, compare, apply, and evaluate.",
+      "details": [
+        "Define one core concept in plain language.",
+        "Compare two controls or threats from the week.",
+        "Apply one idea to a campus or business system.",
+        "Evaluate why a solution might fail in practice."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where review questions affects users, data, or operations.",
+        "instructor_prompt": "What is the one sentence takeaway for review questions?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Define one core concept in plain language.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Review questions: Review questions, Define one core concept in plain language, Compare two controls or threats from the week. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Review questions using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 29,
+      "type": "bridge",
+      "title": "Bridge to lab and assessment",
+      "main_idea": "The reading should transfer into evidence-based lab work and written explanations.",
+      "details": [
+        "Collect evidence, not just screenshots.",
+        "Explain what the artifact proves.",
+        "Connect the proof back to risk and control selection."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where bridge to lab and assessment affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize bridge to lab and assessment in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Collect evidence, not just screenshots.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Bridge to lab and assessment: Bridge to lab and assessment, Collect evidence, not just screenshots, Explain what the artifact proves. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Bridge to lab and assessment using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 30,
+      "type": "closing",
+      "title": "Takeaway",
+      "main_idea": "The central takeaway from Week 9 is to reason from risk to evidence to action.",
+      "details": [
+        "Secure Programming",
+        "Security is a decision process, not just a tool list.",
+        "Use the reading to justify practical choices."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 9 incident where takeaway affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize takeaway in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Secure Programming",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Takeaway: Takeaway, Secure Programming, Security is a decision process, not just a tool list. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Takeaway using evidence, scenario reasoning, and a concrete security takeaway."
+    }
+  ]
+}

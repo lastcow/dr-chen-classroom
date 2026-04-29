@@ -9,89 +9,14 @@ sources: []
 
 # SCIA 120 Presentations
 
-Magazine-style, tech-dark HTML presentations generated from the **SCIA 120 reading materials**. Each weekly presentation is approximately 30 slides and includes AI-generated SVG line-art concept visuals.
+<style>.presentation-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.2rem;margin-top:1.5rem}.presentation-card{border:1px solid rgba(63,81,181,.24);border-radius:14px;padding:1.1rem 1.2rem;background:var(--md-default-bg-color);box-shadow:0 8px 24px rgba(0,0,0,.06)}.presentation-card h3{margin:0 0 .65rem 0!important;line-height:1.25}.presentation-card p{margin:0 0 1rem 0}.presentation-actions{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:.8rem}.presentation-actions .md-button{margin:0!important}</style>
+
+Magazine-style, tech-dark HTML presentations generated from the **SCIA 120 reading materials**. Each weekly presentation has 30 slides, slide-specific classroom dialog, and AI-generated SVG line-art concept visuals.
 
 Author shown on each cover page: **Dr. Zhijiang Chen (Frostburg State University)**.
 
 ## Weekly Presentation Index
 
-<div class="grid cards" markdown>
-
--   **Week 01: Introduction to Information Security and Information Assurance**
-
-    Before an organization can defend itself against threats, it must first develop a clear and precise understanding of what it is defending, why it matters, and who might want to undermine it. This chapter lays t…
-
-    [Open presentation page](week-01.md){ .md-button } [Launch deck](week-01-deck/){ .md-button .md-button--primary }
--   **Week 02: Physical Security**
-
-    It is easy, in a course focused on computing and information assurance, to leap immediately to firewalls, encryption protocols, and malware defenses. Yet one of the most persistent and important truths in secur…
-
-    [Open presentation page](week-02.md){ .md-button } [Launch deck](week-02-deck/){ .md-button .md-button--primary }
--   **Week 03: Social Engineering**
-
-    Every organization invests in firewalls, antivirus software, intrusion detection systems, and encryption — and yet attackers continue to succeed at unprecedented scale. The reason is frequently not technical: i…
-
-    [Open presentation page](week-03.md){ .md-button } [Launch deck](week-03-deck/){ .md-button .md-button--primary }
--   **Week 04: Operating System Security Fundamentals**
-
-    The operating system (OS) is the most critical software layer in any computing environment. It is the software that manages all hardware resources, provides services to applications, and mediates every access t…
-
-    [Open presentation page](week-04.md){ .md-button } [Launch deck](week-04-deck/){ .md-button .md-button--primary }
--   **Week 05: Malware — Types, Analysis, and Defense**
-
-    Malicious software — malware — is one of the primary weapons in the modern attacker&#x27;s arsenal and one of the most pervasive threats facing organizations and individuals. From the crude viruses of the 1980s to t…
-
-    [Open presentation page](week-05.md){ .md-button } [Launch deck](week-05-deck/){ .md-button .md-button--primary }
--   **Week 06: Cryptography Fundamentals**
-
-    Cryptography is among the oldest disciplines in the long history of human secrecy and communication. At its core, cryptography is the science and art of transforming information into an unintelligible form so t…
-
-    [Open presentation page](week-06.md){ .md-button } [Launch deck](week-06-deck/){ .md-button .md-button--primary }
--   **Week 07: Network Security Fundamentals**
-
-    Networks are the arteries of modern computing: nearly every piece of software of consequence communicates over a network, and nearly every organization&#x27;s most sensitive data flows across one. The internet, as t…
-
-    [Open presentation page](week-07.md){ .md-button } [Launch deck](week-07-deck/){ .md-button .md-button--primary }
--   **Week 08: Internet Security**
-
-    The internet was not designed with security in mind. Its foundational protocols — TCP/IP, HTTP, DNS, SMTP — were developed in an era when the network&#x27;s user base was small, relatively trusted, and primarily aca…
-
-    [Open presentation page](week-08.md){ .md-button } [Launch deck](week-08-deck/){ .md-button .md-button--primary }
--   **Week 09: Secure Programming**
-
-    Those decisions — some deliberate, many inadvertent — produced vulnerabilities that adversaries exploit every day at scale. The consequences of insecure software extend far beyond inconvenience.
-
-    [Open presentation page](week-09.md){ .md-button } [Launch deck](week-09-deck/){ .md-button .md-button--primary }
--   **Week 10: Security Models and Security Policies**
-
-    This is the domain of security models and security policies. Security models are formal, often mathematical descriptions of security properties that a system must satisfy.
-
-    [Open presentation page](week-10.md){ .md-button } [Launch deck](week-10-deck/){ .md-button .md-button--primary }
--   **Week 11: Authentication and Access Control**
-
-    Every secure computing system ultimately depends on one foundational question: who are you, and what are you allowed to do? Authentication and access control are the mechanisms that answer these questions, form…
-
-    [Open presentation page](week-11.md){ .md-button } [Launch deck](week-11-deck/){ .md-button .md-button--primary }
--   **Week 12: Distributed Applications Security**
-
-    Modern software rarely runs on a single machine. This distributed architecture enables scalability, resilience, and rapid development — but it also creates a dramatically enlarged and more complex attack surfac…
-
-    [Open presentation page](week-12.md){ .md-button } [Launch deck](week-12-deck/){ .md-button .md-button--primary }
--   **Week 13: Cloud Computing Security**
-
-    Cloud computing has fundamentally transformed how organizations build, deploy, and manage information systems. What once required months of procurement, physical hardware installation, and data center operation…
-
-    [Open presentation page](week-13.md){ .md-button } [Launch deck](week-13-deck/){ .md-button .md-button--primary }
--   **Week 14: Security Practices, Risk Management, and Compliance**
-
-    Security technology alone cannot protect an organization. Encryption protects data at rest but not the application that decrypts it.
-
-    [Open presentation page](week-14.md){ .md-button } [Launch deck](week-14-deck/){ .md-button .md-button--primary }
--   **Week 15: Emerging Threats and the Future of Cybersecurity**
-
-    This final chapter looks forward — examining how the threat landscape is evolving, what new technologies are reshaping both offensive and defensive security, and what the field will look like as you begin your …
-
-    [Open presentation page](week-15.md){ .md-button } [Launch deck](week-15-deck/){ .md-button .md-button--primary }
-
-
+<div class="presentation-grid">
+<div class="presentation-card"><h3>Week 01: Introduction to Information Security and Information Assurance</h3><p>Information security (often abbreviated infosec ) is the practice of protecting information and information systems from unauthorized access, use, disclosure, disruption, modification, or destruction. The goal is to ensure that data remains private, accurate, and accessible to those who legitimately need it. It is important to distinguish information…</p><div class="presentation-actions"><a class="md-button" href="/scia-120/presentations/week-01/">Open presentation page</a><a class="md-button md-button--primary" href="/scia-120/presentations/week-01-deck/">Launch deck</a></div></div><div class="presentation-card"><h3>Week 02: Physical Security</h3><p>The principle is straightforward: physical access to a system is, for most practical purposes, equivalent to total control over that system. An attacker with physical access to a running computer can extract data from memory, bypass operating system access controls with a bootable USB drive, install hardware keyloggers, or simply steal the device. Data…</p><div class="presentation-actions"><a class="md-button" href="/scia-120/presentations/week-02/">Open presentation page</a><a class="md-button md-button--primary" href="/scia-120/presentations/week-02-deck/">Launch deck</a></div></div><div class="presentation-card"><h3>Week 03: Social Engineering</h3><p>Social engineering in a security context refers to any technique that uses psychological manipulation — rather than technical exploitation — to gain unauthorized access to systems, data, or physical spaces. The social engineer&#x27;s targets are people, not machines. Their tools are trust, deception, urgency, and authority. Social engineer Kevin Mitnick, one of…</p><div class="presentation-actions"><a class="md-button" href="/scia-120/presentations/week-03/">Open presentation page</a><a class="md-button md-button--primary" href="/scia-120/presentations/week-03-deck/">Launch deck</a></div></div><div class="presentation-card"><h3>Week 04: Operating System Security Fundamentals</h3><p>An operating system is not a monolithic block of code. Modern OS design separates the software into distinct layers with carefully defined trust boundaries.</p><div class="presentation-actions"><a class="md-button" href="/scia-120/presentations/week-04/">Open presentation page</a><a class="md-button md-button--primary" href="/scia-120/presentations/week-04-deck/">Launch deck</a></div></div><div class="presentation-card"><h3>Week 05: Malware — Types, Analysis, and Defense</h3><p>Malware (a portmanteau of malicious software ) refers to any software intentionally designed to cause harm to a computer system, network, or user. This broad definition encompasses an enormous variety of programs with different mechanisms, objectives, and behaviors. What unites them is intent: malware is designed by adversaries to do something the system&#x27;s…</p><div class="presentation-actions"><a class="md-button" href="/scia-120/presentations/week-05/">Open presentation page</a><a class="md-button md-button--primary" href="/scia-120/presentations/week-05-deck/">Launch deck</a></div></div><div class="presentation-card"><h3>Week 06: Cryptography Fundamentals</h3><p>Cryptography is among the oldest disciplines in the long history of human secrecy and communication. At its core, cryptography is the science and art of transforming information into an unintelligible form so that only authorized parties can read it. The word itself comes from the Greek kryptos (hidden) and graphia (writing). What began as simple letter…</p><div class="presentation-actions"><a class="md-button" href="/scia-120/presentations/week-06/">Open presentation page</a><a class="md-button md-button--primary" href="/scia-120/presentations/week-06-deck/">Launch deck</a></div></div><div class="presentation-card"><h3>Week 07: Network Security Fundamentals</h3><p>Networks are the arteries of modern computing: nearly every piece of software of consequence communicates over a network, and nearly every organization&#x27;s most sensitive data flows across one. The internet, as the world&#x27;s largest and most open network, is simultaneously its most powerful communications medium and its largest attack surface. Understanding how…</p><div class="presentation-actions"><a class="md-button" href="/scia-120/presentations/week-07/">Open presentation page</a><a class="md-button md-button--primary" href="/scia-120/presentations/week-07-deck/">Launch deck</a></div></div><div class="presentation-card"><h3>Week 08: Internet Security</h3><p>The internet was not designed with security in mind. Its foundational protocols — TCP/IP, HTTP, DNS, SMTP — were developed in an era when the network&#x27;s user base was small, relatively trusted, and primarily academic. The explosive growth of the internet into a global infrastructure carrying financial transactions, medical records, political communications,…</p><div class="presentation-actions"><a class="md-button" href="/scia-120/presentations/week-08/">Open presentation page</a><a class="md-button md-button--primary" href="/scia-120/presentations/week-08-deck/">Launch deck</a></div></div><div class="presentation-card"><h3>Week 09: Secure Programming</h3><p>Software is the attack surface. Every application that runs on a network, every operating system, every firmware image represents a body of code that was written by human beings who made decisions under the pressures of deadlines, incomplete requirements, and imperfect understanding. Those decisions — some deliberate, many inadvertent — produced…</p><div class="presentation-actions"><a class="md-button" href="/scia-120/presentations/week-09/">Open presentation page</a><a class="md-button md-button--primary" href="/scia-120/presentations/week-09-deck/">Launch deck</a></div></div><div class="presentation-card"><h3>Week 10: Security Models and Security Policies</h3><p>Building a secure system requires more than technical controls — it requires a coherent theoretical foundation that defines what security means for a given system, who is allowed to do what to which resources, and how organizational commitments to security are expressed and enforced. This is the domain of security models and security policies. Security…</p><div class="presentation-actions"><a class="md-button" href="/scia-120/presentations/week-10/">Open presentation page</a><a class="md-button md-button--primary" href="/scia-120/presentations/week-10-deck/">Launch deck</a></div></div><div class="presentation-card"><h3>Week 11: Authentication and Access Control</h3><p>Every secure computing system ultimately depends on one foundational question: who are you, and what are you allowed to do? Authentication and access control are the mechanisms that answer these questions, forming the first line of defense against unauthorized use of systems, data, and resources. In this chapter, we examine the principles, technologies, and…</p><div class="presentation-actions"><a class="md-button" href="/scia-120/presentations/week-11/">Open presentation page</a><a class="md-button md-button--primary" href="/scia-120/presentations/week-11-deck/">Launch deck</a></div></div><div class="presentation-card"><h3>Week 12: Distributed Applications Security</h3><p>Modern software rarely runs on a single machine. Today&#x27;s applications are sprawling ecosystems: dozens or hundreds of cooperating services hosted across multiple data centers and cloud regions, communicating over networks, serving millions of concurrent users, and integrating with third-party APIs. This distributed architecture enables scalability,…</p><div class="presentation-actions"><a class="md-button" href="/scia-120/presentations/week-12/">Open presentation page</a><a class="md-button md-button--primary" href="/scia-120/presentations/week-12-deck/">Launch deck</a></div></div><div class="presentation-card"><h3>Week 13: Cloud Computing Security</h3><p>Cloud computing has fundamentally transformed how organizations build, deploy, and manage information systems. What once required months of procurement, physical hardware installation, and data center operations now takes minutes — and can be provisioned, scaled, or decommissioned through an API call or a web console. Amazon Web Services (AWS), Microsoft…</p><div class="presentation-actions"><a class="md-button" href="/scia-120/presentations/week-13/">Open presentation page</a><a class="md-button md-button--primary" href="/scia-120/presentations/week-13-deck/">Launch deck</a></div></div><div class="presentation-card"><h3>Week 14: Security Practices, Risk Management, and Compliance</h3><p>Security technology alone cannot protect an organization. Firewalls can be misconfigured. Antivirus can miss novel malware. Encryption protects data at rest but not the application that decrypts it. The gap between having security tools and actually being secure is bridged by security practices — the organizational processes, methodologies, governance…</p><div class="presentation-actions"><a class="md-button" href="/scia-120/presentations/week-14/">Open presentation page</a><a class="md-button md-button--primary" href="/scia-120/presentations/week-14-deck/">Launch deck</a></div></div><div class="presentation-card"><h3>Week 15: Emerging Threats and the Future of Cybersecurity</h3><p>In the preceding fourteen chapters, we have built a comprehensive foundation: from the principles of confidentiality, integrity, and availability, through cryptography, networking, operating system security, application vulnerabilities, identity management, cloud security, and risk management. This final chapter looks forward — examining how the threat…</p><div class="presentation-actions"><a class="md-button" href="/scia-120/presentations/week-15/">Open presentation page</a><a class="md-button md-button--primary" href="/scia-120/presentations/week-15-deck/">Launch deck</a></div></div>
 </div>

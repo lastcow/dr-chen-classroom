@@ -9,14 +9,14 @@ sources: [scia-120/chapter-14.md]
 
 # Week 14 Presentation — Security Practices, Risk Management, and Compliance
 
-**Brief:** This tech-dark, magazine-style deck summarizes the Week 14 reading material for SCIA 120. It is designed for classroom lecture flow: cover, overall page, AI-generated concept map, learning objectives, core reading concepts, applied scenarios, review prompts, and takeaway.
+**Brief:** This tech-dark, magazine-style deck summarizes the Week 14 SCIA 120 reading material. The deck includes a cover page, overall page, learning objectives, concept slides, applied scenarios, review prompts, slide-specific classroom dialog, and AI-generated SVG line-art visuals matched to the slide content.
 
-**Source reading:** [Week 14 Reading Material](../chapter-14.md)  
-**Key terms:** Introduction, Information Security Risk Management, Asset Identification and Valuation, Threat Identification and Threat Intelligence, Risk Treatment Options
+**Source reading:** [Week 14 Reading Material](/scia-120/chapter-14/)  
+**Key concepts:** Introduction, Information Security Risk Management, Asset Identification and Valuation, Threat Identification and Threat Intelligence, Risk Treatment Options, Security Metrics and KPIs
 
-<a class="md-button md-button--primary" href="week-14-deck/">Launch presentation</a>
-<a class="md-button" href="../chapter-14/">Open reading material</a>
+<a class="md-button md-button--primary" href="/scia-120/presentations/week-14-deck/">Launch presentation</a>
+<a class="md-button" href="/scia-120/chapter-14/">Open reading material</a>
 
 ## Preview
 
-<iframe src="week-14-deck/" style="width:100%; height:680px; border:1px solid #1e3a5f; border-radius:14px; background:#050b14;"></iframe>
+<iframe src="/scia-120/presentations/week-14-deck/" style="width:100%; height:680px; border:1px solid #1e3a5f; border-radius:14px; background:#050b14;"></iframe>

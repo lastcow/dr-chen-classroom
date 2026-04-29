@@ -1,0 +1,637 @@
+{
+  "week": 12,
+  "title": "Distributed Applications Security",
+  "source": "scia-120/chapter-12.md",
+  "author": "Dr. Zhijiang Chen",
+  "institution": "Frostburg State University",
+  "summary": "Modern software rarely runs on a single machine. Today's applications are sprawling ecosystems: dozens or hundreds of cooperating services hosted across multiple data centers and cloud regions, communicating over networks, serving millions of concurrent users, and integrating with third-party APIs. This distributed architecture enables scalability,…",
+  "key_concepts": [
+    "Introduction",
+    "What Are Distributed Applications?",
+    "Expanded Attack Surface",
+    "Trust Between Services",
+    "Network Exposure",
+    "Data Consistency and State",
+    "API Security",
+    "API Authentication and Authorization"
+  ],
+  "slides": [
+    {
+      "number": 1,
+      "type": "cover",
+      "title": "Distributed Applications Security",
+      "main_idea": "Introduce Week 12: Distributed Applications Security.",
+      "details": [
+        "Modern software rarely runs on a single machine."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where distributed applications security affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize distributed applications security in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Modern software rarely runs on a single machine.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Tech-dark line-art hero for Week 12: Distributed Applications Security, with networks, locks, shields, data paths, and classroom learning cues.",
+      "visual_mode": "line_art",
+      "speaker_goal": "Teach Distributed Applications Security using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 2,
+      "type": "agenda",
+      "title": "Overall roadmap",
+      "main_idea": "The week moves from core definitions to practical security decisions.",
+      "details": [
+        "Introduction",
+        "What Are Distributed Applications?",
+        "Expanded Attack Surface",
+        "Trust Between Services"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where overall roadmap affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize overall roadmap in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art roadmap showing the major learning path for Overall roadmap; connected nodes represent reading concepts and classroom application.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Overall roadmap using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 3,
+      "type": "objectives",
+      "title": "Learning objectives",
+      "main_idea": "Students should explain, apply, and evaluate the week’s main security ideas.",
+      "details": [
+        "Explain Introduction.",
+        "Explain What Are Distributed Applications?.",
+        "Explain Expanded Attack Surface.",
+        "Explain Trust Between Services."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where learning objectives affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize learning objectives in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Explain Introduction.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Learning objectives: Learning objectives, Explain Introduction, Explain What Are Distributed Applications?. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Learning objectives using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 4,
+      "type": "application",
+      "title": "Opening scenario",
+      "main_idea": "Use a realistic scenario to anchor Distributed Applications Security in operational decision-making.",
+      "details": [
+        "Modern software rarely runs on a single machine.",
+        "Today's applications are sprawling ecosystems: dozens or hundreds of cooperating services hosted across multiple data centers and cloud regions, communicating over networks,…",
+        "This distributed architecture enables scalability, resilience, and rapid development — but it also creates a dramatically enlarged and more complex attack surface than any…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where opening scenario affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Modern software rarely runs on a single machine.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Opening scenario: Opening scenario, Modern software rarely runs on a single machine, Today's applications are sprawling ecosystems: dozens or hundreds of cooperating services hosted across multiple data centers and cloud regions, communicating over networks,…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Opening scenario using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 5,
+      "type": "definition",
+      "title": "Introduction",
+      "main_idea": "Modern software rarely runs on a single machine.",
+      "details": [
+        "Modern software rarely runs on a single machine.",
+        "Today's applications are sprawling ecosystems: dozens or hundreds of cooperating services hosted across multiple data centers and cloud regions, communicating over networks,…",
+        "This distributed architecture enables scalability, resilience, and rapid development — but it also creates a dramatically enlarged and more complex attack surface than any…",
+        "Understanding the security implications of distributed systems is essential for any security professional."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where introduction affects users, data, or operations.",
+        "instructor_prompt": "What problem does introduction help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Modern software rarely runs on a single machine.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Introduction: Introduction, Modern software rarely runs on a single machine, Today's applications are sprawling ecosystems: dozens or hundreds of cooperating services hosted across multiple data centers and cloud regions, communicating over networks,…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Introduction using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 6,
+      "type": "concept",
+      "title": "What Are Distributed Applications?",
+      "main_idea": "A distributed application is one in which components execute on multiple independent computing nodes that communicate via a network, coordinating to perform work on behalf of…",
+      "details": [
+        "A distributed application is one in which components execute on multiple independent computing nodes that communicate via a network, coordinating to perform work on behalf of…",
+        "Distributed architectures have evolved significantly over the past three decades: Client-Server Architecture : The foundational distributed model.",
+        "A client (web browser, mobile app, desktop application) sends requests to a server, which processes them and returns responses.",
+        "Security in this model centers on authenticating clients, securing the communication channel (TLS), and protecting the server from malicious input."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where what are distributed applications? affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize what are distributed applications? in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A distributed application is one in which components execute on…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for What Are Distributed Applications?: What Are Distributed Applications?, A distributed application is one in which components execute on multiple independent computing nodes that communicate via a network, coordinating to perform work on behalf of…, Distributed architectures have evolved significantly over the past three decades: Client-Server Architecture : The foundational distributed model. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach What Are Distributed Applications? using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 7,
+      "type": "application",
+      "title": "Expanded Attack Surface",
+      "main_idea": "A monolithic application presents one attack surface; a distributed application of equivalent functionality presents dozens.",
+      "details": [
+        "A monolithic application presents one attack surface; a distributed application of equivalent functionality presents dozens.",
+        "Each service endpoint is a potential entry point.",
+        "Each internal service-to-service communication channel is a potential interception point.",
+        "Each third-party dependency is a potential supply chain risk."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where expanded attack surface affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A monolithic application presents one attack surface; a distributed…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Expanded Attack Surface: Expanded Attack Surface, A monolithic application presents one attack surface; a distributed application of equivalent functionality presents dozens, Each service endpoint is a potential entry point. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Expanded Attack Surface using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 8,
+      "type": "evidence",
+      "title": "Trust Between Services",
+      "main_idea": "In a distributed system, services must make trust decisions about requests from other services.",
+      "details": [
+        "In a distributed system, services must make trust decisions about requests from other services.",
+        "If Service A calls Service B on behalf of a user, Service B must determine: Is this request really from Service A?",
+        "Is Service A authorized to make this request?",
+        "Is the claimed user identity legitimate?"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where trust between services affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize trust between services in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: In a distributed system, services must make trust decisions about…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Trust Between Services: Trust Between Services, In a distributed system, services must make trust decisions about requests from other services, If Service A calls Service B on behalf of a user, Service B must determine: Is this request really from Service A?. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Trust Between Services using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 9,
+      "type": "definition",
+      "title": "Network Exposure",
+      "main_idea": "Traffic between services traverses networks — whether a shared data center network, a cloud virtual network, or the public internet.",
+      "details": [
+        "Traffic between services traverses networks — whether a shared data center network, a cloud virtual network, or the public internet.",
+        "Internal network traffic is often implicitly trusted (\"if it's on our network, it must be ours\"), a dangerous assumption that the Zero Trust security model explicitly rejects.",
+        "Even in private cloud networks, lateral movement by an attacker after an initial compromise is a major risk."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where network exposure affects users, data, or operations.",
+        "instructor_prompt": "What problem does network exposure help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Traffic between services traverses networks — whether a shared data…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Network Exposure: Network Exposure, Traffic between services traverses networks — whether a shared data center network, a cloud virtual network, or the public internet, Internal network traffic is often implicitly trusted (\"if it's on our network, it must be ours\"), a dangerous assumption that the Zero Trust security model explicitly rejects. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Network Exposure using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 10,
+      "type": "concept",
+      "title": "Data Consistency and State",
+      "main_idea": "Distributed systems must manage state across multiple services, often using eventual consistency models.",
+      "details": [
+        "Distributed systems must manage state across multiple services, often using eventual consistency models.",
+        "Security state — such as session revocation or permission changes — must propagate reliably and promptly.",
+        "Lag in propagation can create windows of vulnerability where a revoked session or permission still grants access."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where data consistency and state affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize data consistency and state in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Distributed systems must manage state across multiple services, often…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Data Consistency and State: Data Consistency and State, Distributed systems must manage state across multiple services, often using eventual consistency models, Security state — such as session revocation or permission changes — must propagate reliably and promptly. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Data Consistency and State using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 11,
+      "type": "application",
+      "title": "API Security",
+      "main_idea": "APIs are the primary interface of modern distributed applications, and they have become a top-tier attack target.",
+      "details": [
+        "APIs are the primary interface of modern distributed applications, and they have become a top-tier attack target.",
+        "API Security connects to risk, controls, and evidence.",
+        "API Security connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where api security affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: APIs are the primary interface of modern distributed applications,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for API Security: API Security, APIs are the primary interface of modern distributed applications, and they have become a top-tier attack target, API Security connects to risk, controls, and evidence. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach API Security using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 12,
+      "type": "evidence",
+      "title": "API Authentication and Authorization",
+      "main_idea": "API Keys : Simple secret strings issued to API consumers to identify and authenticate them.",
+      "details": [
+        "API Keys : Simple secret strings issued to API consumers to identify and authenticate them.",
+        "API keys are convenient but have limitations: they are long-lived (a compromised key remains valid until revoked), they do not inherently carry information about the calling user,…",
+        "API keys work well for server-to-server communication where the key can be stored securely.",
+        "OAuth Tokens : Bearer tokens issued by an authorization server, carrying scoped access rights."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where api authentication and authorization affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize api authentication and authorization in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: API Keys : Simple secret strings issued to API consumers to identify…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for API Authentication and Authorization: API Authentication and Authorization, API Keys : Simple secret strings issued to API consumers to identify and authenticate them, API keys are convenient but have limitations: they are long-lived (a compromised key remains valid until revoked), they do not inherently carry information about the calling user,…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach API Authentication and Authorization using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 13,
+      "type": "definition",
+      "title": "Input Validation",
+      "main_idea": "All API inputs must be validated for type, format, length, and range before being processed or stored.",
+      "details": [
+        "All API inputs must be validated for type, format, length, and range before being processed or stored.",
+        "Failure to validate inputs is the root cause of injection vulnerabilities (SQL injection, command injection, XML injection, SSRF).",
+        "APIs should reject unexpected fields (use allowlists, not denylists), validate that numeric IDs are within expected ranges, and sanitize string inputs to remove or encode…",
+        "Key Definition — BOLA (Broken Object Level Authorization) : The most common critical API vulnerability."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where input validation affects users, data, or operations.",
+        "instructor_prompt": "What problem does input validation help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: All API inputs must be validated for type, format, length, and range…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Input Validation: Input Validation, All API inputs must be validated for type, format, length, and range before being processed or stored, Failure to validate inputs is the root cause of injection vulnerabilities (SQL injection, command injection, XML injection, SSRF). Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Input Validation using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 14,
+      "type": "concept",
+      "title": "Rate Limiting",
+      "main_idea": "Rate limiting controls how many requests a client can make in a given time window, preventing both abuse and denial-of-service attacks.",
+      "details": [
+        "Rate limiting controls how many requests a client can make in a given time window, preventing both abuse and denial-of-service attacks.",
+        "Rate limits should be applied per API key, per user, per IP, and at the service level.",
+        "When a rate limit is exceeded, APIs should return HTTP 429 (Too Many Requests) with a Retry-After header.",
+        "More sophisticated implementations use sliding window algorithms and adaptive limits that detect attack patterns (e.g., high error rates)."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where rate limiting affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize rate limiting in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Rate limiting controls how many requests a client can make in a given…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Rate Limiting: Rate Limiting, Rate limiting controls how many requests a client can make in a given time window, preventing both abuse and denial-of-service attacks, Rate limits should be applied per API key, per user, per IP, and at the service level. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Rate Limiting using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 15,
+      "type": "application",
+      "title": "Service-to-Service Authentication",
+      "main_idea": "When Service A calls Service B, B must authenticate A.",
+      "details": [
+        "When Service A calls Service B, B must authenticate A.",
+        "Several mechanisms achieve this: Mutual TLS (mTLS) : Standard TLS requires only the server to present a certificate.",
+        "In mTLS, both client and server present certificates, and both validate the other's certificate.",
+        "This provides cryptographic proof of identity for both parties."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where service-to-service authentication affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: When Service A calls Service B, B must authenticate A.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Service-to-Service Authentication: Service-to-Service Authentication, When Service A calls Service B, B must authenticate A, Several mechanisms achieve this: Mutual TLS (mTLS) : Standard TLS requires only the server to present a certificate. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Service-to-Service Authentication using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 16,
+      "type": "evidence",
+      "title": "Service Mesh",
+      "main_idea": "A service mesh is an infrastructure layer that handles service-to-service communication transparently, without requiring application code changes.",
+      "details": [
+        "A service mesh is an infrastructure layer that handles service-to-service communication transparently, without requiring application code changes.",
+        "Popular implementations include Istio, Linkerd, and Consul Connect.",
+        "A service mesh typically provides: - Automatic mTLS : All service-to-service traffic is encrypted and mutually authenticated by default.",
+        "- Traffic policies : Fine-grained control over which services can communicate with which other services (authorization policies)."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where service mesh affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize service mesh in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A service mesh is an infrastructure layer that handles…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Service Mesh: Service Mesh, A service mesh is an infrastructure layer that handles service-to-service communication transparently, without requiring application code changes, Popular implementations include Istio, Linkerd, and Consul Connect. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Service Mesh using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 17,
+      "type": "definition",
+      "title": "Secrets Management",
+      "main_idea": "Microservices require secrets (database passwords, API keys, TLS certificates, encryption keys) to function.",
+      "details": [
+        "Microservices require secrets (database passwords, API keys, TLS certificates, encryption keys) to function.",
+        "Hardcoding secrets in code or configuration files is a critical mistake — it leads to credential exposure in source code repositories and container images.",
+        "Dedicated secrets management systems — HashiCorp Vault, AWS Secrets Manager, Azure Key Vault, Kubernetes Secrets (with encryption at rest) — provide secure storage, access…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where secrets management affects users, data, or operations.",
+        "instructor_prompt": "What problem does secrets management help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Microservices require secrets (database passwords, API keys, TLS…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Secrets Management: Secrets Management, Microservices require secrets (database passwords, API keys, TLS certificates, encryption keys) to function, Hardcoding secrets in code or configuration files is a critical mistake — it leads to credential exposure in source code repositories and container images. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Secrets Management using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 18,
+      "type": "concept",
+      "title": "Docker Security",
+      "main_idea": "Containers package application code and its dependencies into an isolated runtime environment.",
+      "details": [
+        "Containers package application code and its dependencies into an isolated runtime environment.",
+        "Docker is the dominant container runtime.",
+        "Key Docker security concerns: Image Vulnerabilities : Container images are built from base images (e.g., ubuntu:22.04, node:18-alpine) that may contain known vulnerabilities.",
+        "Images must be scanned before deployment using tools like Trivy, Snyk, or Clair."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where docker security affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize docker security in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Containers package application code and its dependencies into an…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Docker Security: Docker Security, Containers package application code and its dependencies into an isolated runtime environment, Docker is the dominant container runtime. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Docker Security using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 19,
+      "type": "application",
+      "title": "Kubernetes Security",
+      "main_idea": "Kubernetes (K8s) is the dominant container orchestration platform, managing the deployment, scaling, and networking of containerized workloads.",
+      "details": [
+        "Kubernetes (K8s) is the dominant container orchestration platform, managing the deployment, scaling, and networking of containerized workloads.",
+        "Kubernetes introduces its own security complexity: - RBAC : Kubernetes has its own RBAC system controlling which users and service accounts can perform which operations on which…",
+        "Overly permissive RBAC is a common misconfiguration.",
+        "- Network Policies : By default, all pods in a Kubernetes cluster can communicate with all other pods."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where kubernetes security affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Kubernetes (K8s) is the dominant container orchestration platform,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Kubernetes Security: Kubernetes Security, Kubernetes (K8s) is the dominant container orchestration platform, managing the deployment, scaling, and networking of containerized workloads, Kubernetes introduces its own security complexity: - RBAC : Kubernetes has its own RBAC system controlling which users and service accounts can perform which operations on which…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Kubernetes Security using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 20,
+      "type": "evidence",
+      "title": "Message Queue Security",
+      "main_idea": "Asynchronous message queues decouple services, enabling resilient, event-driven architectures.",
+      "details": [
+        "Asynchronous message queues decouple services, enabling resilient, event-driven architectures.",
+        "Popular message brokers include Apache Kafka, RabbitMQ, and AWS SQS.",
+        "Security concerns include: Authentication and Authorization : Message brokers must require authentication from producers and consumers.",
+        "Kafka uses SASL (Simple Authentication and Security Layer) mechanisms (SCRAM, OAuth) for authentication and ACLs for authorization — controlling which clients can produce to or…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where message queue security affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize message queue security in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Asynchronous message queues decouple services, enabling resilient,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Message Queue Security: Message Queue Security, Asynchronous message queues decouple services, enabling resilient, event-driven architectures, Popular message brokers include Apache Kafka, RabbitMQ, and AWS SQS. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Message Queue Security using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 21,
+      "type": "definition",
+      "title": "RPC and gRPC Security",
+      "main_idea": "Remote Procedure Calls (RPC) allow services to invoke functions on remote services as if they were local calls.",
+      "details": [
+        "Remote Procedure Calls (RPC) allow services to invoke functions on remote services as if they were local calls.",
+        "gRPC, developed by Google, uses HTTP/2 as its transport and Protocol Buffers as its serialization format.",
+        "gRPC security features: - TLS by default : gRPC strongly encourages TLS for all communication; plaintext (\"insecure\") channels should only be used in development.",
+        "- mTLS : gRPC supports mutual TLS for bidirectional authentication."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where rpc and grpc security affects users, data, or operations.",
+        "instructor_prompt": "What problem does rpc and grpc security help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Remote Procedure Calls (RPC) allow services to invoke functions on…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for RPC and gRPC Security: RPC and gRPC Security, Remote Procedure Calls (RPC) allow services to invoke functions on remote services as if they were local calls, gRPC, developed by Google, uses HTTP/2 as its transport and Protocol Buffers as its serialization format. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach RPC and gRPC Security using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 22,
+      "type": "concept",
+      "title": "Distributed Denial of Service (DDoS)",
+      "main_idea": "DDoS attacks overwhelm a target service with traffic or requests, rendering it unavailable to legitimate users.",
+      "details": [
+        "DDoS attacks overwhelm a target service with traffic or requests, rendering it unavailable to legitimate users.",
+        "Modern DDoS attacks are categorized by the layer they target:",
+        "Distributed Denial of Service (DDoS) connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where distributed denial of service (ddos) affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize distributed denial of service (ddos) in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: DDoS attacks overwhelm a target service with traffic or requests,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Distributed Denial of Service (DDoS): Distributed Denial of Service (DDoS), DDoS attacks overwhelm a target service with traffic or requests, rendering it unavailable to legitimate users, Modern DDoS attacks are categorized by the layer they target:. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Distributed Denial of Service (DDoS) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 23,
+      "type": "application",
+      "title": "Attack Types",
+      "main_idea": "Volumetric Attacks : Overwhelm the target's network bandwidth with massive volumes of traffic.",
+      "details": [
+        "Volumetric Attacks : Overwhelm the target's network bandwidth with massive volumes of traffic.",
+        "Common techniques include UDP flood, ICMP flood, and DNS amplification.",
+        "In amplification attacks, the attacker sends a small spoofed request (pretending to be the victim) to many open DNS or NTP servers; those servers send large responses to the…",
+        "Protocol Attacks : Exploit weaknesses in network protocol implementations to exhaust server or infrastructure resources."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where attack types affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Volumetric Attacks : Overwhelm the target's network bandwidth with…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Attack Types: Attack Types, Volumetric Attacks : Overwhelm the target's network bandwidth with massive volumes of traffic, Common techniques include UDP flood, ICMP flood, and DNS amplification. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Attack Types using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 24,
+      "type": "evidence",
+      "title": "DDoS Defenses",
+      "main_idea": "CDN and Anycast Networks : Content Delivery Networks (CDNs) like Cloudflare, Akamai, and Fastly distribute traffic across a global network, absorbing volumetric attacks and…",
+      "details": [
+        "CDN and Anycast Networks : Content Delivery Networks (CDNs) like Cloudflare, Akamai, and Fastly distribute traffic across a global network, absorbing volumetric attacks and…",
+        "Anycast routing means attack traffic is dispersed across many PoPs (Points of Presence) rather than concentrated at one target.",
+        "DDoS Scrubbing Services : Dedicated services that divert traffic through scrubbing centers, where attack traffic is filtered before clean traffic is forwarded to the origin.",
+        "Services like AWS Shield Advanced and Radware activate on-demand during attacks."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where ddos defenses affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize ddos defenses in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: CDN and Anycast Networks : Content Delivery Networks (CDNs) like…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for DDoS Defenses: DDoS Defenses, CDN and Anycast Networks : Content Delivery Networks (CDNs) like Cloudflare, Akamai, and Fastly distribute traffic across a global network, absorbing volumetric attacks and…, Anycast routing means attack traffic is dispersed across many PoPs (Points of Presence) rather than concentrated at one target. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach DDoS Defenses using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 25,
+      "type": "vocabulary",
+      "title": "Key terms to keep",
+      "main_idea": "Vocabulary becomes useful when students can connect terms to scenarios and evidence.",
+      "details": [
+        "Introduction",
+        "What Are Distributed Applications?",
+        "Expanded Attack Surface",
+        "Trust Between Services"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where key terms to keep affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize key terms to keep in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Key terms to keep: Key terms to keep, Introduction, What Are Distributed Applications?. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Key terms to keep using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 26,
+      "type": "comparison",
+      "title": "Compare: Introduction vs. What Are Distributed Applications?",
+      "main_idea": "Comparing related ideas helps students avoid shallow memorization.",
+      "details": [
+        "Where Introduction applies.",
+        "Where What Are Distributed Applications? applies.",
+        "How the difference changes the security decision."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where compare: introduction vs. what are distributed applications? affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize compare: introduction vs. what are distributed applications? in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Where Introduction applies.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Compare: Introduction vs. What Are Distributed Applications?: Compare: Introduction vs. What Are Distributed Applications?, Where Introduction applies, Where What Are Distributed Applications? applies. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Compare: Introduction vs. What Are Distributed Applications? using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 27,
+      "type": "application",
+      "title": "Applied decision checkpoint",
+      "main_idea": "Students should translate concepts into a defensible security decision.",
+      "details": [
+        "Identify the asset or process at risk.",
+        "Choose a preventive, detective, or corrective control.",
+        "Explain what evidence would prove the control is working."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where applied decision checkpoint affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Identify the asset or process at risk.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Applied decision checkpoint: Applied decision checkpoint, Identify the asset or process at risk, Choose a preventive, detective, or corrective control. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Applied decision checkpoint using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 28,
+      "type": "review",
+      "title": "Review questions",
+      "main_idea": "Retrieval practice should ask students to define, compare, apply, and evaluate.",
+      "details": [
+        "Define one core concept in plain language.",
+        "Compare two controls or threats from the week.",
+        "Apply one idea to a campus or business system.",
+        "Evaluate why a solution might fail in practice."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where review questions affects users, data, or operations.",
+        "instructor_prompt": "What is the one sentence takeaway for review questions?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Define one core concept in plain language.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Review questions: Review questions, Define one core concept in plain language, Compare two controls or threats from the week. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Review questions using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 29,
+      "type": "bridge",
+      "title": "Bridge to lab and assessment",
+      "main_idea": "The reading should transfer into evidence-based lab work and written explanations.",
+      "details": [
+        "Collect evidence, not just screenshots.",
+        "Explain what the artifact proves.",
+        "Connect the proof back to risk and control selection."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where bridge to lab and assessment affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize bridge to lab and assessment in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Collect evidence, not just screenshots.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Bridge to lab and assessment: Bridge to lab and assessment, Collect evidence, not just screenshots, Explain what the artifact proves. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Bridge to lab and assessment using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 30,
+      "type": "closing",
+      "title": "Takeaway",
+      "main_idea": "The central takeaway from Week 12 is to reason from risk to evidence to action.",
+      "details": [
+        "Distributed Applications Security",
+        "Security is a decision process, not just a tool list.",
+        "Use the reading to justify practical choices."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 12 incident where takeaway affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize takeaway in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Distributed Applications Security",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Takeaway: Takeaway, Distributed Applications Security, Security is a decision process, not just a tool list. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Takeaway using evidence, scenario reasoning, and a concrete security takeaway."
+    }
+  ]
+}

@@ -1,0 +1,632 @@
+{
+  "week": 5,
+  "title": "Malware — Types, Analysis, and Defense",
+  "source": "scia-120/chapter-05.md",
+  "author": "Dr. Zhijiang Chen",
+  "institution": "Frostburg State University",
+  "summary": "Malware (a portmanteau of malicious software ) refers to any software intentionally designed to cause harm to a computer system, network, or user. This broad definition encompasses an enormous variety of programs with different mechanisms, objectives, and behaviors. What unites them is intent: malware is designed by adversaries to do something the system's…",
+  "key_concepts": [
+    "Defining Malware",
+    "A Brief History of Malware",
+    "— The Creeper",
+    "— Brain: The First PC Virus",
+    "— The Morris Worm",
+    "s — Viruses and Early Email Worms",
+    "s — Botnets and Financial Crime",
+    "s–Present — Nation-State Weapons, Ransomware Crises, and Supply Chain Attacks"
+  ],
+  "slides": [
+    {
+      "number": 1,
+      "type": "cover",
+      "title": "Malware — Types, Analysis, and Defense",
+      "main_idea": "Introduce Week 5: Malware — Types, Analysis, and Defense.",
+      "details": [
+        "Malware (a portmanteau of malicious software ) refers to any software intentionally designed to cause harm to a computer system, network, or user."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where malware — types, analysis, and defense affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize malware — types, analysis, and defense in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Malware (a portmanteau of malicious software ) refers to any software…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Tech-dark line-art hero for Week 5: Malware — Types, Analysis, and Defense, with networks, locks, shields, data paths, and classroom learning cues.",
+      "visual_mode": "line_art",
+      "speaker_goal": "Teach Malware — Types, Analysis, and Defense using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 2,
+      "type": "agenda",
+      "title": "Overall roadmap",
+      "main_idea": "The week moves from core definitions to practical security decisions.",
+      "details": [
+        "Defining Malware",
+        "A Brief History of Malware",
+        "— The Creeper",
+        "— Brain: The First PC Virus"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where overall roadmap affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize overall roadmap in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Defining Malware",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art roadmap showing the major learning path for Overall roadmap; connected nodes represent reading concepts and classroom application.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Overall roadmap using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 3,
+      "type": "objectives",
+      "title": "Learning objectives",
+      "main_idea": "Students should explain, apply, and evaluate the week’s main security ideas.",
+      "details": [
+        "Explain Defining Malware.",
+        "Explain A Brief History of Malware.",
+        "Explain — The Creeper.",
+        "Explain — Brain: The First PC Virus."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where learning objectives affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize learning objectives in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Explain Defining Malware.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Learning objectives: Learning objectives, Explain Defining Malware, Explain A Brief History of Malware. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Learning objectives using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 4,
+      "type": "application",
+      "title": "Opening scenario",
+      "main_idea": "Use a realistic scenario to anchor Malware — Types, Analysis, and Defense in operational decision-making.",
+      "details": [
+        "Malware (a portmanteau of malicious software ) refers to any software intentionally designed to cause harm to a computer system, network, or user.",
+        "This broad definition encompasses an enormous variety of programs with different mechanisms, objectives, and behaviors.",
+        "What unites them is intent: malware is designed by adversaries to do something the system's legitimate owner would not authorize."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where opening scenario affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Malware (a portmanteau of malicious software ) refers to any software…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Opening scenario: Opening scenario, Malware (a portmanteau of malicious software ) refers to any software intentionally designed to cause harm to a computer system, network, or user, This broad definition encompasses an enormous variety of programs with different mechanisms, objectives, and behaviors. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Opening scenario using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 5,
+      "type": "definition",
+      "title": "Defining Malware",
+      "main_idea": "Malware (a portmanteau of malicious software ) refers to any software intentionally designed to cause harm to a computer system, network, or user.",
+      "details": [
+        "Malware (a portmanteau of malicious software ) refers to any software intentionally designed to cause harm to a computer system, network, or user.",
+        "This broad definition encompasses an enormous variety of programs with different mechanisms, objectives, and behaviors.",
+        "What unites them is intent: malware is designed by adversaries to do something the system's legitimate owner would not authorize.",
+        "Malware can pursue many objectives simultaneously."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where defining malware affects users, data, or operations.",
+        "instructor_prompt": "What problem does defining malware help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Malware (a portmanteau of malicious software ) refers to any software…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Defining Malware: Defining Malware, Malware (a portmanteau of malicious software ) refers to any software intentionally designed to cause harm to a computer system, network, or user, This broad definition encompasses an enormous variety of programs with different mechanisms, objectives, and behaviors. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Defining Malware using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 6,
+      "type": "concept",
+      "title": "A Brief History of Malware",
+      "main_idea": "The history of malware is the history of computing itself, shadowing every major technological development with a corresponding evolution in malicious code.",
+      "details": [
+        "The history of malware is the history of computing itself, shadowing every major technological development with a corresponding evolution in malicious code.",
+        "A Brief History of Malware connects to risk, controls, and evidence.",
+        "A Brief History of Malware connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where a brief history of malware affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize a brief history of malware in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The history of malware is the history of computing itself, shadowing…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for A Brief History of Malware: A Brief History of Malware, The history of malware is the history of computing itself, shadowing every major technological development with a corresponding evolution in malicious code, A Brief History of Malware connects to risk, controls, and evidence. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach A Brief History of Malware using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 7,
+      "type": "application",
+      "title": "— The Creeper",
+      "main_idea": "The first program that could be considered malware was Creeper , a self-replicating experimental program created by Bob Thomas at BBN Technologies.",
+      "details": [
+        "The first program that could be considered malware was Creeper , a self-replicating experimental program created by Bob Thomas at BBN Technologies.",
+        "It infected ARPANET machines, displaying the message \"I'M THE CREEPER, CATCH ME IF YOU CAN!\" Creeper was not malicious in intent but established the concept of a self-propagating…",
+        "Reaper , a program created to remove Creeper, is sometimes considered the first antivirus software."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where — the creeper affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The first program that could be considered malware was Creeper , a…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for — The Creeper: — The Creeper, The first program that could be considered malware was Creeper , a self-replicating experimental program created by Bob Thomas at BBN Technologies, It infected ARPANET machines, displaying the message \"I'M THE CREEPER, CATCH ME IF YOU CAN!\" Creeper was not malicious in intent but established the concept of a self-propagating…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach — The Creeper using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 8,
+      "type": "evidence",
+      "title": "— Brain: The First PC Virus",
+      "main_idea": "The Brain virus , released by Pakistani brothers Basit and Amjad Farooq Alvi in January 1986, is widely regarded as the first virus for IBM-compatible personal computers.",
+      "details": [
+        "The Brain virus , released by Pakistani brothers Basit and Amjad Farooq Alvi in January 1986, is widely regarded as the first virus for IBM-compatible personal computers.",
+        "Brain targeted the boot sector of 5.25-inch floppy disks.",
+        "The authors included their names, phone number, and address in the virus's code — ostensibly as an anti-piracy measure for their software business.",
+        "Brain was relatively benign, causing no data damage, but it established the template for boot sector viruses."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where — brain: the first pc virus affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize — brain: the first pc virus in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The Brain virus , released by Pakistani brothers Basit and Amjad…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for — Brain: The First PC Virus: — Brain: The First PC Virus, The Brain virus , released by Pakistani brothers Basit and Amjad Farooq Alvi in January 1986, is widely regarded as the first virus for IBM-compatible personal computers, Brain targeted the boot sector of 5. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach — Brain: The First PC Virus using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 9,
+      "type": "definition",
+      "title": "— The Morris Worm",
+      "main_idea": "The Morris Worm , created by Cornell graduate student Robert Tappan Morris, was the first worm to gain widespread media attention.",
+      "details": [
+        "The Morris Worm , created by Cornell graduate student Robert Tappan Morris, was the first worm to gain widespread media attention.",
+        "It exploited vulnerabilities in Unix sendmail, fingerd, and rsh/rexec to propagate across the early internet, infecting approximately 6,000 machines (a significant fraction of the…",
+        "Morris claimed the worm was not intended to cause damage, but a programming error caused infected machines to become overloaded and unusable.",
+        "Morris was the first person prosecuted under the Computer Fraud and Abuse Act."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where — the morris worm affects users, data, or operations.",
+        "instructor_prompt": "What problem does — the morris worm help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The Morris Worm , created by Cornell graduate student Robert Tappan…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for — The Morris Worm: — The Morris Worm, The Morris Worm , created by Cornell graduate student Robert Tappan Morris, was the first worm to gain widespread media attention, It exploited vulnerabilities in Unix sendmail, fingerd, and rsh/rexec to propagate across the early internet, infecting approximately 6,000 machines (a significant fraction of the…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach — The Morris Worm using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 10,
+      "type": "concept",
+      "title": "s — Viruses and Early Email Worms",
+      "main_idea": "The 1990s saw an explosion of viruses spread via floppy disks and, later, email.",
+      "details": [
+        "The 1990s saw an explosion of viruses spread via floppy disks and, later, email.",
+        "The Melissa virus (1999) was a macro virus that spread via email, using Microsoft Word macros to mail itself to the first 50 contacts in victims' Outlook address books.",
+        "s — Viruses and Early Email Worms connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where s — viruses and early email worms affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize s — viruses and early email worms in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The 1990s saw an explosion of viruses spread via floppy disks and,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for s — Viruses and Early Email Worms: s — Viruses and Early Email Worms, The 1990s saw an explosion of viruses spread via floppy disks and, later, email, The Melissa virus (1999) was a macro virus that spread via email, using Microsoft Word macros to mail itself to the first 50 contacts in victims' Outlook address books. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach s — Viruses and Early Email Worms using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 11,
+      "type": "application",
+      "title": "s — Botnets and Financial Crime",
+      "main_idea": "The 2000s established the modern cybercrime economy.",
+      "details": [
+        "The 2000s established the modern cybercrime economy.",
+        "The Conficker worm (2008) infected millions of Windows machines and created a massive botnet.",
+        "Organized criminal groups began operating malware as a business, with ransomware (in primitive form), banking trojans, and credential-stealing malware becoming primary tools."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where s — botnets and financial crime affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The 2000s established the modern cybercrime economy.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for s — Botnets and Financial Crime: s — Botnets and Financial Crime, The 2000s established the modern cybercrime economy, The Conficker worm (2008) infected millions of Windows machines and created a massive botnet. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach s — Botnets and Financial Crime using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 12,
+      "type": "evidence",
+      "title": "s–Present — Nation-State Weapons, Ransomware Crises, and Supply Chain Attacks",
+      "main_idea": "Modern ransomware operations are run with business-like professionalism, including customer support for victims, affiliate programs for distributing malware, and negotiation…",
+      "details": [
+        "Modern ransomware operations are run with business-like professionalism, including customer support for victims, affiliate programs for distributing malware, and negotiation…",
+        "s–Present — Nation-State Weapons, Ransomware Crises, and Supply Chain Attacks connects to risk, controls, and evidence.",
+        "s–Present — Nation-State Weapons, Ransomware Crises, and Supply Chain Attacks connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where s–present — nation-state weapons, ransomware crises, and supply chain attacks affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize s–present — nation-state weapons, ransomware crises, and supply chain attacks in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Modern ransomware operations are run with business-like…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for s–Present — Nation-State Weapons, Ransomware Crises, and Supply Chain Attacks: s–Present — Nation-State Weapons, Ransomware Crises, and Supply Chain Attacks, Modern ransomware operations are run with business-like professionalism, including customer support for victims, affiliate programs for distributing malware, and negotiation…, s–Present — Nation-State Weapons, Ransomware Crises, and Supply Chain Attacks connects to risk, controls, and evidence. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach s–Present — Nation-State Weapons, Ransomware Crises, and Supply Chain Attacks using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 13,
+      "type": "definition",
+      "title": "Viruses",
+      "main_idea": "A computer virus is a type of malware that attaches itself to a legitimate program or file, and replicates itself by inserting copies into other programs or files when the…",
+      "details": [
+        "A computer virus is a type of malware that attaches itself to a legitimate program or file, and replicates itself by inserting copies into other programs or files when the…",
+        "Like biological viruses, computer viruses require a host to propagate.",
+        "File infectors attach themselves to executable files (.exe, .com, .dll).",
+        "When the infected executable runs, the virus first executes its own code, potentially infecting other executables on the system."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where viruses affects users, data, or operations.",
+        "instructor_prompt": "What problem does viruses help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A computer virus is a type of malware that attaches itself to a…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Viruses: Viruses, A computer virus is a type of malware that attaches itself to a legitimate program or file, and replicates itself by inserting copies into other programs or files when the…, Like biological viruses, computer viruses require a host to propagate. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Viruses using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 14,
+      "type": "concept",
+      "title": "Worms",
+      "main_idea": "A worm is malware that self-propagates across networks without requiring human interaction or a host file.",
+      "details": [
+        "A worm is malware that self-propagates across networks without requiring human interaction or a host file.",
+        "Worms spread by exploiting network vulnerabilities, sending copies of themselves via email, or scanning for vulnerable systems.",
+        "The key distinguishing characteristic is self-propagation without user action.",
+        "Worms can spread with extraordinary speed: the SQL Slammer worm (2003) infected 75,000 systems in the first 10 minutes after release, doubling its infection count every 8.5…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where worms affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize worms in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A worm is malware that self-propagates across networks without…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Worms: Worms, A worm is malware that self-propagates across networks without requiring human interaction or a host file, Worms spread by exploiting network vulnerabilities, sending copies of themselves via email, or scanning for vulnerable systems. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Worms using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 15,
+      "type": "application",
+      "title": "Trojans",
+      "main_idea": "A Trojan horse (or simply \"Trojan\") is malware disguised as legitimate or desirable software.",
+      "details": [
+        "A Trojan horse (or simply \"Trojan\") is malware disguised as legitimate or desirable software.",
+        "Unlike viruses and worms, Trojans do not self-replicate — they rely on users to download and execute them, deceived by their benign appearance.",
+        "Remote Access Trojans (RATs) give attackers remote control over infected systems, typically through a command-and-control (C2) server.",
+        "The attacker can view the user's screen, access the file system, activate the webcam and microphone, log keystrokes, and execute arbitrary commands."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where trojans affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A Trojan horse (or simply \"Trojan\") is malware disguised as…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Trojans: Trojans, A Trojan horse (or simply \"Trojan\") is malware disguised as legitimate or desirable software, Unlike viruses and worms, Trojans do not self-replicate — they rely on users to download and execute them, deceived by their benign appearance. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Trojans using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 16,
+      "type": "evidence",
+      "title": "Ransomware",
+      "main_idea": "Ransomware encrypts victims' files or locks access to their systems, then demands payment (typically in cryptocurrency) in exchange for the decryption key.",
+      "details": [
+        "Ransomware encrypts victims' files or locks access to their systems, then demands payment (typically in cryptocurrency) in exchange for the decryption key.",
+        "It is among the most destructive and profitable forms of malware in the current threat landscape.",
+        "Crypto ransomware encrypts files using strong asymmetric cryptography.",
+        "Without the private key held by the attacker, decryption is computationally infeasible."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where ransomware affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize ransomware in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Ransomware encrypts victims' files or locks access to their systems,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Ransomware: Ransomware, Ransomware encrypts victims' files or locks access to their systems, then demands payment (typically in cryptocurrency) in exchange for the decryption key, It is among the most destructive and profitable forms of malware in the current threat landscape. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Ransomware using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 17,
+      "type": "definition",
+      "title": "Spyware and Adware",
+      "main_idea": "Spyware covertly monitors user activity and collects information without the user's knowledge or consent.",
+      "details": [
+        "Spyware covertly monitors user activity and collects information without the user's knowledge or consent.",
+        "It may capture keystrokes, screenshots, browsing history, passwords, and personal data, sending them to a remote attacker.",
+        "Commercial spyware (sometimes marketed as \"stalkerware\") is used in domestic abuse situations.",
+        "Adware displays unwanted advertisements, typically generating revenue for the malware author via ad impressions or click fraud."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where spyware and adware affects users, data, or operations.",
+        "instructor_prompt": "What problem does spyware and adware help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Spyware covertly monitors user activity and collects information…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Spyware and Adware: Spyware and Adware, Spyware covertly monitors user activity and collects information without the user's knowledge or consent, It may capture keystrokes, screenshots, browsing history, passwords, and personal data, sending them to a remote attacker. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Spyware and Adware using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 18,
+      "type": "concept",
+      "title": "Rootkits",
+      "main_idea": "A rootkit is a collection of tools that allow an attacker to maintain privileged, covert access to a system while hiding their presence from the OS, security software, and users.",
+      "details": [
+        "A rootkit is a collection of tools that allow an attacker to maintain privileged, covert access to a system while hiding their presence from the OS, security software, and users.",
+        "User-mode rootkits operate in user space, manipulating system APIs to hide malicious processes, files, and network connections from system tools.",
+        "They are detectable by tools that bypass standard APIs and directly examine system structures.",
+        "Kernel-mode rootkits operate at the kernel level, modifying the OS kernel itself."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where rootkits affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize rootkits in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A rootkit is a collection of tools that allow an attacker to maintain…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Rootkits: Rootkits, A rootkit is a collection of tools that allow an attacker to maintain privileged, covert access to a system while hiding their presence from the OS, security software, and users, User-mode rootkits operate in user space, manipulating system APIs to hide malicious processes, files, and network connections from system tools. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Rootkits using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 19,
+      "type": "application",
+      "title": "Botnets and Command-and-Control (C2) Infrastructure",
+      "main_idea": "A botnet is a network of compromised computers (called \"bots\" or \"zombies\") controlled by an attacker via a Command-and-Control (C2) server.",
+      "details": [
+        "A botnet is a network of compromised computers (called \"bots\" or \"zombies\") controlled by an attacker via a Command-and-Control (C2) server.",
+        "Individual bots receive instructions from the C2 server and execute them — sending spam, conducting DDoS attacks, mining cryptocurrency, or distributing additional malware.",
+        "Botnets and Command-and-Control (C2) Infrastructure connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where botnets and command-and-control (c2) infrastructure affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A botnet is a network of compromised computers (called \"bots\" or…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Botnets and Command-and-Control (C2) Infrastructure: Botnets and Command-and-Control (C2) Infrastructure, A botnet is a network of compromised computers (called \"bots\" or \"zombies\") controlled by an attacker via a Command-and-Control (C2) server, Individual bots receive instructions from the C2 server and execute them — sending spam, conducting DDoS attacks, mining cryptocurrency, or distributing additional malware. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Botnets and Command-and-Control (C2) Infrastructure using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 20,
+      "type": "evidence",
+      "title": "Fileless Malware",
+      "main_idea": "Fileless malware operates without writing executable files to disk, instead residing entirely in memory or exploiting legitimate system tools.",
+      "details": [
+        "Fileless malware operates without writing executable files to disk, instead residing entirely in memory or exploiting legitimate system tools.",
+        "It uses built-in operating system utilities (such as PowerShell, WMI, and the Windows Registry) as its execution environment, making it far harder for traditional signature-based…",
+        "Fileless attacks often use techniques such as living off the land (LotL) — abusing legitimate system administration tools to achieve malicious objectives.",
+        "Because fileless malware leaves minimal forensic artifacts, detecting it typically requires behavioral analysis rather than file scanning."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where fileless malware affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize fileless malware in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Fileless malware operates without writing executable files to disk,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Fileless Malware: Fileless Malware, Fileless malware operates without writing executable files to disk, instead residing entirely in memory or exploiting legitimate system tools, It uses built-in operating system utilities (such as PowerShell, WMI, and the Windows Registry) as its execution environment, making it far harder for traditional signature-based…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Fileless Malware using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 21,
+      "type": "definition",
+      "title": "Keyloggers",
+      "main_idea": "A keylogger records every keystroke made on an infected system, capturing passwords, credit card numbers, private messages, and any other typed content.",
+      "details": [
+        "A keylogger records every keystroke made on an infected system, capturing passwords, credit card numbers, private messages, and any other typed content.",
+        "Keyloggers may be implemented as software (running as a background process) or hardware (a physical device inserted between keyboard and computer).",
+        "Software keyloggers are often components of larger malware packages (RATs, banking trojans) rather than standalone tools."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where keyloggers affects users, data, or operations.",
+        "instructor_prompt": "What problem does keyloggers help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A keylogger records every keystroke made on an infected system,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Keyloggers: Keyloggers, A keylogger records every keystroke made on an infected system, capturing passwords, credit card numbers, private messages, and any other typed content, Keyloggers may be implemented as software (running as a background process) or hardware (a physical device inserted between keyboard and computer). Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Keyloggers using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 22,
+      "type": "concept",
+      "title": "Logic Bombs",
+      "main_idea": "Logic bombs are particularly insidious because they may lie dormant for months or years before triggering, and their code is embedded within otherwise legitimate systems.",
+      "details": [
+        "Logic bombs are particularly insidious because they may lie dormant for months or years before triggering, and their code is embedded within otherwise legitimate systems.",
+        "A notable case involved a contractor at a financial institution who inserted a logic bomb that would have deleted critical files if his employment status was ever changed to…",
+        "The bomb was discovered during a routine code review before it triggered."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where logic bombs affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize logic bombs in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Logic bombs are particularly insidious because they may lie dormant…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Logic Bombs: Logic Bombs, Logic bombs are particularly insidious because they may lie dormant for months or years before triggering, and their code is embedded within otherwise legitimate systems, A notable case involved a contractor at a financial institution who inserted a logic bomb that would have deleted critical files if his employment status was ever changed to…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Logic Bombs using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 23,
+      "type": "application",
+      "title": "Malware Infection Vectors",
+      "main_idea": "Understanding how malware reaches victims is as important as understanding what it does after infection.",
+      "details": [
+        "Understanding how malware reaches victims is as important as understanding what it does after infection.",
+        "Malware Infection Vectors connects to risk, controls, and evidence.",
+        "Malware Infection Vectors connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where malware infection vectors affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Understanding how malware reaches victims is as important as…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Malware Infection Vectors: Malware Infection Vectors, Understanding how malware reaches victims is as important as understanding what it does after infection, Malware Infection Vectors connects to risk, controls, and evidence. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Malware Infection Vectors using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 24,
+      "type": "evidence",
+      "title": "Email Attachments and Malicious Links",
+      "main_idea": "Email remains the most common initial infection vector.",
+      "details": [
+        "Email remains the most common initial infection vector.",
+        "Email Attachments and Malicious Links connects to risk, controls, and evidence.",
+        "Email Attachments and Malicious Links connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where email attachments and malicious links affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize email attachments and malicious links in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Email remains the most common initial infection vector.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Email Attachments and Malicious Links: Email Attachments and Malicious Links, Email remains the most common initial infection vector, Email Attachments and Malicious Links connects to risk, controls, and evidence. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Email Attachments and Malicious Links using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 25,
+      "type": "vocabulary",
+      "title": "Key terms to keep",
+      "main_idea": "Vocabulary becomes useful when students can connect terms to scenarios and evidence.",
+      "details": [
+        "Defining Malware",
+        "A Brief History of Malware",
+        "— The Creeper",
+        "— Brain: The First PC Virus"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where key terms to keep affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize key terms to keep in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Defining Malware",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Key terms to keep: Key terms to keep, Defining Malware, A Brief History of Malware. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Key terms to keep using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 26,
+      "type": "comparison",
+      "title": "Compare: Defining Malware vs. A Brief History of Malware",
+      "main_idea": "Comparing related ideas helps students avoid shallow memorization.",
+      "details": [
+        "Where Defining Malware applies.",
+        "Where A Brief History of Malware applies.",
+        "How the difference changes the security decision."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where compare: defining malware vs. a brief history of malware affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize compare: defining malware vs. a brief history of malware in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Where Defining Malware applies.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Compare: Defining Malware vs. A Brief History of Malware: Compare: Defining Malware vs. A Brief History of Malware, Where Defining Malware applies, Where A Brief History of Malware applies. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Compare: Defining Malware vs. A Brief History of Malware using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 27,
+      "type": "application",
+      "title": "Applied decision checkpoint",
+      "main_idea": "Students should translate concepts into a defensible security decision.",
+      "details": [
+        "Identify the asset or process at risk.",
+        "Choose a preventive, detective, or corrective control.",
+        "Explain what evidence would prove the control is working."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where applied decision checkpoint affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Identify the asset or process at risk.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Applied decision checkpoint: Applied decision checkpoint, Identify the asset or process at risk, Choose a preventive, detective, or corrective control. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Applied decision checkpoint using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 28,
+      "type": "review",
+      "title": "Review questions",
+      "main_idea": "Retrieval practice should ask students to define, compare, apply, and evaluate.",
+      "details": [
+        "Define one core concept in plain language.",
+        "Compare two controls or threats from the week.",
+        "Apply one idea to a campus or business system.",
+        "Evaluate why a solution might fail in practice."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where review questions affects users, data, or operations.",
+        "instructor_prompt": "What is the one sentence takeaway for review questions?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Define one core concept in plain language.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Review questions: Review questions, Define one core concept in plain language, Compare two controls or threats from the week. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Review questions using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 29,
+      "type": "bridge",
+      "title": "Bridge to lab and assessment",
+      "main_idea": "The reading should transfer into evidence-based lab work and written explanations.",
+      "details": [
+        "Collect evidence, not just screenshots.",
+        "Explain what the artifact proves.",
+        "Connect the proof back to risk and control selection."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where bridge to lab and assessment affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize bridge to lab and assessment in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Collect evidence, not just screenshots.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Bridge to lab and assessment: Bridge to lab and assessment, Collect evidence, not just screenshots, Explain what the artifact proves. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Bridge to lab and assessment using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 30,
+      "type": "closing",
+      "title": "Takeaway",
+      "main_idea": "The central takeaway from Week 5 is to reason from risk to evidence to action.",
+      "details": [
+        "Malware — Types, Analysis, and Defense",
+        "Security is a decision process, not just a tool list.",
+        "Use the reading to justify practical choices."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 5 incident where takeaway affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize takeaway in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Malware — Types, Analysis, and Defense",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Takeaway: Takeaway, Malware — Types, Analysis, and Defense, Security is a decision process, not just a tool list. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Takeaway using evidence, scenario reasoning, and a concrete security takeaway."
+    }
+  ]
+}

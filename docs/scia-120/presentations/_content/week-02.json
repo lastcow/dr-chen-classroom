@@ -1,0 +1,627 @@
+{
+  "week": 2,
+  "title": "Physical Security",
+  "source": "scia-120/chapter-02.md",
+  "author": "Dr. Zhijiang Chen",
+  "institution": "Frostburg State University",
+  "summary": "The principle is straightforward: physical access to a system is, for most practical purposes, equivalent to total control over that system. An attacker with physical access to a running computer can extract data from memory, bypass operating system access controls with a bootable USB drive, install hardware keyloggers, or simply steal the device. Data…",
+  "key_concepts": [
+    "Why Physical Security Is the Foundation",
+    "Physical Security Threats",
+    "Theft",
+    "Vandalism and Sabotage",
+    "Unauthorized Access",
+    "Natural Disasters and Environmental Threats",
+    "Espionage and Surveillance",
+    "Building and Perimeter Security"
+  ],
+  "slides": [
+    {
+      "number": 1,
+      "type": "cover",
+      "title": "Physical Security",
+      "main_idea": "Introduce Week 2: Physical Security.",
+      "details": [
+        "The principle is straightforward: physical access to a system is, for most practical purposes, equivalent to total control over that system."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where physical security affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize physical security in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The principle is straightforward: physical access to a system is, for…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Tech-dark line-art hero for Week 2: Physical Security, with networks, locks, shields, data paths, and classroom learning cues.",
+      "visual_mode": "line_art",
+      "speaker_goal": "Teach Physical Security using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 2,
+      "type": "agenda",
+      "title": "Overall roadmap",
+      "main_idea": "The week moves from core definitions to practical security decisions.",
+      "details": [
+        "Why Physical Security Is the Foundation",
+        "Physical Security Threats",
+        "Theft",
+        "Vandalism and Sabotage"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where overall roadmap affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize overall roadmap in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Why Physical Security Is the Foundation",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art roadmap showing the major learning path for Overall roadmap; connected nodes represent reading concepts and classroom application.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Overall roadmap using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 3,
+      "type": "objectives",
+      "title": "Learning objectives",
+      "main_idea": "Students should explain, apply, and evaluate the week’s main security ideas.",
+      "details": [
+        "Explain Why Physical Security Is the Foundation.",
+        "Explain Physical Security Threats.",
+        "Explain Theft.",
+        "Explain Vandalism and Sabotage."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where learning objectives affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize learning objectives in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Explain Why Physical Security Is the Foundation.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Learning objectives: Learning objectives, Explain Why Physical Security Is the Foundation, Explain Physical Security Threats. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Learning objectives using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 4,
+      "type": "application",
+      "title": "Opening scenario",
+      "main_idea": "Use a realistic scenario to anchor Physical Security in operational decision-making.",
+      "details": [
+        "The principle is straightforward: physical access to a system is, for most practical purposes, equivalent to total control over that system.",
+        "An attacker with physical access to a running computer can extract data from memory, bypass operating system access controls with a bootable USB drive, install hardware…",
+        "Data centers can be targeted for theft of physical media or servers."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where opening scenario affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The principle is straightforward: physical access to a system is, for…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Opening scenario: Opening scenario, The principle is straightforward: physical access to a system is, for most practical purposes, equivalent to total control over that system, An attacker with physical access to a running computer can extract data from memory, bypass operating system access controls with a bootable USB drive, install hardware…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Opening scenario using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 5,
+      "type": "definition",
+      "title": "Why Physical Security Is the Foundation",
+      "main_idea": "The principle is straightforward: physical access to a system is, for most practical purposes, equivalent to total control over that system.",
+      "details": [
+        "The principle is straightforward: physical access to a system is, for most practical purposes, equivalent to total control over that system.",
+        "An attacker with physical access to a running computer can extract data from memory, bypass operating system access controls with a bootable USB drive, install hardware…",
+        "Data centers can be targeted for theft of physical media or servers.",
+        "Backup tapes removed from secure facilities have been lost in transit, exposing enormous volumes of sensitive data."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where why physical security is the foundation affects users, data, or operations.",
+        "instructor_prompt": "What problem does why physical security is the foundation help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The principle is straightforward: physical access to a system is, for…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Why Physical Security Is the Foundation: Why Physical Security Is the Foundation, The principle is straightforward: physical access to a system is, for most practical purposes, equivalent to total control over that system, An attacker with physical access to a running computer can extract data from memory, bypass operating system access controls with a bootable USB drive, install hardware…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Why Physical Security Is the Foundation using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 6,
+      "type": "concept",
+      "title": "Physical Security Threats",
+      "main_idea": "Physical security threats can be categorized into several types.",
+      "details": [
+        "Physical security threats can be categorized into several types.",
+        "Understanding each type is necessary to design proportionate controls.",
+        "Physical Security Threats connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where physical security threats affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize physical security threats in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Physical security threats can be categorized into several types.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Physical Security Threats: Physical Security Threats, Physical security threats can be categorized into several types, Understanding each type is necessary to design proportionate controls. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Physical Security Threats using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 7,
+      "type": "application",
+      "title": "Theft",
+      "main_idea": "Device theft is one of the most common physical security incidents.",
+      "details": [
+        "Device theft is one of the most common physical security incidents.",
+        "Laptops, smartphones, and external drives are stolen both opportunistically (a laptop left unattended in a coffee shop) and deliberately (targeted theft of devices from executives…",
+        "The 2006 theft of a Veterans Affairs laptop containing unencrypted data on 26.5 million veterans remains one of the most widely cited examples of the consequences of inadequate…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where theft affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Device theft is one of the most common physical security incidents.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Theft: Theft, Device theft is one of the most common physical security incidents, Laptops, smartphones, and external drives are stolen both opportunistically (a laptop left unattended in a coffee shop) and deliberately (targeted theft of devices from executives…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Theft using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 8,
+      "type": "evidence",
+      "title": "Vandalism and Sabotage",
+      "main_idea": "Physical damage to equipment — whether by disgruntled insiders, activists, or adversaries — can cause significant disruption.",
+      "details": [
+        "Physical damage to equipment — whether by disgruntled insiders, activists, or adversaries — can cause significant disruption.",
+        "Cutting network cables, damaging server equipment, or destroying backup media can take systems offline and cause data loss.",
+        "In high-stakes environments, sabotage may be deliberate and targeted."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where vandalism and sabotage affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize vandalism and sabotage in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Physical damage to equipment — whether by disgruntled insiders,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Vandalism and Sabotage: Vandalism and Sabotage, Physical damage to equipment — whether by disgruntled insiders, activists, or adversaries — can cause significant disruption, Cutting network cables, damaging server equipment, or destroying backup media can take systems offline and cause data loss. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Vandalism and Sabotage using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 9,
+      "type": "definition",
+      "title": "Unauthorized Access",
+      "main_idea": "Unauthorized entry to secure areas — data centers, server rooms, offices — can enable attackers to install rogue hardware (such as network taps or hardware keyloggers), access…",
+      "details": [
+        "Unauthorized entry to secure areas — data centers, server rooms, offices — can enable attackers to install rogue hardware (such as network taps or hardware keyloggers), access…",
+        "Unauthorized access is often achieved through social engineering techniques such as tailgating (discussed in Chapter 3) or by exploiting weaknesses in access control systems.",
+        "Unauthorized Access connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where unauthorized access affects users, data, or operations.",
+        "instructor_prompt": "What problem does unauthorized access help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Unauthorized entry to secure areas — data centers, server rooms,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Unauthorized Access: Unauthorized Access, Unauthorized entry to secure areas — data centers, server rooms, offices — can enable attackers to install rogue hardware (such as network taps or hardware keyloggers), access…, Unauthorized access is often achieved through social engineering techniques such as tailgating (discussed in Chapter 3) or by exploiting weaknesses in access control systems. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Unauthorized Access using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 10,
+      "type": "concept",
+      "title": "Natural Disasters and Environmental Threats",
+      "main_idea": "Floods, fires, earthquakes, hurricanes, and power outages are not attackers, but they present very real threats to availability.",
+      "details": [
+        "Floods, fires, earthquakes, hurricanes, and power outages are not attackers, but they present very real threats to availability.",
+        "Data centers must be designed with these threats in mind.",
+        "The 2011 flooding in Thailand disrupted global hard drive supply chains for over a year, illustrating how physical environmental threats can have far-reaching consequences for…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where natural disasters and environmental threats affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize natural disasters and environmental threats in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Floods, fires, earthquakes, hurricanes, and power outages are not…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Natural Disasters and Environmental Threats: Natural Disasters and Environmental Threats, Floods, fires, earthquakes, hurricanes, and power outages are not attackers, but they present very real threats to availability, Data centers must be designed with these threats in mind. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Natural Disasters and Environmental Threats using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 11,
+      "type": "application",
+      "title": "Espionage and Surveillance",
+      "main_idea": "In certain threat environments — government, defense, financial services, research — physical surveillance may be used to collect intelligence.",
+      "details": [
+        "In certain threat environments — government, defense, financial services, research — physical surveillance may be used to collect intelligence.",
+        "Attackers may install covert cameras, audio recorders, or network monitoring hardware.",
+        "State-sponsored adversaries have been known to compromise hotel rooms, conference facilities, and offices used by targets during business travel."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where espionage and surveillance affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: In certain threat environments — government, defense, financial…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Espionage and Surveillance: Espionage and Surveillance, In certain threat environments — government, defense, financial services, research — physical surveillance may be used to collect intelligence, Attackers may install covert cameras, audio recorders, or network monitoring hardware. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Espionage and Surveillance using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 12,
+      "type": "evidence",
+      "title": "Building and Perimeter Security",
+      "main_idea": "The first line of physical defense is the perimeter — the boundary between public and controlled space.",
+      "details": [
+        "The first line of physical defense is the perimeter — the boundary between public and controlled space.",
+        "Perimeter security is designed to deter, delay, and detect unauthorized entry.",
+        "Building and Perimeter Security connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where building and perimeter security affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize building and perimeter security in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The first line of physical defense is the perimeter — the boundary…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Building and Perimeter Security: Building and Perimeter Security, The first line of physical defense is the perimeter — the boundary between public and controlled space, Perimeter security is designed to deter, delay, and detect unauthorized entry. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Building and Perimeter Security using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 13,
+      "type": "definition",
+      "title": "Fencing and Barriers",
+      "main_idea": "Physical barriers define the perimeter and force potential intruders to spend time and effort attempting to breach it.",
+      "details": [
+        "Physical barriers define the perimeter and force potential intruders to spend time and effort attempting to breach it.",
+        "High-security facilities use anti-climb fencing (often topped with razor wire or angled outward), concrete bollards to prevent vehicle-ramming attacks, and security gates with…",
+        "The choice of barrier depends heavily on the threat model: a corporate office campus faces different threats than a military installation."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where fencing and barriers affects users, data, or operations.",
+        "instructor_prompt": "What problem does fencing and barriers help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Physical barriers define the perimeter and force potential intruders…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Fencing and Barriers: Fencing and Barriers, Physical barriers define the perimeter and force potential intruders to spend time and effort attempting to breach it, High-security facilities use anti-climb fencing (often topped with razor wire or angled outward), concrete bollards to prevent vehicle-ramming attacks, and security gates with…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Fencing and Barriers using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 14,
+      "type": "concept",
+      "title": "Lighting",
+      "main_idea": "Adequate lighting is one of the most cost-effective physical security controls available.",
+      "details": [
+        "Adequate lighting is one of the most cost-effective physical security controls available.",
+        "Well-lit areas deter opportunistic attackers (who prefer to operate undetected), improve the effectiveness of surveillance cameras, and help security personnel observe the…",
+        "Motion-activated lighting is particularly effective along perimeter areas and access points."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where lighting affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize lighting in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Adequate lighting is one of the most cost-effective physical security…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Lighting: Lighting, Adequate lighting is one of the most cost-effective physical security controls available, Well-lit areas deter opportunistic attackers (who prefer to operate undetected), improve the effectiveness of surveillance cameras, and help security personnel observe the…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Lighting using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 15,
+      "type": "application",
+      "title": "Closed-Circuit Television (CCTV) and Video Surveillance",
+      "main_idea": "Video surveillance serves both detective and deterrent purposes.",
+      "details": [
+        "Video surveillance serves both detective and deterrent purposes.",
+        "Cameras record activity for later review and, when visible, discourage would-be attackers.",
+        "Modern IP camera systems can incorporate analytics for motion detection, object recognition, and anomaly detection.",
+        "For surveillance to be effective, footage must be stored securely, reviewed regularly, and retained for a sufficient period."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where closed-circuit television (cctv) and video surveillance affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Video surveillance serves both detective and deterrent purposes.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Closed-Circuit Television (CCTV) and Video Surveillance: Closed-Circuit Television (CCTV) and Video Surveillance, Video surveillance serves both detective and deterrent purposes, Cameras record activity for later review and, when visible, discourage would-be attackers. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Closed-Circuit Television (CCTV) and Video Surveillance using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 16,
+      "type": "evidence",
+      "title": "Security Guards",
+      "main_idea": "Trained security personnel provide a level of response capability that no automated system can fully replicate.",
+      "details": [
+        "Trained security personnel provide a level of response capability that no automated system can fully replicate.",
+        "Guards can exercise judgment, respond to incidents, challenge suspicious individuals, and conduct patrols.",
+        "However, guards are also subject to human limitations — fatigue, distraction, and susceptibility to social engineering.",
+        "Guard effectiveness is enhanced by clear procedures, good communication technology, and regular training."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where security guards affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize security guards in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Trained security personnel provide a level of response capability…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Security Guards: Security Guards, Trained security personnel provide a level of response capability that no automated system can fully replicate, Guards can exercise judgment, respond to incidents, challenge suspicious individuals, and conduct patrols. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Security Guards using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 17,
+      "type": "definition",
+      "title": "Signage and Security Markings",
+      "main_idea": "Visible signs — \"Authorized Personnel Only,\" \"CCTV in Operation,\" \"Trespassers Will Be Prosecuted\" — serve as both legal notice and psychological deterrence.",
+      "details": [
+        "Visible signs — \"Authorized Personnel Only,\" \"CCTV in Operation,\" \"Trespassers Will Be Prosecuted\" — serve as both legal notice and psychological deterrence.",
+        "While not a barrier in themselves, they establish expectations and create legal clarity about the boundaries of authorized access.",
+        "Signage and Security Markings connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where signage and security markings affects users, data, or operations.",
+        "instructor_prompt": "What problem does signage and security markings help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Visible signs — \"Authorized Personnel Only,\" \"CCTV in Operation,\"…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Signage and Security Markings: Signage and Security Markings, Visible signs — \"Authorized Personnel Only,\" \"CCTV in Operation,\" \"Trespassers Will Be Prosecuted\" — serve as both legal notice and psychological deterrence, While not a barrier in themselves, they establish expectations and create legal clarity about the boundaries of authorized access. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Signage and Security Markings using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 18,
+      "type": "concept",
+      "title": "Access Control Systems",
+      "main_idea": "Once the perimeter is established, access control systems regulate who can enter which areas and under what circumstances.",
+      "details": [
+        "Once the perimeter is established, access control systems regulate who can enter which areas and under what circumstances.",
+        "Physical access control is analogous to logical access control in the digital realm — and the same principles apply: something you have , something you know , and something you…",
+        "Access Control Systems connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where access control systems affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize access control systems in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Once the perimeter is established, access control systems regulate…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Access Control Systems: Access Control Systems, Once the perimeter is established, access control systems regulate who can enter which areas and under what circumstances, Physical access control is analogous to logical access control in the digital realm — and the same principles apply: something you have , something you know , and something you…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Access Control Systems using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 19,
+      "type": "application",
+      "title": "Key Card and Badge Systems",
+      "main_idea": "Electronic key card systems (using RFID or magnetic stripe cards) are the most common form of corporate physical access control.",
+      "details": [
+        "Electronic key card systems (using RFID or magnetic stripe cards) are the most common form of corporate physical access control.",
+        "Each card is linked to an identity, and access events are logged.",
+        "Cards can be quickly deactivated when employees leave or when a card is reported lost.",
+        "Proximity cards (which work without insertion — simply by being near the reader) are convenient but can be vulnerable to cloning if an attacker gets close enough to read the…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where key card and badge systems affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Electronic key card systems (using RFID or magnetic stripe cards) are…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Key Card and Badge Systems: Key Card and Badge Systems, Electronic key card systems (using RFID or magnetic stripe cards) are the most common form of corporate physical access control, Each card is linked to an identity, and access events are logged. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Key Card and Badge Systems using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 20,
+      "type": "evidence",
+      "title": "Biometric Access Controls",
+      "main_idea": "Biometrics use physical or behavioral characteristics to verify identity.",
+      "details": [
+        "Biometrics use physical or behavioral characteristics to verify identity.",
+        "Biometric systems are most effective as part of multi-factor authentication combined with another credential type.",
+        "Biometric Access Controls connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where biometric access controls affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize biometric access controls in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Biometrics use physical or behavioral characteristics to verify…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Biometric Access Controls: Biometric Access Controls, Biometrics use physical or behavioral characteristics to verify identity, Biometric systems are most effective as part of multi-factor authentication combined with another credential type. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Biometric Access Controls using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 21,
+      "type": "definition",
+      "title": "Mantraps and Airlocks",
+      "main_idea": "A mantrap (also called an airlock or access control vestibule) is a small enclosed area with two sets of doors — the second door does not open until the first has closed and…",
+      "details": [
+        "A mantrap (also called an airlock or access control vestibule) is a small enclosed area with two sets of doors — the second door does not open until the first has closed and…",
+        "This prevents tailgating (an unauthorized person following an authorized one through a door).",
+        "Mantraps are common at the entrances to data centers, bank vaults, and government facilities.",
+        "Some sophisticated mantraps include weight sensors or camera systems to detect if more than one person has entered the enclosed space."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where mantraps and airlocks affects users, data, or operations.",
+        "instructor_prompt": "What problem does mantraps and airlocks help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A mantrap (also called an airlock or access control vestibule) is a…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Mantraps and Airlocks: Mantraps and Airlocks, A mantrap (also called an airlock or access control vestibule) is a small enclosed area with two sets of doors — the second door does not open until the first has closed and…, This prevents tailgating (an unauthorized person following an authorized one through a door). Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Mantraps and Airlocks using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 22,
+      "type": "concept",
+      "title": "Visitor Management",
+      "main_idea": "Visitors to controlled facilities should be required to sign in, show identification, receive a visitor badge, and be escorted by authorized personnel.",
+      "details": [
+        "Visitors to controlled facilities should be required to sign in, show identification, receive a visitor badge, and be escorted by authorized personnel.",
+        "Visitor logs serve as both a deterrent and a forensic record.",
+        "Badge designs should visually distinguish visitors from employees, making it easy for anyone in the facility to identify someone who should not be moving freely."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where visitor management affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize visitor management in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Visitors to controlled facilities should be required to sign in, show…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Visitor Management: Visitor Management, Visitors to controlled facilities should be required to sign in, show identification, receive a visitor badge, and be escorted by authorized personnel, Visitor logs serve as both a deterrent and a forensic record. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Visitor Management using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 23,
+      "type": "application",
+      "title": "Data Center Physical Security Standards",
+      "main_idea": "Data centers — facilities that house the servers, storage, networking, and cooling equipment that support organizational IT — require especially rigorous physical security.",
+      "details": [
+        "Data centers — facilities that house the servers, storage, networking, and cooling equipment that support organizational IT — require especially rigorous physical security.",
+        "They represent a single point of concentration for enormous volumes of critical data and systems.",
+        "For security specifically, organizations often follow guidance from NIST Special Publication 800-53, which includes physical and environmental protection controls."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where data center physical security standards affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Data centers — facilities that house the servers, storage,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Data Center Physical Security Standards: Data Center Physical Security Standards, Data centers — facilities that house the servers, storage, networking, and cooling equipment that support organizational IT — require especially rigorous physical security, They represent a single point of concentration for enormous volumes of critical data and systems. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Data Center Physical Security Standards using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 24,
+      "type": "evidence",
+      "title": "Environmental Controls",
+      "main_idea": "The physical environment of a data center or server room must be carefully controlled to ensure availability.",
+      "details": [
+        "The physical environment of a data center or server room must be carefully controlled to ensure availability.",
+        "Environmental threats can cause hardware failures, data corruption, and fires.",
+        "Environmental Controls connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where environmental controls affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize environmental controls in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The physical environment of a data center or server room must be…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Environmental Controls: Environmental Controls, The physical environment of a data center or server room must be carefully controlled to ensure availability, Environmental threats can cause hardware failures, data corruption, and fires. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Environmental Controls using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 25,
+      "type": "vocabulary",
+      "title": "Key terms to keep",
+      "main_idea": "Vocabulary becomes useful when students can connect terms to scenarios and evidence.",
+      "details": [
+        "Why Physical Security Is the Foundation",
+        "Physical Security Threats",
+        "Theft",
+        "Vandalism and Sabotage"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where key terms to keep affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize key terms to keep in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Why Physical Security Is the Foundation",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Key terms to keep: Key terms to keep, Why Physical Security Is the Foundation, Physical Security Threats. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Key terms to keep using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 26,
+      "type": "comparison",
+      "title": "Compare: Why Physical Security Is the Foundation vs. Physical Security Threats",
+      "main_idea": "Comparing related ideas helps students avoid shallow memorization.",
+      "details": [
+        "Where Why Physical Security Is the Foundation applies.",
+        "Where Physical Security Threats applies.",
+        "How the difference changes the security decision."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where compare: why physical security is the foundation vs. physical security threats affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize compare: why physical security is the foundation vs. physical security threats in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Where Why Physical Security Is the Foundation applies.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Compare: Why Physical Security Is the Foundation vs. Physical Security Threats: Compare: Why Physical Security Is the Foundation vs. Physical Security Threats, Where Why Physical Security Is the Foundation applies, Where Physical Security Threats applies. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Compare: Why Physical Security Is the Foundation vs. Physical Security Threats using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 27,
+      "type": "application",
+      "title": "Applied decision checkpoint",
+      "main_idea": "Students should translate concepts into a defensible security decision.",
+      "details": [
+        "Identify the asset or process at risk.",
+        "Choose a preventive, detective, or corrective control.",
+        "Explain what evidence would prove the control is working."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where applied decision checkpoint affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Identify the asset or process at risk.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Applied decision checkpoint: Applied decision checkpoint, Identify the asset or process at risk, Choose a preventive, detective, or corrective control. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Applied decision checkpoint using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 28,
+      "type": "review",
+      "title": "Review questions",
+      "main_idea": "Retrieval practice should ask students to define, compare, apply, and evaluate.",
+      "details": [
+        "Define one core concept in plain language.",
+        "Compare two controls or threats from the week.",
+        "Apply one idea to a campus or business system.",
+        "Evaluate why a solution might fail in practice."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where review questions affects users, data, or operations.",
+        "instructor_prompt": "What is the one sentence takeaway for review questions?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Define one core concept in plain language.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Review questions: Review questions, Define one core concept in plain language, Compare two controls or threats from the week. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Review questions using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 29,
+      "type": "bridge",
+      "title": "Bridge to lab and assessment",
+      "main_idea": "The reading should transfer into evidence-based lab work and written explanations.",
+      "details": [
+        "Collect evidence, not just screenshots.",
+        "Explain what the artifact proves.",
+        "Connect the proof back to risk and control selection."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where bridge to lab and assessment affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize bridge to lab and assessment in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Collect evidence, not just screenshots.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Bridge to lab and assessment: Bridge to lab and assessment, Collect evidence, not just screenshots, Explain what the artifact proves. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Bridge to lab and assessment using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 30,
+      "type": "closing",
+      "title": "Takeaway",
+      "main_idea": "The central takeaway from Week 2 is to reason from risk to evidence to action.",
+      "details": [
+        "Physical Security",
+        "Security is a decision process, not just a tool list.",
+        "Use the reading to justify practical choices."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 2 incident where takeaway affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize takeaway in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Physical Security",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Takeaway: Takeaway, Physical Security, Security is a decision process, not just a tool list. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Takeaway using evidence, scenario reasoning, and a concrete security takeaway."
+    }
+  ]
+}

@@ -1,0 +1,640 @@
+{
+  "week": 10,
+  "title": "Security Models and Security Policies",
+  "source": "scia-120/chapter-10.md",
+  "author": "Dr. Zhijiang Chen",
+  "institution": "Frostburg State University",
+  "summary": "Building a secure system requires more than technical controls — it requires a coherent theoretical foundation that defines what security means for a given system, who is allowed to do what to which resources, and how organizational commitments to security are expressed and enforced. This is the domain of security models and security policies. Security…",
+  "key_concepts": [
+    "Introduction",
+    "The Bell-LaPadula Model",
+    "The Biba Integrity Model",
+    "The Clark-Wilson Integrity Model",
+    "The Brewer-Nash (Chinese Wall) Model",
+    "Discretionary Access Control (DAC)",
+    "Mandatory Access Control (MAC)",
+    "Role-Based Access Control (RBAC)"
+  ],
+  "slides": [
+    {
+      "number": 1,
+      "type": "cover",
+      "title": "Security Models and Security Policies",
+      "main_idea": "Introduce Week 10: Security Models and Security Policies.",
+      "details": [
+        "This is the domain of security models and security policies."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where security models and security policies affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize security models and security policies in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: This is the domain of security models and security policies.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Tech-dark line-art hero for Week 10: Security Models and Security Policies, with networks, locks, shields, data paths, and classroom learning cues.",
+      "visual_mode": "line_art",
+      "speaker_goal": "Teach Security Models and Security Policies using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 2,
+      "type": "agenda",
+      "title": "Overall roadmap",
+      "main_idea": "The week moves from core definitions to practical security decisions.",
+      "details": [
+        "Introduction",
+        "The Bell-LaPadula Model",
+        "The Biba Integrity Model",
+        "The Clark-Wilson Integrity Model"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where overall roadmap affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize overall roadmap in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art roadmap showing the major learning path for Overall roadmap; connected nodes represent reading concepts and classroom application.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Overall roadmap using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 3,
+      "type": "objectives",
+      "title": "Learning objectives",
+      "main_idea": "Students should explain, apply, and evaluate the week’s main security ideas.",
+      "details": [
+        "Explain Introduction.",
+        "Explain The Bell-LaPadula Model.",
+        "Explain The Biba Integrity Model.",
+        "Explain The Clark-Wilson Integrity Model."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where learning objectives affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize learning objectives in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Explain Introduction.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Learning objectives: Learning objectives, Explain Introduction, Explain The Bell-LaPadula Model. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Learning objectives using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 4,
+      "type": "application",
+      "title": "Opening scenario",
+      "main_idea": "Use a realistic scenario to anchor Security Models and Security Policies in operational decision-making.",
+      "details": [
+        "This is the domain of security models and security policies.",
+        "Security models are formal, often mathematical descriptions of security properties that a system must satisfy.",
+        "They provide the conceptual framework that underlies access control implementations: the rules that determine who can read, write, execute, or otherwise interact with system…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where opening scenario affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: This is the domain of security models and security policies.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Opening scenario: Opening scenario, This is the domain of security models and security policies, Security models are formal, often mathematical descriptions of security properties that a system must satisfy. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Opening scenario using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 5,
+      "type": "definition",
+      "title": "Introduction",
+      "main_idea": "This is the domain of security models and security policies.",
+      "details": [
+        "This is the domain of security models and security policies.",
+        "Security models are formal, often mathematical descriptions of security properties that a system must satisfy.",
+        "They provide the conceptual framework that underlies access control implementations: the rules that determine who can read, write, execute, or otherwise interact with system…",
+        "Security policies are the organizational expression of security requirements: written documents that define rules of behavior, acceptable use, and operational procedures."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where introduction affects users, data, or operations.",
+        "instructor_prompt": "What problem does introduction help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: This is the domain of security models and security policies.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Introduction: Introduction, This is the domain of security models and security policies, Security models are formal, often mathematical descriptions of security properties that a system must satisfy. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Introduction using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 6,
+      "type": "concept",
+      "title": "The Bell-LaPadula Model",
+      "main_idea": "The Bell-LaPadula (BLP) model , developed by David Bell and Leonard LaPadula for the U.S.",
+      "details": [
+        "The Bell-LaPadula (BLP) model , developed by David Bell and Leonard LaPadula for the U.S.",
+        "Department of Defense in the 1970s, is a formal mathematical model focused on confidentiality .",
+        "It is designed for environments where information must be strictly controlled based on classification levels (e.g., Unclassified, Confidential, Secret, Top Secret) — a multilevel…",
+        "BLP defines two core security properties: 1."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where the bell-lapadula model affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize the bell-lapadula model in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The Bell-LaPadula (BLP) model , developed by David Bell and Leonard…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Bell-LaPadula Model: The Bell-LaPadula Model, The Bell-LaPadula (BLP) model , developed by David Bell and Leonard LaPadula for the U, Department of Defense in the 1970s, is a formal mathematical model focused on confidentiality . Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Bell-LaPadula Model using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 7,
+      "type": "application",
+      "title": "The Biba Integrity Model",
+      "main_idea": "The Biba model , developed by Kenneth Biba in 1977, is the logical complement to Bell-LaPadula, focusing on integrity rather than confidentiality.",
+      "details": [
+        "The Biba model , developed by Kenneth Biba in 1977, is the logical complement to Bell-LaPadula, focusing on integrity rather than confidentiality.",
+        "It uses a similar structure of subjects with integrity levels and objects with integrity levels, but with inverted rules: 1.",
+        "Simple Integrity Property (\"no read down\") : A subject may not read objects with a lower integrity level.",
+        "A high-integrity process should not read data from an untrusted (low-integrity) source, as it could corrupt the high-integrity process's operations or conclusions."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where the biba integrity model affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The Biba model , developed by Kenneth Biba in 1977, is the logical…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Biba Integrity Model: The Biba Integrity Model, The Biba model , developed by Kenneth Biba in 1977, is the logical complement to Bell-LaPadula, focusing on integrity rather than confidentiality, It uses a similar structure of subjects with integrity levels and objects with integrity levels, but with inverted rules: 1. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Biba Integrity Model using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 8,
+      "type": "evidence",
+      "title": "The Clark-Wilson Integrity Model",
+      "main_idea": "The Clark-Wilson model , proposed by David Clark and David Wilson in 1987, takes a different approach to integrity, grounded in commercial business practices rather than military…",
+      "details": [
+        "The Clark-Wilson model , proposed by David Clark and David Wilson in 1987, takes a different approach to integrity, grounded in commercial business practices rather than military…",
+        "It recognizes that integrity in a business context means something specific: data should only be modified through authorized, auditable procedures that maintain internal…",
+        "The model introduces several key concepts: - Constrained Data Items (CDIs) : Data items whose integrity must be maintained (e.g., account balances, medical records).",
+        "- Unconstrained Data Items (UDIs) : Input data that has not yet been validated (user input, external data)."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where the clark-wilson integrity model affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize the clark-wilson integrity model in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The Clark-Wilson model , proposed by David Clark and David Wilson in…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Clark-Wilson Integrity Model: The Clark-Wilson Integrity Model, The Clark-Wilson model , proposed by David Clark and David Wilson in 1987, takes a different approach to integrity, grounded in commercial business practices rather than military…, It recognizes that integrity in a business context means something specific: data should only be modified through authorized, auditable procedures that maintain internal…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Clark-Wilson Integrity Model using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 9,
+      "type": "definition",
+      "title": "The Brewer-Nash (Chinese Wall) Model",
+      "main_idea": "The Brewer-Nash model , proposed by David Brewer and Michael Nash in 1989, addresses conflicts of interest in commercial consulting and financial contexts.",
+      "details": [
+        "The Brewer-Nash model , proposed by David Brewer and Michael Nash in 1989, addresses conflicts of interest in commercial consulting and financial contexts.",
+        "The classic scenario: a consulting firm works for multiple competing clients in the same industry, such as competing investment banks.",
+        "Consultants who have accessed information about one bank should not be able to access information about competing banks.",
+        "The model introduces conflict of interest classes : groups of companies whose information should be kept separate."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where the brewer-nash (chinese wall) model affects users, data, or operations.",
+        "instructor_prompt": "What problem does the brewer-nash (chinese wall) model help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The Brewer-Nash model , proposed by David Brewer and Michael Nash in…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Brewer-Nash (Chinese Wall) Model: The Brewer-Nash (Chinese Wall) Model, The Brewer-Nash model , proposed by David Brewer and Michael Nash in 1989, addresses conflicts of interest in commercial consulting and financial contexts, The classic scenario: a consulting firm works for multiple competing clients in the same industry, such as competing investment banks. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Brewer-Nash (Chinese Wall) Model using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 10,
+      "type": "concept",
+      "title": "Discretionary Access Control (DAC)",
+      "main_idea": "In Discretionary Access Control (DAC) , the owner of a resource controls access to it.",
+      "details": [
+        "In Discretionary Access Control (DAC) , the owner of a resource controls access to it.",
+        "DAC is flexible and intuitive, but it has a fundamental weakness: once a subject has been granted access, they may be able to pass that access to others (through copying files,…",
+        "This creates the Trojan horse problem : malware running as a user with read access to a file can exfiltrate that file.",
+        "DAC provides no protection against compromised subjects acting within their authorized permissions."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where discretionary access control (dac) affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize discretionary access control (dac) in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: In Discretionary Access Control (DAC) , the owner of a resource…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Discretionary Access Control (DAC): Discretionary Access Control (DAC), In Discretionary Access Control (DAC) , the owner of a resource controls access to it, DAC is flexible and intuitive, but it has a fundamental weakness: once a subject has been granted access, they may be able to pass that access to others (through copying files,…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Discretionary Access Control (DAC) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 11,
+      "type": "application",
+      "title": "Mandatory Access Control (MAC)",
+      "main_idea": "In Mandatory Access Control (MAC) , access control is determined by system policy rather than resource owners' discretion.",
+      "details": [
+        "In Mandatory Access Control (MAC) , access control is determined by system policy rather than resource owners' discretion.",
+        "The system assigns security labels (classifications) to both subjects (clearance levels) and objects (sensitivity levels), and access decisions are enforced by the operating…",
+        "MAC systems implement the Bell-LaPadula model (or variants of it) in practice.",
+        "Users cannot override MAC policies — they cannot share files across classification levels even if they want to."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where mandatory access control (mac) affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: In Mandatory Access Control (MAC) , access control is determined by…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Mandatory Access Control (MAC): Mandatory Access Control (MAC), In Mandatory Access Control (MAC) , access control is determined by system policy rather than resource owners' discretion, The system assigns security labels (classifications) to both subjects (clearance levels) and objects (sensitivity levels), and access decisions are enforced by the operating…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Mandatory Access Control (MAC) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 12,
+      "type": "evidence",
+      "title": "Role-Based Access Control (RBAC)",
+      "main_idea": "Role-Based Access Control (RBAC) is the most widely used access control model in enterprise environments.",
+      "details": [
+        "Role-Based Access Control (RBAC) is the most widely used access control model in enterprise environments.",
+        "Rather than assigning permissions directly to individual users, RBAC assigns permissions to roles (job functions — database administrator, help desk agent, payroll clerk,…",
+        "This abstraction provides several important security benefits: - Least privilege : Users can be assigned to roles that provide only the permissions needed for their job function.",
+        "- Separation of duties : Sensitive functions can be distributed across multiple roles that no single user holds simultaneously (e.g., the role that creates a vendor cannot also be…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where role-based access control (rbac) affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize role-based access control (rbac) in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Role-Based Access Control (RBAC) is the most widely used access…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Role-Based Access Control (RBAC): Role-Based Access Control (RBAC), Role-Based Access Control (RBAC) is the most widely used access control model in enterprise environments, Rather than assigning permissions directly to individual users, RBAC assigns permissions to roles (job functions — database administrator, help desk agent, payroll clerk,…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Role-Based Access Control (RBAC) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 13,
+      "type": "definition",
+      "title": "Attribute-Based Access Control (ABAC)",
+      "main_idea": "Attribute-Based Access Control (ABAC) is a more expressive and flexible model in which access decisions are made based on a set of attributes associated with the subject (user),…",
+      "details": [
+        "Attribute-Based Access Control (ABAC) is a more expressive and flexible model in which access decisions are made based on a set of attributes associated with the subject (user),…",
+        "ABAC is significantly more powerful than RBAC — it can express fine-grained, context-sensitive policies that RBAC cannot easily represent — but it is more complex to manage and…",
+        "ABAC is implemented through policy languages like XACML (eXtensible Access Control Markup Language) and is increasingly used in cloud platforms (AWS IAM policies are essentially…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where attribute-based access control (abac) affects users, data, or operations.",
+        "instructor_prompt": "What problem does attribute-based access control (abac) help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Attribute-Based Access Control (ABAC) is a more expressive and…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Attribute-Based Access Control (ABAC): Attribute-Based Access Control (ABAC), Attribute-Based Access Control (ABAC) is a more expressive and flexible model in which access decisions are made based on a set of attributes associated with the subject (user),…, ABAC is significantly more powerful than RBAC — it can express fine-grained, context-sensitive policies that RBAC cannot easily represent — but it is more complex to manage and…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Attribute-Based Access Control (ABAC) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 14,
+      "type": "concept",
+      "title": "The Principle",
+      "main_idea": "No implicit trust : No user, device, or network location is inherently trusted, regardless of whether they are \"inside\" the network.",
+      "details": [
+        "No implicit trust : No user, device, or network location is inherently trusted, regardless of whether they are \"inside\" the network.",
+        "Verify explicitly : All access must be authenticated and authorized using all available signals: user identity, device health, location, time, behavior analytics.",
+        "Least privilege access : Provide the minimum access necessary for the task, for the minimum necessary duration.",
+        "Assume breach : Design and operate as if the attacker is already inside."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where the principle affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize the principle in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: No implicit trust : No user, device, or network location is…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for The Principle: The Principle, No implicit trust : No user, device, or network location is inherently trusted, regardless of whether they are \"inside\" the network, Verify explicitly : All access must be authenticated and authorized using all available signals: user identity, device health, location, time, behavior analytics. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach The Principle using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 15,
+      "type": "application",
+      "title": "Zero Trust Implementation",
+      "main_idea": "The NIST Special Publication 800-207 (Zero Trust Architecture) provides the authoritative framework.",
+      "details": [
+        "The NIST Special Publication 800-207 (Zero Trust Architecture) provides the authoritative framework.",
+        "Key components include: - Strong Identity Verification : MFA, certificate-based device authentication, identity governance.",
+        "- Device Health Verification : Continuous compliance checking (OS patch level, EDR presence, disk encryption) before granting access.",
+        "- Microsegmentation : Network is divided into small segments, each requiring explicit authorization to cross."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where zero trust implementation affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The NIST Special Publication 800-207 (Zero Trust Architecture)…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Zero Trust Implementation: Zero Trust Implementation, The NIST Special Publication 800-207 (Zero Trust Architecture) provides the authoritative framework, Key components include: - Strong Identity Verification : MFA, certificate-based device authentication, identity governance. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Zero Trust Implementation using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 16,
+      "type": "evidence",
+      "title": "Defense in Depth",
+      "main_idea": "Defense in depth is a security principle derived from military strategy: rather than relying on any single security control, implement multiple independent layers of security such…",
+      "details": [
+        "Defense in depth is a security principle derived from military strategy: rather than relying on any single security control, implement multiple independent layers of security such…",
+        "A firewall and a WAF are both \"security controls,\" but they address different threats and should both be present.",
+        "Defense in Depth connects to risk, controls, and evidence."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where defense in depth affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize defense in depth in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Defense in depth is a security principle derived from military…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Defense in Depth: Defense in Depth, Defense in depth is a security principle derived from military strategy: rather than relying on any single security control, implement multiple independent layers of security such…, A firewall and a WAF are both \"security controls,\" but they address different threats and should both be present. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Defense in Depth using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 17,
+      "type": "definition",
+      "title": "What Is a Security Policy?",
+      "main_idea": "A security policy is a formal document that expresses an organization's security requirements, rules, and expected behaviors.",
+      "details": [
+        "A security policy is a formal document that expresses an organization's security requirements, rules, and expected behaviors.",
+        "Policies provide the bridge between abstract security objectives and concrete operational practices.",
+        "They communicate management's commitment to security, establish standards that technical controls implement, and provide the baseline for compliance and enforcement.",
+        "A policy document has three essential attributes: 1."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where what is a security policy? affects users, data, or operations.",
+        "instructor_prompt": "How does this concept help us analyze the incident?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A security policy is a formal document that expresses an…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for What Is a Security Policy?: What Is a Security Policy?, A security policy is a formal document that expresses an organization's security requirements, rules, and expected behaviors, Policies provide the bridge between abstract security objectives and concrete operational practices. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach What Is a Security Policy? using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 18,
+      "type": "concept",
+      "title": "Types of Security Policies",
+      "main_idea": "Acceptable Use Policy (AUP) : Defines what constitutes acceptable and unacceptable use of organizational IT resources (computers, email, internet, cloud services).",
+      "details": [
+        "Acceptable Use Policy (AUP) : Defines what constitutes acceptable and unacceptable use of organizational IT resources (computers, email, internet, cloud services).",
+        "Every employee should acknowledge the AUP as part of onboarding.",
+        "Key elements: authorized purposes, prohibited content/activities, monitoring notice, consequences for violations.",
+        "Password Policy : Defines requirements for password creation (length, complexity), management (not reusing passwords, not sharing), and storage."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where types of security policies affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize types of security policies in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Acceptable Use Policy (AUP) : Defines what constitutes acceptable and…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Types of Security Policies: Types of Security Policies, Acceptable Use Policy (AUP) : Defines what constitutes acceptable and unacceptable use of organizational IT resources (computers, email, internet, cloud services), Every employee should acknowledge the AUP as part of onboarding. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Types of Security Policies using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 19,
+      "type": "application",
+      "title": "Policy Development Lifecycle",
+      "main_idea": "Security policies are not written once and forgotten — they require ongoing care: 1.",
+      "details": [
+        "Security policies are not written once and forgotten — they require ongoing care: 1.",
+        "Identify Need : What risk or compliance requirement is driving this policy?",
+        "What behavior is it intended to govern?",
+        "Draft : Working group involving security, legal, HR, business stakeholders."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where policy development lifecycle affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Security policies are not written once and forgotten — they require…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Policy Development Lifecycle: Policy Development Lifecycle, Security policies are not written once and forgotten — they require ongoing care: 1, Identify Need : What risk or compliance requirement is driving this policy?. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Policy Development Lifecycle using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 20,
+      "type": "evidence",
+      "title": "NIST Cybersecurity Framework (CSF)",
+      "main_idea": "The NIST Cybersecurity Framework (CSF) , first published in 2014 and updated as CSF 2.0 in 2024, provides voluntary guidance for organizations to manage and reduce cybersecurity…",
+      "details": [
+        "The NIST Cybersecurity Framework (CSF) , first published in 2014 and updated as CSF 2.0 in 2024, provides voluntary guidance for organizations to manage and reduce cybersecurity…",
+        "The framework is voluntary but has been widely adopted and referenced in U.S.",
+        "government contracts and regulatory guidance.",
+        "The NIST CSF uses the concept of Implementation Tiers (1-4, from Partial to Adaptive) to characterize the maturity of an organization's risk management practices, and Profiles to…"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where nist cybersecurity framework (csf) affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize nist cybersecurity framework (csf) in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The NIST Cybersecurity Framework (CSF) , first published in 2014 and…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for NIST Cybersecurity Framework (CSF): NIST Cybersecurity Framework (CSF), The NIST Cybersecurity Framework (CSF) , first published in 2014 and updated as CSF 2, The framework is voluntary but has been widely adopted and referenced in U. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach NIST Cybersecurity Framework (CSF) using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 21,
+      "type": "definition",
+      "title": "ISO/IEC 27001 and 27002",
+      "main_idea": "ISO/IEC 27001 is an international standard for Information Security Management Systems (ISMS) .",
+      "details": [
+        "ISO/IEC 27001 is an international standard for Information Security Management Systems (ISMS) .",
+        "Unlike NIST CSF, which is a flexible framework, ISO 27001 is a formal standard against which organizations can be certified through independent audits.",
+        "Certification demonstrates to customers, partners, and regulators that the organization has a systematic, documented, and continuously improving information security management…",
+        "ISO 27001 specifies requirements for establishing, implementing, maintaining, and continuously improving an ISMS."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where iso/iec 27001 and 27002 affects users, data, or operations.",
+        "instructor_prompt": "What problem does iso/iec 27001 and 27002 help us understand?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: ISO/IEC 27001 is an international standard for Information Security…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for ISO/IEC 27001 and 27002: ISO/IEC 27001 and 27002, ISO/IEC 27001 is an international standard for Information Security Management Systems (ISMS) , Unlike NIST CSF, which is a flexible framework, ISO 27001 is a formal standard against which organizations can be certified through independent audits. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach ISO/IEC 27001 and 27002 using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 22,
+      "type": "concept",
+      "title": "CIS Controls",
+      "main_idea": "The CIS Critical Security Controls (CIS Controls) , maintained by the Center for Internet Security, are a prioritized set of 18 security controls derived from analysis of the most…",
+      "details": [
+        "The CIS Critical Security Controls (CIS Controls) , maintained by the Center for Internet Security, are a prioritized set of 18 security controls derived from analysis of the most…",
+        "They are organized into three Implementation Groups (IGs) of increasing maturity: - IG1 (Basic Cyber Hygiene) : Controls 1-6, addressing inventory, patching, access control, and…",
+        "- IG2 (Expanded) : IG1 plus additional controls for organizations with more resources and greater risk.",
+        "- IG3 (Organizational) : The full set, for organizations facing sophisticated threats."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where cis controls affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize cis controls in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The CIS Critical Security Controls (CIS Controls) , maintained by the…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for CIS Controls: CIS Controls, The CIS Critical Security Controls (CIS Controls) , maintained by the Center for Internet Security, are a prioritized set of 18 security controls derived from analysis of the most…, They are organized into three Implementation Groups (IGs) of increasing maturity: - IG1 (Basic Cyber Hygiene) : Controls 1-6, addressing inventory, patching, access control, and…. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach CIS Controls using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 23,
+      "type": "application",
+      "title": "Compliance vs. Security",
+      "main_idea": "An important — and frequently misunderstood — distinction: compliance is not security .",
+      "details": [
+        "An important — and frequently misunderstood — distinction: compliance is not security .",
+        "Compliance means meeting the requirements of a specific standard, regulation, or framework at a specific point in time.",
+        "Security means actually reducing risk effectively.",
+        "The two often overlap but are not identical."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where compliance vs. security affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: An important — and frequently misunderstood — distinction: compliance…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Compliance vs. Security: Compliance vs. Security, An important — and frequently misunderstood — distinction: compliance is not security , Compliance means meeting the requirements of a specific standard, regulation, or framework at a specific point in time. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Compliance vs. Security using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 24,
+      "type": "evidence",
+      "title": "Security Governance",
+      "main_idea": "Security governance refers to the framework of leadership, organizational structures, accountability, and processes through which security decisions are made and enforced.",
+      "details": [
+        "Security governance refers to the framework of leadership, organizational structures, accountability, and processes through which security decisions are made and enforced.",
+        "Key elements include: - Chief Information Security Officer (CISO) : Executive ownership of the security program, reporting to the CEO or Board.",
+        "- Security Steering Committee : Cross-functional body (IT, legal, HR, business units, finance) providing oversight and aligning security with business objectives.",
+        "- Risk Management : Formal processes for identifying, assessing, treating, and monitoring information security risk, integrated with enterprise risk management."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where security governance affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize security governance in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Security governance refers to the framework of leadership,…",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Security Governance: Security Governance, Security governance refers to the framework of leadership, organizational structures, accountability, and processes through which security decisions are made and enforced, Key elements include: - Chief Information Security Officer (CISO) : Executive ownership of the security program, reporting to the CEO or Board. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Security Governance using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 25,
+      "type": "vocabulary",
+      "title": "Key terms to keep",
+      "main_idea": "Vocabulary becomes useful when students can connect terms to scenarios and evidence.",
+      "details": [
+        "Introduction",
+        "The Bell-LaPadula Model",
+        "The Biba Integrity Model",
+        "The Clark-Wilson Integrity Model"
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where key terms to keep affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize key terms to keep in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Key terms to keep: Key terms to keep, Introduction, The Bell-LaPadula Model. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Key terms to keep using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 26,
+      "type": "comparison",
+      "title": "Compare: Introduction vs. The Bell-LaPadula Model",
+      "main_idea": "Comparing related ideas helps students avoid shallow memorization.",
+      "details": [
+        "Where Introduction applies.",
+        "Where The Bell-LaPadula Model applies.",
+        "How the difference changes the security decision."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where compare: introduction vs. the bell-lapadula model affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize compare: introduction vs. the bell-lapadula model in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Where Introduction applies.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Compare: Introduction vs. The Bell-LaPadula Model: Compare: Introduction vs. The Bell-LaPadula Model, Where Introduction applies, Where The Bell-LaPadula Model applies. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Compare: Introduction vs. The Bell-LaPadula Model using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 27,
+      "type": "application",
+      "title": "Applied decision checkpoint",
+      "main_idea": "Students should translate concepts into a defensible security decision.",
+      "details": [
+        "Identify the asset or process at risk.",
+        "Choose a preventive, detective, or corrective control.",
+        "Explain what evidence would prove the control is working."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where applied decision checkpoint affects users, data, or operations.",
+        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Identify the asset or process at risk.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Applied decision checkpoint: Applied decision checkpoint, Identify the asset or process at risk, Choose a preventive, detective, or corrective control. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Applied decision checkpoint using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 28,
+      "type": "review",
+      "title": "Review questions",
+      "main_idea": "Retrieval practice should ask students to define, compare, apply, and evaluate.",
+      "details": [
+        "Define one core concept in plain language.",
+        "Compare two controls or threats from the week.",
+        "Apply one idea to a campus or business system.",
+        "Evaluate why a solution might fail in practice."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where review questions affects users, data, or operations.",
+        "instructor_prompt": "What is the one sentence takeaway for review questions?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Define one core concept in plain language.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Review questions: Review questions, Define one core concept in plain language, Compare two controls or threats from the week. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Review questions using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 29,
+      "type": "bridge",
+      "title": "Bridge to lab and assessment",
+      "main_idea": "The reading should transfer into evidence-based lab work and written explanations.",
+      "details": [
+        "Collect evidence, not just screenshots.",
+        "Explain what the artifact proves.",
+        "Connect the proof back to risk and control selection."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where bridge to lab and assessment affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize bridge to lab and assessment in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Collect evidence, not just screenshots.",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Bridge to lab and assessment: Bridge to lab and assessment, Collect evidence, not just screenshots, Explain what the artifact proves. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Bridge to lab and assessment using evidence, scenario reasoning, and a concrete security takeaway."
+    },
+    {
+      "number": 30,
+      "type": "closing",
+      "title": "Takeaway",
+      "main_idea": "The central takeaway from Week 10 is to reason from risk to evidence to action.",
+      "details": [
+        "Security Models and Security Policies",
+        "Security is a decision process, not just a tool list.",
+        "Use the reading to justify practical choices."
+      ],
+      "classroom_dialog": {
+        "scenario": "A campus technology team is reviewing a realistic Week 10 incident where takeaway affects users, data, or operations.",
+        "instructor_prompt": "How would you recognize takeaway in a real organization?",
+        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Security Models and Security Policies",
+        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
+      },
+      "visual_prompt": "Line-art explanatory scene for Takeaway: Takeaway, Security Models and Security Policies, Security is a decision process, not just a tool list. Use labels, arrows, and security-control symbols.",
+      "visual_mode": "dialog_plus_line_art",
+      "speaker_goal": "Teach Takeaway using evidence, scenario reasoning, and a concrete security takeaway."
+    }
+  ]
+}
