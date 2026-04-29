@@ -30,3 +30,9 @@
 - Created `setup/docker-compose.md` for Docker Compose plugin verification and first Compose lab.
 - Updated Setup menu navigation in `mkdocs.yml`.
 - Added raw provenance notes for DigitalOcean initial server setup, DigitalOcean Git setup, and VS Code Remote SSH docs.
+## [2026-04-29] create | SCIA 120 presentation sample
+- Installed `guizang-ppt-skill` with the `skills` CLI into `~/.agents/skills/guizang-ppt-skill` and symlinked it for Claude Code/OpenClaw.
+- Created `scia-120/presentations/index.md` as a dedicated Presentations section.
+- Created `scia-120/presentations/llm-wiki-sample.md` wrapper page.
+- Created `scia-120/presentations/llm-wiki-sample-deck/index.html` as a magazine-style HTML presentation sample on LLM Wiki.
+- Updated `mkdocs.yml` navigation under SCIA-120.

@@ -131,6 +131,9 @@ nav:
 
   - 🔐 SCIA-120:
     - Overview: entities/scia-120.md
+    - Presentations:
+      - Presentations Overview: scia-120/presentations/index.md
+      - Sample Deck — LLM Wiki: scia-120/presentations/llm-wiki-sample.md
     - Reading Materials:
       - Week 1 - Introduction to Information Security: scia-120/chapter-01.md
       - Week 2 - Physical Security: scia-120/chapter-02.md
