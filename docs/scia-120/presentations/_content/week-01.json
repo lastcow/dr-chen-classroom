@@ -4,632 +4,629 @@
   "source": "scia-120/chapter-01.md",
   "author": "Dr. Zhijiang Chen",
   "institution": "Frostburg State University",
-  "summary": "Information security (often abbreviated infosec ) is the practice of protecting information and information systems from unauthorized access, use, disclosure, disruption, modification, or destruction. The goal is to ensure that data remains private, accurate, and accessible to those who legitimately need it. It is important to distinguish information…",
+  "summary": "Student-facing Week 1 deck aligned to the reading material, with detailed explanations, credible source-backed enrichment, applied examples, self-check prompts, and slide-specific technical line-art visuals.",
   "key_concepts": [
-    "What Is Information Security?",
-    "What Is Information Assurance?",
-    "The CIA Triad",
-    "Confidentiality",
-    "Integrity",
-    "Availability",
-    "The DAD Triad",
-    "Why Security Matters"
+    "Information Security",
+    "Cybersecurity",
+    "Information Assurance",
+    "CIA Triad",
+    "DAD Triad",
+    "Threat Actors",
+    "MICE Motivations",
+    "Security Mindset",
+    "Risk Management",
+    "Security Controls",
+    "NIST CSF 2.0",
+    "Cybersecurity Careers"
+  ],
+  "external_sources": [
+    "NIST Cybersecurity Framework 2.0 — https://www.nist.gov/cyberframework",
+    "CISA Cyber Essentials — https://www.cisa.gov/resources-tools/resources/cyber-essentials",
+    "IBM Cost of a Data Breach Report 2025 — https://www.ibm.com/reports/data-breach",
+    "ISC2 Cybersecurity Workforce Study 2025 — https://www.isc2.org/Insights/2025/12/2025-ISC2-Cybersecurity-Workforce-Study",
+    "NIST Computer Security Resource Center Glossary — https://csrc.nist.gov/glossary"
   ],
   "slides": [
     {
       "number": 1,
       "type": "cover",
       "title": "Introduction to Information Security and Information Assurance",
-      "main_idea": "Introduce Week 1: Introduction to Information Security and Information Assurance.",
+      "main_idea": "Security begins with a clear answer to three questions: what information matters, what could go wrong, and how can trust be preserved?",
       "details": [
-        "Information security (often abbreviated infosec ) is the practice of protecting information and information systems from unauthorized access, use, disclosure, disruption, modification,…"
+        "SCIA 120 Week 01 builds the vocabulary used throughout the course.",
+        "The module connects protection goals, attacker goals, risk, controls, and professional roles.",
+        "The focus is practical: students should be able to classify a real situation using security concepts."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where introduction to information security and information assurance affects users, data, or operations.",
-        "instructor_prompt": "How would you recognize introduction to information security and information assurance in a real organization?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Information security (often abbreviated infosec ) is the practice of…",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Tech-dark line-art hero for Week 1: Introduction to Information Security and Information Assurance, with networks, locks, shields, data paths, and classroom learning cues.",
       "visual_mode": "line_art",
-      "speaker_goal": "Teach Introduction to Information Security and Information Assurance using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_kind": "shield protecting connected data nodes",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Introduction to Information Security and Information Assurance. Visual must match this exact concept: shield protecting connected data nodes. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material"
+      ],
+      "why_it_matters": "Every later topic—physical security, malware, cryptography, networks, secure coding, cloud security—depends on these Week 01 mental models."
     },
     {
       "number": 2,
-      "type": "agenda",
-      "title": "Overall roadmap",
-      "main_idea": "The week moves from core definitions to practical security decisions.",
+      "type": "roadmap",
+      "title": "Week 01 Roadmap",
+      "main_idea": "The week moves from definitions to decision-making: define security goals, recognize threats, estimate risk, select controls, and verify outcomes.",
       "details": [
-        "What Is Information Security?",
-        "What Is Information Assurance?",
-        "The CIA Triad",
-        "Confidentiality"
+        "Start with information security and information assurance.",
+        "Use CIA and DAD as paired models: defender goals vs. attacker outcomes.",
+        "Apply risk thinking before choosing controls.",
+        "Connect the security lifecycle to NIST CSF 2.0 and career pathways."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where overall roadmap affects users, data, or operations.",
-        "instructor_prompt": "How would you recognize overall roadmap in a real organization?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: What Is Information Security?",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art roadmap showing the major learning path for Overall roadmap; connected nodes represent reading concepts and classroom application.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Overall roadmap using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "four-stage roadmap with security icons",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Week 01 Roadmap. Visual must match this exact concept: four-stage roadmap with security icons. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material",
+        "NIST Cybersecurity Framework 2.0 — https://www.nist.gov/cyberframework"
+      ],
+      "example": "A student-record system can be analyzed as assets, threats, CIA impact, controls, and assurance evidence."
     },
     {
       "number": 3,
       "type": "objectives",
-      "title": "Learning objectives",
-      "main_idea": "Students should explain, apply, and evaluate the week’s main security ideas.",
+      "title": "Learning Outcomes",
+      "main_idea": "By the end of this module, students should be able to explain and apply the basic language of information security.",
       "details": [
-        "Explain What Is Information Security?.",
-        "Explain What Is Information Assurance?.",
-        "Explain The CIA Triad.",
-        "Explain Confidentiality."
+        "Distinguish information security, cybersecurity, and information assurance.",
+        "Classify incidents by CIA and DAD properties.",
+        "Identify threat actors and likely motivations.",
+        "Use Risk = Threat × Vulnerability × Impact to compare scenarios.",
+        "Match controls to risk and explain what evidence would show they work."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where learning objectives affects users, data, or operations.",
-        "instructor_prompt": "How would you recognize learning objectives in a real organization?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Explain What Is Information Security?.",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for Learning objectives: Learning objectives, Explain What Is Information Security?, Explain What Is Information Assurance?. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Learning objectives using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "checklist on secure clipboard",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Learning Outcomes. Visual must match this exact concept: checklist on secure clipboard. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material"
+      ],
+      "self_check": "If you can read a short breach scenario and name the asset, CIA impact, likely actor, risk, control, and evidence, you are using the Week 01 toolkit."
     },
     {
       "number": 4,
-      "type": "application",
-      "title": "Opening scenario",
-      "main_idea": "Use a realistic scenario to anchor Introduction to Information Security and Information Assurance in operational decision-making.",
+      "type": "concept",
+      "title": "The Big Question: What Are We Defending?",
+      "main_idea": "Security work starts with assets, not tools. An asset is anything valuable enough to protect: data, systems, services, identities, operations, or trust.",
       "details": [
-        "Information security (often abbreviated infosec ) is the practice of protecting information and information systems from unauthorized access, use, disclosure, disruption,…",
-        "The goal is to ensure that data remains private, accurate, and accessible to those who legitimately need it.",
-        "It is important to distinguish information security from cybersecurity , a term that has become ubiquitous but is somewhat narrower in common usage."
+        "Information can exist as database rows, files, emails, printed records, conversations, credentials, logs, and backups.",
+        "A system can fail security even without a hacker: accidental deletion, misconfiguration, power failure, or unavailable backups can still harm users.",
+        "Good security decisions name the protected asset before naming the technology."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where opening scenario affects users, data, or operations.",
-        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Information security (often abbreviated infosec ) is the practice of…",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for Opening scenario: Opening scenario, Information security (often abbreviated infosec ) is the practice of protecting information and information systems from unauthorized access, use, disclosure, disruption,…, The goal is to ensure that data remains private, accurate, and accessible to those who legitimately need it. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Opening scenario using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "asset inventory map with data, identity, service, trust nodes",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: The Big Question: What Are We Defending?. Visual must match this exact concept: asset inventory map with data, identity, service, trust nodes. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material",
+        "CISA Cyber Essentials — https://www.cisa.gov/resources-tools/resources/cyber-essentials"
+      ],
+      "example": "For an online gradebook, assets include grades, student identities, login credentials, audit logs, availability during registration, and trust in academic records.",
+      "why_it_matters": "If the asset is unclear, the control may protect the wrong thing."
     },
     {
       "number": 5,
       "type": "definition",
-      "title": "What Is Information Security?",
-      "main_idea": "Information security (often abbreviated infosec ) is the practice of protecting information and information systems from unauthorized access, use, disclosure, disruption,…",
+      "title": "Information Security",
+      "main_idea": "Information security is the practice of protecting information and the systems that store, process, and transmit it from unauthorized access, use, disclosure, disruption, modification, or destruction.",
       "details": [
-        "Information security (often abbreviated infosec ) is the practice of protecting information and information systems from unauthorized access, use, disclosure, disruption,…",
-        "The goal is to ensure that data remains private, accurate, and accessible to those who legitimately need it.",
-        "It is important to distinguish information security from cybersecurity , a term that has become ubiquitous but is somewhat narrower in common usage.",
-        "Cybersecurity typically refers to the protection of digital systems, networks, and data from attacks that originate in or travel through cyberspace."
+        "It protects information while it is stored, being processed, and moving across networks.",
+        "The practical goals are privacy, accuracy, and availability for authorized users.",
+        "It includes people, processes, policies, and technology—not only firewalls or antivirus.",
+        "A useful security definition should lead to concrete controls such as encryption, access control, backups, monitoring, and training."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where what is information security? affects users, data, or operations.",
-        "instructor_prompt": "How does this concept help us analyze the incident?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Information security (often abbreviated infosec ) is the practice of…",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for What Is Information Security?: What Is Information Security?, Information security (often abbreviated infosec ) is the practice of protecting information and information systems from unauthorized access, use, disclosure, disruption,…, The goal is to ensure that data remains private, accurate, and accessible to those who legitimately need it. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach What Is Information Security? using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "data lifecycle with storage processing transmission",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Information Security. Visual must match this exact concept: data lifecycle with storage processing transmission. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material",
+        "NIST Computer Security Resource Center Glossary — https://csrc.nist.gov/glossary"
+      ],
+      "example": "Encrypting a laptop protects stored information; MFA protects account access; backups protect availability after ransomware.",
+      "why_it_matters": "Information security turns abstract concern into decisions about what to protect and how."
     },
     {
       "number": 6,
-      "type": "concept",
-      "title": "What Is Information Assurance?",
-      "main_idea": "Information Assurance (IA) is a related but distinct concept.",
+      "type": "comparison",
+      "title": "Cybersecurity vs. Information Security",
+      "main_idea": "Cybersecurity is usually the digital-systems subset of a broader information-security mission.",
       "details": [
-        "Information Assurance (IA) is a related but distinct concept.",
-        "While information security focuses primarily on protecting data, information assurance is concerned with ensuring that information is trustworthy and usable when needed.",
-        "IA encompasses not only security controls but also reliability, accuracy, and the processes that guarantee confidence in information.",
-        "In practical terms, information assurance asks: Can I trust that this information is what it claims to be?"
+        "Cybersecurity focuses on networks, computers, software, cloud systems, devices, and digital attacks.",
+        "Information security also includes paper records, spoken information, physical files, human behavior, policy, and business processes.",
+        "The distinction matters because information can leak without a network attack: an unlocked office, misplaced printout, or overheard conversation can still be a security failure."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where what is information assurance? affects users, data, or operations.",
-        "instructor_prompt": "How would you recognize what is information assurance? in a real organization?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Information Assurance (IA) is a related but distinct concept.",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for What Is Information Assurance?: What Is Information Assurance?, Information Assurance (IA) is a related but distinct concept, While information security focuses primarily on protecting data, information assurance is concerned with ensuring that information is trustworthy and usable when needed. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach What Is Information Assurance? using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "nested circles: information security contains cybersecurity",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Cybersecurity vs. Information Security. Visual must match this exact concept: nested circles: information security contains cybersecurity. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material",
+        "CISA Cyber Essentials — https://www.cisa.gov/resources-tools/resources/cyber-essentials"
+      ],
+      "example": "A stolen database is cybersecurity and information security. A printed transcript left in a public hallway is information security even if no computer was hacked.",
+      "why_it_matters": "Professionals must protect information across its full lifecycle and all forms, not only inside computers."
     },
     {
       "number": 7,
-      "type": "application",
-      "title": "The CIA Triad",
-      "main_idea": "The most fundamental model in information security is the CIA Triad , which describes the three core properties that any secure information system must maintain.",
+      "type": "definition",
+      "title": "Information Assurance",
+      "main_idea": "Information assurance is about confidence: can users trust that information is available, accurate, authentic, confidential, and tied to accountable actions?",
       "details": [
-        "The most fundamental model in information security is the CIA Triad , which describes the three core properties that any secure information system must maintain.",
-        "The CIA Triad connects to risk, controls, and evidence.",
-        "The CIA Triad connects to risk, controls, and evidence."
+        "The reading expands assurance beyond protection to include authentication and non-repudiation.",
+        "Assurance depends on design, evidence, monitoring, auditing, continuity planning, and recovery capability.",
+        "A system may appear secure, but assurance asks whether there is proof that controls are operating correctly.",
+        "NIST and CISA guidance both emphasize governance, readiness, and repeatable practices—not one-time setup."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where the cia triad affects users, data, or operations.",
-        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The most fundamental model in information security is the CIA Triad ,…",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for The CIA Triad: The CIA Triad, The most fundamental model in information security is the CIA Triad , which describes the three core properties that any secure information system must maintain, The CIA Triad connects to risk, controls, and evidence. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach The CIA Triad using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "assurance seal over verified logs and backup",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Information Assurance. Visual must match this exact concept: assurance seal over verified logs and backup. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material",
+        "NIST Cybersecurity Framework 2.0 — https://www.nist.gov/cyberframework",
+        "CISA Cyber Essentials — https://www.cisa.gov/resources-tools/resources/cyber-essentials"
+      ],
+      "example": "A backup policy is security; test-restoring the backup and recording the result is assurance evidence.",
+      "why_it_matters": "Organizations need confidence before relying on information for medical, financial, government, or academic decisions."
     },
     {
       "number": 8,
-      "type": "evidence",
-      "title": "Confidentiality",
-      "main_idea": "Confidentiality ensures that information is accessible only to those authorized to access it.",
+      "type": "comparison",
+      "title": "Security vs. Assurance",
+      "main_idea": "Security protects; assurance verifies, sustains, and proves that protection remains trustworthy over time.",
       "details": [
-        "Confidentiality ensures that information is accessible only to those authorized to access it.",
-        "It prevents unauthorized disclosure.",
-        "Examples of confidentiality controls include encryption, access control lists, and user authentication.",
-        "A breach of confidentiality occurs when sensitive data — such as medical records, financial information, or trade secrets — is read or copied by an unauthorized party."
+        "Security question: what control reduces unauthorized disclosure, alteration, or denial?",
+        "Assurance question: how do we know that control is correctly implemented and still working?",
+        "Security often focuses on implementation; assurance adds measurement, governance, documentation, and accountability.",
+        "Both are required: a control without evidence is difficult to trust, and evidence without effective controls does not reduce risk."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where confidentiality affects users, data, or operations.",
-        "instructor_prompt": "How would you recognize confidentiality in a real organization?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Confidentiality ensures that information is accessible only to those…",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for Confidentiality: Confidentiality, Confidentiality ensures that information is accessible only to those authorized to access it, It prevents unauthorized disclosure. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Confidentiality using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "two-column protect versus prove diagram",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Security vs. Assurance. Visual must match this exact concept: two-column protect versus prove diagram. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material",
+        "NIST Cybersecurity Framework 2.0 — https://www.nist.gov/cyberframework"
+      ],
+      "example": "MFA reduces account takeover risk; logs showing MFA enrollment, failed login attempts, and periodic access reviews provide assurance.",
+      "why_it_matters": "Real organizations must defend systems and justify decisions to managers, auditors, regulators, and users."
     },
     {
       "number": 9,
-      "type": "definition",
-      "title": "Integrity",
-      "main_idea": "Integrity ensures that information is accurate and has not been tampered with or altered without authorization.",
+      "type": "model",
+      "title": "CIA Triad Overview",
+      "main_idea": "The CIA Triad is the classic model for the three core security properties: confidentiality, integrity, and availability.",
       "details": [
-        "Integrity ensures that information is accurate and has not been tampered with or altered without authorization.",
-        "It covers both accidental modification (such as a database error) and intentional manipulation (such as an attacker altering financial records).",
-        "Controls that protect integrity include checksums, digital signatures, version control, and write-protect mechanisms."
+        "Confidentiality asks: who is allowed to see this?",
+        "Integrity asks: is this accurate, complete, and unmodified?",
+        "Availability asks: can authorized users access it when needed?",
+        "Most incidents can be described as damage to one or more CIA properties."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where integrity affects users, data, or operations.",
-        "instructor_prompt": "What problem does integrity help us understand?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Integrity ensures that information is accurate and has not been…",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for Integrity: Integrity, Integrity ensures that information is accurate and has not been tampered with or altered without authorization, It covers both accidental modification (such as a database error) and intentional manipulation (such as an attacker altering financial records). Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Integrity using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "triangle with confidentiality integrity availability corners",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: CIA Triad Overview. Visual must match this exact concept: triangle with confidentiality integrity availability corners. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material"
+      ],
+      "example": "Ransomware can affect availability by locking files, confidentiality by stealing data before encryption, and integrity by modifying systems.",
+      "why_it_matters": "CIA gives students a compact way to classify what went wrong and what controls are needed."
     },
     {
       "number": 10,
       "type": "concept",
-      "title": "Availability",
-      "main_idea": "Availability ensures that systems and data are accessible and usable by authorized users when needed.",
+      "title": "Confidentiality",
+      "main_idea": "Confidentiality prevents unauthorized disclosure of information.",
       "details": [
-        "Availability ensures that systems and data are accessible and usable by authorized users when needed.",
-        "A system may be perfectly confidential and perfectly intact, but if it is offline when users need it, it has failed from a security perspective.",
-        "Availability is threatened by denial-of-service attacks, hardware failures, natural disasters, and ransomware.",
-        "Controls include redundancy, failover systems, backups, and disaster recovery planning."
+        "Sensitive information includes passwords, student records, health data, financial data, business plans, source code, and private communications.",
+        "Common threats include stolen credentials, misconfigured cloud storage, phishing, insider snooping, lost devices, and weak access control.",
+        "Controls include encryption, least privilege, MFA, access reviews, secure disposal, and data classification.",
+        "CISA Cyber Essentials emphasizes knowing who has access and using MFA, especially for privileged and remote users."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where availability affects users, data, or operations.",
-        "instructor_prompt": "How would you recognize availability in a real organization?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Availability ensures that systems and data are accessible and usable…",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for Availability: Availability, Availability ensures that systems and data are accessible and usable by authorized users when needed, A system may be perfectly confidential and perfectly intact, but if it is offline when users need it, it has failed from a security perspective. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Availability using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "locked document with authorized and blocked access paths",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Confidentiality. Visual must match this exact concept: locked document with authorized and blocked access paths. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material",
+        "CISA Cyber Essentials — https://www.cisa.gov/resources-tools/resources/cyber-essentials"
+      ],
+      "example": "A grade spreadsheet emailed to the wrong recipient is a confidentiality failure even if the file is not modified.",
+      "why_it_matters": "Confidentiality failures create legal, financial, reputational, and personal harm."
     },
     {
       "number": 11,
-      "type": "application",
-      "title": "The DAD Triad",
-      "main_idea": "The DAD Triad — Disclosure, Alteration, Denial — is the mirror image of the CIA Triad.",
+      "type": "concept",
+      "title": "Integrity",
+      "main_idea": "Integrity means information remains accurate, complete, and protected from unauthorized or accidental change.",
       "details": [
-        "The DAD Triad — Disclosure, Alteration, Denial — is the mirror image of the CIA Triad.",
-        "Rather than describing what security should preserve, the DAD Triad describes what attackers are trying to achieve .",
-        "Each attack maps to an attack on one of the CIA properties: - Disclosure is the opposite of Confidentiality — it represents unauthorized access to or release of sensitive…",
-        "- Alteration is the opposite of Integrity — it represents unauthorized modification of data."
+        "Integrity failures can be malicious, such as altering grades or payment instructions, or accidental, such as database corruption.",
+        "Controls include hashes, checksums, digital signatures, version control, database constraints, change approvals, and audit logs.",
+        "Integrity is not only about preventing change; it is also about detecting and proving whether a change occurred.",
+        "Evidence matters: logs and hashes help reconstruct what changed and when."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where the dad triad affects users, data, or operations.",
-        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The DAD Triad — Disclosure, Alteration, Denial — is the mirror image…",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for The DAD Triad: The DAD Triad, The DAD Triad — Disclosure, Alteration, Denial — is the mirror image of the CIA Triad, Rather than describing what security should preserve, the DAD Triad describes what attackers are trying to achieve . Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach The DAD Triad using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "file hash fingerprint comparing original and changed file",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Integrity. Visual must match this exact concept: file hash fingerprint comparing original and changed file. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material"
+      ],
+      "example": "If a student grade changes from 82 to 92 without authorization, the system has an integrity problem even if the record is still private and available.",
+      "why_it_matters": "Bad data can drive bad decisions: wrong medication, wrong payment, wrong grade, or wrong security response.",
+      "code": {
+        "label": "Tiny integrity demo",
+        "language": "bash",
+        "content": "sha256sum assignment.txt\n# Change the file, then run again.\n# A different hash means the contents changed."
+      }
     },
     {
       "number": 12,
-      "type": "evidence",
-      "title": "Why Security Matters",
-      "main_idea": "The consequences of inadequate security are significant, expensive, and sometimes catastrophic.",
+      "type": "concept",
+      "title": "Availability",
+      "main_idea": "Availability means authorized users can access systems and information when they need them.",
       "details": [
-        "The consequences of inadequate security are significant, expensive, and sometimes catastrophic.",
-        "Consider a few dimensions of impact: Financial loss is the most visible consequence.",
-        "The IBM Cost of a Data Breach Report consistently estimates the average global cost of a data breach at over $4 million USD per incident.",
-        "Organizations face direct costs from incident response, legal fees, fines, and customer notification, as well as indirect costs from reputational damage and loss of customer trust."
+        "Availability can be harmed by DDoS attacks, ransomware, hardware failure, expired certificates, power loss, bad updates, or cloud outages.",
+        "Controls include backups, redundancy, failover, monitoring, patch management, disaster recovery plans, and capacity planning.",
+        "Availability is a security property because a perfectly private and accurate system still fails users if it is unreachable.",
+        "CISA Cyber Essentials emphasizes protecting critical assets and preparing for crisis response."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where why security matters affects users, data, or operations.",
-        "instructor_prompt": "How would you recognize why security matters in a real organization?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: The consequences of inadequate security are significant, expensive,…",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for Why Security Matters: Why Security Matters, The consequences of inadequate security are significant, expensive, and sometimes catastrophic, Consider a few dimensions of impact: Financial loss is the most visible consequence. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Why Security Matters using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "service uptime monitor with redundant servers",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Availability. Visual must match this exact concept: service uptime monitor with redundant servers. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material",
+        "CISA Cyber Essentials — https://www.cisa.gov/resources-tools/resources/cyber-essentials"
+      ],
+      "example": "A hospital scheduling system that is offline during emergency operations creates real-world harm even if no data is stolen.",
+      "why_it_matters": "For many organizations, downtime means lost revenue, safety risk, missed deadlines, and loss of public trust.",
+      "code": {
+        "label": "Simple availability check",
+        "language": "bash",
+        "content": "ping -c 3 example.edu\n# Replies suggest network reachability; failures need diagnosis."
+      }
     },
     {
       "number": 13,
-      "type": "definition",
-      "title": "A Brief History of Computer Security",
-      "main_idea": "Understanding the history of computer security helps contextualize why today's threats and defenses evolved as they did.",
+      "type": "model",
+      "title": "DAD Triad: The Attacker’s Mirror",
+      "main_idea": "The DAD Triad describes attacker outcomes: disclosure, alteration, and denial—the opposites of confidentiality, integrity, and availability.",
       "details": [
-        "Understanding the history of computer security helps contextualize why today's threats and defenses evolved as they did.",
-        "1960s–1970s: Timesharing and Early Threats.",
-        "The first computer security concerns arose in the era of mainframes and timesharing systems, when multiple users accessed the same machine.",
-        "The threat model was primarily one of insider misbehavior — unauthorized access to other users' data."
+        "Disclosure violates confidentiality by exposing information to unauthorized parties.",
+        "Alteration violates integrity by changing information or system state without authorization.",
+        "Denial violates availability by preventing legitimate use.",
+        "DAD helps students translate incidents into attacker impact."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where a brief history of computer security affects users, data, or operations.",
-        "instructor_prompt": "What problem does a brief history of computer security help us understand?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Understanding the history of computer security helps contextualize…",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for A Brief History of Computer Security: A Brief History of Computer Security, Understanding the history of computer security helps contextualize why today's threats and defenses evolved as they did, 1960s–1970s: Timesharing and Early Threats. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach A Brief History of Computer Security using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "mirror diagram mapping CIA to DAD",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: DAD Triad: The Attacker’s Mirror. Visual must match this exact concept: mirror diagram mapping CIA to DAD. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material"
+      ],
+      "example": "A ransomware incident may involve disclosure through data theft, alteration through encrypted files, and denial through system outage.",
+      "why_it_matters": "Defenders preserve CIA; attackers try to create DAD. The paired model makes incident analysis easier."
     },
     {
       "number": 14,
-      "type": "concept",
-      "title": "Threat Actors",
-      "main_idea": "A threat actor (also called a threat agent) is any individual, group, or entity that has the potential, intent, and capability to cause harm to information systems.",
+      "type": "impact",
+      "title": "Why Security Matters",
+      "main_idea": "Security failures matter because they create real costs for people, organizations, and society.",
       "details": [
-        "A threat actor (also called a threat agent) is any individual, group, or entity that has the potential, intent, and capability to cause harm to information systems.",
-        "Understanding who the adversaries are — their motivations, resources, and methods — is critical to building appropriate defenses.",
-        "Threat Actors connects to risk, controls, and evidence."
+        "Financial impact includes incident response, legal fees, fines, customer notification, downtime, and lost trust.",
+        "Personal impact includes identity theft, exposure of medical records, privacy violations, and fraud.",
+        "National-security impact appears when critical infrastructure, elections, defense, or public services are targeted.",
+        "IBM’s 2025 breach report emphasizes that governance gaps—especially around fast AI adoption—can increase breach risk and cost."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where threat actors affects users, data, or operations.",
-        "instructor_prompt": "How would you recognize threat actors in a real organization?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: A threat actor (also called a threat agent) is any individual, group,…",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for Threat Actors: Threat Actors, A threat actor (also called a threat agent) is any individual, group, or entity that has the potential, intent, and capability to cause harm to information systems, Understanding who the adversaries are — their motivations, resources, and methods — is critical to building appropriate defenses. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Threat Actors using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "impact wheel: financial personal legal national trust",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Why Security Matters. Visual must match this exact concept: impact wheel: financial personal legal national trust. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material",
+        "IBM Cost of a Data Breach Report 2025 — https://www.ibm.com/reports/data-breach"
+      ],
+      "example": "A breach of a campus system could expose identities, interrupt services, require notification, trigger investigation, and damage trust in institutional systems.",
+      "why_it_matters": "Security is not just a technical preference; it is risk management for real harm."
     },
     {
       "number": 15,
-      "type": "application",
-      "title": "Script Kiddies",
-      "main_idea": "Script kiddies are low-skill attackers who use pre-built tools and exploit code created by others, with little understanding of the underlying technology.",
+      "type": "timeline",
+      "title": "A Brief History of Computer Security",
+      "main_idea": "Computer security evolved as computing moved from shared mainframes to personal computers, the internet, organized cybercrime, cloud services, and AI-enabled systems.",
       "details": [
-        "Script kiddies are low-skill attackers who use pre-built tools and exploit code created by others, with little understanding of the underlying technology.",
-        "They are typically motivated by curiosity, notoriety, or vandalism.",
-        "While individually unsophisticated, they represent a significant volume of attack traffic due to their large numbers and the easy availability of attack tools."
+        "1960s–1970s: timesharing raised early questions about user separation and unauthorized access.",
+        "1980s: PC malware and the Morris Worm showed that self-replicating code could disrupt connected systems.",
+        "1990s: the web and email expanded attack surfaces and fraud opportunities.",
+        "2000s–present: organized cybercrime, ransomware, nation-state operations, cloud, mobile, IoT, and supply-chain attacks changed the scale of risk."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where script kiddies affects users, data, or operations.",
-        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Script kiddies are low-skill attackers who use pre-built tools and…",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for Script Kiddies: Script Kiddies, Script kiddies are low-skill attackers who use pre-built tools and exploit code created by others, with little understanding of the underlying technology, They are typically motivated by curiosity, notoriety, or vandalism. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Script Kiddies using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "timeline from mainframe to cloud and AI",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: A Brief History of Computer Security. Visual must match this exact concept: timeline from mainframe to cloud and AI. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material"
+      ],
+      "example": "The Morris Worm is often used as an early lesson in how software flaws, trust assumptions, and network connectivity can turn a mistake into widespread disruption.",
+      "why_it_matters": "History shows that security problems follow technology adoption: every new platform creates new attack surfaces."
     },
     {
       "number": 16,
-      "type": "evidence",
-      "title": "Hacktivists",
-      "main_idea": "Hacktivists are actors motivated by political, social, or ideological causes.",
+      "type": "actors",
+      "title": "Threat Actors: Capability, Intent, Opportunity",
+      "main_idea": "A threat actor is any person, group, or entity with the potential to harm information systems.",
       "details": [
-        "Hacktivists are actors motivated by political, social, or ideological causes.",
-        "Groups like Anonymous have conducted high-profile attacks against governments, corporations, and organizations they perceive as adversarial to their cause.",
-        "Their tools are often disruptive rather than financially motivated — website defacement and distributed denial-of-service (DDoS) attacks are common."
+        "Capability means the actor has tools, skills, access, or resources.",
+        "Intent means the actor has a reason to act: money, ideology, coercion, ego, espionage, revenge, or negligence.",
+        "Opportunity means a weakness is reachable: exposed service, weak password, unlocked device, misconfiguration, or trusted access.",
+        "Defenses should match the actor: a control that stops casual misuse may not stop a well-funded APT."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where hacktivists affects users, data, or operations.",
-        "instructor_prompt": "How would you recognize hacktivists in a real organization?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Hacktivists are actors motivated by political, social, or ideological…",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for Hacktivists: Hacktivists, Hacktivists are actors motivated by political, social, or ideological causes, Groups like Anonymous have conducted high-profile attacks against governments, corporations, and organizations they perceive as adversarial to their cause. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Hacktivists using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "threat actor radar chart capability intent opportunity",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Threat Actors: Capability, Intent, Opportunity. Visual must match this exact concept: threat actor radar chart capability intent opportunity. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material"
+      ],
+      "example": "A weak password creates opportunity for many actors, but a nation-state and a script kiddie differ greatly in patience, tools, and target selection.",
+      "why_it_matters": "Threat modeling becomes clearer when students ask who might attack, why, and with what capability."
     },
     {
       "number": 17,
-      "type": "definition",
-      "title": "Cybercriminals",
-      "main_idea": "Organized criminal groups operate sophisticated technical operations aimed at financial gain.",
+      "type": "actors",
+      "title": "Common Threat Actor Profiles",
+      "main_idea": "Different threat actors behave differently because their skills, goals, and resources differ.",
       "details": [
-        "Organized criminal groups operate sophisticated technical operations aimed at financial gain.",
-        "They engage in ransomware deployment, credential theft, business email compromise (BEC), banking fraud, and the operation of dark-web marketplaces for stolen data.",
-        "These groups may operate like businesses, with specialized roles, customer service, and affiliate programs."
+        "Script kiddies use existing tools with limited understanding and often seek curiosity, disruption, or status.",
+        "Hacktivists use cyber actions to advance political, social, or ideological goals.",
+        "Cybercriminals pursue profit through ransomware, credential theft, fraud, extortion, and stolen-data markets.",
+        "These actors often reuse known vulnerabilities, leaked credentials, and social engineering because those methods scale."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where cybercriminals affects users, data, or operations.",
-        "instructor_prompt": "What problem does cybercriminals help us understand?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Organized criminal groups operate sophisticated technical operations…",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for Cybercriminals: Cybercriminals, Organized criminal groups operate sophisticated technical operations aimed at financial gain, They engage in ransomware deployment, credential theft, business email compromise (BEC), banking fraud, and the operation of dark-web marketplaces for stolen data. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Cybercriminals using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "three actor cards with tools motives targets",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Common Threat Actor Profiles. Visual must match this exact concept: three actor cards with tools motives targets. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material"
+      ],
+      "example": "A phishing kit sold online may allow low-skill attackers to steal credentials without understanding the underlying web or authentication technology.",
+      "why_it_matters": "Knowing the profile helps predict likely tactics and prioritize controls."
     },
     {
       "number": 18,
-      "type": "concept",
-      "title": "Insider Threats",
-      "main_idea": "Insider threats originate from within the organization — current or former employees, contractors, or business partners who have or had legitimate access to systems.",
+      "type": "actors",
+      "title": "Insiders and Nation-State/APT Actors",
+      "main_idea": "Some of the hardest threats come from trusted access or patient, well-funded adversaries.",
       "details": [
-        "Insider threats originate from within the organization — current or former employees, contractors, or business partners who have or had legitimate access to systems.",
-        "Insiders may act with malicious intent (stealing data for personal gain or to harm the organization) or negligently (accidentally causing breaches through careless behavior).",
-        "The 2013 Edward Snowden leak of NSA documents is perhaps the most famous example of an insider threat."
+        "Insider threats come from employees, contractors, vendors, or partners with legitimate access; harm may be malicious or negligent.",
+        "Nation-state actors may pursue espionage, strategic advantage, sabotage, or influence operations.",
+        "Advanced Persistent Threats are long-term, targeted campaigns that prioritize stealth and persistence.",
+        "Controls must include least privilege, monitoring, segmentation, logging, and incident response readiness."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where insider threats affects users, data, or operations.",
-        "instructor_prompt": "How would you recognize insider threats in a real organization?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Insider threats originate from within the organization — current or…",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for Insider Threats: Insider Threats, Insider threats originate from within the organization — current or former employees, contractors, or business partners who have or had legitimate access to systems, Insiders may act with malicious intent (stealing data for personal gain or to harm the organization) or negligently (accidentally causing breaches through careless behavior). Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Insider Threats using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "insider badge and external APT path converging on assets",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Insiders and Nation-State/APT Actors. Visual must match this exact concept: insider badge and external APT path converging on assets. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material"
+      ],
+      "example": "An employee copying customer data to a personal drive is an insider risk; a long-term stealth campaign against a supplier may indicate APT-style behavior.",
+      "why_it_matters": "Perimeter defenses are not enough when the actor may already have access or time to adapt."
     },
     {
       "number": 19,
-      "type": "application",
-      "title": "Nation-States and Advanced Persistent Threats (APTs)",
-      "main_idea": "Nation-state actors are well-funded, highly skilled groups operating on behalf of governments.",
+      "type": "motivation",
+      "title": "Attack Motivations: MICE",
+      "main_idea": "MICE summarizes common motivations: Money, Ideology, Coercion, and Ego.",
       "details": [
-        "Nation-state actors are well-funded, highly skilled groups operating on behalf of governments.",
-        "Their objectives range from espionage and intelligence collection to sabotage and strategic disruption.",
-        "Advanced Persistent Threats (APTs) are long-term, targeted intrusion campaigns characterized by stealthy, slow operations designed to avoid detection.",
-        "Notable examples include APT28 (Fancy Bear, attributed to Russian intelligence) and APT41 (attributed to Chinese state-sponsored hackers)."
+        "Money drives ransomware, fraud, credential theft, extortion, and data resale.",
+        "Ideology drives hacktivism, defacement, leaks, and disruption for a cause.",
+        "Coercion appears when someone acts under pressure, blackmail, or threat.",
+        "Ego drives bragging, revenge, status seeking, or the thrill of access.",
+        "Motivation helps estimate what the actor may target and how persistent they may be."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where nation-states and advanced persistent threats (apts) affects users, data, or operations.",
-        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Nation-state actors are well-funded, highly skilled groups operating…",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for Nation-States and Advanced Persistent Threats (APTs): Nation-States and Advanced Persistent Threats (APTs), Nation-state actors are well-funded, highly skilled groups operating on behalf of governments, Their objectives range from espionage and intelligence collection to sabotage and strategic disruption. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Nation-States and Advanced Persistent Threats (APTs) using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "MICE motivation matrix with examples",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Attack Motivations: MICE. Visual must match this exact concept: MICE motivation matrix with examples. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material"
+      ],
+      "example": "A ransomware group usually wants money; a hacktivist group may want attention; an insider may be motivated by revenge, coercion, or financial gain.",
+      "why_it_matters": "Motivation changes likely targets, timing, tactics, and negotiation behavior."
     },
     {
       "number": 20,
-      "type": "evidence",
-      "title": "Attack Motivations",
-      "main_idea": "Understanding why attackers do what they do is as important as understanding what they do.",
+      "type": "mindset",
+      "title": "The Security Mindset",
+      "main_idea": "The security mindset means looking at systems through failure, abuse, and trust assumptions—not only through intended use.",
       "details": [
-        "Understanding why attackers do what they do is as important as understanding what they do.",
-        "Nation-states are motivated by a combination of ideology, strategic advantage, and coercion.",
-        "Hacktivists are primarily motivated by ideology.",
-        "Understanding motivation helps predict targeting and behavior."
+        "Adversarial thinking asks: how could this be misused?",
+        "Skepticism treats inputs, identities, and assumptions as things to verify.",
+        "Failure-mode thinking asks what happens when a control breaks or a user makes a mistake.",
+        "Defense in depth assumes no single control is perfect.",
+        "Proportionality balances risk reduction against cost, complexity, and usability."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where attack motivations affects users, data, or operations.",
-        "instructor_prompt": "How would you recognize attack motivations in a real organization?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Understanding why attackers do what they do is as important as…",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for Attack Motivations: Attack Motivations, Understanding why attackers do what they do is as important as understanding what they do, Nation-states are motivated by a combination of ideology, strategic advantage, and coercion. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Attack Motivations using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "system diagram with intended path and abuse path",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: The Security Mindset. Visual must match this exact concept: system diagram with intended path and abuse path. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material"
+      ],
+      "example": "A login form should be designed not only for correct passwords, but also for guessing attacks, stolen credentials, error-message leaks, lockout abuse, and logging.",
+      "why_it_matters": "Security professionals find problems by asking different questions than ordinary users or developers."
     },
     {
       "number": 21,
-      "type": "definition",
-      "title": "The Security Mindset",
-      "main_idea": "Effective security practitioners develop a distinctive way of thinking about systems — one that differs from how developers or end users typically think.",
+      "type": "risk",
+      "title": "Risk = Threat × Vulnerability × Impact",
+      "main_idea": "Risk is the potential for loss when a threat can exploit a vulnerability and cause impact.",
       "details": [
-        "Effective security practitioners develop a distinctive way of thinking about systems — one that differs from how developers or end users typically think.",
-        "This security mindset involves: - Adversarial thinking: Always asking \"How could an attacker exploit this?\" rather than \"How will a legitimate user use this?\" - Skepticism:…",
-        "- Thinking in failure modes: Considering what happens when controls fail, not just when they succeed.",
-        "- Defense in depth: Assuming no single control will be sufficient and layering multiple defenses."
+        "Threat: what harmful event or actor could occur?",
+        "Vulnerability: what weakness could be exploited?",
+        "Impact: how severe is the harm if exploitation succeeds?",
+        "The formula is conceptual, not exact arithmetic, but it forces structured thinking.",
+        "Risk can be reduced by lowering likelihood, removing vulnerability, or reducing impact."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where the security mindset affects users, data, or operations.",
-        "instructor_prompt": "What problem does the security mindset help us understand?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Effective security practitioners develop a distinctive way of…",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for The Security Mindset: The Security Mindset, Effective security practitioners develop a distinctive way of thinking about systems — one that differs from how developers or end users typically think, This security mindset involves: - Adversarial thinking: Always asking \"How could an attacker exploit this?\" rather than \"How will a legitimate user use this?\" - Skepticism:…. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach The Security Mindset using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "risk equation cards multiplying threat vulnerability impact",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Risk = Threat × Vulnerability × Impact. Visual must match this exact concept: risk equation cards multiplying threat vulnerability impact. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material"
+      ],
+      "example": "An internet-facing unpatched server with sensitive customer data has high risk because threat likelihood, exploitable vulnerability, and impact are all significant.",
+      "why_it_matters": "Risk thinking prevents random control selection. It connects security spending to actual harm reduction.",
+      "code": {
+        "label": "Simple risk scoring idea",
+        "language": "text",
+        "content": "risk_score = threat_likelihood × vulnerability_exposure × impact\nUse it to compare scenarios, not as perfect math."
+      }
     },
     {
       "number": 22,
-      "type": "concept",
-      "title": "Risk Management Basics",
-      "main_idea": "Risk is the potential for loss or damage when a threat exploits a vulnerability.",
+      "type": "risk",
+      "title": "Risk Treatment Options",
+      "main_idea": "After identifying risk, organizations choose how to handle it: avoid, mitigate, transfer, or accept.",
       "details": [
-        "Risk is the potential for loss or damage when a threat exploits a vulnerability.",
-        "A foundational formula in risk management is: Risk = Threat × Vulnerability × Impact - Threat is the likelihood that a specific type of attack or adverse event will occur.",
-        "- Vulnerability is a weakness in a system that could be exploited.",
-        "- Impact is the magnitude of harm if the threat is realized."
+        "Avoid: stop the risky activity entirely.",
+        "Mitigate: reduce likelihood or impact with controls.",
+        "Transfer: shift some financial impact to another party, such as insurance or a service provider contract.",
+        "Accept: document the risk and choose not to act when it is low or treatment cost is disproportionate.",
+        "Good risk decisions should be explicit, not accidental."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where risk management basics affects users, data, or operations.",
-        "instructor_prompt": "How would you recognize risk management basics in a real organization?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Risk is the potential for loss or damage when a threat exploits a…",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for Risk Management Basics: Risk Management Basics, Risk is the potential for loss or damage when a threat exploits a vulnerability, A foundational formula in risk management is: Risk = Threat × Vulnerability × Impact - Threat is the likelihood that a specific type of attack or adverse event will occur. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Risk Management Basics using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "four-way risk treatment decision board",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Risk Treatment Options. Visual must match this exact concept: four-way risk treatment decision board. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material",
+        "NIST Cybersecurity Framework 2.0 — https://www.nist.gov/cyberframework"
+      ],
+      "example": "Turning off an unused exposed service avoids risk; patching it mitigates risk; cyber insurance transfers some financial risk; documenting a low-risk issue accepts it.",
+      "why_it_matters": "Security teams rarely eliminate all risk. They help organizations choose defensible treatment strategies."
     },
     {
       "number": 23,
-      "type": "application",
-      "title": "Types of Security Controls",
-      "main_idea": "Security controls are safeguards or countermeasures implemented to reduce risk.",
+      "type": "controls",
+      "title": "Control Functions: Preventive, Detective, Corrective",
+      "main_idea": "Controls reduce risk by stopping incidents, finding incidents, or helping recover from incidents.",
       "details": [
-        "Security controls are safeguards or countermeasures implemented to reduce risk.",
-        "They are categorized in several ways.",
-        "- Technical/Logical controls: Software and hardware mechanisms — firewalls, encryption, authentication systems.",
-        "- Physical controls: Tangible barriers — locks, fences, guards, surveillance cameras."
+        "Preventive controls stop or block unwanted events: MFA, encryption, firewall rules, secure configuration.",
+        "Detective controls reveal events or suspicious activity: logs, IDS alerts, monitoring, file integrity checks.",
+        "Corrective controls limit damage and restore operations: backups, patches, account resets, incident response procedures.",
+        "Strong programs combine all three because prevention eventually fails."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where types of security controls affects users, data, or operations.",
-        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Security controls are safeguards or countermeasures implemented to…",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for Types of Security Controls: Types of Security Controls, Security controls are safeguards or countermeasures implemented to reduce risk, They are categorized in several ways. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Types of Security Controls using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "three-layer control pipeline prevent detect correct",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Control Functions: Preventive, Detective, Corrective. Visual must match this exact concept: three-layer control pipeline prevent detect correct. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material",
+        "CISA Cyber Essentials — https://www.cisa.gov/resources-tools/resources/cyber-essentials"
+      ],
+      "example": "For phishing: MFA is preventive, suspicious-login alerts are detective, password reset and session revocation are corrective.",
+      "why_it_matters": "Classifying controls helps students understand what a defense actually does."
     },
     {
       "number": 24,
-      "type": "evidence",
-      "title": "The Security Lifecycle",
-      "main_idea": "Security is not a one-time project; it is an ongoing process.",
+      "type": "controls",
+      "title": "Control Layers: Administrative, Technical, Physical",
+      "main_idea": "Controls also differ by implementation layer: policy and process, technology, or physical protection.",
       "details": [
-        "Security is not a one-time project; it is an ongoing process.",
-        "The security lifecycle (sometimes represented as a cycle) includes the following phases: 1.",
-        "Identify — understand assets, threats, vulnerabilities, and risks 2.",
-        "Protect — implement controls to defend against identified risks 3."
+        "Administrative controls include policies, training, hiring procedures, acceptable-use rules, and incident response plans.",
+        "Technical controls include authentication, encryption, access control, endpoint protection, logging, and network segmentation.",
+        "Physical controls include locks, cameras, guards, badges, secure rooms, and cable locks.",
+        "Effective defense in depth uses multiple layers because one layer alone is fragile."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where the security lifecycle affects users, data, or operations.",
-        "instructor_prompt": "How would you recognize the security lifecycle in a real organization?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Security is not a one-time project; it is an ongoing process.",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for The Security Lifecycle: The Security Lifecycle, Security is not a one-time project; it is an ongoing process, The security lifecycle (sometimes represented as a cycle) includes the following phases: 1. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach The Security Lifecycle using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "stacked layers administrative technical physical",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Control Layers: Administrative, Technical, Physical. Visual must match this exact concept: stacked layers administrative technical physical. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material",
+        "CISA Cyber Essentials — https://www.cisa.gov/resources-tools/resources/cyber-essentials"
+      ],
+      "example": "Protecting a server room may require badge policy, access-control logs, locked doors, cameras, and system authentication—not just one control.",
+      "why_it_matters": "A technically strong system can still fail if physical access or organizational process is weak."
     },
     {
       "number": 25,
-      "type": "vocabulary",
-      "title": "Key terms to keep",
-      "main_idea": "Vocabulary becomes useful when students can connect terms to scenarios and evidence.",
+      "type": "lifecycle",
+      "title": "Security Lifecycle and NIST CSF 2.0",
+      "main_idea": "Security is a continuous lifecycle, not a one-time project. NIST CSF 2.0 organizes cybersecurity outcomes around Govern, Identify, Protect, Detect, Respond, and Recover.",
       "details": [
-        "What Is Information Security?",
-        "What Is Information Assurance?",
-        "The CIA Triad",
-        "Confidentiality"
+        "Govern sets strategy, accountability, policy, and risk management direction.",
+        "Identify understands assets, dependencies, threats, vulnerabilities, and risk.",
+        "Protect implements safeguards to reduce likelihood or impact.",
+        "Detect finds possible cybersecurity events.",
+        "Respond contains and manages incidents; Recover restores operations and improves resilience.",
+        "The cycle repeats because threats, systems, and business needs change."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where key terms to keep affects users, data, or operations.",
-        "instructor_prompt": "How would you recognize key terms to keep in a real organization?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: What Is Information Security?",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for Key terms to keep: Key terms to keep, What Is Information Security?, What Is Information Assurance?. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Key terms to keep using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "six-step circular lifecycle with NIST CSF labels",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Security Lifecycle and NIST CSF 2.0. Visual must match this exact concept: six-step circular lifecycle with NIST CSF labels. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material",
+        "NIST Cybersecurity Framework 2.0 — https://www.nist.gov/cyberframework"
+      ],
+      "example": "A school system identifies student-record assets, protects them with access control, detects suspicious logins, responds to compromised accounts, recovers affected services, and updates policy under governance.",
+      "why_it_matters": "The framework gives students a professional vocabulary used by organizations beyond this course."
     },
     {
       "number": 26,
-      "type": "comparison",
-      "title": "Compare: What Is Information Security? vs. What Is Information Assurance?",
-      "main_idea": "Comparing related ideas helps students avoid shallow memorization.",
+      "type": "scenario",
+      "title": "Student Scenario: Classify the Incident",
+      "main_idea": "Apply the Week 01 toolkit to a realistic incident instead of memorizing terms in isolation.",
       "details": [
-        "Where What Is Information Security? applies.",
-        "Where What Is Information Assurance? applies.",
-        "How the difference changes the security decision."
+        "Scenario: a staff member receives a phishing email, enters credentials into a fake page, and an attacker downloads a spreadsheet of student records.",
+        "Asset: student records and account credentials.",
+        "CIA impact: confidentiality is violated; integrity and availability may also be at risk if the attacker changes or deletes data.",
+        "Threat actor: likely cybercriminal unless evidence suggests another motive.",
+        "Controls: MFA, phishing-resistant training, login anomaly detection, least privilege, access review, and incident response.",
+        "Evidence: sign-in logs, MFA logs, email headers, file access logs, affected-account timeline."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where compare: what is information security? vs. what is information assurance? affects users, data, or operations.",
-        "instructor_prompt": "How would you recognize compare: what is information security? vs. what is information assurance? in a real organization?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Where What Is Information Security? applies.",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for Compare: What Is Information Security? vs. What Is Information Assurance?: Compare: What Is Information Security? vs. What Is Information Assurance?, Where What Is Information Security? applies, Where What Is Information Assurance? applies. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Compare: What Is Information Security? vs. What Is Information Assurance? using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "incident analysis worksheet with asset CIA actor controls evidence",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Student Scenario: Classify the Incident. Visual must match this exact concept: incident analysis worksheet with asset CIA actor controls evidence. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material",
+        "CISA Cyber Essentials — https://www.cisa.gov/resources-tools/resources/cyber-essentials"
+      ],
+      "why_it_matters": "Scenario practice builds the habit of moving from vocabulary to analysis.",
+      "self_check": "Can you identify DAD impact, risk treatment, and at least one preventive, detective, and corrective control for this scenario?"
     },
     {
       "number": 27,
-      "type": "application",
-      "title": "Applied decision checkpoint",
-      "main_idea": "Students should translate concepts into a defensible security decision.",
+      "type": "careers",
+      "title": "Cybersecurity Career Paths",
+      "main_idea": "Week 01 concepts appear in many security roles, from technical operations to governance and leadership.",
       "details": [
-        "Identify the asset or process at risk.",
-        "Choose a preventive, detective, or corrective control.",
-        "Explain what evidence would prove the control is working."
+        "Security Analyst: monitors alerts, investigates suspicious activity, and supports response.",
+        "Penetration Tester: performs authorized testing to find weaknesses before attackers do.",
+        "Security Engineer: builds and maintains secure systems and infrastructure.",
+        "Incident Responder / Forensic Analyst: investigates incidents, preserves evidence, and identifies root cause.",
+        "Security Architect: designs security posture across systems.",
+        "CISO and GRC roles connect security to risk, policy, compliance, and executive decisions.",
+        "ISC2’s 2025 study emphasizes demand for both technical and nontechnical skills, including incident response, security engineering, risk, cloud, AI, and GRC."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where applied decision checkpoint affects users, data, or operations.",
-        "instructor_prompt": "If this issue appeared in a campus or business system, what evidence would you collect first?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Identify the asset or process at risk.",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for Applied decision checkpoint: Applied decision checkpoint, Identify the asset or process at risk, Choose a preventive, detective, or corrective control. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Applied decision checkpoint using evidence, scenario reasoning, and a concrete security takeaway."
+      "visual_mode": "line_art",
+      "visual_kind": "career pathway map from foundations to roles",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Cybersecurity Career Paths. Visual must match this exact concept: career pathway map from foundations to roles. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material",
+        "ISC2 Cybersecurity Workforce Study 2025 — https://www.isc2.org/Insights/2025/12/2025-ISC2-Cybersecurity-Workforce-Study"
+      ],
+      "example": "The same CIA/risk/control vocabulary is used in SOC tickets, penetration test reports, architecture reviews, audits, and executive risk briefings.",
+      "why_it_matters": "A strong foundation helps students move toward certifications and roles such as Security+, CEH, CISSP, OSCP, analyst, engineer, responder, or GRC analyst."
     },
     {
       "number": 28,
-      "type": "review",
-      "title": "Review questions",
-      "main_idea": "Retrieval practice should ask students to define, compare, apply, and evaluate.",
+      "type": "summary",
+      "title": "Week 01 Takeaway",
+      "main_idea": "Security is a process for preserving trust in information under uncertainty, attack, failure, and change.",
       "details": [
-        "Define one core concept in plain language.",
-        "Compare two controls or threats from the week.",
-        "Apply one idea to a campus or business system.",
-        "Evaluate why a solution might fail in practice."
+        "Start every analysis with assets and context.",
+        "Use CIA to name defender goals and DAD to name attacker outcomes.",
+        "Estimate risk through threat, vulnerability, and impact.",
+        "Choose controls by function and layer, then look for evidence that they work.",
+        "Use the lifecycle mindset: Govern, Identify, Protect, Detect, Respond, Recover.",
+        "Keep building the security mindset: ask what can fail, who could abuse it, and what proof would increase confidence."
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where review questions affects users, data, or operations.",
-        "instructor_prompt": "What is the one sentence takeaway for review questions?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Define one core concept in plain language.",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for Review questions: Review questions, Define one core concept in plain language, Compare two controls or threats from the week. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Review questions using evidence, scenario reasoning, and a concrete security takeaway."
-    },
-    {
-      "number": 29,
-      "type": "bridge",
-      "title": "Bridge to lab and assessment",
-      "main_idea": "The reading should transfer into evidence-based lab work and written explanations.",
-      "details": [
-        "Collect evidence, not just screenshots.",
-        "Explain what the artifact proves.",
-        "Connect the proof back to risk and control selection."
+      "visual_mode": "line_art",
+      "visual_kind": "summary constellation connecting CIA DAD risk controls lifecycle careers",
+      "visual_prompt": "Technical line-art design for SCIA 120 Week 01 slide: Week 01 Takeaway. Visual must match this exact concept: summary constellation connecting CIA DAD risk controls lifecycle careers. No conversational scenes, no people chatting, no photorealism.",
+      "sources": [
+        "SCIA 120 Chapter 1 reading material",
+        "NIST Cybersecurity Framework 2.0 — https://www.nist.gov/cyberframework",
+        "CISA Cyber Essentials — https://www.cisa.gov/resources-tools/resources/cyber-essentials"
       ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where bridge to lab and assessment affects users, data, or operations.",
-        "instructor_prompt": "How would you recognize bridge to lab and assessment in a real organization?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Collect evidence, not just screenshots.",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for Bridge to lab and assessment: Bridge to lab and assessment, Collect evidence, not just screenshots, Explain what the artifact proves. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Bridge to lab and assessment using evidence, scenario reasoning, and a concrete security takeaway."
-    },
-    {
-      "number": 30,
-      "type": "closing",
-      "title": "Takeaway",
-      "main_idea": "The central takeaway from Week 1 is to reason from risk to evidence to action.",
-      "details": [
-        "Introduction to Information Security and Information Assurance",
-        "Security is a decision process, not just a tool list.",
-        "Use the reading to justify practical choices."
-      ],
-      "classroom_dialog": {
-        "scenario": "A campus technology team is reviewing a realistic Week 1 incident where takeaway affects users, data, or operations.",
-        "instructor_prompt": "How would you recognize takeaway in a real organization?",
-        "student_response": "This concept helps us decide what is at risk, what evidence to check, and which control would reduce harm. For this slide, the key clue is: Introduction to Information Security and Information Assurance",
-        "teaching_point": "Push the answer beyond a definition: name the asset, identify the risk, choose evidence, and justify a practical control."
-      },
-      "visual_prompt": "Line-art explanatory scene for Takeaway: Takeaway, Introduction to Information Security and Information Assurance, Security is a decision process, not just a tool list. Use labels, arrows, and security-control symbols.",
-      "visual_mode": "dialog_plus_line_art",
-      "speaker_goal": "Teach Takeaway using evidence, scenario reasoning, and a concrete security takeaway."
+      "why_it_matters": "These concepts are the foundation for the rest of SCIA 120.",
+      "self_check": "Explain one recent security incident using: asset, CIA impact, DAD impact, threat actor, motivation, vulnerability, impact, controls, and assurance evidence."
     }
   ]
 }

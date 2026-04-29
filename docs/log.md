@@ -42,3 +42,8 @@
 - Each deck has 30 slides, cover author line for Dr. Zhijiang Chen (Frostburg State University), an overall page, AI-generated SVG line-art concept visuals, review prompts, and launchable HTML.
 - Updated `scia-120/presentations/index.md` as the overall presentation page with links to all 15 presentations.
 - Created 15 wrapper pages with brief descriptions, launch links, reading links, and iframe previews.
+## [2026-04-29] update | SCIA 120 Week 01 presentation revised
+- Updated `scia-120/presentations/_content/week-01.json` with detailed student-facing content aligned to Chapter 1.
+- Updated `scia-120/presentations/week-01-deck/index.html` to remove dialog/teaching-tip material and add topic-matched technical line-art visuals.
+- Updated `scia-120/presentations/week-01.md` wrapper brief.
+- Enriched Week 01 concepts with credible references including NIST CSF 2.0, CISA Cyber Essentials, IBM Cost of a Data Breach Report 2025, and ISC2 Cybersecurity Workforce Study 2025.
