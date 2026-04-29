@@ -47,3 +47,7 @@
 - Updated `scia-120/presentations/week-01-deck/index.html` to remove dialog/teaching-tip material and add topic-matched technical line-art visuals.
 - Updated `scia-120/presentations/week-01.md` wrapper brief.
 - Enriched Week 01 concepts with credible references including NIST CSF 2.0, CISA Cyber Essentials, IBM Cost of a Data Breach Report 2025, and ISC2 Cybersecurity Workforce Study 2025.
+## [2026-04-29] update | SCIA 120 Week 01 presentation card layout
+- Updated `scia-120/presentations/_content/week-01.json` to remove dialog-related visual-prompt residue.
+- Updated `scia-120/presentations/week-01-deck/index.html` with title/body cards for each key point and topic-related slide backgrounds.
+- Updated `scia-120/presentations/week-01.md` and the presentation index to remove stale dialog wording.

@@ -11,7 +11,7 @@ sources: []
 
 <style>.presentation-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.2rem;margin-top:1.5rem}.presentation-card{border:1px solid rgba(63,81,181,.24);border-radius:14px;padding:1.1rem 1.2rem;background:var(--md-default-bg-color);box-shadow:0 8px 24px rgba(0,0,0,.06)}.presentation-card h3{margin:0 0 .65rem 0!important;line-height:1.25}.presentation-card p{margin:0 0 1rem 0}.presentation-actions{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:.8rem}.presentation-actions .md-button{margin:0!important}</style>
 
-Magazine-style, tech-dark HTML presentations generated from the **SCIA 120 reading materials**. Each weekly presentation has 30 slides, slide-specific classroom dialog, and AI-generated SVG line-art concept visuals.
+Magazine-style, tech-dark HTML presentations generated from the **SCIA 120 reading materials**. Each weekly presentation has 30 slides, card-based key points, topic-related cybersecurity backgrounds, and slide-specific SVG line-art concept visuals.
 
 Author shown on each cover page: **Dr. Zhijiang Chen (Frostburg State University)**.
 

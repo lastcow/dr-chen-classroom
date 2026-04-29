@@ -9,7 +9,7 @@ sources: [scia-120/chapter-01.md]
 
 # Week 01 Presentation — Introduction to Information Security and Information Assurance
 
-**Brief:** This student-facing Week 01 deck explains the key ideas from the SCIA 120 reading material in detail: information security, information assurance, CIA/DAD triads, threat actors, attacker motivations, risk, controls, the security lifecycle, NIST CSF 2.0, and career paths. It includes source-backed enrichment from credible cybersecurity resources, applied examples, self-check prompts, and slide-specific technical line-art visuals.
+**Brief:** This student-facing Week 01 deck uses a card-based layout: each slide presents key points as title/body cards over topic-related cybersecurity backgrounds, with applied examples, source-backed explanations, self-check prompts, and slide-specific technical visuals. It contains only student-facing content.
 
 **Source reading:** [Week 01 Reading Material](/scia-120/chapter-01/)  
 **Key concepts:** Information Security, Cybersecurity, Information Assurance, CIA Triad, DAD Triad, Threat Actors, MICE, Risk, Controls, NIST CSF 2.0, Careers
