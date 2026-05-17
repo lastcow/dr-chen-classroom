@@ -110,9 +110,14 @@ markdown_extensions:
   - md_in_html
   - tables
   - footnotes
+  - pymdownx.arithmatex:
+      generic: true
   - toc:
       permalink: true
       title: On this page
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 copyright: "&copy; 2026 Dr. Chen &nbsp;|&nbsp; Frostburg State University &nbsp;|&nbsp; Department of Computer Science &amp; IT"
 
@@ -353,6 +358,11 @@ nav:
       - Lab 11 - Corporate Portal Design: itec-442/labs/lab-11.md
       - Lab 12 - E-Government Service Analysis: itec-442/labs/lab-12.md
       - Lab 13 - Capstone Mini E-Commerce System: itec-442/labs/lab-13.md
+
+  - 💲 Engineering Economics:
+    - Overview: eng-econ/index.md
+    - Lectures:
+      - "Lecture 3 — Time Value of Money": eng-econ/lecture-03.md
 
   - 🐘 ITEC-445:
     - Overview: itec-445/index.md

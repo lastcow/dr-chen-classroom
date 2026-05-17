@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Lecture 3 — Time Value of Money · Engineering Economics</title>
+
+  <!-- Reveal.js core -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+
+  <!-- Editorial-academic typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --ink:        #131524;
+      --ink-soft:   #2d3047;
+      --ink-mute:   #5a5e7a;
+      --paper:      #faf6ef;
+      --paper-2:    #f3ecdf;
+      --rule:       #c9b994;
+      --accent:     #7a1b1b;   /* maroon */
+      --accent-2:   #1e3a5f;   /* navy */
+      --gold:       #b08a3e;
+    }
+
+    /* ---- Reveal overrides ---- */
+    .reveal-viewport { background: var(--paper); }
+    .reveal {
+      font-family: "Source Serif 4", "Source Serif Pro", Georgia, serif;
+      font-weight: 400;
+      color: var(--ink);
+      font-size: 30px;
+      letter-spacing: 0.005em;
+    }
+    .reveal .slides {
+      text-align: left;
+    }
+    .reveal .slides > section,
+    .reveal .slides > section > section {
+      padding: 56px 88px 96px;
+      box-sizing: border-box;
+      height: 720px;
+    }
+
+    /* ---- Headings ---- */
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+      font-family: "Cormorant Garamond", "Source Serif 4", Georgia, serif;
+      font-weight: 600;
+      color: var(--ink);
+      text-transform: none;
+      letter-spacing: 0;
+      line-height: 1.1;
+      margin: 0 0 0.4em;
+    }
+    .reveal h1 { font-size: 3.4em; font-weight: 500; }
+    .reveal h2 { font-size: 2.1em; }
+    .reveal h3 { font-size: 1.4em; color: var(--ink-soft); }
+    .reveal h4 { font-size: 1.05em; font-weight: 600; color: var(--accent-2); letter-spacing: 0.06em; text-transform: uppercase; font-family: "Source Serif 4", Georgia, serif; }
+
+    .reveal p, .reveal li {
+      line-height: 1.55;
+      font-size: 0.95em;
+      color: var(--ink-soft);
+    }
+    .reveal em { color: var(--ink); font-style: italic; }
+    .reveal strong { color: var(--ink); font-weight: 600; }
+    .reveal ul, .reveal ol { margin: 0.3em 0 0.5em 1.1em; }
+    .reveal ul li { padding-left: 0.25em; margin-bottom: 0.35em; }
+    .reveal li::marker { color: var(--gold); }
+
+    .reveal a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+
+    /* ---- Header / footer chrome ---- */
+    .deck-header,
+    .deck-footer {
+      position: absolute;
+      left: 88px; right: 88px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-family: "Source Serif 4", Georgia, serif;
+      color: var(--ink-mute);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      z-index: 5;
+    }
+    .deck-header { top: 22px; border-bottom: 1px solid var(--rule); padding-bottom: 6px; }
+    .deck-footer { bottom: 22px; border-top: 1px solid var(--rule); padding-top: 6px; }
+    .deck-header .h-mark { color: var(--accent); font-weight: 600; }
+    .deck-footer .f-cite { font-style: italic; text-transform: none; letter-spacing: 0.02em; }
+    .deck-footer .f-page::after { content: " / 29"; color: var(--rule); }
+    .reveal .controls { color: var(--ink-mute); }
+    .reveal .progress { color: var(--accent); height: 2px; }
+
+    /* ---- Title slide ---- */
+    section.title-slide {
+      padding: 96px 96px !important;
+      background:
+        radial-gradient(ellipse at top right, rgba(122,27,27,0.06), transparent 60%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+    }
+    .title-eyebrow {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 0.6em; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--accent); font-weight: 600;
+      margin-bottom: 28px;
+    }
+    .title-slide h1 {
+      font-size: 4.2em; line-height: 1.02; font-weight: 500;
+      max-width: 14ch;
+      margin-bottom: 18px;
+    }
+    .title-slide .subtitle {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic;
+      font-size: 1.55em; color: var(--ink-soft);
+      max-width: 30ch;
+      margin-bottom: 56px;
+    }
+    .title-meta {
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      gap: 28px 60px;
+      align-items: end;
+      padding-top: 24px;
+      border-top: 1px solid var(--rule);
+      max-width: 880px;
+    }
+    .title-meta dt {
+      font-size: 0.6em; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--ink-mute); margin-bottom: 6px;
+    }
+    .title-meta dd { font-size: 0.95em; color: var(--ink); margin: 0; font-weight: 500; }
+
+    /* ---- Section dividers ---- */
+    section.divider {
+      background: linear-gradient(180deg, var(--paper-2) 0%, var(--paper) 100%);
+      display: flex !important; flex-direction: column; justify-content: center;
+    }
+    .divider .section-no {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 5em; color: var(--gold); font-style: italic;
+      line-height: 1; margin-bottom: 12px;
+    }
+    .divider h2 { font-size: 3em; margin-bottom: 18px; max-width: 18ch; }
+    .divider p { font-size: 1.05em; max-width: 50ch; color: var(--ink-mute); font-style: italic; font-family: "Cormorant Garamond", Georgia, serif; }
+
+    /* ---- Two-column ---- */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .grid-2.tight { gap: 32px; }
+    .grid-2-7-5 { display: grid; grid-template-columns: 7fr 5fr; gap: 48px; align-items: start; }
+
+    /* ---- Callout / pull boxes ---- */
+    .pull {
+      border-left: 3px solid var(--accent);
+      padding: 4px 0 4px 20px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic;
+      color: var(--ink-soft);
+      font-size: 1.15em;
+      line-height: 1.4;
+      margin: 10px 0;
+    }
+    .frame {
+      border: 1px solid var(--rule);
+      background: #fdfaf3;
+      padding: 22px 26px;
+      border-radius: 2px;
+    }
+    .frame .label {
+      font-size: 0.55em; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--accent); font-weight: 600;
+      display: block; margin-bottom: 10px;
+    }
+    .frame.navy { border-color: var(--accent-2); background: #f1f3f7; }
+    .frame.navy .label { color: var(--accent-2); }
+    .frame.gold { border-color: var(--gold); background: #fbf6e8; }
+    .frame.gold .label { color: var(--gold); }
+
+    /* ---- Tables ---- */
+    table.editorial {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85em;
+      font-variant-numeric: tabular-nums;
+    }
+    table.editorial th, table.editorial td {
+      padding: 9px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--rule);
+    }
+    table.editorial thead th {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 0.78em; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--ink-mute); font-weight: 600;
+      border-top: 1px solid var(--ink-soft);
+      border-bottom: 1px solid var(--ink-soft);
+    }
+    table.editorial tbody td { color: var(--ink-soft); }
+    table.editorial tbody tr:last-child td { border-bottom: 1px solid var(--ink-soft); }
+    table.editorial .num { text-align: right; font-variant-numeric: tabular-nums; }
+    table.editorial .hi { color: var(--accent); font-weight: 600; }
+
+    /* ---- Math display ---- */
+    .reveal mjx-container[display="true"] { margin: 0.4em 0 0.6em !important; }
+    .formula-card {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--accent);
+      padding: 18px 26px;
+      margin: 14px 0;
+      font-size: 1.1em;
+    }
+    .formula-card .where {
+      font-size: 0.7em; color: var(--ink-mute); margin-top: 6px;
+      font-style: italic; font-family: "Cormorant Garamond", Georgia, serif;
+    }
+
+    /* ---- Cash-flow diagram (SVG) ---- */
+    .cfd { background: #fff; border: 1px solid var(--rule); padding: 16px; border-radius: 2px; }
+
+    /* ---- Discussion segment ---- */
+    section.discussion {
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(176,138,62,0.10), transparent 55%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+    }
+    .discussion .stamp {
+      display: inline-block;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 0.55em; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--accent); font-weight: 600;
+      border: 1px solid var(--accent); padding: 5px 12px;
+      margin-bottom: 22px;
+    }
+    .discussion h2 { font-size: 2.6em; max-width: 22ch; margin-bottom: 14px; }
+    .discussion .prompt {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic; font-size: 1.55em; color: var(--ink-soft);
+      max-width: 36ch; line-height: 1.35; margin-bottom: 26px;
+    }
+
+    /* ---- Misc utilities ---- */
+    .small { font-size: 0.78em; color: var(--ink-mute); }
+    .mute  { color: var(--ink-mute); }
+    .hairline { border: 0; border-top: 1px solid var(--rule); margin: 14px 0; }
+    .kicker {
+      font-size: 0.62em; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--accent); font-weight: 600; margin-bottom: 8px;
+    }
+    .row { display: flex; gap: 18px; align-items: stretch; }
+    .row > * { flex: 1; }
+
+    .objective-list { counter-reset: obj; list-style: none; margin-left: 0; padding-left: 0; }
+    .objective-list li {
+      counter-increment: obj;
+      padding-left: 56px; position: relative;
+      margin-bottom: 14px; line-height: 1.45;
+    }
+    .objective-list li::before {
+      content: counter(obj, decimal-leading-zero);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic; font-size: 1.6em; color: var(--gold);
+      position: absolute; left: 0; top: -6px; width: 44px; text-align: right;
+    }
+
+    .agenda { display: grid; grid-template-columns: 64px 1fr 80px; row-gap: 6px; column-gap: 18px; font-size: 0.92em; }
+    .agenda .ag-no  { color: var(--accent); font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-size: 1.2em; }
+    .agenda .ag-t   { color: var(--ink); }
+    .agenda .ag-min { text-align: right; color: var(--ink-mute); font-variant-numeric: tabular-nums; }
+    .agenda .row-sep { grid-column: 1 / -1; border-bottom: 1px dashed var(--rule); padding-bottom: 2px; }
+
+    /* Caption used under figures / tables */
+    .caption {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic; font-size: 0.85em;
+      color: var(--ink-mute); margin-top: 6px;
+    }
+
+    /* Common pitfalls red ticks */
+    .pitfall { padding-left: 1.4em; position: relative; margin-bottom: 0.4em; }
+    .pitfall::before {
+      content: "✕"; color: var(--accent); position: absolute; left: 0; top: 0.05em; font-weight: 600;
+    }
+
+    /* Speaker note styling (only visible in speaker view) */
+    aside.notes { font-family: "Source Serif 4", Georgia, serif; }
+  </style>
+</head>
+<body>
+
+<div class="reveal">
+  <div class="slides">
+
+    <!-- ============================================================ 1 ============================================================ -->
+    <section class="title-slide" data-state="no-chrome">
+      <div class="title-eyebrow">BJU · Engineering Economics · Lecture 3</div>
+      <h1>The Time Value of Money</h1>
+      <p class="subtitle">Why one dollar today is not one dollar tomorrow — and how engineers price the gap.</p>
+
+      <dl class="title-meta">
+        <div><dt>Instructor</dt><dd>Dr. Zhijiang Chen</dd></div>
+        <div><dt>Session</dt><dd>Friday · 2026-06-05</dd></div>
+        <div><dt>Room</dt><dd>SY 109</dd></div>
+        <div><dt>Duration</dt><dd>110 minutes</dd></div>
+      </dl>
+
+      <aside class="notes">
+        Open warmly. Two-sentence framing: "Last session we put a price on software effort. Today we put a price on time itself. By the end of these 110 minutes you should be able to move a dollar across years — forwards, backwards, at any compounding cadence — and know which formula to reach for without thinking."
+        Pace check: you have 110 minutes including a 10-minute break around slide 16 and a 15-minute discussion at slide 25. Aim to be at slide 10 by minute 35.
+      </aside>
+    </section>
+
+    <!-- ============================================================ 2 ============================================================ -->
+    <section>
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Lecture 3 — Time Value of Money</span></header>
+      <h4>Learning objectives</h4>
+      <h2>What you will be able to do by 16:30 today</h2>
+      <ol class="objective-list">
+        <li><strong>Translate</strong> a verbal cash-flow problem into the canonical <em>(P, F, A, i, n)</em> notation and a cash-flow diagram.</li>
+        <li><strong>Compute</strong> future and present values under simple, discrete-compound, and continuously-compounded interest.</li>
+        <li><strong>Convert</strong> fluently between nominal annual rate, periodic rate, and Effective Annual Rate (EAR) for any compounding frequency.</li>
+        <li><strong>Justify</strong> which compounding model is appropriate for a given financial instrument — and recognise when the choice changes the answer materially.</li>
+      </ol>
+      <footer class="deck-footer"><span class="f-cite">Park, <em>Contemporary Engineering Economics</em>, 6e — ch. 3</span><span class="f-page">2</span></footer>
+      <aside class="notes">
+        Read each objective slowly. Tell students these four bullets are the rubric for the homework due Wednesday and for two questions on the midterm. Set the expectation that "I knew the formula" is not the bar — the bar is "I picked the right formula and defended the choice."
+      </aside>
+    </section>
+
+    <!-- ============================================================ 3 ============================================================ -->
+    <section>
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Lecture 3 — Time Value of Money</span></header>
+      <h4>Agenda · 110 minutes</h4>
+      <h2>How we will spend the session</h2>
+
+      <div class="agenda">
+        <div class="ag-no">I.</div>   <div class="ag-t">Motivation — would you rather have $1,000 today or $1,100 next year?</div> <div class="ag-min">10 min</div>
+        <div class="row-sep"></div>
+        <div class="ag-no">II.</div>  <div class="ag-t">The cash-flow language: <em>P, F, A, i, n</em> and the diagram</div>                <div class="ag-min">10 min</div>
+        <div class="row-sep"></div>
+        <div class="ag-no">III.</div> <div class="ag-t">Simple interest vs. compound interest</div>                                          <div class="ag-min">15 min</div>
+        <div class="row-sep"></div>
+        <div class="ag-no">IV.</div>  <div class="ag-t">Single-payment factors: F/P and P/F — with worked examples</div>                    <div class="ag-min">20 min</div>
+        <div class="row-sep"></div>
+        <div class="ag-no">—</div>    <div class="ag-t"><em>Stretch break</em></div>                                                        <div class="ag-min">10 min</div>
+        <div class="row-sep"></div>
+        <div class="ag-no">V.</div>   <div class="ag-t">Nominal vs. periodic vs. effective annual rate (EAR)</div>                          <div class="ag-min">15 min</div>
+        <div class="row-sep"></div>
+        <div class="ag-no">VI.</div>  <div class="ag-t">Continuous compounding — the <em>e</em><sup>rt</sup> limit</div>                    <div class="ag-min">10 min</div>
+        <div class="row-sep"></div>
+        <div class="ag-no">VII.</div> <div class="ag-t"><strong>In-class discussion</strong> — credit cards, payday loans, &amp; APR vs APY</div> <div class="ag-min">15 min</div>
+        <div class="row-sep"></div>
+        <div class="ag-no">VIII.</div><div class="ag-t">Synthesis, pitfalls, and a preview of Lecture 4</div>                               <div class="ag-min">5 min</div>
+      </div>
+      <footer class="deck-footer"><span class="f-cite">Dr. Zhijiang Chen — Engineering Economics 2026 Spring</span><span class="f-page">3</span></footer>
+      <aside class="notes">
+        Don't read the agenda line by line — point at the discussion segment (VII) and the break. Tell them the discussion is graded on participation and they should arrive at slide 25 with their phones out so they can pull up a real credit-card statement or loan disclosure.
+      </aside>
+    </section>
+
+    <!-- ============================================================ 4 — Section I divider ============================================================ -->
+    <section class="divider">
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part I — Motivation</span></header>
+      <div class="section-no">i.</div>
+      <h2>Why a dollar moves through time.</h2>
+      <p>Three forces — earning power, inflation, and risk — make time itself a price.</p>
+      <footer class="deck-footer"><span class="f-cite">Dr. Zhijiang Chen — Engineering Economics 2026 Spring</span><span class="f-page">4</span></footer>
+      <aside class="notes">
+        Hold this slide for a beat. The point of the divider is rhythm — students should feel the lecture moving in chapters, not bullets.
+      </aside>
+    </section>
+
+    <!-- ============================================================ 5 — Hook ============================================================ -->
+    <section>
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part I — Motivation</span></header>
+      <h4>Opening question</h4>
+      <h2>Would you rather have $1,000 today, or $1,100 next year?</h2>
+
+      <div class="grid-2-7-5" style="margin-top:18px;">
+        <div>
+          <p>Show of hands. Before anyone justifies their answer with a number, notice that the question itself is <em>incomplete</em> — it cannot be answered without three pieces of context:</p>
+          <ul>
+            <li><strong>Earning power.</strong> What else could $1,000 do for you in twelve months?</li>
+            <li><strong>Purchasing power.</strong> Will $1,100 next year buy what $1,000 buys today?</li>
+            <li><strong>Risk.</strong> How confident are you the $1,100 will actually arrive?</li>
+          </ul>
+          <p class="pull">Engineering economics is the discipline of pricing those three forces explicitly so we can compare cash that does not arrive at the same time.</p>
+        </div>
+        <aside class="frame navy">
+          <span class="label">A working definition</span>
+          <p><strong>Time Value of Money (TVM)</strong> — the principle that a sum of money has a different economic value depending on when it is received or paid, because money in hand can be put to productive use.</p>
+          <hr class="hairline" />
+          <p class="small">In the rest of this lecture we will quantify "different value" with a single parameter: the interest rate <em>i</em>.</p>
+        </aside>
+      </div>
+
+      <footer class="deck-footer"><span class="f-cite">Dr. Zhijiang Chen — Engineering Economics 2026 Spring</span><span class="f-page">5</span></footer>
+      <aside class="notes">
+        Take a real vote. Write tallies on the board. Then call on someone from each camp to defend their answer. Resist correcting — let the class hear all three forces emerge from peers before you name them. Budget 4 minutes for discussion, 1 minute to formalise.
+      </aside>
+    </section>
+
+    <!-- ============================================================ 6 — TVM forces ============================================================ -->
+    <section>
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part I — Motivation</span></header>
+      <h4>Decomposition</h4>
+      <h2>The interest rate, dissected</h2>
+
+      <p>The single number <em>i</em> we use throughout this course is in fact a bundle:</p>
+
+      <div class="formula-card">
+        $$i \;\approx\; \underbrace{r_f}_{\text{real risk-free}} \;+\; \underbrace{\pi}_{\text{inflation premium}} \;+\; \underbrace{\rho}_{\text{risk premium}}$$
+        <div class="where">This is the <em>Fisher decomposition</em> in its additive approximation; we will tighten it in Lecture 11. For now, treat <em>i</em> as the price the market charges to move one dollar one year forward.</div>
+      </div>
+
+      <div class="grid-2 tight" style="margin-top:18px;">
+        <div>
+          <h4>Two lenses on the same rate</h4>
+          <ul>
+            <li><strong>Lender's lens.</strong> <em>i</em> is the rent collected for parting with capital.</li>
+            <li><strong>Borrower's lens.</strong> <em>i</em> is the price paid for spending money you have not yet earned.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>An engineering project's lens</h4>
+          <ul>
+            <li><em>i</em> is the <strong>opportunity cost</strong> — the return forgone by not deploying the same capital in the next-best alternative.</li>
+            <li>That alternative is often called the <em>Minimum Attractive Rate of Return</em> (MARR), to which we return in Lecture 5.</li>
+          </ul>
+        </div>
+      </div>
+
+      <footer class="deck-footer"><span class="f-cite">Park, ch. 3 §3.1 · Newnan, ch. 4 §4.2</span><span class="f-page">6</span></footer>
+      <aside class="notes">
+        Don't get sucked into Fisher's exact multiplicative form here — flag it as Lecture 11. Two questions to ask: "If inflation were zero and there were no risk, would <em>i</em> still be positive?" (Yes — pure time preference.) and "Why do mortgages and credit cards have different <em>i</em> on the same day?" (Risk premium.)
+      </aside>
+    </section>
+
+    <!-- ============================================================ 7 — Section II divider ============================================================ -->
+    <section class="divider">
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part II — Notation</span></header>
+      <div class="section-no">ii.</div>
+      <h2>A vocabulary engineers can compute with.</h2>
+      <p><em>P</em>, <em>F</em>, <em>A</em>, <em>i</em>, <em>n</em> — five letters that carry the rest of the course.</p>
+      <footer class="deck-footer"><span class="f-cite">Dr. Zhijiang Chen — Engineering Economics 2026 Spring</span><span class="f-page">7</span></footer>
+      <aside class="notes"></aside>
+    </section>
+
+    <!-- ============================================================ 8 — Notation & diagram ============================================================ -->
+    <section>
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part II — Notation</span></header>
+      <h4>The five symbols</h4>
+      <h2>Cash-flow notation and the cash-flow diagram</h2>
+
+      <div class="grid-2-7-5">
+        <div>
+          <table class="editorial">
+            <thead>
+              <tr><th style="width:14%">Symbol</th><th>Meaning</th><th style="width:32%">Unit</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>P</strong></td><td>Present worth — a single sum located <em>now</em>, at <em>n</em> = 0</td><td>$ at time 0</td></tr>
+              <tr><td><strong>F</strong></td><td>Future worth — a single sum located at the end of period <em>n</em></td><td>$ at time <em>n</em></td></tr>
+              <tr><td><strong>A</strong></td><td>Annuity — a uniform amount occurring at the end of each period</td><td>$ per period</td></tr>
+              <tr><td><strong>i</strong></td><td>Interest rate per period</td><td>decimal / period</td></tr>
+              <tr><td><strong>n</strong></td><td>Number of interest periods</td><td>periods</td></tr>
+            </tbody>
+          </table>
+          <p class="caption">Conventions: end-of-period cash flow, arrows up for receipts, arrows down for disbursements, time on the horizontal axis.</p>
+        </div>
+
+        <div class="cfd">
+          <!-- SVG cash flow diagram -->
+          <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
+            <defs>
+              <marker id="arrU" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,10 L5,0 L10,10 z" fill="#1e3a5f"/>
+              </marker>
+              <marker id="arrD" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,0 L5,10 L10,0 z" fill="#7a1b1b"/>
+              </marker>
+            </defs>
+            <!-- timeline -->
+            <line x1="20" y1="130" x2="340" y2="130" stroke="#131524" stroke-width="1.5"/>
+            <!-- ticks -->
+            <g font-family="Source Serif 4, serif" font-size="10" fill="#5a5e7a">
+              <line x1="40"  y1="126" x2="40"  y2="134" stroke="#131524"/><text x="40"  y="150" text-anchor="middle">0</text>
+              <line x1="100" y1="126" x2="100" y2="134" stroke="#131524"/><text x="100" y="150" text-anchor="middle">1</text>
+              <line x1="160" y1="126" x2="160" y2="134" stroke="#131524"/><text x="160" y="150" text-anchor="middle">2</text>
+              <line x1="220" y1="126" x2="220" y2="134" stroke="#131524"/><text x="220" y="150" text-anchor="middle">3</text>
+              <line x1="280" y1="126" x2="280" y2="134" stroke="#131524"/><text x="280" y="150" text-anchor="middle">…</text>
+              <line x1="320" y1="126" x2="320" y2="134" stroke="#131524"/><text x="320" y="150" text-anchor="middle">n</text>
+            </g>
+            <!-- P arrow down (disbursement) -->
+            <line x1="40" y1="40" x2="40" y2="128" stroke="#7a1b1b" stroke-width="2" marker-end="url(#arrD)"/>
+            <text x="40" y="32" text-anchor="middle" font-family="Cormorant Garamond, serif" font-style="italic" font-size="18" fill="#7a1b1b">P</text>
+            <!-- F arrow up (receipt) -->
+            <line x1="320" y1="220" x2="320" y2="132" stroke="#1e3a5f" stroke-width="2" marker-end="url(#arrU)"/>
+            <text x="320" y="212" text-anchor="middle" font-family="Cormorant Garamond, serif" font-style="italic" font-size="18" fill="#1e3a5f">F</text>
+            <!-- annotations -->
+            <text x="180" y="200" text-anchor="middle" font-family="Source Serif 4, serif" font-size="11" fill="#5a5e7a" font-style="italic">
+              n periods, interest rate i per period
+            </text>
+          </svg>
+          <p class="caption">Single-payment diagram: invest <em>P</em> today, receive <em>F</em> after <em>n</em> periods.</p>
+        </div>
+      </div>
+
+      <footer class="deck-footer"><span class="f-cite">Dr. Zhijiang Chen — Engineering Economics 2026 Spring</span><span class="f-page">8</span></footer>
+      <aside class="notes">
+        The end-of-period convention is unintuitive but universal — emphasise that "year 1" cash flows are drawn at the right edge of the first interval, not the left. Most homework errors trace to a mis-drawn timeline. Promise them you will accept a hand-drawn diagram with their solution and will dock points if it's missing.
+      </aside>
+    </section>
+
+    <!-- ============================================================ 9 — Section III divider ============================================================ -->
+    <section class="divider">
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part III — Simple vs. compound</span></header>
+      <div class="section-no">iii.</div>
+      <h2>Two ways interest accrues.</h2>
+      <p>One is a straight line. The other is a curve — and almost everything in modern finance is the curve.</p>
+      <footer class="deck-footer"><span class="f-cite">Dr. Zhijiang Chen — Engineering Economics 2026 Spring</span><span class="f-page">9</span></footer>
+      <aside class="notes"></aside>
+    </section>
+
+    <!-- ============================================================ 10 — Simple interest ============================================================ -->
+    <section>
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part III — Simple vs. compound</span></header>
+      <h4>Definition</h4>
+      <h2>Simple interest — the linear case</h2>
+
+      <p>Interest is charged only on the original principal. Each period adds the same dollar amount; nothing is ever charged on previously accrued interest.</p>
+
+      <div class="formula-card">
+        $$ I \;=\; P \cdot i \cdot n \qquad\text{and}\qquad F \;=\; P\,(1 + i \cdot n) $$
+        <div class="where"><em>I</em> is total interest accrued, <em>P</em> is principal, <em>i</em> is the periodic rate, <em>n</em> is the number of periods.</div>
+      </div>
+
+      <div class="grid-2 tight" style="margin-top:14px;">
+        <div>
+          <h4>Where you'll actually see it</h4>
+          <ul>
+            <li>Short-term Treasury bills quoted on a "discount" basis.</li>
+            <li>Some commercial paper and money-market quotations.</li>
+            <li>Statutory interest on overdue invoices in many jurisdictions.</li>
+            <li>Convenience approximations (back-of-envelope checks).</li>
+          </ul>
+        </div>
+        <aside class="frame">
+          <span class="label">Worked example · 1 of 4</span>
+          <p>You deposit $1,000 in an account earning <strong>6 % simple interest</strong> per year. What is the balance after 5 years?</p>
+          <p>$$ F = 1{,}000\,(1 + 0.06 \cdot 5) = 1{,}000 \cdot 1.30 = \$1{,}300 $$</p>
+          <p class="small">Interest earned: <strong>$300</strong>. Notice that the $60 earned in year 1 never earns any further interest — that money sits idle.</p>
+        </aside>
+      </div>
+
+      <footer class="deck-footer"><span class="f-cite">Park, ch. 3 §3.2.1</span><span class="f-page">10</span></footer>
+      <aside class="notes">
+        Simple interest is theoretically rare in modern engineering finance but worth covering for two reasons: (i) it is the natural baseline for explaining compounding, and (ii) some legal and regulatory regimes still mandate it. If a student asks why we even bother — answer: because the next slide makes its inferiority quantitative.
+      </aside>
+    </section>
+
+    <!-- ============================================================ 11 — Compound interest ============================================================ -->
+    <section>
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part III — Simple vs. compound</span></header>
+      <h4>Definition</h4>
+      <h2>Compound interest — the exponential case</h2>
+
+      <p>Each period, interest is computed on the <em>current</em> balance — principal <strong>plus</strong> all previously accrued interest. Interest earns interest.</p>
+
+      <div class="formula-card">
+        $$ F \;=\; P\,(1 + i)^{n} $$
+        <div class="where">The factor $(1+i)^{n}$ is the <strong>single-payment compound-amount factor</strong>, written $(F/P,\,i,\,n)$ in the textbook tables.</div>
+      </div>
+
+      <div class="grid-2 tight" style="margin-top:14px;">
+        <div>
+          <h4>The same $1,000 at 6 %, compounded annually</h4>
+          <table class="editorial">
+            <thead><tr><th>Year</th><th class="num">Opening balance</th><th class="num">Interest</th><th class="num">Closing balance</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td class="num">1,000.00</td><td class="num">60.00</td><td class="num">1,060.00</td></tr>
+              <tr><td>2</td><td class="num">1,060.00</td><td class="num">63.60</td><td class="num">1,123.60</td></tr>
+              <tr><td>3</td><td class="num">1,123.60</td><td class="num">67.42</td><td class="num">1,191.02</td></tr>
+              <tr><td>4</td><td class="num">1,191.02</td><td class="num">71.46</td><td class="num">1,262.48</td></tr>
+              <tr><td>5</td><td class="num">1,262.48</td><td class="num">75.75</td><td class="num hi">1,338.23</td></tr>
+            </tbody>
+          </table>
+          <p class="caption">After five years the compound balance exceeds the simple balance by <strong>$38.23</strong> — a 12.7 % bigger pile of interest from a single keyword change.</p>
+        </div>
+        <aside class="frame gold">
+          <span class="label">Worked example · 2 of 4</span>
+          <p>Verify the table:</p>
+          <p>$$ F = 1{,}000\,(1.06)^{5} = 1{,}000 \cdot 1.33823 = \$1{,}338.23 $$</p>
+          <hr class="hairline" />
+          <p class="small">Over 30 years the same $1,000 grows to <strong>$5,743</strong> under compounding versus <strong>$2,800</strong> under simple interest — more than double. This gap is the entire engine of long-horizon investing.</p>
+        </aside>
+      </div>
+
+      <footer class="deck-footer"><span class="f-cite">Park, ch. 3 §3.2.2</span><span class="f-page">11</span></footer>
+      <aside class="notes">
+        Walk the table column by column on the board, not on the slide. Stop after year 2 and ask: "What was the $3.60 in year 2 paying you for?" Answer: for the $60 of interest you earned in year 1 that the bank kept for itself for another year. That is compounding, in one sentence.
+      </aside>
+    </section>
+
+    <!-- ============================================================ 12 — Side by side ============================================================ -->
+    <section>
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part III — Simple vs. compound</span></header>
+      <h4>Side by side</h4>
+      <h2>The growth curves diverge — and the gap never closes</h2>
+
+      <div class="grid-2-7-5">
+        <div class="cfd">
+          <svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
+            <!-- axes -->
+            <line x1="50" y1="250" x2="460" y2="250" stroke="#131524" stroke-width="1"/>
+            <line x1="50" y1="20"  x2="50"  y2="250" stroke="#131524" stroke-width="1"/>
+
+            <!-- x ticks -->
+            <g font-family="Source Serif 4, serif" font-size="10" fill="#5a5e7a">
+              <text x="50"  y="268" text-anchor="middle">0</text>
+              <text x="132" y="268" text-anchor="middle">10</text>
+              <text x="214" y="268" text-anchor="middle">20</text>
+              <text x="296" y="268" text-anchor="middle">30</text>
+              <text x="378" y="268" text-anchor="middle">40</text>
+              <text x="460" y="268" text-anchor="middle">50</text>
+              <text x="255" y="282" text-anchor="middle" font-style="italic">years (n)</text>
+            </g>
+            <!-- y ticks -->
+            <g font-family="Source Serif 4, serif" font-size="10" fill="#5a5e7a">
+              <text x="44" y="252" text-anchor="end">$1k</text>
+              <text x="44" y="194" text-anchor="end">$5k</text>
+              <text x="44" y="135" text-anchor="end">$10k</text>
+              <text x="44" y="78"  text-anchor="end">$15k</text>
+              <text x="44" y="22"  text-anchor="end">$20k</text>
+              <text x="20" y="135" text-anchor="middle" font-style="italic" transform="rotate(-90 20 135)">balance F</text>
+            </g>
+            <!-- gridlines -->
+            <g stroke="#e6ddc7" stroke-dasharray="2 3">
+              <line x1="50" y1="194" x2="460" y2="194"/>
+              <line x1="50" y1="135" x2="460" y2="135"/>
+              <line x1="50" y1="78"  x2="460" y2="78"/>
+              <line x1="50" y1="22"  x2="460" y2="22"/>
+            </g>
+
+            <!-- Simple: F = 1000(1+0.06n), n=0..50 -> y from 1000 to 4000.  Map: y px = 250 - (F-1000)/19000 * 228 -->
+            <!-- Points: n=0: F=1000 -> 250 ; n=50: F=4000 -> 250-(3000/19000*228)=250-35.99=214 -->
+            <polyline fill="none" stroke="#1e3a5f" stroke-width="2"
+              points="50,250 132,243 214,236 296,228 378,221 460,214" />
+            <text x="465" y="216" font-family="Cormorant Garamond, serif" font-style="italic" font-size="13" fill="#1e3a5f">simple</text>
+
+            <!-- Compound: F = 1000(1.06)^n. Values: 0:1000, 10:1791, 20:3207, 30:5743, 40:10286, 50:18420 -->
+            <!-- y px: 250 - (F-1000)/19000*228 -->
+            <!-- n=0:250 ;10: 250 - 791/19000*228 = 250-9.49=240.5 ;20: 250-2207/19000*228 = 250-26.48=223.5 ;30: 250-4743/19000*228=250-56.92=193 ;40:250-9286/19000*228=250-111.43=138.6 ;50:250-17420/19000*228=250-209.04=41 -->
+            <polyline fill="none" stroke="#7a1b1b" stroke-width="2.5"
+              points="50,250 132,240.5 214,223.5 296,193 378,138.6 460,41" />
+            <text x="465" y="44" font-family="Cormorant Garamond, serif" font-style="italic" font-size="13" fill="#7a1b1b">compound</text>
+
+            <!-- Annotation -->
+            <line x1="378" y1="138.6" x2="378" y2="221" stroke="#5a5e7a" stroke-dasharray="3 3"/>
+            <text x="384" y="180" font-family="Source Serif 4, serif" font-size="10" fill="#5a5e7a" font-style="italic">at year 40,</text>
+            <text x="384" y="192" font-family="Source Serif 4, serif" font-size="10" fill="#5a5e7a" font-style="italic">$10.3k vs $3.4k</text>
+          </svg>
+          <p class="caption">$1,000 invested at 6 % per year, simple vs. compound, over 50 years.</p>
+        </div>
+        <div>
+          <h4>What the picture tells us</h4>
+          <ul>
+            <li>For small <em>n</em>, the two curves are nearly indistinguishable. Many short-horizon decisions are insensitive to the choice.</li>
+            <li>For large <em>n</em>, the gap explodes — this is the famed <em>exponential</em> behaviour Einstein never actually called the eighth wonder of the world (but the quote sticks because the math is correct).</li>
+            <li>The <strong>doubling time</strong> under compounding is approximated by the <em>Rule of 72</em>: $n \approx 72/i\%$. At 6 %, money doubles roughly every 12 years.</li>
+          </ul>
+          <p class="pull">From this point in the course, every formula assumes compound interest unless stated otherwise.</p>
+        </div>
+      </div>
+
+      <footer class="deck-footer"><span class="f-cite">Dr. Zhijiang Chen — Engineering Economics 2026 Spring</span><span class="f-page">12</span></footer>
+      <aside class="notes">
+        Quick interactive: ask students to estimate, without a calculator, how long it takes $1,000 to become $1,000,000 at 8 %. Rule of 72 gives doubling every 9 years; 10 doublings reach about $1M, so roughly 90 years. The point: tiny rate differences compounded over a career are enormous.
+      </aside>
+    </section>
+
+    <!-- ============================================================ 13 — Section IV divider ============================================================ -->
+    <section class="divider">
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part IV — Single-payment factors</span></header>
+      <div class="section-no">iv.</div>
+      <h2>Moving one dollar through time, in either direction.</h2>
+      <p>The compound-amount factor pushes a sum forward; its reciprocal — the present-worth factor — pulls a sum back.</p>
+      <footer class="deck-footer"><span class="f-cite">Dr. Zhijiang Chen — Engineering Economics 2026 Spring</span><span class="f-page">13</span></footer>
+      <aside class="notes"></aside>
+    </section>
+
+    <!-- ============================================================ 14 — FV formal ============================================================ -->
+    <section>
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part IV — Single-payment factors</span></header>
+      <h4>The F / P factor</h4>
+      <h2>Future Value of a single present sum</h2>
+
+      <div class="grid-2 tight">
+        <div>
+          <div class="formula-card">
+            $$ F \;=\; P\,(1 + i)^{n} \;=\; P \cdot (F/P,\, i,\, n) $$
+            <div class="where">Read the factor aloud as "<em>F</em> given <em>P</em>, at rate <em>i</em>, over <em>n</em> periods."</div>
+          </div>
+
+          <h4>Reading the textbook table</h4>
+          <p>Tables in the back of Park give $(F/P, i, n)$ for standard rates. To find $F$ for $P = \$1{,}000$, $i = 6\%$, $n = 5$:</p>
+          <ol>
+            <li>Open the 6 % table.</li>
+            <li>Find the row $n = 5$.</li>
+            <li>Read the <em>F/P</em> column: <strong>1.3382</strong>.</li>
+            <li>Multiply: $F = 1{,}000 \cdot 1.3382 = \$1{,}338.20$.</li>
+          </ol>
+          <p class="small">In practice we just type <code>=FV(0.06,5,0,-1000)</code> into Excel or call <code>(1.06)**5</code> in Python — but on the midterm you'll see tables, so know the layout.</p>
+        </div>
+
+        <aside class="frame navy">
+          <span class="label">Worked example · 3 of 4</span>
+          <p><strong>Hardware sinking fund.</strong> Your firm sets aside $250,000 today to replace a server cluster in 8 years. The treasury earns 4.5 % per year, compounded annually. How much will be available?</p>
+          <hr class="hairline" />
+          <p>$$ F = 250{,}000 \cdot (1.045)^{8} $$</p>
+          <p>$$ (1.045)^{8} = 1.4221 $$</p>
+          <p>$$ F = 250{,}000 \cdot 1.4221 = \boxed{\$355{,}535} $$</p>
+          <p class="small">Sanity check: 4.5 % doubles in about 16 years (Rule of 72), so 8 years is half a doubling — a 41–42 % gain is exactly what we should expect.</p>
+        </aside>
+      </div>
+
+      <footer class="deck-footer"><span class="f-cite">Park, ch. 3 §3.3.1 · Newnan, ch. 4 §4.5</span><span class="f-page">14</span></footer>
+      <aside class="notes">
+        Show the Rule-of-72 sanity check explicitly. Engineering economics is full of arithmetic errors that propagate; cultivate the habit of estimating the answer before computing it. Take a question or two before moving on.
+      </aside>
+    </section>
+
+    <!-- ============================================================ 15 — PV formal ============================================================ -->
+    <section>
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part IV — Single-payment factors</span></header>
+      <h4>The P / F factor</h4>
+      <h2>Present Value of a single future sum</h2>
+
+      <div class="grid-2 tight">
+        <div>
+          <div class="formula-card">
+            $$ P \;=\; \dfrac{F}{(1 + i)^{n}} \;=\; F \cdot (P/F,\, i,\, n) $$
+            <div class="where">$(P/F, i, n) = (1+i)^{-n}$ is called the <strong>discount factor</strong>; it always lies in $(0, 1]$ for $i \ge 0$.</div>
+          </div>
+
+          <p>Discounting answers the inverse question: "What single sum today would I need, set aside at rate <em>i</em>, to grow to <em>F</em> by year <em>n</em>?"</p>
+
+          <p class="pull">Every NPV calculation in the rest of this course is built from $(P/F, i, n)$ applied to each year's cash flow.</p>
+
+          <h4>Behaviour as i and n increase</h4>
+          <ul>
+            <li>For fixed <em>F</em> and <em>n</em>, higher <em>i</em> ⇒ lower <em>P</em>. Future cash is cheaper to promise.</li>
+            <li>For fixed <em>F</em> and <em>i</em>, larger <em>n</em> ⇒ lower <em>P</em>. Distant cash is cheaper still.</li>
+          </ul>
+        </div>
+
+        <aside class="frame">
+          <span class="label">Worked example · 4 of 4</span>
+          <p><strong>Settlement choice.</strong> An insurer offers either $80,000 today, or a single payment of $120,000 in 7 years. Your investable alternative earns 6.5 % compounded annually. Which is worth more?</p>
+          <hr class="hairline" />
+          <p>$$ P \;=\; \dfrac{120{,}000}{(1.065)^{7}} = \dfrac{120{,}000}{1.5540} $$</p>
+          <p>$$ P \;=\; \$77{,}221 $$</p>
+          <hr class="hairline" />
+          <p><strong>Take the $80,000 today.</strong> Its present value beats the deferred offer by about $2,800.</p>
+          <p class="small">Notice that the decision flips if your alternative earns only 5 %: then PV of the deferred offer rises to $85,275, and waiting wins.</p>
+        </aside>
+      </div>
+
+      <footer class="deck-footer"><span class="f-cite">Park, ch. 3 §3.3.2</span><span class="f-page">15</span></footer>
+      <aside class="notes">
+        Stress the second example's punchline: the right answer depends on <em>your</em> opportunity cost, not on the cash flows alone. Two rational engineers can choose differently and both be correct. That observation seeds the MARR discussion in Lecture 5.
+      </aside>
+    </section>
+
+    <!-- ============================================================ 16 — Stretch / orientation ============================================================ -->
+    <section class="divider">
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Pause</span></header>
+      <div class="section-no">—</div>
+      <h2>Ten-minute stretch.</h2>
+      <p>When we come back: compounding more often than once a year, and what "12.99 % APR" really costs you.</p>
+      <footer class="deck-footer"><span class="f-cite">Dr. Zhijiang Chen — Engineering Economics 2026 Spring</span><span class="f-page">16</span></footer>
+      <aside class="notes">
+        Aim to hit this slide at roughly minute 55. Use the break to circulate — answer one-on-one questions about the worked examples, since students who didn't follow Example 4 will not follow EAR either.
+      </aside>
+    </section>
+
+    <!-- ============================================================ 17 — Section V divider ============================================================ -->
+    <section class="divider">
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part V — Nominal vs. effective</span></header>
+      <div class="section-no">v.</div>
+      <h2>The rate the bank quotes is not the rate you pay.</h2>
+      <p>Compounding frequency turns a single nominal rate into a family of periodic and effective rates.</p>
+      <footer class="deck-footer"><span class="f-cite">Dr. Zhijiang Chen — Engineering Economics 2026 Spring</span><span class="f-page">17</span></footer>
+      <aside class="notes"></aside>
+    </section>
+
+    <!-- ============================================================ 18 — Nominal vs periodic ============================================================ -->
+    <section>
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part V — Nominal vs. effective</span></header>
+      <h4>Compounding more than once a year</h4>
+      <h2>Three rates that live on the same loan</h2>
+
+      <p>When interest compounds <em>m</em> times per year, the rate you quote, the rate the bank applies, and the rate you actually pay are three different numbers.</p>
+
+      <div class="row" style="margin-top:14px;">
+        <aside class="frame navy">
+          <span class="label">1 · Nominal annual rate</span>
+          <p>The <em>r</em> printed in marketing — by U.S. statute, the APR on a loan. It is the periodic rate <em>times</em> the number of periods per year.</p>
+          <p>$$ r \;=\; i_{\text{periodic}} \cdot m $$</p>
+        </aside>
+        <aside class="frame">
+          <span class="label">2 · Periodic rate</span>
+          <p>The rate the bank multiplies your balance by each compounding period.</p>
+          <p>$$ i_{\text{periodic}} \;=\; \dfrac{r}{m} $$</p>
+          <p class="small">If <em>r</em> = 12 % nominal, monthly compounding, then $i = 1\%$ per month.</p>
+        </aside>
+        <aside class="frame gold">
+          <span class="label">3 · Effective annual rate</span>
+          <p>The single annual rate that would produce the same year-end balance, ignoring intra-year structure.</p>
+          <p>$$ i_a \;=\; \left(1 + \tfrac{r}{m}\right)^{m} - 1 $$</p>
+        </aside>
+      </div>
+
+      <p class="pull" style="margin-top:18px;">A loan disclosed as <em>12 %&nbsp;APR compounded monthly</em> is in fact a <em>12.683 %&nbsp;EAR</em>. The difference is real money.</p>
+
+      <footer class="deck-footer"><span class="f-cite">Park, ch. 3 §3.4 · TILA Reg-Z §1026.14</span><span class="f-page">18</span></footer>
+      <aside class="notes">
+        Anchor the three boxes with an example you write on the board: a credit card disclosed as 24.99 % APR with monthly compounding has $i = 2.0825\%$/month and EAR = $\left(1.020825\right)^{12} - 1 \approx 28.07\%$. Promise we will return to this number in the discussion segment.
+      </aside>
+    </section>
+
+    <!-- ============================================================ 19 — EAR derivation ============================================================ -->
+    <section>
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part V — Nominal vs. effective</span></header>
+      <h4>Derivation</h4>
+      <h2>Where the EAR formula comes from</h2>
+
+      <div class="grid-2 tight">
+        <div>
+          <p>Start with $\$1$ invested for one year at nominal rate <em>r</em>, compounded <em>m</em> times per year. Each period multiplies the balance by $\left(1 + r/m\right)$:</p>
+
+          <div class="formula-card">
+            $$ F_{1\text{ year}} \;=\; 1 \cdot \left(1 + \tfrac{r}{m}\right)^{m} $$
+          </div>
+
+          <p>The <em>effective annual rate</em> $i_a$ is, by definition, the rate that produces the same one-year balance compounded only once:</p>
+
+          <div class="formula-card">
+            $$ 1 + i_a \;=\; \left(1 + \tfrac{r}{m}\right)^{m} $$
+            <div class="where">Subtract 1 from both sides to recover the formula on the previous slide. The EAR is what you should quote when comparing two loans whose compounding frequencies differ.</div>
+          </div>
+        </div>
+
+        <aside class="frame navy">
+          <span class="label">Why this matters legally</span>
+          <p>Under U.S. Truth-in-Lending, credit-card statements show <strong>APR</strong> — the nominal rate. But the dollar interest computed each cycle uses the periodic rate. To compare two cards, two mortgages, or two GIC offerings, convert each to <strong>EAR</strong> first; only then are the rates apples-to-apples.</p>
+          <hr class="hairline" />
+          <p class="small">Some jurisdictions (Canada, EU) require lenders to also disclose the annual percentage yield (APY) or annual equivalent rate (AER) — both of which are EAR by another name.</p>
+        </aside>
+      </div>
+
+      <footer class="deck-footer"><span class="f-cite">Dr. Zhijiang Chen — Engineering Economics 2026 Spring</span><span class="f-page">19</span></footer>
+      <aside class="notes">
+        Pause after the derivation. Ask: "If $m = 1$, what is the difference between nominal and effective?" (None — they coincide.) "If $m \to \infty$?" (The continuous limit, next section.) These two endpoints are easy to remember and bracket every real loan.
+      </aside>
+    </section>
+
+    <!-- ============================================================ 20 — EAR example ============================================================ -->
+    <section>
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part V — Nominal vs. effective</span></header>
+      <h4>Worked comparison</h4>
+      <h2>Two mortgage offers, side by side</h2>
+
+      <div class="grid-2-7-5">
+        <div>
+          <table class="editorial">
+            <thead>
+              <tr><th>Bank</th><th>Nominal APR <em>r</em></th><th>Compounding <em>m</em></th><th>Periodic <em>i</em></th><th class="num">EAR <em>i<sub>a</sub></em></th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Alpha</td><td>5.95 %</td><td>Monthly (12)</td><td>0.4958 %/mo</td><td class="num">6.116 %</td></tr>
+              <tr><td>Beta</td> <td>6.00 %</td><td>Semi-annual (2)</td><td>3.000 %/half-yr</td><td class="num hi">6.090 %</td></tr>
+              <tr><td>Gamma</td><td>5.92 %</td><td>Daily (365)</td><td>0.01622 %/day</td><td class="num">6.097 %</td></tr>
+            </tbody>
+          </table>
+          <p class="caption">Despite Alpha having the lowest nominal rate, Beta is the cheapest offering when compounded properly. Compounding frequency reshuffles the ranking.</p>
+
+          <h4 style="margin-top:18px;">A closed-form to keep handy</h4>
+          <p>For any nominal $r$ and compounding $m$:</p>
+          <p>$$ i_a = (1 + r/m)^{m} - 1 $$</p>
+          <p>For $r = 5.95\%, m = 12$: $\;(1 + 0.0595/12)^{12} - 1 = 0.06116$.</p>
+        </div>
+
+        <aside class="frame">
+          <span class="label">Heuristic</span>
+          <p>For a fixed nominal <em>r</em>, EAR is <strong>monotonically increasing in <em>m</em></strong>. More frequent compounding always raises the effective cost of a loan (or the effective return on an investment).</p>
+          <hr class="hairline" />
+          <p>So when borrowing, you want the lowest possible <em>m</em>; when investing, the highest. The lender wants exactly the opposite — which is why credit cards compound daily.</p>
+        </aside>
+      </div>
+
+      <footer class="deck-footer"><span class="f-cite">Dr. Zhijiang Chen — Engineering Economics 2026 Spring</span><span class="f-page">20</span></footer>
+      <aside class="notes">
+        Have students rank the three offers by nominal rate (Gamma &lt; Alpha &lt; Beta), then by EAR (Beta &lt; Gamma &lt; Alpha). The flip is the entire lesson. Bonus: ask which the realtor and which the loan officer would each lead with.
+      </aside>
+    </section>
+
+    <!-- ============================================================ 21 — Section VI divider ============================================================ -->
+    <section class="divider">
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part VI — Continuous compounding</span></header>
+      <div class="section-no">vi.</div>
+      <h2>What happens when we compound every instant.</h2>
+      <p>The limit as $m \to \infty$ is finite, elegant, and closes the chapter.</p>
+      <footer class="deck-footer"><span class="f-cite">Dr. Zhijiang Chen — Engineering Economics 2026 Spring</span><span class="f-page">21</span></footer>
+      <aside class="notes"></aside>
+    </section>
+
+    <!-- ============================================================ 22 — Continuous limit ============================================================ -->
+    <section>
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part VI — Continuous compounding</span></header>
+      <h4>The continuous limit</h4>
+      <h2>From discrete <em>(1+r/m)</em><sup>m</sup> to <em>e</em><sup>r</sup></h2>
+
+      <div class="grid-2 tight">
+        <div>
+          <p>Take the EAR formula and let the number of compounding periods per year grow without bound. From calculus:</p>
+
+          <div class="formula-card">
+            $$ \lim_{m \to \infty} \left(1 + \tfrac{r}{m}\right)^{m} \;=\; e^{r} $$
+            <div class="where">This is one of the definitions of Euler's number, and the gateway from discrete to continuous time finance.</div>
+          </div>
+
+          <p>So under <em>continuous compounding</em> at nominal rate <em>r</em>:</p>
+
+          <div class="formula-card">
+            $$ F \;=\; P\,e^{r n} \qquad P \;=\; F\,e^{-r n} \qquad i_a \;=\; e^{r} - 1 $$
+            <div class="where">Time <em>n</em> is now measured in years (matching the units of <em>r</em>) and need not be an integer.</div>
+          </div>
+        </div>
+
+        <aside class="frame navy">
+          <span class="label">Why we bother</span>
+          <ul>
+            <li><strong>Modelling.</strong> Many quantitative-finance results (Black–Scholes, term structures) are cleanest in continuous time.</li>
+            <li><strong>Upper bound.</strong> $e^{r} - 1$ is the largest EAR you can ever extract from a given nominal $r$; it is the worst-case quote-vs-cost gap, useful as a guardrail.</li>
+            <li><strong>Approximation.</strong> For modest <em>r</em>, daily compounding is already within 0.005 % of continuous. The two are operationally identical.</li>
+          </ul>
+        </aside>
+      </div>
+
+      <footer class="deck-footer"><span class="f-cite">Park, ch. 3 §3.5 · Hull, <em>Options, Futures &amp; Other Derivatives</em>, ch. 4</span><span class="f-page">22</span></footer>
+      <aside class="notes">
+        Don't dwell on the limit derivation — refer students to their calculus text. The pedagogical point is the boxed three formulas. Have them rewrite "$F = P(1+i)^n$" and "$F = P\,e^{rn}$" side by side in their notes; the structural symmetry is the whole story.
+      </aside>
+    </section>
+
+    <!-- ============================================================ 23 — Continuous example ============================================================ -->
+    <section>
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part VI — Continuous compounding</span></header>
+      <h4>Comparison and worked example</h4>
+      <h2>How much does compounding frequency really cost?</h2>
+
+      <div class="grid-2-7-5">
+        <div>
+          <p><strong>Setup.</strong> Nominal rate $r = 12\%$ per year, principal $P = \$10{,}000$, horizon $n = 1$ year.</p>
+          <table class="editorial">
+            <thead>
+              <tr><th>Compounding</th><th><em>m</em></th><th class="num">Periodic rate</th><th class="num">EAR <em>i<sub>a</sub></em></th><th class="num">F after 1 yr</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Annual</td>      <td>1</td>   <td class="num">12.00000 %</td><td class="num">12.0000 %</td><td class="num">11,200.00</td></tr>
+              <tr><td>Semi-annual</td> <td>2</td>   <td class="num">6.00000 %</td> <td class="num">12.3600 %</td><td class="num">11,236.00</td></tr>
+              <tr><td>Quarterly</td>   <td>4</td>   <td class="num">3.00000 %</td> <td class="num">12.5509 %</td><td class="num">11,255.09</td></tr>
+              <tr><td>Monthly</td>     <td>12</td>  <td class="num">1.00000 %</td> <td class="num">12.6825 %</td><td class="num">11,268.25</td></tr>
+              <tr><td>Weekly</td>      <td>52</td>  <td class="num">0.23077 %</td> <td class="num">12.7341 %</td><td class="num">11,273.41</td></tr>
+              <tr><td>Daily</td>       <td>365</td> <td class="num">0.03288 %</td> <td class="num">12.7475 %</td><td class="num">11,274.75</td></tr>
+              <tr><td><strong>Continuous</strong></td><td>∞</td><td class="num">—</td><td class="num hi">12.7497 %</td><td class="num hi">11,274.97</td></tr>
+            </tbody>
+          </table>
+          <p class="caption">The asymptote between daily and continuous is only $\$0.22$ on $\$10{,}000$ — negligible in practice, conceptually fundamental.</p>
+        </div>
+
+        <aside class="frame gold">
+          <span class="label">Worked check</span>
+          <p>Verify the bottom row:</p>
+          <p>$$ F = 10{,}000 \cdot e^{0.12} $$</p>
+          <p>$$ e^{0.12} = 1.127497 $$</p>
+          <p>$$ F = \$11{,}274.97 $$</p>
+          <hr class="hairline" />
+          <p class="small">The diminishing returns from finer compounding are the empirical justification for the convention: large institutional models almost always assume continuous compounding because the simplification is free.</p>
+        </aside>
+      </div>
+
+      <footer class="deck-footer"><span class="f-cite">Dr. Zhijiang Chen — Engineering Economics 2026 Spring</span><span class="f-page">23</span></footer>
+      <aside class="notes">
+        Walk down the EAR column — the gap from annual to semi-annual (36 bp) is much bigger than the gap from monthly to continuous (7 bp). The first decision a borrower should fight about is "how often"; once you are at monthly, you are already 99 % of the way to the asymptote.
+      </aside>
+    </section>
+
+    <!-- ============================================================ 24 — Pitfalls ============================================================ -->
+    <section>
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part VI — Continuous compounding</span></header>
+      <h4>Diagnostic</h4>
+      <h2>Five mistakes that account for most of the homework points lost on this material</h2>
+
+      <ol class="objective-list">
+        <li>
+          <strong>Using the nominal rate where the periodic rate belongs.</strong>
+          <p class="small mute" style="margin:4px 0 0;">If you compound monthly, you must use $r/12$, not $r$, as the per-period rate. Plugging $r$ directly into $(1+i)^n$ with $n$ in months over-charges interest by a factor that grows with <em>n</em>.</p>
+        </li>
+        <li>
+          <strong>Mismatching <em>i</em>'s period and <em>n</em>'s period.</strong>
+          <p class="small mute" style="margin:4px 0 0;">If <em>n</em> is in months, <em>i</em> must be a monthly rate. The single most common silent error.</p>
+        </li>
+        <li>
+          <strong>Comparing two offers by APR alone.</strong>
+          <p class="small mute" style="margin:4px 0 0;">Always convert to EAR first when compounding frequencies differ.</p>
+        </li>
+        <li>
+          <strong>Forgetting that simple-interest formulas exist.</strong>
+          <p class="small mute" style="margin:4px 0 0;">A homework problem that explicitly says "simple interest" is not a typo; do not silently switch to compound.</p>
+        </li>
+        <li>
+          <strong>Reporting too many decimal places.</strong>
+          <p class="small mute" style="margin:4px 0 0;">Cash answers belong to the cent ($\pm 0.005$); rate answers to the basis point ($\pm 0.0001$). More digits implies precision you do not have.</p>
+        </li>
+      </ol>
+
+      <footer class="deck-footer"><span class="f-cite">Dr. Zhijiang Chen — Engineering Economics 2026 Spring</span><span class="f-page">24</span></footer>
+      <aside class="notes">
+        Tell them which ones cost most last year. Mistake (2) cost the median student 6 marks on Q3 of the midterm; mistake (3) cost full marks on the credit-card homework. This is the slide they should photograph.
+      </aside>
+    </section>
+
+    <!-- ============================================================ 25 — DISCUSSION SEGMENT ============================================================ -->
+    <section class="discussion">
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part VII — In-class discussion</span></header>
+      <span class="stamp">In-class discussion · 15 minutes</span>
+
+      <h2>Why does my credit-card statement say "19.99 % APR" when I'm actually paying more than 22 %?</h2>
+      <p class="prompt">"Find your most recent credit-card statement — or pull up one online. Locate the disclosed APR, the cycle length, and any 'cash advance' rate. Convert the APR to an EAR, and decide: is the lender being honest, legal, or both?"</p>
+
+      <div class="grid-2 tight" style="margin-top:8px;">
+        <aside class="frame">
+          <span class="label">Discussion protocol</span>
+          <ul>
+            <li><strong>Minutes 0–3.</strong> Solo: each student computes the EAR on their own card (or a sample statement on the projector).</li>
+            <li><strong>Minutes 3–9.</strong> Pairs: compare results and identify the largest gap between APR and EAR in the room.</li>
+            <li><strong>Minutes 9–14.</strong> Plenary: three pairs report; class debates whether disclosure law should mandate EAR over APR.</li>
+            <li><strong>Minute 14.</strong> Instructor synthesis.</li>
+          </ul>
+        </aside>
+        <aside class="frame navy">
+          <span class="label">Prompts to push the conversation</span>
+          <ul>
+            <li>If both numbers are mathematically derivable from each other, does the choice of which to disclose matter ethically?</li>
+            <li>Payday lenders sometimes report rates "per pay period" of 15 % — what is the EAR if pay periods are biweekly?</li>
+            <li>Why might a regulator <em>prefer</em> APR disclosure even though it understates the true cost?</li>
+            <li>Where in your own engineering work might you face the equivalent choice — quoting a number that is technically true but operationally misleading?</li>
+          </ul>
+        </aside>
+      </div>
+
+      <footer class="deck-footer"><span class="f-cite">Dr. Zhijiang Chen — Engineering Economics 2026 Spring</span><span class="f-page">25</span></footer>
+      <aside class="notes">
+        Keep yourself out of the conversation for the full plenary segment. The pedagogical goal is for students to discover, in their own words, that <em>true ≠ informative</em> — a recurring theme in engineering ethics. If the room is quiet, prime the pump with the payday-loan number (biweekly 15 % ⇒ 26 compounding periods ⇒ EAR ≈ 3,685 %). That usually gets the discussion moving.
+        Hard stop at 14 minutes regardless — slide 26 is your synthesis.
+      </aside>
+    </section>
+
+    <!-- ============================================================ 26 — Synthesis ============================================================ -->
+    <section>
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Part VIII — Synthesis</span></header>
+      <h4>Where we have been</h4>
+      <h2>One picture, four formulas, one habit</h2>
+
+      <div class="grid-2 tight">
+        <div>
+          <h4>The four formulas to memorise</h4>
+          <table class="editorial">
+            <thead><tr><th>Setting</th><th>Forward (F)</th><th>Backward (P)</th></tr></thead>
+            <tbody>
+              <tr><td>Simple interest</td><td>$F = P(1 + in)$</td><td>$P = F/(1 + in)$</td></tr>
+              <tr><td>Discrete compound</td><td>$F = P(1 + i)^{n}$</td><td>$P = F\,(1+i)^{-n}$</td></tr>
+              <tr><td>Continuous compound</td><td>$F = P\,e^{rn}$</td><td>$P = F\,e^{-rn}$</td></tr>
+              <tr><td>EAR conversion</td><td colspan="2">$i_a = (1 + r/m)^{m} - 1$ · or · $i_a = e^{r} - 1$</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <aside class="frame gold">
+          <span class="label">The one habit</span>
+          <p><strong>Draw the cash-flow diagram before you reach for the formula.</strong></p>
+          <p>If you cannot draw <em>P</em>, <em>F</em>, the timeline, and the period of <em>i</em> on a napkin, no algebraic manipulation will save you. Conversely, if the diagram is right, the rest is bookkeeping.</p>
+          <hr class="hairline" />
+          <p class="small">This is the single piece of advice that distinguishes A-grade homework from B-grade homework — confirmed every year for ten years.</p>
+        </aside>
+      </div>
+
+      <div class="pull" style="margin-top:18px;">
+        Today's content compresses to: <em>money has a price that depends on time, that price compounds, and a quote is not a cost until you convert to an effective rate.</em>
+      </div>
+
+      <footer class="deck-footer"><span class="f-cite">Dr. Zhijiang Chen — Engineering Economics 2026 Spring</span><span class="f-page">26</span></footer>
+      <aside class="notes">
+        Read the pull-quote aloud as the lecture's one-sentence summary. Tell students this is the sentence that should come back to them on exam day if they remember nothing else.
+      </aside>
+    </section>
+
+    <!-- ============================================================ 27 — Homework ============================================================ -->
+    <section>
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Assignment</span></header>
+      <h4>Problem set 3 — due Wednesday 2026-06-10, 23:59</h4>
+      <h2>Practice and apply</h2>
+
+      <div class="grid-2 tight">
+        <div>
+          <h4>Required</h4>
+          <ol>
+            <li>Park 3.7, 3.12, 3.19, 3.24 — straight drill on the four formulas.</li>
+            <li><strong>Statement exercise.</strong> Take one bill or statement from your own life (utilities, tuition, phone plan, subscription) and decompose any financing terms it contains into APR, periodic rate, and EAR. One paragraph of commentary on whether the disclosure is informative.</li>
+            <li><strong>Modelling exercise.</strong> Compare two student-loan offers (data on Canvas): which has the lower EAR, and by how much over a 10-year horizon?</li>
+          </ol>
+          <h4>Optional · extension</h4>
+          <ul>
+            <li>Park 3.41 — continuous-compounding mortgage problem.</li>
+            <li>Read Hull §4.1–4.3 for a derivatives perspective on continuous compounding.</li>
+          </ul>
+        </div>
+        <aside class="frame">
+          <span class="label">Submission format</span>
+          <ul>
+            <li>Hand-drawn cash-flow diagram for every numeric problem (photograph is fine).</li>
+            <li>Worked algebra <em>before</em> the calculator output — partial credit lives in the algebra.</li>
+            <li>Final numerical answer boxed and units stated.</li>
+            <li>Total length: no more than 4 pages.</li>
+          </ul>
+          <hr class="hairline" />
+          <p class="small">Office hours: Mon 14:00–16:00, SY 314. Bring your homework draft, not your final solution.</p>
+        </aside>
+      </div>
+
+      <footer class="deck-footer"><span class="f-cite">Dr. Zhijiang Chen — Engineering Economics 2026 Spring</span><span class="f-page">27</span></footer>
+      <aside class="notes">
+        Emphasise (2) — the statement exercise is the one that consistently surprises students. They discover that their phone-plan financing is structured oddly, or that their bank account pays an effective rate noticeably below the advertised rate. The pedagogical payoff dwarfs the textbook drill.
+      </aside>
+    </section>
+
+    <!-- ============================================================ 28 — Next lecture preview ============================================================ -->
+    <section>
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>Coming next</span></header>
+      <h4>Lecture 4 · Saturday 2026-06-06 · SY 109</h4>
+      <h2>Cash Flow Analysis &amp; Equivalence</h2>
+
+      <div class="grid-2 tight">
+        <div>
+          <p>Today we moved a <em>single</em> sum through time. Next session we move <em>streams</em> — uniform annuities, arithmetic gradients, geometric gradients — and prove that any cash-flow pattern can be reduced to an equivalent single sum.</p>
+          <h4>Bring</h4>
+          <ul>
+            <li>Today's cash-flow notation, fluent.</li>
+            <li>A financial calculator or laptop with Excel / Sheets / Python.</li>
+            <li>The first three problems of Park ch. 4 attempted (not necessarily solved).</li>
+          </ul>
+        </div>
+        <aside class="frame navy">
+          <span class="label">Bridge</span>
+          <p>The $(P/F)$ factor you mastered today is one of <em>seven</em> standard factors. Tomorrow's lecture introduces the remaining six:</p>
+          <p class="small">$(F/A,\,i,\,n)$ · $(A/F,\,i,\,n)$ · $(P/A,\,i,\,n)$ · $(A/P,\,i,\,n)$ · $(P/G,\,i,\,n)$ · $(A/G,\,i,\,n)$.</p>
+          <p>Every cash-flow problem in this course will be a composition of these seven, applied in sequence on a cash-flow diagram. That is the architecture you are building.</p>
+        </aside>
+      </div>
+
+      <footer class="deck-footer"><span class="f-cite">Dr. Zhijiang Chen — Engineering Economics 2026 Spring</span><span class="f-page">28</span></footer>
+      <aside class="notes">
+        End on the bridge — students who arrive at Lecture 4 understanding it is "more of the same machinery, applied to streams" learn the seven factors twice as fast as students who treat each factor as a fresh formula to memorise.
+      </aside>
+    </section>
+
+    <!-- ============================================================ 29 — Credits / references ============================================================ -->
+    <section>
+      <header class="deck-header"><span class="h-mark">BJU · ENGINEERING ECONOMICS</span><span>References</span></header>
+      <h4>For further reading</h4>
+      <h2>Sources and recommended texts</h2>
+
+      <div class="grid-2 tight">
+        <div>
+          <h4>Primary text</h4>
+          <ul>
+            <li>Park, C. S. <em>Contemporary Engineering Economics</em>, 6th ed. Pearson, 2019. Chapter 3.</li>
+            <li>Newnan, D. G.; Eschenbach, T. G.; Lavelle, J. P. <em>Engineering Economic Analysis</em>, 14th ed. Oxford, 2020. Chapter 4.</li>
+          </ul>
+          <h4>Quant-finance complement</h4>
+          <ul>
+            <li>Hull, J. C. <em>Options, Futures &amp; Other Derivatives</em>, 11th ed. Pearson, 2021. Chapter 4 §4.1–4.3 on continuous compounding.</li>
+          </ul>
+          <h4>Regulatory background</h4>
+          <ul>
+            <li>U.S. CFPB. <em>Truth in Lending Act (Regulation Z)</em>, 12 CFR §1026 — APR disclosure requirements.</li>
+          </ul>
+        </div>
+        <aside class="frame">
+          <span class="label">A note on calculators</span>
+          <p>Any of the following will be accepted for graded work:</p>
+          <ul>
+            <li>HP 12C or TI BA II Plus — the classics.</li>
+            <li>Excel functions <code>PV</code>, <code>FV</code>, <code>EFFECT</code>, <code>NOMINAL</code>.</li>
+            <li>Python <code>numpy_financial.fv</code>, <code>pv</code>, or hand-rolled $\,e^{rn}\,$.</li>
+          </ul>
+          <hr class="hairline" />
+          <p class="small">Whichever you choose, please write the formula on paper before invoking the calculator. The midterm will not allow electronic devices.</p>
+        </aside>
+      </div>
+
+      <footer class="deck-footer"><span class="f-cite">Dr. Zhijiang Chen — Engineering Economics 2026 Spring</span><span class="f-page">29</span></footer>
+      <aside class="notes">
+        Final beat: thank the room, remind them of office hours, and dismiss. Total runtime, hitting agenda exactly: 110 minutes.
+      </aside>
+    </section>
+
+  </div>
+</div>
+
+<!-- Reveal.js scripts -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/math/math.js"></script>
+<script>
+  Reveal.initialize({
+    width:  1280,
+    height: 720,
+    margin: 0,
+    minScale: 0.2,
+    maxScale: 2.0,
+    hash: true,
+    slideNumber: false,
+    controls: true,
+    progress: true,
+    transition: 'fade',
+    transitionSpeed: 'default',
+    backgroundTransition: 'none',
+    pdfSeparateFragments: false,
+    plugins: [ RevealNotes, RevealMath.MathJax3 ],
+    mathjax3: {
+      mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    }
+  });
+</script>
+</body>
+</html>
